@@ -33,4 +33,4 @@ switch (playerSide) do
 	};
 };
 
-[_packet,"BRUUUDIS_fnc_add",false,false] spawn life_fnc_MP;
+[_packet,"TON_fnc_add",false,false] spawn life_fnc_MP;

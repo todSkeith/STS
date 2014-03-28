@@ -3,7 +3,7 @@ class Life_cell_text {
 	name= "life_cell_text";
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "[] spawn life_fnc_cell_text";
+	//onLoad = "[] spawn life_fnc_cell_textRefresh;";
 	
 	class controlsBackground {
 		class phone_img_text: Life_RscPicture
@@ -27,15 +27,18 @@ class Life_cell_text {
 			y = 0.75 * safezoneH + safezoneY;
 			w = 0.10 * safezoneW;
 			h = 0.155 * safezoneH;
+			onLBDblClick = "[0,_this] call life_fnc_cell_message;";
 		};
-		class EMSButton: Life_RscButtonTextOnly
+		class AdminButton: Life_RscButtonTextOnly
 		{
 			idc = 3102;
-			text = ""; 
+
+			text = "";
 			x = 0.8 * safezoneW + safezoneX;
-			y = 0.694 * safezoneH + safezoneY;
+			y = 0.643 * safezoneH + safezoneY;
 			w = 0.084 * safezoneW;
 			h = 0.02 * safezoneH;
+			onButtonClick = "[1] call life_fnc_cell_message;";
 		};
 		class PoliceButton: Life_RscButtonTextOnly
 		{
@@ -46,19 +49,18 @@ class Life_cell_text {
 			y = 0.667 * safezoneH + safezoneY;
 			w = 0.084 * safezoneW;
 			h = 0.02 * safezoneH;
+			onButtonClick = "[2] call life_fnc_cell_message;";
 		};
-		class AdminButton: Life_RscButtonTextOnly
+		class EMSButton: Life_RscButtonTextOnly
 		{
 			idc = 3104;
-
-			text = "";
+			text = ""; 
 			x = 0.8 * safezoneW + safezoneX;
-			y = 0.643 * safezoneH + safezoneY;
+			y = 0.694 * safezoneH + safezoneY;
 			w = 0.084 * safezoneW;
 			h = 0.02 * safezoneH;
-			onButtonClick = "closeDialog 0; createDialog ""Life_cell_message"";";
+			onButtonClick = "[3] call life_fnc_cell_message;";
 		};
-	
 		class CloseButton: Life_RscButtonTextOnly
 		{
 			idc = -1;
@@ -69,7 +71,7 @@ class Life_cell_text {
 			h = 0.044 * safezoneH;
 			colorText[] = {0,0,0,0};
 			colorBackground[] = {0,0,0,0};
-			onButtonClick = "closeDialog 0; createDialog ""Life_cell_phone"";";
+			onButtonClick = "[""home""] call life_fnc_cellHandle;";
 		};
 	};
 };

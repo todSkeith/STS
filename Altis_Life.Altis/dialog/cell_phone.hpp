@@ -12,7 +12,6 @@ class Life_cell_phone {
 	name= "life_cell_phone";
 	movingEnable = false;
 	enableSimulation = true;
-	//onLoad = "[] spawn life_fnc_cellphone";
 	
 	class controlsBackground {
 		class phone_img: Life_RscPicture
@@ -39,7 +38,7 @@ class Life_cell_phone {
 			h = 0.044 * safezoneH;
 			colorText[] = {0,0,0,0};
 			colorBackground[] = {0,0,0,0};
-			onButtonClick = "closeDialog 3000; createDialog ""Life_cell_text""; [] spawn life_fnc_cell_text;";
+			onButtonClick = "closeDialog 0; [""text""] call life_fnc_cellHandle;";
 			
 		};
 		class MessagesButton: Life_RscButtonTextOnly
@@ -52,7 +51,7 @@ class Life_cell_phone {
 			h = 0.044 * safezoneH;
 			colorText[] = {0,0,0,0};
 			colorBackground[] = {0,0,0,0};
-			onButtonClick = "closeDialog 3000; createDialog ""Life_cell_inbox"";";
+			onButtonClick = "[""inbox""] call life_fnc_cellHandle;";
 		};
 		class SettingsButton: Life_RscButtonTextOnly
 		{

@@ -38,7 +38,7 @@ _handle = [] spawn compile PreprocessFileLineNumbers "core\config_housing.sqf";
 diag_log "::Life Client:: Housing Variables";
 waitUntil {scriptDone _handle};
 diag_log "::Life Client:: Housing Variables initialized";
-waitUntil {(!isNil {life_fnc_wounded})};
+//waitUntil {(!isNil {life_fnc_wounded})}; DOES NOT EXIST!!!!! DO NOT SET A WAITUNTIL FOR SOMETHING THAT DOES NOT EXIST!!!!!
 diag_log "::Life Client:: Received server functions.";
 
 switch (playerSide) do

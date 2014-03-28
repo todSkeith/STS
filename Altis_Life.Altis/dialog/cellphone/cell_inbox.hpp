@@ -3,7 +3,6 @@ class Life_cell_inbox {
 	name= "life_cell_inbox";
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "[] spawn life_fnc_cell_inbox";
 	
 	class controlsBackground {
 		class phone_img_inbox: Life_RscPicture
@@ -38,7 +37,7 @@ class Life_cell_inbox {
 			h = 0.044 * safezoneH;
 			colorText[] = {0,0,0,0};
 			colorBackground[] = {0,0,0,0};
-			onButtonClick = "closeDialog 0; createDialog ""Life_cell_from"";";
+			onButtonClick = "[""from""] call life_fnc_cellHandle;";
 		};
 	};
 };
