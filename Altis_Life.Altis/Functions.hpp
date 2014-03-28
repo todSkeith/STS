@@ -199,6 +199,8 @@ class Life_Client_Core
 		class autoSave {};
 		class updateCash {};
         class vehicleGarage {};
+		class unconscious {};
+		class revive {};
 	};
 
  class Housing

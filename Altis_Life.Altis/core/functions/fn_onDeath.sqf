@@ -73,6 +73,7 @@ if(side _source == west && vehicle _source == _source && playerSide == civilian)
 _handle = [_unit] spawn life_fnc_dropItems;
 waitUntil {scriptDone _handle};
 
+deleteMarker name player;
 life_carryWeight = 0;
 life_thirst = 100;
 life_hunger = 100;

@@ -44,7 +44,7 @@ life_action_index = [];
 life_actions = [];
 life_roadblock = ObjNull;
 life_roadcone = ObjNull;
-life_revive_timer = 0;
+life_isUnconscious = false;
 
 
 

@@ -34,10 +34,10 @@ cutText["Finishing client setup procedure","BLACK FADED"];
 0 cutFadeOut 9999999;
 //[] execVM "core\client\group_base_respawn.sqf";
 //diag_log "::Life Client:: Group Base Execution";
-_handle = [] spawn compile PreprocessFileLineNumbers "core\config_housing.sqf";
-diag_log "::Life Client:: Housing Variables";
-waitUntil {scriptDone _handle};
-diag_log "::Life Client:: Housing Variables initialized";
+//_handle = [] spawn compile PreprocessFileLineNumbers "core\config_housing.sqf"; Housing not in yet
+//diag_log "::Life Client:: Housing Variables";
+//waitUntil {scriptDone _handle};
+//diag_log "::Life Client:: Housing Variables initialized";
 //waitUntil {(!isNil {life_fnc_wounded})}; DOES NOT EXIST!!!!! DO NOT SET A WAITUNTIL FOR SOMETHING THAT DOES NOT EXIST!!!!!
 diag_log "::Life Client:: Received server functions.";
 
