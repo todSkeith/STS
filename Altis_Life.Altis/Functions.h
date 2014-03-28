@@ -1,7 +1,7 @@
 class Life_Client_Core
 {
 	tag = "life";
-
+	
 	class Master_Directory
 	{
 		file = "core";
@@ -9,10 +9,9 @@ class Life_Client_Core
 		class setupEVH {};
 		class initCiv {};
 		class initCop {};
-		class initMedic {};
 		class welcomeNotification {};
 	};
-
+	
 	class Admin
 	{
 		file = "core\admin";
@@ -22,23 +21,13 @@ class Life_Client_Core
 		class adminMenu {};
 		class adminQuery {};
 	};
-
+	
 	class Actions
 	{
 		file = "core\actions";
-		class civPullOut {};
-		class civPutInCar {};
 		class buyLicense {};
 		class chemlightUse {};
-		class restrainCiv {};
-		class unrestrainAction {};
-		class unzip {};
-		class zipTieAction {};
 		class heal {};
-		class drugeffect_alc {};
-		class drugeffect_coc {};
-		class drugeffect_her {};
-		class drugeffect_mar {};
 		class healHospital {};
 		class pushVehicle {};
 		class repairTruck {};
@@ -71,7 +60,6 @@ class Life_Client_Core
 		class pickupItem {};
 		class pickupMoney {};
 		class ticketAction {};
-		class gatherCorn {};
 		class gatherPeaches {};
 		class gatherCocaine {};
 		class pumpRepair {};
@@ -80,19 +68,8 @@ class Life_Client_Core
 		class storeVehicle {};
 		class robAction {};
 		class sellTurtle {};
-		class payrepair {};
-		class gasman1 {};
-		class gasman2 {};
-		class gasman3 {};
-		class gasman4 {};
-		class nclights {};
-		class ncmusic {};
-		class ncstage {};
-		class ncsmoke {};
-		class ncflash {};
-		class toggleActions {};
 	};
-
+	
 	class Config
 	{
 		file = "core\config";
@@ -113,18 +90,14 @@ class Life_Client_Core
 		class vehShopLicenses {};
 		class vehicleAnimate {};
 		class weaponShopCfg {};
-		class isMedic {};
-		class houseContainers {};
-        class housePrice {};
-
+		
 		//Clothing Store Configs
 		class clothing_cop {};
 		class clothing_bruce {};
 		class clothing_reb {};
 		class clothing_dive {};
-		class clothing_copdive {};
 	};
-
+	
 	class session
 	{
 		file = "core\session";
@@ -158,7 +131,7 @@ class Life_Client_Core
 		class settingsMenu {};
 		class settingsInit {};
 	};
-
+	
 	class Functions
 	{
 		file = "core\functions";
@@ -166,14 +139,10 @@ class Life_Client_Core
 		class fetchCfgDetails {};
 		class handleInv {};
 		class hudSetup {};
-		class intro {};
-		class playsound {};
-		class setUniform {};
 		class hudUpdate {};
 		class fetchGear{};
 		class tazeSound {};
 		class animSync {};
-		class equipGear {};
 		class simDisable {};
 		class keyHandler {};
 		class dropItems {};
@@ -191,41 +160,9 @@ class Life_Client_Core
 		class pulloutVeh {};
 		class nearUnits {};
 		class fedSuccess {};
-		class holsterWeapon {};
-		class abortEnabled {};
 		class actionKeyHandler {};
-		class setReviveMarker {};
-		class medicMarkers {};
-		class autoSave {};
-		class updateCash {};
-        class vehicleGarage {};
 	};
-
- class Housing
-    {
-        file = "core\housing";
-        class buyHouse {};
-        class sellHouse {}; 
-        class createMarkers {};
-        class deleteMarkers {};
-        class getBuildID {};
-        class initHouses {};
-        class lockHouse {};
-        class lockStorage {};
-        class countBuildingPositions {};
-        class houseStoreItem {};
-        class houseTakeItem {};
-        class houseInventory {};
-        class openStorage {};
-        class placeStorage {};
-        class preCloseHouseStorage {};
-        class calcGarageSpawn {};
-        class onPut {};
-        class onTake {};
-    };
-
-
-
+	
 	class Network
 	{
 		file = "core\functions\network";
@@ -234,11 +171,10 @@ class Life_Client_Core
 		class MPexec {};
 		class netSetVar {};
 	};
-
+	
 	class Civilian
 	{
 		file = "core\civilian";
-		class civInteractionMenu {};
 		class jailMe {};
 		class jail {};
 		class tazed {};
@@ -251,9 +187,8 @@ class Life_Client_Core
 		class robPerson {};
 		class removeLicenses {};
 		class zoneCreator {};
-		class surrender {};
 	};
-
+	
 	class Vehicle
 	{
 		file = "core\vehicle";
@@ -266,7 +201,7 @@ class Life_Client_Core
 		class vehInventory {};
 		class vInteractionMenu {};
 	};
-
+	
 	class Cop
 	{
 		file = "core\cop";
@@ -282,31 +217,16 @@ class Life_Client_Core
 		class ticketGive {};
 		class ticketPay {};
 		class ticketPrompt {};
-		class copHorn {};
 		class copSiren {};
 		class spikeStripEffect {};
-		class seizeObjects {};
-		class seizePlayerWeapon {};
-		class seizePlayerWeaponAction {};
 		class radar {};
 		class questionDealer {};
 		class copInteractionMenu {};
 		class sirenLights {};
-		class jailDialog {};
-		class jailPre {};
 		class licenseCheck {};
 		class licensesRead {};
-		class houseOwnerSearch {};
-        class houseInvSearch {};
-        class raidHouse {};
 	};
-
-	class Medic
-	{
-		file = "core\medic";
-		class medicLoadGear {};
-	};
-
+	
 	class Gangs
 	{
 		file = "core\gangs";
@@ -321,7 +241,7 @@ class Life_Client_Core
 		class lockGang {};
 		class unlockGang {};
 	};
-
+	
 	class Shops
 	{
 		file = "core\shops";
@@ -346,19 +266,16 @@ class Life_Client_Core
 		class chopShopSelection {};
 		class chopShopSell {};
 	};
-
+	
 	class Items
 	{
 		file = "core\items";
 		class pickaxeUse {};
 		class lockpick {};
 		class spikeStrip {};
-		class zipTie {};
 		class jerryRefuel {};
-		class crabpot {};
-		class chainsaw {};
 	};
-
+	
 	class Dialog_Controls
 	{
 		file = "dialog\function";
@@ -372,6 +289,5 @@ class Life_Client_Core
 		class impoundMenu {};
 		class unimpound {};
 		class sellGarage {};
-		class houseMenu {};
 	};
 };
