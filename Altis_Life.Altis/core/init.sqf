@@ -38,6 +38,8 @@ _handle = [] spawn compile PreprocessFileLineNumbers "core\config_housing.sqf";
 diag_log "::Life Client:: Housing Variables";
 waitUntil {scriptDone _handle};
 diag_log "::Life Client:: Housing Variables initialized";
+waitUntil {(!isNil {life_fnc_wounded})};
+diag_log "::Life Client:: Received server functions.";
 
 switch (playerSide) do
 {
@@ -69,6 +71,7 @@ player setVariable["transporting",false,true];
 player setVariable["zipTie",false,true];
 player setVariable["surrender",false,true];
 player setVariable["kidnapped",false,true];
+player setVariable ["wounded", false, true];
 
 diag_log "Past Settings Init";
 [] execFSM "core\fsm\client.fsm";

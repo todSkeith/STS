@@ -44,6 +44,8 @@ life_action_index = [];
 life_actions = [];
 life_roadblock = ObjNull;
 life_roadcone = ObjNull;
+life_revive_timer = 0;
+
 
 
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)

@@ -73,6 +73,9 @@ if(playerSide == west && side _source == west) then
 {
 	_damage = false;
 };
+if (alive _unit && !(player getVariable ["wounded",false])) then {
+	life_gear = [] call life_fnc_fetchGear;
+};
 
 [] call life_fnc_hudUpdate;
 _damage;

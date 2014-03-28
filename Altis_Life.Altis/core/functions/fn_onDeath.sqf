@@ -82,6 +82,25 @@ life_holstered_weapon = nil;
 
 [] call life_fnc_sessionUpdate;
 
+
+if (!(player getVariable ["wounded", false])) then {
+	player setVariable ["wounded", true, true];
+	10 cutText ["You were heavily wounded, but you can still be revived by a Medic...", "BLACK OUT", 0.1];
+	if (!isNull _source && _source != _unit && isPlayer _source) then {
+		_msg = format ["%1 was heavily wounded by %2", name _unit, name _source];
+	} else {
+		_msg = format ["%1 was heavily wounded", name _unit];
+	};
+	[[0, _msg], "life_fnc_broadcastMessage", true, false] spawn BIS_fnc_MP;
+} else {
+	player setVariable ["wounded", false, true];
+};
+
+player setVariable ["restrained", false, true];
+player setVariable ["escorting", false, true];
+player setVariable ["transporting", false, true];
+life_holstered = false;
+
 // Sort out the body
 deleteVehicle _unit;
 [[2, player, format["Killed by %1",name _source]],"ASY_fnc_logIt",false,false] spawn BIS_fnc_MP;
