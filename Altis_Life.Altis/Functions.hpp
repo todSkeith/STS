@@ -114,8 +114,8 @@ class Life_Client_Core
 		class vehicleAnimate {};
 		class weaponShopCfg {};
 		class isMedic {};
-		class houseContainers {};
-        class housePrice {};
+		//class houseContainers {};
+        //class housePrice {};
 
 		//Clothing Store Configs
 		class clothing_cop {};
@@ -197,8 +197,8 @@ class Life_Client_Core
 		class setReviveMarker {};
 		class medicMarkers {};
 		class autoSave {};
-		class updateCash {};
-        class vehicleGarage {};
+		//class updateCash {};
+        //class vehicleGarage {};
 		class unconscious {};
 		class revive {};
 	};

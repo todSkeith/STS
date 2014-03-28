@@ -74,13 +74,13 @@ if(playerSide == west && side _source == west) then
 	_damage = false;
 };
 
-if(_selection == "" || _selection == "head_hit" || _selection =="body") then
+if(_sel == "" || _sel == "head_hit" || _sel =="body") then
 		{
-			if (_damage >= 0.9) then
+			if (_damage >= 0.89) then
 			{
 				_unit setDamage 0;
 				_unit allowDamage false;
-				_amountOfDamage = 0;
+				_damage = 0;
 				[_unit, _source] spawn life_fnc_unconscious;
 			};
 		};
