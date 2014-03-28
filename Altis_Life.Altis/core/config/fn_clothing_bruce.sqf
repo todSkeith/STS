@@ -1,7 +1,7 @@
 /*
 	File: fn_clothing_bruce.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Master configuration file for Bruce's Outback Outfits.
 */
@@ -31,10 +31,11 @@ switch (_filter) do
 		["U_C_HunterBody_grn","The Hunters Look",1500],
 		["U_C_WorkerCoveralls","Mechanic Coveralls",2500],
 		["U_OrestesBody","Surfing On Land",1100],
-		["U_NikosBody","Bad Ass Uniform",5000]
+		["U_NikosBody","Bad Ass Uniform",5000],
+		["U_NikosAgedBody","Bussiness Casual",5000]
 		];
 	};
-	
+
 	//Hats
 	case 1:
 	{
@@ -65,7 +66,7 @@ switch (_filter) do
 			["H_Cap_tan",nil,150]
 		];
 	};
-	
+
 	//Glasses
 	case 2:
 	{
@@ -85,21 +86,22 @@ switch (_filter) do
 			["G_Combat",nil,55]
 		];
 	};
-	
+
 	//Vest
 	case 3:
 	{
 		[
 		];
 	};
-	
+
 	//Backpacks
 	case 4:
 	{
 		[
 			["B_FieldPack_ocamo",nil,1250],
 			["B_Kitbag_mcamo",nil,3000],
-			["B_Bergen_sgg",nil,3000]
+			["B_Bergen_sgg",nil,3000],
+			["B_Carryall_khk",nil,4000]
 
 		];
 	};

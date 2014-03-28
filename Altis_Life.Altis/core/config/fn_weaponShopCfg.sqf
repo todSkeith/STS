@@ -32,11 +32,11 @@ switch(_shop) do
 						["ToolKit",nil,250],
 						["FirstAidKit",nil,150],
 						["Medikit",nil,1000],
-						["NVGoggles",nil,2000]
-						//["Chemlight_red",nil,300],
-						//["Chemlight_yellow",nil,300],
-						//["Chemlight_green",nil,300],
-						//["Chemlight_blue",nil,300]
+						["NVGoggles_OPFOR",nil,2000],
+						["Chemlight_red",nil,300],
+						["Chemlight_yellow",nil,300],
+						["Chemlight_green",nil,300],
+						["Chemlight_blue",nil,300]
 					]
 				];
 			};
@@ -45,11 +45,10 @@ switch(_shop) do
 
 	case "police_weapons":
 	{
-		//change these switches to coplevel == 1 for activating the shop, it's less buggy
-		switch (life_coplevel) do
+		switch(true) do
 		{
-			case (__GETC__(life_coplevel) < 1): {"You are not this rank!"};
-			default
+			case (__GETC__(life_coplevel) == 0): {"You are not a cop!"};
+			case (__GETC__(life_coplevel) == 1):
 			{
 				["Recruit Shop",
 					[
@@ -64,12 +63,12 @@ switch(_shop) do
 					]
 				];
 			};
-			case (__GETC__(life_coplevel) < 2): {"You are not at a patrol officer rank!"};
-			default
+
+			case (__GETC__(life_coplevel) == 2):
 			{
 				["Altis Patrol Officer Shop",
 					[
-						["arifle_MX_F",nil,35000],
+						["arifle_MXC_F",nil,15000],
 						["SMG_01_F",nil,20000],
 						["acc_flashlight",nil,750],
 						["optic_Holosight",nil,1200],
@@ -80,99 +79,202 @@ switch(_shop) do
 					]
 				];
 			};
-			case (__GETC__(life_coplevel) < 3): {"You are not at a Senior Patrol Officer rank!"};
-			default
+
+			case (__GETC__(life_coplevel) == 3):
 			{
 				["Altis Senior Patrol Officer Shop",
 					[
-						["arifle_MX_F",nil,35000],
-						["SMG_01_F",nil,20000],
+						["arifle_MX_F",nil,15000],
+						["arifle_MXC_F",nil,15000],
+						["SMG_01_F",nil,18000],
 						["acc_flashlight",nil,750],
-						["optic_Holosight",nil,1200],
 						["optic_Arco",nil,2500],
+						["optic_Holosight",nil,1200],
+						["optic_Hamr",nil,2500],
 						["muzzle_snds_H",nil,2750],
-						["30Rnd_65x39_caseless_mag",nil,130],
+						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150]
 					]
 				];
 			};
-			case (__GETC__(life_coplevel) < 4): {"You are not at a Corporal rank!"};
-			default
+
+			case (__GETC__(life_coplevel) == 4):
 			{
 				["Altis Corporal Shop",
 					[
-						["arifle_MX_F",nil,35000],
-						["SMG_01_F",nil,20000],
+						["arifle_MX_F",nil,15000],
+						["arifle_MXC_F",nil,15000],
+						["SMG_01_F",nil,16000],
 						["acc_flashlight",nil,750],
-						["optic_Holosight",nil,1200],
 						["optic_Arco",nil,2500],
+						["optic_Holosight",nil,1200],
+						["optic_Hamr",nil,2000],
 						["muzzle_snds_H",nil,2750],
-						["30Rnd_65x39_caseless_mag",nil,130],
+						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150]
 					]
 				];
 			};
-			case (__GETC__(life_coplevel) < 5): {"You are not at a Sergeant rank!"};
-			default
+
+			case (__GETC__(life_coplevel) == 5):
 			{
 				["Altis Sergeant Shop",
 					[
-						["arifle_MX_F",nil,35000],
-						["SMG_01_F",nil,20000],
-						["acc_flashlight",nil,750],
-						["optic_Holosight",nil,1200],
+						["arifle_MXC_F",nil,15000],
+						["arifle_MXM_F",nil,30000],
+						["arifle_MX_SW_F",nil,35000],
+						["SMG_01_F",nil,15000],
+						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
+						["optic_Holosight",nil,1200],
+						["optic_Hamr",nil,2000],
+						["acc_pointer_IR",nil,2500],
 						["muzzle_snds_H",nil,2750],
-						["30Rnd_65x39_caseless_mag",nil,130],
-						["30Rnd_45ACP_Mag_SMG_01",nil,150]
+						["30Rnd_65x39_caseless_mag",nil,300],
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
+						["9Rnd_45ACP_Mag",nil,200]
 					]
 				];
 			};
-			case (__GETC__(life_coplevel) < 6): {"You are not at a Lieutenant rank!"};
-			default
+
+			case (__GETC__(life_coplevel) == 6):
 			{
 				["Altis Lieutenant Shop",
 					[
-						["arifle_MX_F",nil,35000],
-						["SMG_01_F",nil,20000],
-						["acc_flashlight",nil,750],
-						["optic_Holosight",nil,1200],
+						["arifle_MX_Black_F",nil,15000],
+						["arifle_MXM_F",nil,30000],
+						["arifle_MX_SW_F",nil,35000],
+						["arifle_MXC_F",nil,15000],
+						["SMG_01_F",nil,15000],
+						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
+						["optic_Holosight",nil,1200],
+						["optic_Hamr",nil,2000],
+						["acc_pointer_IR",nil,2500],
 						["muzzle_snds_H",nil,2750],
-						["30Rnd_65x39_caseless_mag",nil,130],
-						["30Rnd_45ACP_Mag_SMG_01",nil,150]
+						["30Rnd_65x39_caseless_mag",nil,300],
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
+						["9Rnd_45ACP_Mag",nil,200]
 					]
 				];
 			};
-			case (__GETC__(life_coplevel) < 7): {"You are not at a Captain rank!"};
-			default
+
+			case (__GETC__(life_coplevel) == 7):
 			{
 				["Altis Captain Shop",
 					[
-						["arifle_MX_F",nil,35000],
-						["SMG_01_F",nil,20000],
-						["acc_flashlight",nil,750],
-						["optic_Holosight",nil,1200],
+						["arifle_MX_Black_F",nil,15000],
+						["arifle_MXM_F",nil,30000],
+						["arifle_MX_SW_F",nil,35000],
+						["arifle_MXC_F",nil,15000],
+						["SMG_01_F",nil,15000],
+						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
+						["optic_Holosight",nil,1200],
+						["optic_Hamr",nil,2000],
+						["acc_pointer_IR",nil,2500],
 						["muzzle_snds_H",nil,2750],
-						["30Rnd_65x39_caseless_mag",nil,130],
-						["30Rnd_45ACP_Mag_SMG_01",nil,150]
+						["30Rnd_65x39_caseless_mag",nil,300],
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
+						["9Rnd_45ACP_Mag",nil,200]
 					]
 				];
 			};
-			case (__GETC__(life_coplevel) < 8): {"You are not at a Superintendent rank!"};
-			default
+
+			case (__GETC__(life_coplevel) == 8):
 			{
 				["Altis Superintendent Shop",
 					[
-						["arifle_MX_F",nil,35000],
-						["SMG_01_F",nil,20000],
-						["acc_flashlight",nil,750],
-						["optic_Holosight",nil,1200],
+						["arifle_MXM_Black_F",nil,15000],
+						["arifle_MX_Black_F",nil,15000],
+						["arifle_MX_SW_Black_F",nil,15000],
+						["SMG_01_F",nil,14000],
+						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
+						["optic_Holosight",nil,1200],
+						["optic_Hamr",nil,2000],
+						["acc_pointer_IR",nil,2500],
 						["muzzle_snds_H",nil,2750],
-						["30Rnd_65x39_caseless_mag",nil,130],
-						["30Rnd_45ACP_Mag_SMG_01",nil,150]
+						["30Rnd_65x39_caseless_mag",nil,300],
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
+						["9Rnd_45ACP_Mag",nil,200]
+					]
+				];
+			};
+
+			case (__GETC__(life_coplevel) == 9):
+			{
+				["Altis Chief Shop",
+					[
+						["arifle_MXM_Black_F",nil,15000],
+						["arifle_MX_Black_F",nil,15000],
+						["arifle_MX_SW_Black_F",nil,15000],
+						["SMG_01_F",nil,10000],
+						["hgun_ACPC2_F",nil,17500],
+						["optic_Arco",nil,2500],
+						["optic_Holosight",nil,1200],
+						["optic_Hamr",nil,1500],
+						["acc_pointer_IR",nil,2500],
+						["muzzle_snds_H",nil,2750],
+						["30Rnd_65x39_caseless_mag",nil,300],
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
+						["9Rnd_45ACP_Mag",nil,200]
+					]
+				];
+			};
+
+			case (__GETC__(life_coplevel) == 10):
+			{
+				["Altis Admin Shop",
+					[
+						["arifle_MXM_F",nil,5000],
+						["arifle_MX_F",nil,5000],
+						["arifle_MXM_Black_F",nil,5000],
+						["arifle_MX_Black_F",nil,5000],
+						["arifle_MX_SW_Black_F",nil,5000],
+						["SMG_01_F",nil,1],
+						["hgun_ACPC2_F",nil,2500],
+						["hgun_Pistol_heavy_01_MRD_F",nil,2500],
+						["optic_Arco",nil,500],
+						["optic_Holosight",nil,1200],
+						["optic_Hamr",nil,1],
+						["acc_pointer_IR",nil,500],
+						["ItemGPS",nil,10],
+						["ToolKit",nil,25],
+						["FirstAidKit",nil,50],
+						["Medikit",nil,100],
+						["30Rnd_65x39_caseless_mag",nil,125],
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
+						["9Rnd_45ACP_Mag",nil,20],
+						["11Rnd_45ACP_Mag",nil,20]
+					]
+				];
+			};
+
+			case (__GETC__(life_adminlevel) > 1):
+			{
+				["Altis Admin Shop",
+					[
+						["arifle_MXM_F",nil,5000],
+						["arifle_MX_F",nil,5000],
+						["arifle_MXM_Black_F",nil,5000],
+						["arifle_MX_Black_F",nil,5000],
+						["arifle_MX_SW_Black_F",nil,5000],
+						["SMG_01_F",nil,1],
+						["hgun_ACPC2_F",nil,2500],
+						["hgun_Pistol_heavy_01_MRD_F",nil,2500],
+						["optic_Arco",nil,500],
+						["optic_Holosight",nil,1200],
+						["optic_Hamr",nil,1],
+						["acc_pointer_IR",nil,500],
+						["ItemGPS",nil,10],
+						["ToolKit",nil,25],
+						["FirstAidKit",nil,50],
+						["Medikit",nil,100],
+						["30Rnd_65x39_caseless_mag",nil,125],
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
+						["9Rnd_45ACP_Mag",nil,20],
+						["11Rnd_45ACP_Mag",nil,20]
 					]
 				];
 			};
@@ -217,7 +319,11 @@ switch(_shop) do
 						["ItemGPS",nil,100],
 						["ToolKit",nil,250],
 						["Medikit",nil,100],
-						["FirstAidKit",nil,150]
+						["FirstAidKit",nil,150],
+						["Chemlight_red",nil,300],
+						["Chemlight_yellow",nil,300],
+						["Chemlight_green",nil,300],
+						["Chemlight_blue",nil,300]
 					]
 				];
 			};
@@ -395,11 +501,11 @@ switch(_shop) do
 				["ItemGPS",nil,100],
 				["ToolKit",nil,250],
 				["FirstAidKit",nil,150],
-				["NVGoggles",nil,2000]
-				//["Chemlight_red",nil,300],
-				//["Chemlight_yellow",nil,300],
-				//["Chemlight_green",nil,300],
-				//["Chemlight_blue",nil,300]
+				["NVGoggles",nil,2000],
+				["Chemlight_red",nil,300],
+				["Chemlight_yellow",nil,300],
+				["Chemlight_green",nil,300],
+				["Chemlight_blue",nil,300]
 			]
 		];
 	};
