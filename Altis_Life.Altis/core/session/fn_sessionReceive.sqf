@@ -2,7 +2,7 @@
 /*
 	File: fn_sessionReceive.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Received information from the server and sorts information and
 	initializes the player, if no data is found it starts the session
@@ -23,10 +23,10 @@ if(count _session == 0) exitWith {[] spawn life_fnc_sessionCreate;};
 if(_session select 0 == "Error") exitWith {[] spawn life_fnc_sessionCreate;};
 
 /*
-	All data passed from the server is a string, you will need to format 
+	All data passed from the server is a string, you will need to format
 	it accordingly when adding additional stuff, if it is a number/scalar
 	you will use parseNumber and everything else you need to compile.
-	
+
 	*	SCALAR/NUMBER: parseNumber(_session select index)
 	* 	STRING: (_session select index)
 	*	ARRAY: (_session select index)
@@ -53,7 +53,7 @@ switch (playerSide) do
 		//if(life_adminlevel > 0) then {[] execVM "core\client\aconfig.sqf";};
 		__CONST__(life_donator,parseNumber(_session select 9));
 	};
-	
+
 	case civilian:
 	{
 		if((getPlayerUID player) != (_session select 0)) exitWith {}; //Data didn't match.
@@ -71,8 +71,10 @@ switch (playerSide) do
 		civ_gear = (_session select 8);
 		[] spawn life_fnc_civLoadGear;
 		__CONST__(life_coplevel,0);
+		life_houses = (_session select 9);
+        life_houses_markers = [];
 	};
-	
+
 	case independent:
 	{
 		if((getPlayerUID player) != (_session select 0)) exitWith {}; //Data didn't match.

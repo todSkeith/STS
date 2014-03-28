@@ -34,6 +34,10 @@ cutText["Finishing client setup procedure","BLACK FADED"];
 0 cutFadeOut 9999999;
 //[] execVM "core\client\group_base_respawn.sqf";
 //diag_log "::Life Client:: Group Base Execution";
+_handle = [] spawn compile PreprocessFileLineNumbers "core\config_housing.sqf";
+diag_log "::Life Client:: Housing Variables";
+waitUntil {scriptDone _handle};
+diag_log "::Life Client:: Housing Variables initialized";
 
 switch (playerSide) do
 {

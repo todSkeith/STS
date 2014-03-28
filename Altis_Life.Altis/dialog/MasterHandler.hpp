@@ -27,3 +27,5 @@
 #include "cellphone\cell_message.hpp"
 #include "cellphone\cell_inbox.hpp"
 #include "cellphone\cell_from.hpp"
+#include "trunkHouse.hpp"
+#include "house.hpp"

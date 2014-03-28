@@ -190,7 +190,9 @@ life_inv_items =
 	"life_inv_cellphone",
 	"life_inv_RoadCone",
 	"life_inv_RoadConeStrip",
-	"life_inv_RoadBlockWood"
+	"life_inv_RoadBlockWood",
+	"life_inv_storage1",
+    "life_inv_storage2"
 ];
 
 //Setup variable inv vars.
@@ -224,7 +226,8 @@ life_licenses =
 	["license_civ_steel","civ"],
 	["license_civ_bh","civ"],
 	["license_civ_logging","civ"],
-	["license_medic_air","medic"]
+	["license_medic_air","medic"],
+	["license_civ_home", "civ"]
 
 
 
@@ -332,7 +335,9 @@ buy_array =
 	["chainsaw",5000],
 	["RoadConeStrip",1],
 	["RoadCone",1],
-	["RoadBlockWood",1]
+	["RoadBlockWood",1],
+	["storage1",50000],
+    ["storage2",250000]
 ];
 __CONST__(buy_array,buy_array);
 
