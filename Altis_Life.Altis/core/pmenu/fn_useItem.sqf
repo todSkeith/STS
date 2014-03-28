@@ -99,6 +99,107 @@ switch (true) do
 		[] spawn life_fnc_chainsaw;
 	};
 
+	case (_item == "RoadCone"):
+	{
+		if(!isNull life_roadcone) exitWith {hint "You already have a Roadcone active in deployment"};
+		//if cop override and allow use of item
+		if(playerSide == west) then {
+			if(([false,_item,1] call life_fnc_handleInv)) then {
+				[] spawn life_fnc_RoadCone;
+			};
+		};
+		//if civ check for rebel license otherwise deny use of item
+		if(playerSide != west) then {
+			if(!(license_civ_rebel)) then {hint "You need a rebel license to use this item"}
+			else {
+				if(([false,_item,1] call life_fnc_handleInv)) then {
+					[] spawn life_fnc_RoadCone;
+				};
+			};
+		};
+	};
+		case (_item == "RoadConeStrip"):
+	{
+		if(!isNull life_roadcone) exitWith {hint "You already have a Roadcone Strip active in deployment"};
+		//if cop override and allow use of item
+		if(playerSide == west) then {
+			if(([false,_item,1] call life_fnc_handleInv)) then {
+				[] spawn life_fnc_RoadConeStrip;
+			};
+		};
+		//if civ check for rebel license otherwise deny use of item
+		if(playerSide != west) then {
+			if(!(license_civ_rebel)) then {hint "You need a rebel license to use this item"}
+			else {
+				if(([false,_item,1] call life_fnc_handleInv)) then {
+					[] spawn life_fnc_RoadConeStrip;
+				};
+			};
+		};
+	};
+		case (_item == "RoadConeB"):
+	{
+		if(!isNull life_roadcone) exitWith {hint "You already have a Blinking Roadcone active in deployment"};
+		//if cop override and allow use of item
+		if(playerSide == west) then {
+			if(([false,_item,1] call life_fnc_handleInv)) then {
+				[] spawn life_fnc_RoadConeB;
+			};
+		};
+		//if civ check for rebel license otherwise deny use of item
+		if(playerSide != west) then {
+			if(!(license_civ_rebel)) then {hint "You need a rebel license to use this item"}
+			else {
+				if(([false,_item,1] call life_fnc_handleInv)) then {
+					[] spawn life_fnc_RoadConeB;
+				};
+			};
+		};
+	};
+		case (_item == "RoadConeStripB"):
+	{
+		if(!isNull life_roadcone) exitWith {hint "You already have a Blinking Roadcone Strip active in deployment"};
+		//if cop override and allow use of item
+		if(playerSide == west) then {
+			if(([false,_item,1] call life_fnc_handleInv)) then {
+				[] spawn life_fnc_RoadConeStripB;
+			};
+		};
+		//if civ check for rebel license otherwise deny use of item
+		if(playerSide != west) then {
+			if(!(license_civ_rebel)) then {hint "You need a rebel license to use this item"}
+			else {
+				if(([false,_item,1] call life_fnc_handleInv)) then {
+					[] spawn life_fnc_RoadConeStripB;
+				};
+			};
+		};
+	};
+
+	case (_item == "RoadBlockWood"):
+	{
+		if(!isNull life_roadblock) exitWith {hint "You already have a Road Block active in deployment"};
+		//if cop override and allow use of item
+		if(playerSide == west) then {
+			if(([false,_item,1] call life_fnc_handleInv)) then {
+				[] spawn life_fnc_RoadBlockWood;
+			};
+		};
+		//if civ check for rebel license otherwise deny use of item
+		if(playerSide != west) then {
+			if(!(license_civ_rebel)) then {hint "You need a rebel license to use this item"}
+			else {
+				if(([false,_item,1] call life_fnc_handleInv)) then {
+					[] spawn life_fnc_RoadBlockWood;
+				};
+			};
+		};
+	};
+
+	case (_item in ["storage1","storage2"]):
+    {
+        [_item] call life_fnc_placeStorage;
+    };
 
 	default
 	{
