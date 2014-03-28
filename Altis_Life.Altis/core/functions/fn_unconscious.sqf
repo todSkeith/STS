@@ -32,7 +32,7 @@ name player setMarkerColor "ColorRed";
 name player setMarkerText format["%1 is unconscious", name player];
 name player setMarkerType "waypoint";
 
-while {life_isUnconscious} do
+while {life_isUnconscious && player == _unit} do
 {
 	if(!life_isUnconscious || player != _unit) then {
 		deleteMarker name player;

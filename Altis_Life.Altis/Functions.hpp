@@ -203,7 +203,7 @@ class Life_Client_Core
 		class revive {};
 	};
 
- class Housing
+ /*class Housing
     {
         file = "core\housing";
         class buyHouse {};
@@ -225,7 +225,7 @@ class Life_Client_Core
         class onPut {};
         class onTake {};
     };
-
+*/
 
 
 	class Network
@@ -298,15 +298,19 @@ class Life_Client_Core
 		class jailPre {};
 		class licenseCheck {};
 		class licensesRead {};
-		class houseOwnerSearch {};
-        class houseInvSearch {};
-        class raidHouse {};
+		//class houseOwnerSearch {};
+        //class houseInvSearch {};
+        //class raidHouse {};
 	};
 
 	class Medic
 	{
 		file = "core\medic";
 		class medicLoadGear {};
+		class medicInteractionMenu {};
+		class mediclights {};
+		class medicSiren {};
+		class medicSirenLights {};
 	};
 
 	class Gangs
@@ -374,6 +378,6 @@ class Life_Client_Core
 		class impoundMenu {};
 		class unimpound {};
 		class sellGarage {};
-		class houseMenu {};
+		//class houseMenu {};
 	};
 };
