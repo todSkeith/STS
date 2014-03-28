@@ -12,9 +12,10 @@ _damage = _this select 2;
 _source = _this select 3;
 _projectile = _this select 4;
 _curWep = "";
+
 if(isPlayer _source && _source isKindOf "Man") then {_curWep = currentWeapon _source;};
 
-if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then
+if(_source != _unit && (license_civ_bh) && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then
 {
 	if(_projectile in ["B_9x21_Ball","B_556x45_dual"]) then
 	{

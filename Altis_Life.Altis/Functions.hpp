@@ -295,8 +295,6 @@ class Life_Client_Core
 		class questionDealer {};
 		class copInteractionMenu {};
 		class sirenLights {};
-		class jailDialog {};
-		class jailPre {};
 		class licenseCheck {};
 		class licensesRead {};
 		//class houseOwnerSearch {};

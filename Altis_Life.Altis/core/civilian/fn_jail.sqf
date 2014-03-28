@@ -1,7 +1,7 @@
 //////////////////////////////////////////////////////////////////
 // Created by: Tonic and Adapted by DirtDiver for STS
-// Function Name: life_fn_itemWeight.sqf
-// Description: Sets the weight for items.
+// Function Name: life_fn_jail.sqf
+// Description: Starts jailing process.
 //////////////////////////////////////////////////////////////////
 
 private["_ret","_bad","_time","_bail","_esc","_countDown","_unit"];
@@ -35,6 +35,7 @@ if(life_inv_turtle > 0) then {[false,"turtle",life_inv_turtle] call life_fnc_han
 if(life_inv_cannabis > 0) then {[false,"cannabis",life_inv_cannabis] call life_fnc_handleInv;};
 if(life_inv_marijuana > 0) then {[false,"marijuana",life_inv_marijuana] call life_fnc_handleInv;};
 life_is_arrested = true;
+life_holstered=nil;
 removeAllWeapons player;
 {player removeMagazine _x} foreach (magazines player);
 

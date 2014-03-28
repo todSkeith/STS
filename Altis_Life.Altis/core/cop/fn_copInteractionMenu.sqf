@@ -1,7 +1,7 @@
 /*
 	File: fn_copInteractionMenu.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Replaces the mass addactions for various cop actions towards another player.
 */
@@ -63,7 +63,7 @@ _Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_ticketAction;";
 
 //SeT Jail
 _Btn6 ctrlSetText localize "STR_pInAct_Arrest";
-_Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_jailDialog;";
+_Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
 
 //Set PutinCar
 _Btn7 ctrlSetText localize "STR_pInAct_PutInCar";
@@ -78,8 +78,7 @@ _Btn9 buttonSetAction "[life_pInact_curTarget] call life_fnc_seizeObjects;";
 
 
 //Check that you are near a place to jail them.
-if(!((player distance (getMarkerPos "police_hq_1") < 30) OR  (player distance (getMarkerPos "police_hq_2") < 30) OR (player distance (getMarkerPos "cop_spawn_3") < 30) OR (player distance (getMarkerPos "cop_spawn_5") < 30))) then 
+if(!((player distance (getMarkerPos "police_hq_1") < 30) OR  (player distance (getMarkerPos "police_hq_2") < 30) OR (player distance (getMarkerPos "cop_spawn_3") < 30) OR (player distance (getMarkerPos "cop_spawn_5") < 30))) then
 {
 	_Btn6 ctrlEnable false;
 };
-		
