@@ -1,9 +1,8 @@
 class Life_cell_from {
-	idd = 3200;
+	idd = 3400;
 	name= "life_cell_from";
 	movingEnable = false;
 	enableSimulation = true;
-	onLoad = "[] spawn life_fnc_cell_from";
 	
 	class controlsBackground {
 		class phone_img_from: Life_RscPicture
@@ -22,7 +21,7 @@ class Life_cell_from {
 
 		class FromPlayer: Life_RscText
 		{
-			idc = 3201;
+			idc = 3401;
 			text = "Penis";
 			x = 0.80755 * safezoneW + safezoneX;
 			y = 0.66369 * safezoneH + safezoneY;
@@ -31,7 +30,7 @@ class Life_cell_from {
 		};
 		class MessageBox: Life_RscEdit
 		{
-			idc = 3202;
+			idc = 3402;
 			type = 0;
 			style = 16+0x200;
 			lineSpacing = 0.8;
@@ -46,7 +45,7 @@ class Life_cell_from {
 		};
 		class ReplyButton : Life_RscButtonTextOnly
 		{
-			idc = 3203;
+			idc = 3403;
 
 			text = "";
 			x = 0.7864 * safezoneW + safezoneX;
@@ -57,14 +56,14 @@ class Life_cell_from {
 		};
 		class BackButton: Life_RscButtonTextOnly
 		{
-			idc = 3204;
+			idc = 3404;
 
 			text = "";
 			x = 0.855 * safezoneW + safezoneX;
 			y = 0.8888 * safezoneH + safezoneY;
 			w = 0.0360937 * safezoneW;
 			h = 0.022 * safezoneH;
-			onButtonClick = "closeDialog 0; createDialog ""Life_cell_inbox"";";
+			onButtonClick = "[""inbox""] call life_fnc_cellHandle;";
 		};
 		class CloseButton: Life_RscButtonTextOnly
 		{
@@ -76,7 +75,7 @@ class Life_cell_from {
 			h = 0.044 * safezoneH;
 			colorText[] = {0,0,0,0};
 			colorBackground[] = {0,0,0,0};
-			onButtonClick = "closeDialog 0; createDialog ""Life_cell_phone"";";
+			onButtonClick = "[""home""] call life_fnc_cellHandle;";
 		};
 	};
 };

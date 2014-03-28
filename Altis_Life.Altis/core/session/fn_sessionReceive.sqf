@@ -2,7 +2,7 @@
 /*
 	File: fn_sessionReceive.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Received information from the server and sorts information and
 	initializes the player, if no data is found it starts the session
@@ -23,10 +23,10 @@ if(count _session == 0) exitWith {[] spawn life_fnc_sessionCreate;};
 if(_session select 0 == "Error") exitWith {[] spawn life_fnc_sessionCreate;};
 
 /*
-	All data passed from the server is a string, you will need to format 
+	All data passed from the server is a string, you will need to format
 	it accordingly when adding additional stuff, if it is a number/scalar
 	you will use parseNumber and everything else you need to compile.
-	
+
 	*	SCALAR/NUMBER: parseNumber(_session select index)
 	* 	STRING: (_session select index)
 	*	ARRAY: (_session select index)
@@ -53,7 +53,7 @@ switch (playerSide) do
 		//if(life_adminlevel > 0) then {[] execVM "core\client\aconfig.sqf";};
 		__CONST__(life_donator,parseNumber(_session select 9));
 	};
-	
+
 	case civilian:
 	{
 		if((getPlayerUID player) != (_session select 0)) exitWith {}; //Data didn't match.
@@ -71,8 +71,10 @@ switch (playerSide) do
 		civ_gear = (_session select 8);
 		[] spawn life_fnc_civLoadGear;
 		__CONST__(life_coplevel,0);
+		life_houses = (_session select 9);
+        life_houses_markers = [];
 	};
-	
+
 	case independent:
 	{
 		if((getPlayerUID player) != (_session select 0)) exitWith {}; //Data didn't match.
@@ -90,6 +92,20 @@ switch(__GETC__(life_donator)) do
 	case 1: {life_paycheck = life_paycheck + 750;};
 	case 2: {life_paycheck = life_paycheck + 1500;};
 	case 3: {life_paycheck = life_paycheck + 2000;};
+};
+
+switch(__GETC__(life_coplevel)) do
+{
+	case 1: {life_paycheck = life_paycheck + 5000;};//Recruit
+	case 2: {life_paycheck = life_paycheck + 5000;};//PO
+	case 3: {life_paycheck = life_paycheck + 5000;};//SPO
+	case 4: {life_paycheck = life_paycheck + 5000;};//CPL
+	case 5: {life_paycheck = life_paycheck + 5000;};//Sgt
+	case 6: {life_paycheck = life_paycheck + 5000;};//Lt.
+	case 7: {life_paycheck = life_paycheck + 5000;};//Capt.
+	case 8: {life_paycheck = life_paycheck + 5000;};//SuperI
+	case 9: {life_paycheck = life_paycheck + 5000;};//Chief
+	case 10: {life_paycheck = life_paycheck + 5000;};//Admin
 };
 
 if((getPlayerUID player) != (_session select 0)) exitWith {[] spawn life_fnc_sessionCreate;}; //Since it didn't match create the session again?

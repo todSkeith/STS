@@ -38,6 +38,7 @@ switch (_type) do
 	case "bh": {1};
 	case "logging": {1};
 	case "medicair" : {1};
+	case "home": {100000};
 	{
 		/* STATEMENT */
 	};

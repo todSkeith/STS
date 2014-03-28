@@ -3,7 +3,7 @@
 	See http://armafiles.info/life/list.txt for servers that are permitted to use this code.
 	File: fn_sessionCreate.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Start the process and setup the players information on the server.
 */
@@ -19,13 +19,13 @@ switch (playerSide) do
 		_gear = cop_gear;
 		_packet set[count _packet,_gear];
 	};
-	
+
 	case civilian:
 	{
 		[] call life_fnc_civFetchGear;
 		_packet set[count _packet,life_is_arrested];
 	};
-	
+
 	case independent:
 	{
 		[] call life_fnc_medicLoadGear;

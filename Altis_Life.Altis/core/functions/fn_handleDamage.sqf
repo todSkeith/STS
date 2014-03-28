@@ -14,13 +14,24 @@ _projectile = _this select 4;
 _curWep = "";
 if(isPlayer _source && _source isKindOf "Man") then {_curWep = currentWeapon _source;};
 
+if(_selection == "" || _selection == "head_hit" || _selection =="body") then
+		{
+			if (_damage >= 0.9) then
+			{
+				_unit setDamage 0;
+				_unit allowDamage false;
+				_amountOfDamage = 0;
+				[_unit, _source] spawn life_fnc_unconscious;
+			};
+		};
+
 if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then
 {
 	if(_projectile in ["B_9x21_Ball","B_556x45_dual"]) then
 	{
 		_damage = false;
 		if(_curwep == "arifle_SDAR_F") then
-		{
+		{	
 			if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 100) then
 			{
 				_damage = 0;
@@ -72,6 +83,9 @@ if((player getVariable["restrained",false])) then
 if(playerSide == west && side _source == west) then
 {
 	_damage = false;
+};
+if (alive _unit && !(player getVariable ["wounded",false])) then {
+	life_gear = [] call life_fnc_fetchGear;
 };
 
 [] call life_fnc_hudUpdate;

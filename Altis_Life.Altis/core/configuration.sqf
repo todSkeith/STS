@@ -42,6 +42,10 @@ life_action_time = 0;
 life_action_inUse = false;
 life_action_index = [];
 life_actions = [];
+life_roadblock = ObjNull;
+life_roadcone = ObjNull;
+life_revive_timer = 0;
+
 
 
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)
@@ -185,7 +189,12 @@ life_inv_items =
 	"life_inv_log",
 	"life_inv_lumber",
 	"life_inv_chainsaw",
-	"life_inv_cellphone"
+	"life_inv_cellphone",
+	"life_inv_RoadCone",
+	"life_inv_RoadConeStrip",
+	"life_inv_RoadBlockWood",
+	"life_inv_storage1",
+    "life_inv_storage2"
 ];
 
 //Setup variable inv vars.
@@ -219,7 +228,8 @@ life_licenses =
 	["license_civ_steel","civ"],
 	["license_civ_bh","civ"],
 	["license_civ_logging","civ"],
-	["license_medic_air","medic"]
+	["license_medic_air","medic"],
+	["license_civ_home", "civ"]
 
 
 
@@ -292,6 +302,7 @@ sell_array =
 	["steel",3000],
 	["lumber",4000]
 ];
+
 __CONST__(sell_array,sell_array);
 
 buy_array =
@@ -323,8 +334,12 @@ buy_array =
 	["budweiser",75],
 	["crabpot",500],
 	["defib",3500],
-	["chainsaw",5000]
-
+	["chainsaw",5000],
+	["RoadConeStrip",1],
+	["RoadCone",1],
+	["RoadBlockWood",1],
+	["storage1",50000],
+    ["storage2",250000]
 ];
 __CONST__(buy_array,buy_array);
 

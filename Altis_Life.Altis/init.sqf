@@ -27,7 +27,7 @@ if(X_Client) then
 */
 [] execVM "briefing.sqf"; //Load Briefing
 [] execVM "KRON_Strings.sqf";
-[]call compileFinal preprocessFileLineNumbers "FAR_revive\FAR_revive_init.sqf";
+[]call compileFinal preprocessFileLineNumbers "core\unconcious.sqf";
 if(!StartProgress) then
 {
 	[8,true,false] execFSM "core\fsm\core_time.fsm";

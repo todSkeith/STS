@@ -67,5 +67,8 @@ switch (_item) do
 	case "log" : {40};
 	case "lumber" : {30};
 	case "chainsaw" : {15};
+	case "RoadConeStrip": {10};
+	case "RoadCone": {2};
+	case "RoadBlockWood": {23};
 	default {1};
 };
