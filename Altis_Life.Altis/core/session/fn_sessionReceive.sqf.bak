@@ -92,20 +92,6 @@ switch(__GETC__(life_donator)) do
 	case 3: {life_paycheck = life_paycheck + 2000;};
 };
 
-switch(__GETC__(life_coplevel)) do
-{
-	case 1: {life_paycheck = life_paycheck + 5000;};//Recruit
-	case 2: {life_paycheck = life_paycheck + 5000;};//PO
-	case 3: {life_paycheck = life_paycheck + 5000;};//SPO
-	case 4: {life_paycheck = life_paycheck + 5000;};//CPL
-	case 5: {life_paycheck = life_paycheck + 5000;};//Sgt
-	case 6: {life_paycheck = life_paycheck + 5000;};//Lt.
-	case 7: {life_paycheck = life_paycheck + 5000;};//Capt.
-	case 8: {life_paycheck = life_paycheck + 5000;};//SuperI
-	case 9: {life_paycheck = life_paycheck + 5000;};//Chief
-	case 10: {life_paycheck = life_paycheck + 5000;};//Admin
-};
-
 if((getPlayerUID player) != (_session select 0)) exitWith {[] spawn life_fnc_sessionCreate;}; //Since it didn't match create the session again?
 cutText["Received information from server and validated it, you are almost ready.","BLACK FADED"];
 0 cutFadeOut 9999999;

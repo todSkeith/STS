@@ -1,5 +1,5 @@
 author = "STS Dev Team";
-onLoadName = "Altis Life RPG v4.0.0";
+onLoadName = "Altis Life RPG v3.1.2";
 onLoadMission = "A RPG game mode developed by TAW_Tonic";
 joinUnassigned = 1;
 respawn = BASE;
