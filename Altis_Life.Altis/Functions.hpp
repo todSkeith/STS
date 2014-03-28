@@ -91,6 +91,7 @@ class Life_Client_Core
 		class ncsmoke {};
 		class ncflash {};
 		class toggleActions {};
+		class fuel_consumption {};
 	};
 
 	class Config
