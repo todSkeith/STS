@@ -1972,14 +1972,14 @@ class Mission
 				class Item118
 				{
 					position[]={12034.584,27.623886,15810.207};
-					azimut=725.83813;
+					azimut=725.83801;
 					special="NONE";
 					id=149;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
 					text="gasman2";
-					init="this enableSimulation false;this allowDamage false;  this addAction[""Rob Station"",life_fnc_poscheck,""poscheck""];    this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""]; this addAction[""Market"",life_fnc_virt_menu,""market""]; this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];";
+					init="this enableSimulation false;this allowDamage false;  this addAction[""Rob Station"",life_fnc_poscheck,""poscheck""];    this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""]; this addAction[""Market"",life_fnc_virt_menu,""market""]; this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""]; this addAction[""Rob Station"",life_fnc_gasman2];";
 				};
 				class Item119
 				{
@@ -2005,19 +2005,19 @@ class Mission
 					vehicle="C_man_1";
 					skill=0.60000002;
 					text="gasman3";
-					init="this enableSimulation false;       this allowDamage false;  this addAction[""Rob Station"",life_fnc_poscheck,""poscheck""];         this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];  this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];";
+					init="this enableSimulation false;       this allowDamage false;  this addAction[""Rob Station"",life_fnc_poscheck,""poscheck""];         this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];  this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""]; this addAction[""Rob Station"",life_fnc_gasman3];";
 				};
 				class Item121
 				{
 					position[]={23359.863,12.923513,19812.846};
-					azimut=505.85602;
+					azimut=505.85599;
 					special="NONE";
 					id=152;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
 					text="gasman4";
-					init="this enableSimulation false;       this allowDamage false;  this addAction[""Rob Station"",life_fnc_poscheck,""poscheck""];         this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];      this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];";
+					init="this enableSimulation false;       this allowDamage false;  this addAction[""Rob Station"",life_fnc_poscheck,""poscheck""];         this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];      this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""]; this addAction[""Rob Station"",life_fnc_gasman4];";
 				};
 				class Item122
 				{
@@ -2223,9 +2223,9 @@ class Mission
 				};
 				class Item139
 				{
-					position[]={3709.32,19.9015,12797.9};
-					offsetY = 0.672558;
+					position[]={3709.3201,19.901501,12797.9};
 					azimut=-136.907;
+					offsetY=0.67255801;
 					special="NONE";
 					id=170;
 					side="WEST";
@@ -19576,7 +19576,7 @@ class Mission
 			text="Bill's Busty Gas";
 			type="loc_Fuelstation";
 			colorName="ColorCIV";
-			angle=49.515991;
+			angle=-0.67746294;
 		};
 		class Item228
 		{

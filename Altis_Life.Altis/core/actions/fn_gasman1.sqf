@@ -54,7 +54,7 @@ if(!alive player) exitWith {life_action_inUse = false;};
 
 sleep 2;
 _robberycash = robberyreward;
-_timer = time + (2 * 60);	
+_timer = time + (3 * 60);	
 _toFar = false;
 _vault = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 
