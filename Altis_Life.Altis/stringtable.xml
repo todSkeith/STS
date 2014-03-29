@@ -386,6 +386,9 @@
 		<Key ID="STR_pInAct_SeizeObjectsFromGround">
 			<Original>Seize Objects</Original>
 		</Key>
+		<Key ID="STR_pInAct_Revive">
+			<Original>Revive Player</Original>
+		</Key>
 		<Key ID="STR_cInAct_Unrestrain">
 			<Original>Un-Restrain</Original>
 		</Key>
@@ -420,9 +423,6 @@
 		</Key>
 		<Key ID="STR_vInAct_Impound">
 			<Original>Impound Vehicle</Original>
-		<Key ID="STR_pInAct_Revive">
-			<Original>Revive Player</Original>
-		</Key>
 		</Key>
 	</Package>
 </Project>

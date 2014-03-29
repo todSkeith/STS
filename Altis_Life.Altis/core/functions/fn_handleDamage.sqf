@@ -77,7 +77,7 @@ if(playerSide == west && side _source == west) then
 
 if(_sel == "" || _sel == "head_hit" || _sel =="body") then
 		{
-			if (_damage >= 0.89) then
+			if (_damage >= 0.89 && !(_projectile in ["B_9x21_Ball","B_556x45_dual"])) then
 			{
 				_unit setDamage 0;
 				_unit allowDamage false;

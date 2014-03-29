@@ -26,14 +26,14 @@ if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
 if(!isPlayer _curTarget && side _curTarget == civilian) exitWith {closeDialog 0;}; //Bad side check?
 _display = findDisplay 37400;
 _Btn1 = _display displayCtrl Btn1;
-_Btn2 = _display displayCtrl Btn2;
-_Btn3 = _display displayCtrl Btn3;
-_Btn4 = _display displayCtrl Btn4;
-_Btn5 = _display displayCtrl Btn5;
-_Btn6 = _display displayCtrl Btn6;
-_Btn7 = _display displayCtrl Btn7;
-_Btn8 = _display displayCtrl Btn8;
-_Btn9 = _display displayCtrl Btn9;
+//_Btn2 = _display displayCtrl Btn2;
+//_Btn3 = _display displayCtrl Btn3;
+//_Btn4 = _display displayCtrl Btn4;
+//_Btn5 = _display displayCtrl Btn5;
+//_Btn6 = _display displayCtrl Btn6;
+//_Btn7 = _display displayCtrl Btn7;
+//_Btn8 = _display displayCtrl Btn8;
+//_Btn9 = _display displayCtrl Btn9;
 life_pInact_curTarget = _curTarget;
 
 //Set revive Button

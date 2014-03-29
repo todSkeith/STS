@@ -10,11 +10,13 @@ _target = cursorTarget;
 
 sendRevive = {
 	life_isUnconscious = false;
-	_this select 0 enableSimulation true;
-	_this select 0 allowDamage true;
-	_this select 0 setDamage 0;
-	_this select 0 setCaptive false;
-}
+	cursorTarget enableSimulation true;
+	cursorTarget allowDamage true;
+	cursorTarget setDamage 0;
+	cursorTarget setCaptive false;
+	disableUserInput false;
+	cursorTarget playMove "amovppnemstpsraswrfldnon";
+};
 
 if (alive _target) then
 	{
@@ -22,5 +24,5 @@ if (alive _target) then
 		sleep 2.5;//wait for animation to finish
 		[[_target],sendRevive,cursorTarget,false] spawn life_fnc_MP;
 		
-	}
+	};
 		
