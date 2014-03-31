@@ -279,6 +279,7 @@ sell_array =
 	["marijuana",640],
 	["tbacon",25],
 	["lockpick",250],
+	["zip",300],
 	["pickaxe",750],
 	["redgull",200],
 	["peach",20],
