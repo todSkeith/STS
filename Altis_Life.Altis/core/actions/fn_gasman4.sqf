@@ -25,7 +25,7 @@ if(currentWeapon player !="")then
 				[[2,"A station is being robbed!"],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 				gasman4 setVariable["robProgress",true, true];
 				_Pos = position player;
-				_marker = createMarker ["Marker203", gas];
+				_marker = createMarker ["Marker203", gasman4];
 				"Marker203" setMarkerColor "ColorRed";
 				"Marker203" setMarkerText "Station is being robbed!";
 				"Marker203" setMarkerType "mil_warning";
