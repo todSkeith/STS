@@ -25,7 +25,7 @@ if(currentWeapon player !="")then
 				[[2,"A station is being robbed!"],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 				gasman2 setVariable["robProgress",true, true];
 				_Pos = position player;
-				_marker = createMarker ["Marker200", gasman2];
+				_marker = createMarker ["Marker201", gasman2];
 				"Marker201" setMarkerColor "ColorRed";
 				"Marker201" setMarkerText "Station is being robbed!";
 				"Marker201" setMarkerType "mil_warning";
@@ -47,7 +47,7 @@ if(currentWeapon player !="")then
 		} else {hint "HAHA! You think you can hold me up with your bare hands! What a joke!"; _denied1 = true;};		
 
 if(_denied1) exitwith
-{
+{																																																																				
 };
 
 if(!alive player) exitWith {life_action_inUse = false;};
