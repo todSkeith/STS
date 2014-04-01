@@ -19,10 +19,12 @@ if(vehicle player != player) then
 
 if (isPlayer _unit) then
 	{
-		disableUserInput true;
 		titleText ["", "BLACK FADED"];
+		
+		sleep 2.5;
 	};
-
+	titleText ["", "BLACK IN", 1];
+	
 	_unit setDamage 0;
 	_unit setVelocity [0,0,0];
 	_unit allowDamage false;
@@ -32,15 +34,15 @@ if (isPlayer _unit) then
 	name player setMarkerText format["%1 is unconscious", name player];
 	name player setMarkerType "waypoint";
 	
-	
-while {_unit getVariable "unconscious"} do
-{
 	_unit setDamage 0;
 	_unit setVelocity [0,0,0];
 	_unit allowDamage false;
 	_unit setCaptive true;
+
+while {_unit getVariable "unconscious"} do
+{
 	_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
-	waitUntil {animationState _victim != "AinjPpneMstpSnonWrflDnon_rolltoback" || !(_victim getVariable "zipTie")};
+	waitUntil {animationState _victim != "AinjPpneMstpSnonWrflDnon_rolltoback" || !(_victim getVariable "unconscious")};
 };
 
 _unit enableSimulation true;
