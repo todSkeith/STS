@@ -208,6 +208,7 @@ class Life_Client_Core
         //class vehicleGarage {};
 		class unconscious {};
 		class revive {};
+		class reviveAction {};
 	};
 
  /*class Housing

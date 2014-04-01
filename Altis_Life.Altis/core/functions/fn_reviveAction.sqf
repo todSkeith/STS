@@ -1,0 +1,12 @@
+		player setVariable ["unconscious",false,true];
+		hint "enable sim";
+		player enableSimulation true;
+		hint "allowdamage";
+		player allowDamage true;
+		hint "setdamage";
+		player setDamage 0;
+		hint "setcaptive";
+		player setCaptive false;
+		hint "animation";
+		player playMove "amovppnemstpsraswrfldnon";
+		hint "done";

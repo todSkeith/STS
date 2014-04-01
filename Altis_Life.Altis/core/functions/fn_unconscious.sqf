@@ -38,11 +38,13 @@ if (isPlayer _unit) then
 	_unit setVelocity [0,0,0];
 	_unit allowDamage false;
 	_unit setCaptive true;
+	_unit playMove "amovppnemstpsraswrfldnon";
 
-while {_unit getVariable "unconscious"} do
+
+	while {_unit getVariable "unconscious"} do
 {
 	_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
-	waitUntil {animationState _victim != "AinjPpneMstpSnonWrflDnon_rolltoback" || !(_victim getVariable "unconscious")};
+	waitUntil {animationState _unit != "AinjPpneMstpSnonWrflDnon_rolltoback" || !(_unit getVariable "unconscious")};
 };
 
 _unit enableSimulation true;

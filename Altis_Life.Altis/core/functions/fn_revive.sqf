@@ -8,24 +8,24 @@
 
 _target = _this select 0;
 
-sendRevive = {
-	life_isUnconscious = false;
-	_target enableSimulation true;
-	_target allowDamage true;
-	_target setDamage 0;
-	_target setCaptive false;
-	_target playMove "amovppnemstpsraswrfldnon";
-};
-
+player playMove "AinvPknlMstpSnonWnonDnon_medic0";
+[[_target], "life_fnc_reviveAction", cursorTarget, false] spawn BIS_fnc_MP;
+/*
 if (alive _target) then
 	{
 		player playMove "AinvPknlMstpSnonWnonDnon_medic0";
-		sleep 2.5;//wait for animation to finish
+		hint format ["setvariable %1", _target];
 		_target setVariable ["unconscious",false,true];
+		hint format ["enable sim %1", _target];
 		_target enableSimulation true;
+		hint format ["allowdamage %1", _target];
 		_target allowDamage true;
+		hint format ["setdamage %1", _target];
 		_target setDamage 0;
+		hint format ["setcaptive %1", _target];
 		_target setCaptive false;
+		hint format ["animation %1", _target];
 		_target playMove "amovppnemstpsraswrfldnon";
+		hint format ["done %1", _target];
 	};
-		
+*/
