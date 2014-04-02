@@ -709,7 +709,7 @@ class Mission
 				{
 					position[]={12311.305,24.097553,15700.733};
 					azimut=-245.22577;
-					offsetY=0.40000001;
+					offsetY=0.83301401;
 					special="NONE";
 					id=41;
 					side="CIV";
@@ -2187,8 +2187,8 @@ class Mission
 				};
 				class Item136
 				{
-					position[]={18081.42,18.132629,19195.502};
-					azimut=-209.808;
+					position[]={18079.768,18.167372,19184.402};
+					azimut=-180.40411;
 					special="NONE";
 					id=167;
 					side="CIV";
@@ -20193,7 +20193,7 @@ class Mission
 		};
 		class Item274
 		{
-			position[]={18081.479,18.195105,19187.152};
+			position[]={18080.207,18.174141,19184.611};
 			name="turle_dealer_1";
 			text="Wildlife Poacher";
 			type="mil_dot";
