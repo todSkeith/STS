@@ -8,6 +8,7 @@
 
 private["_unit", "_killer"];
 _unit = _this select 0;
+hint format ["_unit is %1", _unit];
 _source = _this select 1;
 
 _unit setVariable["unconscious",true,true];
@@ -43,8 +44,16 @@ if (isPlayer _unit) then
 
 	while {_unit getVariable "unconscious"} do
 {
-	_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
-	waitUntil {animationState _unit != "AinjPpneMstpSnonWrflDnon_rolltoback" || !(_unit getVariable "unconscious")};
+	while {player == _unit && _unit getVariable "unconscious"} do
+{
+	if(player == _unit) then {
+		_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
+	}
+	else{
+		deleteMarker name player;
+	};
+};
+	waitUntil {animationState _unit != "AinjPpneMstpSnonWrflDnon_rolltoback" || !(_unit getVariable "unconscious") || player != _unit};
 };
 
 _unit enableSimulation true;

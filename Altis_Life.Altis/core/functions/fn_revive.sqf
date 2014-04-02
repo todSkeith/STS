@@ -9,7 +9,7 @@
 _target = _this select 0;
 
 player playMove "AinvPknlMstpSnonWnonDnon_medic0";
-[[_target], "life_fnc_reviveAction", cursorTarget, false] spawn BIS_fnc_MP;
+[[], "life_fnc_reviveAction", _target, false] spawn BIS_fnc_MP;
 /*
 if (alive _target) then
 	{

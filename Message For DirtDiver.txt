@@ -1,9 +1,0 @@
-Pretty please can you make sure the game isnt broken before you commit anything to the git?  I got on today and tested everything out and was left with an absolutely broken game.  
-
-I could not even get past the lobby.  I don't like reverting your work because I know you work just as hard as I do.  You dont have to have it working and finished, just make sure that everything else that was working still works before committing.  
-
-Jonsandman has all the files that you committed before I rolled them back, and I did my best to pick a rollback that didn't delete your roadcones and stuff
-
-Sorry for the trouble, we really need to link up and get on the same page 
-
--Skeith
