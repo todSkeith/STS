@@ -419,9 +419,9 @@ __CONST__(life_garage_prices,life_garage_prices);
 
 life_garage_sell =
 [
-	["B_Quadbike_01_F",950],
+	["B_Quadbike_01_F",450],
 	["C_Hatchback_01_F",4500],
-	["C_Offroad_01_F", 6500],
+	["C_Offroad_01_F", 1500],
 	["B_G_Offroad_01_F",3500],
 	["C_SUV_01_F",15000],
 	["C_Van_01_transport_F",25000],

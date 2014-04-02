@@ -27,6 +27,10 @@ switch(_shop) do
 			{
 				["Altis Police Equipment Shop",
 					[
+						["arifle_sdar_F","Taser Rifle",10000],
+						["hgun_P07_snds_F","Stun Pistol",2000],
+						["16Rnd_9x21_Mag","Stun Pistol Magazine",50],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
 						["Binocular",nil,150],
 						["ItemGPS",nil,100],
 						["ToolKit",nil,250],
@@ -298,6 +302,7 @@ switch(_shop) do
 						["optic_Arco",nil,2500],
 						["muzzle_snds_H",nil,2750],
 						["30Rnd_65x39_caseless_mag",nil,100],
+						["20Rnd_556x45_UW_mag",nil,125],
 						["30Rnd_556x45_Stanag",nil,300],
 						["30Rnd_9x21_Mag",nil,60],
 						["9Rnd_45ACP_Mag",nil,200]

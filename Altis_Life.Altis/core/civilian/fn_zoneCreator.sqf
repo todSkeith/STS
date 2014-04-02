@@ -1,13 +1,13 @@
 /*
 	File: fn_zoneCreator.sqf
 	Author: Bryan "Tonic" Boardwine
-	
+
 	Description:
 	Creates triggers around the map to add the addAction for specific
 	fields such as apples, cocaine, heroin, etc. This method is to reduce
 	CPU load.
-	
-	Note: 
+
+	Note:
 	Triggers are NOT my preferred method so this is considered temporary until a more suitable
 	option is presented.
 */
@@ -56,4 +56,12 @@ _weedZones = ["weed_1"];
 	_zone setTriggerArea[50,50,0,false];
 	_zone setTriggerActivation["CIV","PRESENT",true];
 	_zone setTriggerStatements["player in thislist","LIFE_Action_Coke = player addAction['Gather Cocaine',life_fnc_gatherCocaine,'',0,false,false,'','!life_action_inUse'];","player removeAction LIFE_Action_Coke;"];
+} foreach _cocaineZones;
+
+//Create corn zones
+{
+	_zone = createTrigger ["EmptyDetector",(getMarkerPos _x)];
+	_zone setTriggerArea[50,50,0,false];
+	_zone setTriggerActivation["CIV","PRESENT",true];
+	_zone setTriggerStatements["player in thislist","LIFE_Action_Corn = player addAction['Gather Corn',life_fnc_gatherCorn,'',0,false,false,'','!life_action_inUse'];","player removeAction LIFE_Action_Corn;"];
 } foreach _cocaineZones;
