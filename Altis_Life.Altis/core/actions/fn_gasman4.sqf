@@ -1,5 +1,8 @@
 // Rewritten and Fixed by CDawg
 
+private["_robber"];
+
+_robber = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
 _pos = GetPos player;
 _denied1 = false;
 
@@ -23,6 +26,7 @@ if(currentWeapon player !="")then
 			if(currentWeapon player !="Binocular") then
 			{
 				[[2,"A station is being robbed!"],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+				[[getPlayerUID _robber,name _robber,"211"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 				gasman4 setVariable["robProgress",true, true];
 				_Pos = position player;
 				_marker = createMarker ["Marker203", gasman4];
@@ -115,7 +119,6 @@ switch(true) do
 	{
 		hint format["You have successfully robbed $%1", _robberycash];
 		life_cash = life_cash + _robberycash;
-		[[getPlayerUID _robber,name _robber,"211"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 		[[2,"A station was successfully robbed!"],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
 		gasman4 setVariable["robProgress",false, true];
 		gasman4 setVariable["gaswait",true, true];

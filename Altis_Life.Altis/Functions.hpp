@@ -207,7 +207,6 @@ class Life_Client_Core
 		class disablecollisionwith {};
 		class enableActions {};
 		class actionUpdate {};
-		class actionKeyHandler {};
 	};
 
  /*class Housing

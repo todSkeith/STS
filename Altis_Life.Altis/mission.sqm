@@ -1979,7 +1979,7 @@ class Mission
 					vehicle="C_man_1";
 					skill=0.60000002;
 					text="gasman2";
-					init="this enableSimulation false;this allowDamage false;  this addAction[""Rob Station"",life_fnc_poscheck,""poscheck""];    this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""]; this addAction[""Market"",life_fnc_virt_menu,""market""]; this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""]; this addAction[""Rob Station"",life_fnc_gasman2];";
+					init="this enableSimulation false;this allowDamage false;    this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""]; this addAction[""Market"",life_fnc_virt_menu,""market""]; this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""]; this addAction[""Rob Station"",life_fnc_gasman2,""gasman2""];";
 				};
 				class Item119
 				{
@@ -1992,7 +1992,7 @@ class Mission
 					vehicle="C_man_1";
 					skill=0.60000002;
 					text="gasman1";
-					init="this enableSimulation false;       this allowDamage false;  this addAction[""Rob Station"",life_fnc_poscheck,""poscheck""];       this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];      this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];this addAction[""Rob Station"",life_fnc_gasman1];";
+					init="this enableSimulation false;       this allowDamage false;       this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];      this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];this addAction[""Rob Station"",life_fnc_gasman1,""gasman1""];";
 				};
 				class Item120
 				{
@@ -2005,7 +2005,7 @@ class Mission
 					vehicle="C_man_1";
 					skill=0.60000002;
 					text="gasman3";
-					init="this enableSimulation false;       this allowDamage false;  this addAction[""Rob Station"",life_fnc_poscheck,""poscheck""];         this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];  this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""]; this addAction[""Rob Station"",life_fnc_gasman3];";
+					init="this enableSimulation false;       this allowDamage false;         this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];  this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""]; this addAction[""Rob Station"",life_fnc_gasman3,""gasman3""];";
 				};
 				class Item121
 				{
@@ -2017,7 +2017,7 @@ class Mission
 					vehicle="C_man_1";
 					skill=0.60000002;
 					text="gasman4";
-					init="this enableSimulation false;       this allowDamage false;  this addAction[""Rob Station"",life_fnc_poscheck,""poscheck""];         this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];      this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""]; this addAction[""Rob Station"",life_fnc_gasman4];";
+					init="this enableSimulation false;       this allowDamage false;         this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];      this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""]; this addAction[""Rob Station"",life_fnc_gasman4,""gasman4""];";
 				};
 				class Item122
 				{
