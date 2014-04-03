@@ -49,6 +49,7 @@
                 case "I_Boat_Armed_01_minigun_F": {_rate = 0.00010;};
                 case "B_G_Boat_Transport_01_F": {_rate = 0.00020;};
                 case "B_Boat_Transport_01_F": {_rate = 0.00020;};
+				default {_rate = 0};
         };
         if (isengineon _vehicle) then {
         _vehicle setFuel ( Fuel _vehicle - (_speed + _rate) / 300);

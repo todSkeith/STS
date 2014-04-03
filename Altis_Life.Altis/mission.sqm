@@ -1177,8 +1177,8 @@ class Mission
 				};
 				class Item50
 				{
-					position[]={3273.7852,2.2043402,12977.299};
-					azimut=182.06165;
+					position[]={3273.8237,2.2020121,12976.679};
+					azimut=182.062;
 					offsetY=0.050000001;
 					special="NONE";
 					id=81;
@@ -4657,7 +4657,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3274.0381,2.2008109,12976.164};
+					position[]={3273.9995,2.1983354,12975.583};
 					azimut=269.35599;
 					offsetY=0.30000001;
 					special="NONE";
