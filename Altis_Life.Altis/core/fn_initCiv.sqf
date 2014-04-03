@@ -25,5 +25,6 @@ if(life_is_arrested) then
 	waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
 	waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
 };
-[] call life_fnc_initHouses;
+//[] call life_fnc_initHouses;
+[] call life_fnc_zoneCreator;
 player addRating 9999999;

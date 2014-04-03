@@ -203,6 +203,11 @@ class Life_Client_Core
 		class unconscious {};
 		class revive {};
 		class reviveAction {};
+		class enablecollisionwith {};
+		class disablecollisionwith {};
+		class enableActions {};
+		class actionUpdate {};
+		class actionKeyHandler {};
 	};
 
  /*class Housing
@@ -363,6 +368,9 @@ class Life_Client_Core
 		class jerryRefuel {};
 		class crabpot {};
 		class chainsaw {};
+		class RoadBlockWood {};
+		class RoadCone {};
+		class RoadConeStrip {};
 	};
 
 	class Dialog_Controls

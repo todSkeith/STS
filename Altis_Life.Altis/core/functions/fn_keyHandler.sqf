@@ -26,6 +26,14 @@ if(life_action_inUse) exitWith {
 
 switch (_code) do
 {
+
+	//1 Key
+	case 2:
+	{
+		[] call life_fnc_p_openMenu;
+		[] call life_fnc_wantedMenu;
+	};
+
 	//Map Key
 	case _mapKey:
 	{
