@@ -86,11 +86,13 @@ life_holstered_weapon = nil;
 player setVariable ["restrained", false, true];
 player setVariable ["escorting", false, true];
 player setVariable ["transporting", false, true];
+player setVariable ["unconscious", false, true];
 life_holstered = false;
 
 // Sort out the body
 deleteVehicle _unit;
-[[2, player, format["Killed by %1",name _source]],"ASY_fnc_logIt",false,false] spawn BIS_fnc_MP;
 
 { _unit removeAction _x; } foreach life_actions;
 life_actions = [];
+
+[1,true] call life_fnc_sessionHandle;//updates gear after your death

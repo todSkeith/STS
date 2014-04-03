@@ -71,7 +71,7 @@ player setVariable["transporting",false,true];
 player setVariable["zipTie",false,true];
 player setVariable["surrender",false,true];
 player setVariable["kidnapped",false,true];
-player setVariable ["wounded", false, true];
+player setVariable ["unconscious", false, true];
 
 diag_log "Past Settings Init";
 [] execFSM "core\fsm\client.fsm";

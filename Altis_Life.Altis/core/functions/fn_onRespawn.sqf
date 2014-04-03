@@ -20,6 +20,7 @@ deleteVehicle _corpse;
 //waitUntil {scriptDone _handle};
 */
 
+/*
 if (player getVariable ["wounded", false]) then {
 	[_corpse] spawn life_fnc_wounded;
 } else {
@@ -28,7 +29,8 @@ if (player getVariable ["wounded", false]) then {
 
 	_handle = [] spawn life_fnc_initActions;
 	waitUntil { scriptDone _handle };
-
+};
+	*/
 switch(playerSide) do
 {
 	case west:
