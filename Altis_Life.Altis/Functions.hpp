@@ -150,13 +150,7 @@ class Life_Client_Core
 		class p_updateMenu {};
 		class removeItem {};
 		class useItem {};
-		class cellHandle {};
 		class cellphone {};
-		class cell_text {};
-		class cell_textRefresh {};
-		class cell_message {};
-		class cell_inbox {};
-		class cell_from {};
 		class keyMenu {};
 		class keyGive {};
 		class keyDrop {};
