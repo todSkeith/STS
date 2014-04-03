@@ -1,5 +1,7 @@
 private["_unit"];
-_unit = cursorTarget;
+_unit = _this select 0;
+
+if (isNil "_unit" || isNull _unit || !(_unit getVariable "stage")) exitWith {};
 
 
 if(ncstagelights) exitWith
@@ -16,6 +18,7 @@ _pos = ligh;
 
 ncstagelights = true;
 sleep 1;
+if (!(_vehicle getVariable "stage")) exitWith {};
 if(ncstagelights) then
 {
 	_unit setVariable["stagelight",FALSE,TRUE] spawn BIS_FNC_MP;

@@ -8,13 +8,16 @@ if(strobe1) exitWith
 
 
 private["_vehicle", "_pos"];
-_vehicle = cursorTarget;
+_vehicle = _this select 0;
 _pos = this select 1;
+if (isNil "_vehicle" || isNull _vehicle || !(_vehicle getVariable "flashing")) exitWith {};
+
 
 strobe1 = true;
 sleep 0.5;
 while {strobe1} do 
 {
+	if (!(_vehicle getVariable "flashing")) exitWith {};
 	
 	sleep 0.09;
 	_pos setVariable["#lightpoint",FALSE,TRUE] spawn BIS_FNC_MP;

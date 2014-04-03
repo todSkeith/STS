@@ -8,13 +8,22 @@ if(strobe) exitWith
 
 
 private["_vehicle", "_pos"];
-_vehicle = cursorTarget;
+
+_vehicle = _this select 0;
 _pos = this select 1;
+
+
+if (isNil "_vehicle" || isNull _vehicle || !(_vehicle getVariable "lights")) exitWith {};
+
 
 strobe = true;
 sleep 0.5;
 while {strobe} do 
+
+
 {
+	if (!(_vehicle getVariable "lights")) exitWith {};
+
 	_pos setVariable["#lightpoint",FALSE,TRUE] spawn BIS_FNC_MP;
 	_pos = lightsource1;
 	light = createVehicle ["#lightpoint", getPos _pos, [], 0, "CAN_COLLIDE"];
