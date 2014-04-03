@@ -51,7 +51,7 @@ switch (true) do
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
-			[] spawn fnc_drug_use;
+			[] spawn fnc_drugeffect_her;
 		};
 	};
 
@@ -65,10 +65,16 @@ switch (true) do
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
-			[] spawn fnc_drugweed_use;
+			[] spawn fnc_drugeffect_mar;
 		};
 	};
-
+	case (_item == "cocainep"):
+	{
+		if(([false,_item,1] call life_fnc_handleInv)) then
+		{
+			[] spawn fnc_drugeffect_coc;
+		};
+	};
 	case (_item == "lockpick"):
 	{
 		[] spawn life_fnc_lockpick;
