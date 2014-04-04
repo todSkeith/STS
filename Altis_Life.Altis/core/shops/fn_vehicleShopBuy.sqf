@@ -5,7 +5,7 @@
 	Description:
 	Deleting it soon enough....
 */
-private["_index","_veh","_color","_price","_sp","_kill","_dir","_name","_sv","_fed","_double"];
+private["_index","_veh","_color","_price","_sp","_kill","_dir","_name","_sv","_fed","_double","_ems"];
 _kill = false;
 _double = false;
 switch(life_veh_shop) do
@@ -221,6 +221,7 @@ switch(life_veh_shop) do
 	{
 		_sp = getMarkerPos "medic_air_1";
 		_dir = markerDir "medic_air_1";
+		_ems = true;
 	};
 };
 _index = lbCurSel 2302;
@@ -264,6 +265,12 @@ if(_sv) then
 	[_vehicle,"service_truck",true] call life_fnc_vehicleAnimate;
 	_color = 4;
 };
+
+if(_ems) then
+{
+	[_vehicle,"EMS_Heli",true] call life_fnc_vehicleAnimate;
+};
+
 
 _vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,name player]],true];
 
