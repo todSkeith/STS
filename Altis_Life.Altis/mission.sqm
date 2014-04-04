@@ -132,7 +132,8 @@ class Mission
 		year=2035;
 		month=7;
 		day=6;
-		minute=15;
+		hour=8;
+		minute=0;
 		startFogDecay=0.0049333;
 		forecastFogDecay=0.0049333;
 	};
@@ -5134,7 +5135,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=1292;
+		items=1294;
 		class Item0
 		{
 			position[]={8065.1616,35.674362,24985.314};
@@ -18001,6 +18002,27 @@ class Mission
 			skill=0.60000002;
 			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
 		};
+		class Item1292
+		{
+			position[]={3730.8845,18.06941,13020.197};
+			id=1599;
+			side="EMPTY";
+			vehicle="UserTexture1m_F";
+			skill=0.60000002;
+			text="heli1_1";
+			init="this setPos [getPos this select 0, getPos this select 1, 1];";
+		};
+		class Item1293
+		{
+			position[]={3731.3013,18.873394,12977.545};
+			id=1600;
+			side="EMPTY";
+			vehicle="UserTexture1m_F";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			text="heli1";
+			init="this setPos [getPos this select 0, getPos this select 1, 30];";
+		};
 	};
 	class Markers
 	{
@@ -20201,12 +20223,6 @@ class Mission
 		};
 		class Item275
 		{
-			position[]={3725.3118,38.366085,12981.427};
-			name="medic_air_1";
-			type="Empty";
-		};
-		class Item276
-		{
 			position[]={3740.3135,18.864353,12979.234};
 			name="atm_1_3_11_5_5_2";
 			text="ATM";
@@ -20214,13 +20230,19 @@ class Mission
 			colorName="ColorGreen";
 			angle=-2.5306273;
 		};
-		class Item277
+		class Item276
 		{
 			position[]={3705.7114,18.986652,12798.44};
 			name="bh_1_1";
 			text="Bounty Hunter Store";
 			type="c_unknown";
 			colorName="ColorYellow";
+		};
+		class Item277
+		{
+			position[]={3729.2432,18.876467,12981.662};
+			name="medic_air_1";
+			type="Empty";
 		};
 	};
 	class Sensors
