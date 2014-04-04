@@ -5135,7 +5135,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=1294;
+		items=1293;
 		class Item0
 		{
 			position[]={8065.1616,35.674362,24985.314};
@@ -18004,18 +18004,8 @@ class Mission
 		};
 		class Item1292
 		{
-			position[]={3730.8845,18.06941,13020.197};
-			id=1599;
-			side="EMPTY";
-			vehicle="UserTexture1m_F";
-			skill=0.60000002;
-			text="heli1_1";
-			init="this setPos [getPos this select 0, getPos this select 1, 1];";
-		};
-		class Item1293
-		{
 			position[]={3731.3013,18.873394,12977.545};
-			id=1600;
+			id=1599;
 			side="EMPTY";
 			vehicle="UserTexture1m_F";
 			lock="UNLOCKED";
