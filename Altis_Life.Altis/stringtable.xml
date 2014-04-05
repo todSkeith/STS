@@ -389,6 +389,9 @@
 		<Key ID="STR_pInAct_Revive">
 			<Original>Revive Player</Original>
 		</Key>
+		<Key ID="STR_pInAct_Drag">
+			<Original>Drag Player</Original>
+		</Key>
 		<Key ID="STR_cInAct_Unrestrain">
 			<Original>Un-Restrain</Original>
 		</Key>

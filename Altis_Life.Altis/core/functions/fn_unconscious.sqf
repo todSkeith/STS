@@ -40,17 +40,24 @@ if (isPlayer _unit) then
 	_unit setVelocity [0,0,0];
 	_unit allowDamage false;
 	_unit setCaptive true;
-	_unit playMove "amovppnemstpsraswrfldnon";
+	_unit playMoveNow "amovppnemstpsraswrfldnon";
 
 
 	while {_unit getVariable "unconscious"} do
 {
 		_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
-		hintSilent format["Bleedout in %1 seconds\n\n%2", round ( - time)];
+		onPlayerDisconnected {deleteMarker name player;};
+		if (_bleedout >= time) then {
+			hintSilent format["Bleedout in %1 seconds\n\n%2", round (_bleedout - time)];
+		}
+		else {
+			player setDamage 1;
+			deleteMarker name player;
+		}
 };
 	waitUntil {animationState _unit != "AinjPpneMstpSnonWrflDnon_rolltoback" || !(_unit getVariable "unconscious") || player != _unit};
 
-_unit enableSimulation true;
+	_unit enableSimulation true;
 	_unit allowDamage true;
 	_unit setDamage 0;
 	_unit setCaptive false;
