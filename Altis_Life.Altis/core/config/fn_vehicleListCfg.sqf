@@ -210,7 +210,7 @@ switch (_shop) do
 	case "medic_air_1":
 	{
 		_return set[count _return,
-		["O_Heli_Light_02_unarmed_F",1]];
+		["O_Heli_Light_02_unarmed_F",250000]];
 
 	};
 
