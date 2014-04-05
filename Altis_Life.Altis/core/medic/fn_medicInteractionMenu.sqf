@@ -17,6 +17,9 @@
 #define Title 37401
 
 private["_display","_curTarget","_Btn1","_Btn2"];
+_isUnconscious = _curTarget getVariable "FAR_isUnconscious";
+if(_isUnconscious == 0) exitWith {};
+
 if(!dialog) then {
 	createDialog "pInteraction_Menu";
 };
@@ -41,5 +44,4 @@ _Btn1 ctrlSetText localize "STR_pInAct_Revive";
 _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_revive; closeDialog 0;";
 _Btn2 ctrlSetText localize "STR_pInAct_Drag";
 _Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_drag; closeDialog 0;";
-
 		

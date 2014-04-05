@@ -12,6 +12,7 @@ if((_this select 1)) then {
 };
 
 player setVariable["repairtoken",1];
+player setVariable["FAR_isUnconscious",0];
 //Make NPC's to normal stance..
 {
 	if(!isPlayer _x) then {

@@ -16,6 +16,9 @@
 #define Btn9 37458
 #define Title 37401
 
+_isUnconscious = player getVariable "FAR_isUnconscious";
+if (_isUnconscious == 1) exitWith {};
+
 private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8","_Btn9"];
 if(!dialog) then {
 	createDialog "cInteraction_Menu";

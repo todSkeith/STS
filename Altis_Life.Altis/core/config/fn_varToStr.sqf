@@ -75,9 +75,9 @@ switch (_var) do
 	case "life_inv_RoadConeStrip": {"RoadCone Strip"};
 	case "life_inv_RoadCone": {"RoadCone"};
 	case "life_inv_RoadBlockWood": {"RoadBlock (Wooden)"};
-	case "life_inv_storage1": {"House Storage"};
-    case "life_inv_storage2": {"House Storage Large"};
-    case "license_civ_home": {"Home Owner License"};
+//	case "life_inv_storage1": {"House Storage"};
+//   case "life_inv_storage2": {"House Storage Large"};
+//    case "license_civ_home": {"Home Owner License"};
 
 
 
