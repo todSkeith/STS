@@ -83,9 +83,10 @@ switch (_filter) do
 	case 4:
 	{
 		[
-			["B_Kitbag_mcamo",nil,1250],
-			["B_FieldPack_ocamo",nil,3000],
-			["B_Bergen_sgg",nil,5000]
+			["B_Kitbag_mcamo",nil,3000],
+			["B_FieldPack_ocamo",nil,1250],
+			["B_Bergen_sgg",nil,3000],
+			["B_Carryall_mcamo",nil,4000]
 
 		];
 	};
