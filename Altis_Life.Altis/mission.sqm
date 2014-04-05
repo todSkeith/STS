@@ -1744,7 +1744,7 @@ class Mission
 				class Item99
 				{
 					position[]={5398.6816,21.993683,14516.188};
-					azimut=130.93864;
+					azimut=130.939;
 					offsetY=0.30000001;
 					special="NONE";
 					id=130;
@@ -2220,7 +2220,7 @@ class Mission
 					vehicle="C_man_polo_4_F";
 					skill=0.60000002;
 					text="medic_garage_1_1";
-					init="this enableSimulation false; removeHeadgear this; this allowDamage false; this addAction[""Helicopter Shop"",life_fnc_vehicleShop,""medic_air_1""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""medic_air_1"";  }];  this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  this addUniform ""U_I_CombatUniform""; this setObjectTexture [0, ""images\ems_uni.jpg""];";
+					init="this enableSimulation false; removeHeadgear this; this allowDamage false; this addAction[""Helicopter Shop"",life_fnc_vehicleShop,""medic_air_1""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""medic_air_1"";  }];  this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  this addUniform ""U_I_CombatUniform""; this setObjectTextureglobal [0, ""images\ems_uni.jpg""];";
 				};
 				class Item139
 				{
@@ -5135,7 +5135,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=1293;
+		items=1292;
 		class Item0
 		{
 			position[]={8065.1616,35.674362,24985.314};
@@ -18002,17 +18002,6 @@ class Mission
 			skill=0.60000002;
 			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
 		};
-		class Item1292
-		{
-			position[]={3731.3013,18.873394,12977.545};
-			id=1599;
-			side="EMPTY";
-			vehicle="UserTexture1m_F";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			text="heli1";
-			init="this setPos [getPos this select 0, getPos this select 1, 30];";
-		};
 	};
 	class Markers
 	{
@@ -20230,7 +20219,7 @@ class Mission
 		};
 		class Item277
 		{
-			position[]={3729.2432,18.876467,12981.662};
+			position[]={3731.7676,18.871788,12976.34};
 			name="medic_air_1";
 			type="Empty";
 		};
