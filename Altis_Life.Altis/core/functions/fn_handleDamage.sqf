@@ -77,12 +77,17 @@ if(playerSide == west && side _source == west) then
 
 if(_sel == "" || _sel == "head_hit" || _sel =="body") then
 		{
-			if (_damage >= 0.89 && !(_projectile in ["B_9x21_Ball","B_556x45_dual"])) then
-			{
-				_unit setDamage 0;
-				_unit allowDamage false;
-				_damage = 0;
-				[_unit, _source] spawn life_fnc_unconscious;
+			if(side _source == west && _projectile in ["B_9x21_Ball","B_556x45_dual"]) then {
+				//do nothing if being shot by tazer
+			} 
+			else {
+				if (_damage >= 0.89) then
+				{
+					_unit setDamage 0;
+					_unit allowDamage false;
+					_damage = 0;
+					[_unit, _source] spawn life_fnc_unconscious;
+				};
 			};
 		};
 

@@ -10,6 +10,7 @@ private["_unit", "_killer"];
 _unit = _this select 0;
 hint format ["_unit is %1", _unit];
 _source = _this select 1;
+_bleedout = time + (60*10);
 
 _unit setVariable["unconscious",true,true];
 	
@@ -44,17 +45,10 @@ if (isPlayer _unit) then
 
 	while {_unit getVariable "unconscious"} do
 {
-	while {player == _unit && _unit getVariable "unconscious"} do
-{
-	if(player == _unit) then {
 		_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
-	}
-	else{
-		deleteMarker name player;
-	};
+		hintSilent format["Bleedout in %1 seconds\n\n%2", round ( - time)];
 };
 	waitUntil {animationState _unit != "AinjPpneMstpSnonWrflDnon_rolltoback" || !(_unit getVariable "unconscious") || player != _unit};
-};
 
 _unit enableSimulation true;
 	_unit allowDamage true;

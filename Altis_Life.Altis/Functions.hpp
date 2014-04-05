@@ -201,8 +201,6 @@ class Life_Client_Core
 		//class updateCash {};
         //class vehicleGarage {};
 		class unconscious {};
-		class revive {};
-		class reviveAction {};
 		class enablecollisionwith {};
 		class disablecollisionwith {};
 		class enableActions {};
@@ -315,6 +313,8 @@ class Life_Client_Core
 		class mediclights {};
 		class medicSiren {};
 		class medicSirenLights {};
+		class revive {};
+		class reviveAction {};
 	};
 
 	class Gangs
