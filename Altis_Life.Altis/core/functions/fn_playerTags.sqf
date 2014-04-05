@@ -17,23 +17,20 @@
                 {
                     _pos = visiblePosition _x;
                     _pos set[2,(getPosATL _x select 2) + 2.2];
-                                    _width = 0.7;
-                                    _height = 0.7;
-                                    switch (_x getVariable["coplevel", 0]) do
-                                    {
-                                            case (1) : {_name = format["Recruit %1", name _x];};
-                                            case (2) : {_name = format["Patrol Officer %1", name _x];};
-                                            case (3) : {_name = format["Senior Patrol Officer %1", name _x];};
-                                            case (4) : {_name = format["Corporal %1", name _x];};
-                                            case (5) : {_name = format["Sergeant %1", name _x];};
-                                            case (6) : {_name = format["Lieutenant %1", name _x];};
-                                            case (7) : {_name = format["Captain %1", name _x];};
-                                            case (8) : {_name = format["Superintendent %1", name _x];};
-                                            case (9) : {_name = format["Chief %1", name _x];};
-                                            case (10) : {_name = format["Admin %1", name _x];};
-                                            default {_name = name _x; _icon = ""; _width = 0; _height = 0;}
-                                    };
-                    drawIcon3D [_icon,[1,1,1,1],_pos,_width,_height,0,_name,0,0.04];
+					switch (_x getVariable["coplevel", 0]) do
+					{
+							case 0: {_name = name _x};
+							case 1: {_name = format["Recruit %1", name _x];};
+							case 2: {_name = format["Patrol Officer %1", name _x];};
+							case 3: {_name = format["Senior Patrol Officer %1", name _x];};
+							case 4: {_name = format["Corporal %1", name _x];};
+							case 5: {_name = format["Sergeant %1", name _x];};
+							case 6: {_name = format["CO %1", name _x];};
+							case 7: {_name = format["Superintendent %1", name _x];};
+							case 8: {_name = format["Chief %1", name _x];};
+							default {_name = name _x;}
+					};
+                    drawIcon3D ["",[1,1,1,1],_pos,0,0,0,_name,0,0.04];
                 };
             };
         } foreach _near;
