@@ -121,13 +121,13 @@ FAR_Player_Unconscious =
 		if (FAR_BleedOut > 0 && {time > _bleedOut} && {_unit getVariable ["FAR_isStabilized",0] == 0}) then
 		{
 			_unit setDamage 1;
-			deleteMarker name player;
+			deleteMarker ["%1", name player];
 		}
 		else
 		{
 			// Player got revived
 			_unit setVariable ["FAR_isStabilized", 0, true];
-			deleteMarker name player;
+			deleteMarker ["%1", name player];
 			sleep 6;
 
 			// Clear the "medic nearby" hint
