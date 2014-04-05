@@ -5,6 +5,13 @@ X_Client = false;
 X_JIP = false;
 StartProgress = false;
 
+while {true} do
+{
+waitUntil {alive player};
+sleep 7;
+execVM "core\actions\fn_logo.sqf";
+};
+
 if(!isDedicated) then { X_Client = true;};
 /*
 if(isNull player) then
