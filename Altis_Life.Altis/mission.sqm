@@ -1071,7 +1071,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_polo_3_F";
 					skill=0.60000002;
-					init="removeHeadgear this; this enableSimulation false; this allowDamage false; this addAction[""Medical Assistance"",life_fnc_healHospital]; this addUniform ""U_I_CombatUniform""; this setObjectTexture [0, ""images\ems_uni.jpg""];";
+					init="removeHeadgear this; this enableSimulation false; this allowDamage false; this addAction[""Medical Assistance"",life_fnc_healHospital]; this addUniform ""U_I_CombatUniform""; this setObjectTextureglobal [0, ""images\ems_uni.jpg""];";
 				};
 				class Item41
 				{
@@ -2138,7 +2138,7 @@ class Mission
 					vehicle="C_man_polo_4_F";
 					skill=0.60000002;
 					text="medic_shop_1";
-					init="removeHeadgear this; this enableSimulation false; this allowDamage false; this addAction[""Medic Shop"",life_fnc_weaponShopMenu,""medic"",0,false,false,"""",' playerSide == independent'];  this addUniform ""U_I_CombatUniform""; this setObjectTexture [0, ""images\ems_uni.jpg""]; ";
+					init="removeHeadgear this; this enableSimulation false; this allowDamage false; this addAction[""Medic Shop"",life_fnc_weaponShopMenu,""medic"",0,false,false,"""",' playerSide == independent'];  this addUniform ""U_I_CombatUniform""; this setObjectTextureglobal [0, ""images\ems_uni.jpg""]; ";
 				};
 				class Item132
 				{
