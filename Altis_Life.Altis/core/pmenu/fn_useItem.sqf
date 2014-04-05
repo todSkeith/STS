@@ -6,6 +6,7 @@
 	Main function for item effects and functionality through the player menu.
 */
 private["_item"];
+_isUnconscious = player getVariable "FAR_isUnconscious";
 disableSerialization;
 if((lbCurSel 2005) == -1) exitWith {hint "You need to select an item first!";};
 _item = lbData[2005,(lbCurSel 2005)];
@@ -35,15 +36,6 @@ switch (true) do
 				waitUntil {!alive player OR ((time - life_redgull_effect) > (3 * 60))};
 				player enableFatigue true;
 			};
-		};
-	};
-
-	case (_item == "spikeStrip"):
-	{
-		if(!isNull life_spikestrip) exitWith {hint "You already have a Spike Strip active in deployment"};
-		if(([false,_item,1] call life_fnc_handleInv)) then
-		{
-			[] spawn life_fnc_spikeStrip;
 		};
 	};
 
@@ -105,19 +97,32 @@ switch (true) do
 		[] spawn life_fnc_chainsaw;
 	};
 
+	case (_item == "spikeStrip"):
+	{
+		if(!isNull life_spikestrip) exitWith {hint "You already have a Spike Strip active in deployment"};
+		if(if (_isUnconscious == 1) exitWith {};
+		if(([false,_item,1] call life_fnc_handleInv)) then
+		{
+			[] spawn life_fnc_spikeStrip;
+		};
+	};
+
 	case (_item == "RoadCone"):
 	{
 		if(!isNull life_roadcone) exitWith {hint "You already have a Roadcone active in deployment"};
 		//if cop override and allow use of item
 		if(playerSide == west) then {
+			if (_isUnconscious == 1) exitWith {};
 			if(([false,_item,1] call life_fnc_handleInv)) then {
 				[] spawn life_fnc_RoadCone;
 			};
 		};
 		//if civ check for rebel license otherwise deny use of item
 		if(playerSide != west) then {
-			if(!(license_civ_rebel)) then {hint "You need a rebel license to use this item"}
+			if (_isUnconscious == 1) exitWith {};
+			if(!(license_civ_rebel)) then {hint "You need a rebel license to use this item"};
 			else {
+				if (_isUnconscious == 1) exitWith {};
 				if(([false,_item,1] call life_fnc_handleInv)) then {
 					[] spawn life_fnc_RoadCone;
 				};
@@ -127,6 +132,7 @@ switch (true) do
 		case (_item == "RoadConeStrip"):
 	{
 		if(!isNull life_roadcone) exitWith {hint "You already have a Roadcone Strip active in deployment"};
+		if (_isUnconscious == 1) exitWith {};
 		//if cop override and allow use of item
 		if(playerSide == west) then {
 			if(([false,_item,1] call life_fnc_handleInv)) then {
@@ -146,6 +152,7 @@ switch (true) do
 		case (_item == "RoadConeB"):
 	{
 		if(!isNull life_roadcone) exitWith {hint "You already have a Blinking Roadcone active in deployment"};
+		if (_isUnconscious == 1) exitWith {};
 		//if cop override and allow use of item
 		if(playerSide == west) then {
 			if(([false,_item,1] call life_fnc_handleInv)) then {
@@ -154,7 +161,8 @@ switch (true) do
 		};
 		//if civ check for rebel license otherwise deny use of item
 		if(playerSide != west) then {
-			if(!(license_civ_rebel)) then {hint "You need a rebel license to use this item"}
+			if(!(license_civ_rebel)) then {hint "You need a rebel license to use this item"};
+			if (_isUnconscious == 1) exitWith {}
 			else {
 				if(([false,_item,1] call life_fnc_handleInv)) then {
 					[] spawn life_fnc_RoadConeB;
@@ -165,6 +173,7 @@ switch (true) do
 		case (_item == "RoadConeStripB"):
 	{
 		if(!isNull life_roadcone) exitWith {hint "You already have a Blinking Roadcone Strip active in deployment"};
+		if (_isUnconscious == 1) exitWith {};
 		//if cop override and allow use of item
 		if(playerSide == west) then {
 			if(([false,_item,1] call life_fnc_handleInv)) then {
@@ -174,7 +183,7 @@ switch (true) do
 		//if civ check for rebel license otherwise deny use of item
 		if(playerSide != west) then {
 			if(!(license_civ_rebel)) then {hint "You need a rebel license to use this item"}
-			else {
+			else {if (_isUnconscious == 1) exitWith {};
 				if(([false,_item,1] call life_fnc_handleInv)) then {
 					[] spawn life_fnc_RoadConeStripB;
 				};
@@ -185,6 +194,7 @@ switch (true) do
 	case (_item == "RoadBlockWood"):
 	{
 		if(!isNull life_roadblock) exitWith {hint "You already have a Road Block active in deployment"};
+		if (_isUnconscious == 1) exitWith {};
 		//if cop override and allow use of item
 		if(playerSide == west) then {
 			if(([false,_item,1] call life_fnc_handleInv)) then {
@@ -194,7 +204,7 @@ switch (true) do
 		//if civ check for rebel license otherwise deny use of item
 		if(playerSide != west) then {
 			if(!(license_civ_rebel)) then {hint "You need a rebel license to use this item"}
-			else {
+			else {if (_isUnconscious == 1) exitWith {};
 				if(([false,_item,1] call life_fnc_handleInv)) then {
 					[] spawn life_fnc_RoadBlockWood;
 				};
