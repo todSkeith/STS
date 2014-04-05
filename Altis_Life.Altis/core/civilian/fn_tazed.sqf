@@ -15,22 +15,7 @@ if(_shooter isKindOf "Man" && alive player) then
 	if(!life_istazed) then
 	{
 		life_istazed = true;
-		_curWep = currentWeapon player;
-		_curMags = magazines player;
-		_attach = if(primaryWeapon player != "") then {primaryWeaponItems _unit} else {[]};
-		{player removeMagazine _x} foreach _curMags;
-		player removeWeapon _curWep;
-		player addWeapon _curWep;
-		if(count _attach != 0 && primaryWeapon _unit != "") then
-		{
-			{
-				_unit addPrimaryWeaponItem _x;
-			} foreach _attach;
-		};
-		if(count _curMags != 0) then
-		{
-			{player addMagazine _x;} foreach _curMags;
-		};
+		player setAmmo[currentWeapon player, 0];
 		
 		[[_unit],"life_fnc_tazeSound",true,false] spawn life_fnc_MP;
 		_obj = "Land_ClutterCutter_small_F" createVehicle (getPosATL _unit);

@@ -90,12 +90,5 @@ if(_sel == "" || _sel == "head_hit" || _sel =="body") then
 				};
 			};
 		};
-
-if (alive _unit && !(player getVariable ["wounded",false])) then {
-	life_gear = [] call life_fnc_fetchGear;
-};
-
-
-
 [] call life_fnc_hudUpdate;
 _damage;

@@ -19184,7 +19184,7 @@ class Mission
 			position[]={14266.07,19.374266,16294.293};
 			name="air_g_1";
 			type="Empty";
-			angle=153.94191;
+			angle=221.8828;
 		};
 		class Item148
 		{
