@@ -30,6 +30,7 @@ _itemInfo = switch (_type) do
 	case "cement": {[["rock"],"cement",110,"Mixing Cement"]};
 	case "log": {[["log"],"lumber",110,"Sawing Wood"]};
 	case "steel" : {[["coalore","ironore"],"steel",1,"Forging Steel"]};
+	case "moonshine" : {[["corn"],"moonshine", 100, "Distilling Liquor"]};
 	default {[]};
 };
 
