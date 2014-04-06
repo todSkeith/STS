@@ -6,7 +6,6 @@
 	Main function for item effects and functionality through the player menu.
 */
 private["_item"];
-_isUnconscious = player getVariable "FAR_isUnconscious";
 disableSerialization;
 if((lbCurSel 2005) == -1) exitWith {hint "You need to select an item first!";};
 _item = lbData[2005,(lbCurSel 2005)];
@@ -100,7 +99,7 @@ switch (true) do
 	case (_item == "spikeStrip"):
 	{
 		if(!isNull life_spikestrip) exitWith {hint "You already have a Spike Strip active in deployment"};
-		if(if (_isUnconscious == 1) exitWith {};
+		if((player getVariable "unconscious")) exitWith {};
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
 			[] spawn life_fnc_spikeStrip;

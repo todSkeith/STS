@@ -15,6 +15,8 @@ _respawnB = _display displayCtrl 1010;
 _respawnB ctrlEnable false;
 _abortB ctrlEnable false;
 
+//_abortB ctrlSetEventHandler ["onMouseButtonClick", "deleteMarker name player"];
+
 if ((player getVariable "restrained") || (player getVariable "Escorting") || (player getVariable "transporting") || life_is_arrested || life_istazed) then
 {
 	_respawnB ctrlEnable false;

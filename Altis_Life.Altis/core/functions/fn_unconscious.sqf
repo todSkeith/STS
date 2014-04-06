@@ -47,6 +47,12 @@ if (isPlayer _unit) then
 {
 		_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
 		onPlayerDisconnected {deleteMarker name player;};
+		
+		if(vehicle player != player) then
+		{
+			player action ["Eject",vehicle player];
+		};
+
 		if (_bleedout >= time) then {
 			hintSilent format["Bleedout in %1 seconds\n\n%2", round (_bleedout - time)];
 			sleep 1;
