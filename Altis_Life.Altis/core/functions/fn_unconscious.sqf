@@ -49,13 +49,13 @@ if (isPlayer _unit) then
 		onPlayerDisconnected {deleteMarker name player;};
 		if (_bleedout >= time) then {
 			hintSilent format["Bleedout in %1 seconds\n\n%2", round (_bleedout - time)];
+			sleep 1;
 		}
 		else {
 			player setDamage 1;
 			deleteMarker name player;
-		}
+		};
 };
-	waitUntil {animationState _unit != "AinjPpneMstpSnonWrflDnon_rolltoback" || !(_unit getVariable "unconscious") || player != _unit};
 
 	_unit enableSimulation true;
 	_unit allowDamage true;

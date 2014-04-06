@@ -6,13 +6,24 @@
 	Description: action that makes medic drag player.
 */
 
-_victim = cursorTarget;
+_unit = cursorTarget;
+if(isNull _unit) exitWith {}; //Not valid
+if(!(_unit isKindOf "Man")) exitWith {}; //Not a 'Man'
+if(!isPlayer _unit) exitWith {}; //Not a human player
 
-_victim attachTo [player, [0, 1.1, 0.092]];
-_victim setDir 180;
+_unit = cursorTarget;
+player setVariable["isDragging",true,true];
+_unit attachTo [player, [0, 1.1, 0.092]];
+_unit setDir 180;
 player playMoveNow "AcinPknlMstpSnonWnonDnon";
-_id = player addAction ["<t color=""#C90000"">" + "Release" + "</t>", {
-	_victim switchMove "AinjPpneMstpSnonWrflDnon"; 
-	detach _victim; 
-	player removeAction _id;
+_id = player addAction ["<t color=""#C90000"">" + "Release" + "</t>", { 
+	player setVariable["isDragging",false,true];
+	_unit = cursorTarget;
+	_unit switchMove "AinjPpneMstpSnonWrflDnon"; 
+	player playMoveNow "AmovPercMstpSnonWnonDnon"; 
+	detach _unit; 
 }];
+
+while {(player getVariable "isDragging")} do {
+	if(!(player getVariable "isDragging")) then {player removeAction _id;};
+};

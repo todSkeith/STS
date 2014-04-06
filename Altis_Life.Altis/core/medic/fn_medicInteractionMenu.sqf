@@ -16,9 +16,11 @@
 //#define Btn9 37458
 #define Title 37401
 
+if((player getVariable "unconscious")) exitWith {};
+
 private["_display","_curTarget","_Btn1","_Btn2"];
-_isUnconscious = _curTarget getVariable "FAR_isUnconscious";
-if(_isUnconscious == 0) exitWith {};
+
+if(!(_curTarget getVariable "unconscious")) exitWith {};
 
 if(!dialog) then {
 	createDialog "pInteraction_Menu";
