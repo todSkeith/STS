@@ -330,9 +330,9 @@ buy_array =
 	["crabpot",500],
 	["defib",3500],
 	["chainsaw",5000],
-	["RoadConeStrip",1],
-	["RoadCone",1],
-	["RoadBlockWood",1],
+	["RoadConeStrip",750],
+	["RoadCone",150],
+	["RoadBlockWood",1500],
 	["moonshine", 100]
 ];
 __CONST__(buy_array,buy_array);
