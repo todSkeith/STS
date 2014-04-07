@@ -332,7 +332,8 @@ buy_array =
 	["chainsaw",5000],
 	["RoadConeStrip",1],
 	["RoadCone",1],
-	["RoadBlockWood",1]
+	["RoadBlockWood",1],
+	["moonshine", 100]
 ];
 __CONST__(buy_array,buy_array);
 
