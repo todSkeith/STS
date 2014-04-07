@@ -33,11 +33,11 @@ switch (_type) do
 	case "cement": {11000};
 	case "gold": {18500};
 	case "moonshine": {9500};
-	case "crabbing" : {1};
-	case "steel" : {1};
-	case "bh": {1};
-	case "logging": {1};
-	case "medicair" : {1};
+	case "crabbing" : {5000};
+	case "steel" : {22500};
+	case "bh": {15000};
+	case "logging": {12500};
+	case "medicair" : {25000};
 	case "home": {100000};
 	{
 		/* STATEMENT */
