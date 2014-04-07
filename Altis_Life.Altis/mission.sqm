@@ -1152,7 +1152,7 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Boat Shop"",life_fnc_vehicleShop,""cop_ship_1""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Ship"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_ship_1"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Boat Shop"",life_fnc_vehicleShop,""cop_ship_1"",0,false,false,"""",'playerSide == west']; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Ship"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_ship_1"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item48
 				{
@@ -1163,7 +1163,7 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false;  removeAllWeapons this; this addAction[""Helicopter Shop"",life_fnc_vehicleShop,""cop_air_1""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_air_1"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false; this allowDamage false;  removeAllWeapons this; this addAction[""Helicopter Shop"",life_fnc_vehicleShop,""cop_air_1"",0,false,false,"""",'playerSide == west']; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_air_1"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item49
 				{
@@ -1174,7 +1174,7 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false;  removeAllWeapons this;  this addAction[""Car Shop"",life_fnc_vehicleShop,""cop_car_1""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_1""; life_garage_type = ""Car"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false; this allowDamage false;  removeAllWeapons this;  this addAction[""Car Shop"",life_fnc_vehicleShop,""cop_car_1"",0,false,false,"""",'playerSide == west']; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_1""; life_garage_type = ""Car"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item50
 				{
@@ -1187,7 +1187,7 @@ class Mission
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
 					text="h1_3";
-					init="this enableSimulation false;this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop""];this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""];this addAction[""Police Equipment Shop"",life_fnc_weaponShopMenu,""police_equipment"",0,false,false,"""",'playerSide == west']; this addAction[""Police Weapons Shop"",life_fnc_weaponShopMenu,""police_weapons"",0,false,false,"""",'playerSide == west']; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west ']; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];  removeAllWeapons this;";
+					init="this enableSimulation false;this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop"",0,false,false,"""",'playerSide == west'];this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop"",0,false,false,"""",'playerSide == west'];this addAction[""Police Equipment Shop"",life_fnc_weaponShopMenu,""police_equipment"",0,false,false,"""",'playerSide == west']; this addAction[""Police Weapons Shop"",life_fnc_weaponShopMenu,""police_weapons"",0,false,false,"""",'playerSide == west']; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west ']; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];  removeAllWeapons this;";
 				};
 				class Item51
 				{
@@ -1234,7 +1234,7 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
-					init="this enableSimulation false;this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop""];this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""]; this addAction[""Police Equipment Shop"",life_fnc_weaponShopMenu,""police_equipment"",0,false,false,"""",'playerSide == west']; this addAction[""Police Weapons Shop"",life_fnc_weaponShopMenu,""police_weapons"",0,false,false,"""",'playerSide == west'];this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west ']; this addAction[""Helicopter Shop"",life_fnc_vehicleShop,""cop_air_2""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_air_2"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false;this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop"",0,false,false,"""",'playerSide == west'];this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop"",0,false,false,"""",'playerSide == west']; this addAction[""Police Equipment Shop"",life_fnc_weaponShopMenu,""police_equipment"",0,false,false,"""",'playerSide == west']; this addAction[""Police Weapons Shop"",life_fnc_weaponShopMenu,""police_weapons"",0,false,false,"""",'playerSide == west'];this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west ']; this addAction[""Helicopter Shop"",life_fnc_vehicleShop,""cop_air_2""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_air_2"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item55
 				{
@@ -1245,7 +1245,7 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Car Shop"",life_fnc_vehicleShop,""cop_car_2""];  this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Car"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_2"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  removeAllWeapons this;";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Car Shop"",life_fnc_vehicleShop,""cop_car_2"",0,false,false,"""",'playerSide == west'];  this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Car"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_2"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  removeAllWeapons this;";
 				};
 				class Item56
 				{
@@ -1256,7 +1256,7 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
-					init="this enableSimulation false;this allowDamage false; this addAction[""Car Shop"",life_fnc_vehicleShop,""cop_car_3""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;  life_garage_type = ""Car""; createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_3"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  removeAllWeapons this;";
+					init="this enableSimulation false;this allowDamage false; this addAction[""Car Shop"",life_fnc_vehicleShop,""cop_car_3"",0,false,false,"""",'playerSide == west']; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;  life_garage_type = ""Car""; createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_3"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  removeAllWeapons this;";
 				};
 				class Item57
 				{
@@ -1442,7 +1442,7 @@ class Mission
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
 					text="h1_3_1";
-					init="this enableSimulation false;this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop""];this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""]; this addAction[""Police Equipment Shop"",life_fnc_weaponShopMenu,""police_equipment"",0,false,false,"""",'playerSide == west'];this addAction[""Police Weapons Shop"",life_fnc_weaponShopMenu,""police_weapons"",0,false,false,"""",'playerSide == west']; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west ']; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];  removeAllWeapons this;";
+					init="this enableSimulation false;this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop"",0,false,false,"""",'playerSide == west'];this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop"",0,false,false,"""",'playerSide == west']; this addAction[""Police Equipment Shop"",life_fnc_weaponShopMenu,""police_equipment"",0,false,false,"""",'playerSide == west'];this addAction[""Police Weapons Shop"",life_fnc_weaponShopMenu,""police_weapons"",0,false,false,"""",'playerSide == west']; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west ']; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];  removeAllWeapons this;";
 				};
 				class Item73
 				{
@@ -1454,7 +1454,7 @@ class Mission
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
 					text="h1_3_2";
-					init="this enableSimulation false;this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop""];this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""]; this addAction[""Police Equipment Shop"",life_fnc_weaponShopMenu,""police_equipment"",0,false,false,"""",'playerSide == west']; this addAction[""Police Weapons Shop"",life_fnc_weaponShopMenu,""police_weapons"",0,false,false,"""",'playerSide == west']; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west ']; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];  removeAllWeapons this;";
+					init="this enableSimulation false;this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop"",0,false,false,"""",'playerSide == west'];this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop"",0,false,false,"""",'playerSide == west']; this addAction[""Police Equipment Shop"",life_fnc_weaponShopMenu,""police_equipment"",0,false,false,"""",'playerSide == west']; this addAction[""Police Weapons Shop"",life_fnc_weaponShopMenu,""police_weapons"",0,false,false,"""",'playerSide == west']; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west ']; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];  removeAllWeapons this;";
 				};
 				class Item74
 				{
@@ -1638,7 +1638,7 @@ class Mission
 					vehicle="B_RangeMaster_F";
 					skill=0.60000002;
 					text="h1_3_3";
-					init="this enableSimulation false;this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop""];this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop""]; this addAction[""Police Equipment Shop"",life_fnc_weaponShopMenu,""police_equipment"",0,false,false,"""",'playerSide == west']; this addAction[""Police Weapons Shop"",life_fnc_weaponShopMenu,""police_weapons"",0,false,false,"""",'playerSide == west']; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west ']; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];  removeAllWeapons this;";
+					init="this enableSimulation false;this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop"",0,false,false,"""",'playerSide == west'];this addAction[""Cop Clothing Shop"",life_fnc_clothingMenu,""cop"",0,false,false,"""",'playerSide == west']; this addAction[""Police Equipment Shop"",life_fnc_weaponShopMenu,""police_equipment"",0,false,false,"""",'playerSide == west']; this addAction[""Police Weapons Shop"",life_fnc_weaponShopMenu,""police_weapons"",0,false,false,"""",'playerSide == west']; this addAction[format[""%1 ($%2)"",[""license_cop_air""] call life_fnc_varToStr,[([""cair""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cair"",0,false,false,"""",' !license_cop_air && playerSide == west ']; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];  removeAllWeapons this;";
 				};
 				class Item90
 				{
@@ -1649,7 +1649,7 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false;  this addAction[""Car Shop"",life_fnc_vehicleShop,""cop_car_5""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_5""; life_garage_type = ""Car"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  removeAllWeapons this;";
+					init="this enableSimulation false; this allowDamage false;  this addAction[""Car Shop"",life_fnc_vehicleShop,""cop_car_5"",0,false,false,"""",'playerSide == west']; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP;   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_car_5""; life_garage_type = ""Car"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  removeAllWeapons this;";
 				};
 				class Item91
 				{
@@ -1752,7 +1752,7 @@ class Mission
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
 					text="h1_3_4";
-					init="this enableSimulation false;  this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop""]; this setPos [getPos this select 0, getPos this select 1, 0.40]; removeallWeapons this;  ";
+					init="this enableSimulation false;  this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop"",0,false,false,"""",'playerSide == west']; this setPos [getPos this select 0, getPos this select 1, 0.40]; removeallWeapons this;  ";
 				};
 				class Item100
 				{
@@ -1765,7 +1765,7 @@ class Mission
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
 					text="h1_3_4_1";
-					init="this enableSimulation false;  this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop""]; this setPos [getPos this select 0, getPos this select 1, 0.50]; removeallWeapons this;  this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance']; ";
+					init="this enableSimulation false;  this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop"",0,false,false,"""",'playerSide == west']; this setPos [getPos this select 0, getPos this select 1, 0.50]; removeallWeapons this;  this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance']; ";
 				};
 				class Item101
 				{
@@ -1829,7 +1829,7 @@ class Mission
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
 					text="h1_3_4_1_1";
-					init="this enableSimulation false;  this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop""]; this setPos [getPos this select 0, getPos this select 1, 0.60]; removeallWeapons this;  this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance']; ";
+					init="this enableSimulation false;  this allowDamage false; this addAction[""Cop Item Shop"",life_fnc_virt_menu,""cop"",0,false,false,"""",'playerSide == west']; this setPos [getPos this select 0, getPos this select 1, 0.60]; removeallWeapons this;  this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance']; ";
 				};
 				class Item106
 				{
@@ -1874,7 +1874,7 @@ class Mission
 					side="WEST";
 					vehicle="B_diver_F";
 					skill=0.60000002;
-					init="this allowDamage false; removeallWeapons this; this enableSimulation false; this addAction[""CoastGuard Diving Shop"",life_fnc_clothingMenu,""copdive""];  this addAction[""CoastGuard Weapon Shop"",life_fnc_weaponShopMenu,""cg""]; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];;";
+					init="this allowDamage false; removeallWeapons this; this enableSimulation false; this addAction[""CoastGuard Diving Shop"",life_fnc_clothingMenu,""copdive"",0,false,false,"""",'playerSide == west'];  this addAction[""CoastGuard Weapon Shop"",life_fnc_weaponShopMenu,""cg""]; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];;";
 				};
 				class Item110
 				{
@@ -1885,7 +1885,7 @@ class Mission
 					side="WEST";
 					vehicle="B_diver_F";
 					skill=0.60000002;
-					init="this allowDamage false; removeallWeapons this; this enableSimulation false; this addAction[""CoastGuard Diving Shop"",life_fnc_clothingMenu,""copdive""];  this addAction[""CoastGuard Weapon Shop"",life_fnc_weaponShopMenu,""cg""]; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance'];";
+					init="this allowDamage false; removeallWeapons this; this enableSimulation false; this addAction[""CoastGuard Diving Shop"",life_fnc_clothingMenu,""copdive"",0,false,false,"""",'playerSide == west'];  this addAction[""CoastGuard Weapon Shop"",life_fnc_weaponShopMenu,""cg"",0,false,false,"""",'playerSide == west']; this addAction[format[""%1 ($%2)"",[""license_cop_cg""] call life_fnc_varToStr,[([""cg""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""cg"",0,false,false,"""",' !license_cop_cg && playerSide == west '];this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance'];";
 				};
 				class Item111
 				{
@@ -1896,7 +1896,7 @@ class Mission
 					side="WEST";
 					vehicle="B_Soldier_F";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Boat Shop"",life_fnc_vehicleShop,""cop_ship_2""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Ship"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_ship_2"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Boat Shop"",life_fnc_vehicleShop,""cop_ship_2"",0,false,false,"""",'playerSide == west']; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Ship"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Ship"";  createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""cop_ship_2"";  }]; this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
 				};
 				class Item112
 				{
