@@ -8,6 +8,8 @@
 private["_type"];
 _type = _this select 3;
 
+if(_type == "bh") then {player setVariable ["bountyHunter", true, true];};
+
 _price = [_type] call life_fnc_licensePrice;
 _license = [_type,0] call life_fnc_licenseType;
 

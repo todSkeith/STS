@@ -114,7 +114,6 @@ class Life_Client_Core
 		class vehShopLicenses {};
 		class vehicleAnimate {};
 		class weaponShopCfg {};
-		class isMedic {};
 		//class houseContainers {};
         //class housePrice {};
 
@@ -195,7 +194,6 @@ class Life_Client_Core
 		class holsterWeapon {};
 		class abortEnabled {};
 		class actionKeyHandler {};
-		class setReviveMarker {};
 		class medicMarkers {};
 		class autoSave {};
 		//class updateCash {};
@@ -211,7 +209,7 @@ class Life_Client_Core
     {
         file = "core\housing";
         class buyHouse {};
-        class sellHouse {}; 
+        class sellHouse {};
         class createMarkers {};
         class deleteMarkers {};
         class getBuildID {};

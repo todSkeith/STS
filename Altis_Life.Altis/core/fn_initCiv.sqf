@@ -14,6 +14,8 @@ civ_spawn_4 = nearestObjects[getMarkerPos  "civ_spawn_4", ["Land_i_House_Big_01_
 
 waitUntil {!(isNull (findDisplay 46))};
 
+
+
 if(life_is_arrested) then
 {
 	life_is_arrested = false;
@@ -27,4 +29,8 @@ if(life_is_arrested) then
 };
 //[] call life_fnc_initHouses;
 [] call life_fnc_zoneCreator;
+
+if((license_civ_bh)) then {
+	player setVariable ["bountyHunter", true, true];
+};
 player addRating 9999999;

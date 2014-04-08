@@ -15,52 +15,55 @@ _curWep = "";
 
 if(isPlayer _source && _source isKindOf "Man") then {_curWep = currentWeapon _source;};
 
-if(_source != _unit && isPlayer _source || (license_civ_bh) && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then
+if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then
 {
-	if(_projectile in ["B_9x21_Ball","B_556x45_dual"]) then
+	if(side _source == west || (_source getVariable "bountyHunter")) then 
 	{
-		_damage = false;
-		if(_curwep == "arifle_SDAR_F") then
+		if(_projectile in ["B_9x21_Ball","B_556x45_dual"]) then
 		{
-			if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 100) then
+			_damage = false;
+			if(_curwep == "arifle_SDAR_F") then
 			{
-				_damage = 0;
-				if(typeOf (vehicle player) == "B_Quadbike_01_F") then
+				if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 100) then
 				{
-					player action ["Eject",vehicle player];
-					[_unit,_source] spawn life_fnc_tazed;
-				};
+					_damage = 0;
+					if(typeOf (vehicle player) == "B_Quadbike_01_F") then
+					{
+						player action ["Eject",vehicle player];
+						[_unit,_source] spawn life_fnc_tazed;
+					};
 
-				if(vehicle player == player) then
+					if(vehicle player == player) then
+					{
+						[_unit,_source] spawn life_fnc_tazed;
+					};
+				};
+			}
+			else
+			{
+				if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 100) then
 				{
-					[_unit,_source] spawn life_fnc_tazed;
+					_damage = 0;
+					if(typeOf (vehicle player) == "B_Quadbike_01_F") then
+					{
+						player action ["Eject",vehicle player];
+						[_unit,_source] spawn life_fnc_tazed;
+					};
+
+					if(vehicle player == player) then
+					{
+						[_unit,_source] spawn life_fnc_tazed;
+					};
 				};
 			};
 		}
-			else
+		else
 		{
-			if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 100) then
+			//player allowDamage true;
+			if(_projectile == "") then
 			{
 				_damage = 0;
-				if(typeOf (vehicle player) == "B_Quadbike_01_F") then
-				{
-					player action ["Eject",vehicle player];
-					[_unit,_source] spawn life_fnc_tazed;
-				};
-
-				if(vehicle player == player) then
-				{
-					[_unit,_source] spawn life_fnc_tazed;
-				};
 			};
-		};
-	}
-		else
-	{
-		//player allowDamage true;
-		if(_projectile == "") then
-		{
-			_damage = 0;
 		};
 	};
 };
