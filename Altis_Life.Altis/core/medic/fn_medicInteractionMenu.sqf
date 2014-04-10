@@ -20,7 +20,7 @@ if((player getVariable "unconscious")) exitWith {};
 
 private["_display","_curTarget","_Btn1","_Btn2"];
 
-if(!(_curTarget getVariable "unconscious")) exitWith {};
+if(!(cursorTarget getVariable "unconscious")) exitWith {};
 
 if(!dialog) then {
 	createDialog "pInteraction_Menu";

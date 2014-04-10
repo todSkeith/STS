@@ -8,11 +8,7 @@
 */
 player addRating 9999999;
 waitUntil {!(isNull (findDisplay 46))};
-
-if(life_blacklisted) exitWith
-{
-	endMission "Loser";
-};
+[] spawn life_fnc_medicMarkers;
 
 switch (true) do
 {

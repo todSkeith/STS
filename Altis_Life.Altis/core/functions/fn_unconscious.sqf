@@ -31,10 +31,7 @@ if (isPlayer _unit) then
 	_unit setVelocity [0,0,0];
 	_unit allowDamage false;
 	_unit setCaptive true;
-	_marker = createMarker [format["%1", name player], getpos player];
-	name player setMarkerColor "ColorRed";
-	name player setMarkerText format["%1 is unconscious", name player];
-	name player setMarkerType "waypoint";
+	[[_unit],"life_fnc_unconsciousMarker", true, false] spawn Bis_fnc_MP; 
 	
 	_unit setDamage 0;
 	_unit setVelocity [0,0,0];
@@ -46,7 +43,6 @@ if (isPlayer _unit) then
 	while {_unit getVariable "unconscious"} do
 {
 		_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
-		onPlayerDisconnected {deleteMarker name player;};
 		
 		if(vehicle player != player) then
 		{
@@ -59,7 +55,7 @@ if (isPlayer _unit) then
 		}
 		else {
 			player setDamage 1;
-			deleteMarker name player;
+			hintSilent "";
 		};
 };
 
@@ -67,12 +63,4 @@ if (isPlayer _unit) then
 	_unit allowDamage true;
 	_unit setDamage 0;
 	_unit setCaptive false;
-	disableUserInput false;
 	_unit playMove "amovppnemstpsraswrfldnon";
-
-while {player == _unit} do
-{
-	if(player != _unit) then {
-		deleteMarker name player;
-	};
-};

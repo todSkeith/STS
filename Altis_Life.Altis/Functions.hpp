@@ -194,7 +194,7 @@ class Life_Client_Core
 		class holsterWeapon {};
 		class abortEnabled {};
 		class actionKeyHandler {};
-		class medicMarkers {};
+		class unconsciousMarker {};
 		class autoSave {};
 		//class updateCash {};
         //class vehicleGarage {};
@@ -307,12 +307,14 @@ class Life_Client_Core
 	{
 		file = "core\medic";
 		class medicLoadGear {};
+		class medicMarkers {};
 		class medicInteractionMenu {};
 		class mediclights {};
 		class medicSiren {};
 		class medicSirenLights {};
 		class revive {};
 		class reviveAction {};
+		class drag {};
 	};
 
 	class Gangs
