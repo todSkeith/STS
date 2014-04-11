@@ -218,12 +218,12 @@ switch (life_veh_shop) do
 
 	case "medic_car_1":
 	{
-		if((playerSide == civilian) && (playerSide == west)) exitWith {_kill =  "You are not a medic."};
+		if((playerSide == civilian) or (playerSide == west)) exitWith {_kill =  "You are not a medic."};
 		ctrlSetText[2301,"Medic Car Shop"];
 	};
 	case "medic_air_1":
 	{
-		if((playerSide == civilian) && (playerSide == west)) exitWith {_kill =  "You are not a medic."};
+		if((playerSide == civilian) or (playerSide == west)) exitWith {_kill =  "You are not a medic."};
 		ctrlSetText[2301,"Medic Air Shop"];
 	};
 

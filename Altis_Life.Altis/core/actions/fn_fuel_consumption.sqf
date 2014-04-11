@@ -56,7 +56,7 @@
 				
         };
         if (isengineon _vehicle) then {
-        _vehicle setFuel ( Fuel _vehicle - (_speed + _rate) / 150 );
+        _vehicle setFuel ( Fuel _vehicle - (_speed + _rate) / 300 );
         };
         sleep 0.5;
         };
