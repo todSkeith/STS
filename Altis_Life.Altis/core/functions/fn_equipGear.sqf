@@ -21,11 +21,15 @@
 		[[player,"images\ems_uni.jpg"], "life_fnc_setUniform", true, true] spawn BIS_fnc_MP;
 	};
 	
-	if ((uniform player) == "U_C_Poloshirt_stripped") then
+	if ((uniform player) == "U_C_Poloshirt_salmon") then
 	{
 		[[player,"images\pol3.jpg"], "life_fnc_setUniform", true, true] spawn BIS_fnc_MP;
 	};
 	if ((uniform player) == "U_C_Scientist") then
 	{
 		[[player,"images\mech.jpg"], "life_fnc_setUniform", true, true] spawn BIS_fnc_MP;
+	};
+	if ((uniform player) == "U_OG_Guerilla3_2") then
+	{
+		[[player,"images\tiee11.jpg"], "life_fnc_setUniform", true, true] spawn BIS_fnc_MP;
 	};
