@@ -14,10 +14,10 @@ switch (true) do
 {
 	case (!(str(player) in ["medic_nil"])):
 	{
-		switch (true) do
-		{
-			case(__GETC__(life_medicLvl) > 0) : {}; // Do nothing
-			case (__GETC__(life_adminlevel) > 0) : {}; //Do nothing
+		if((__GETC__(life_medicLvl)) > 0 || (__GETC__(life_adminlevel)) > 0) then {
+			//do nothing
+		}
+		else {
 			default {endMission "Loser"};
 		};
 	};

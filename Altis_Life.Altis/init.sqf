@@ -32,5 +32,5 @@ if(!StartProgress) then
 	[8,true,false] execFSM "core\fsm\core_time.fsm";
 };
 StartProgress = true;
-
-onPlayerDisconnected {diag_log [_id, _uid, _name]};
+player setVariable ["bountyHunter", false, true];
+player setVariable ["unconscious", false, true];

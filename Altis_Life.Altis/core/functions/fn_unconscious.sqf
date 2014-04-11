@@ -6,13 +6,14 @@
 	Description: when handle damage calls this file, it will do all of the actions needed to be unconscious.
 */
 
-private["_unit", "_killer"];
+private["_unit", "_source"];
 _unit = _this select 0;
 hint format ["_unit is %1", _unit];
 _source = _this select 1;
 _bleedout = time + (60*10);
 
 _unit setVariable["unconscious",true,true];
+[[0,format["%1 was critically wounded by %2", name _unit, name _source]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 	
 if(vehicle player != player) then
 {
@@ -42,8 +43,8 @@ if (isPlayer _unit) then
 
 	while {_unit getVariable "unconscious"} do
 {
-		_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
-		
+		_unit playMoveNow "AinjPpneMstpSnonWrflDnon_rolltoback";
+		_unit enablesimulation false;
 		if(vehicle player != player) then
 		{
 			player action ["Eject",vehicle player];
@@ -54,8 +55,9 @@ if (isPlayer _unit) then
 			sleep 1;
 		}
 		else {
-			player setDamage 1;
 			hintSilent "";
+			_unit enablesimulation false;
+			player setDamage 1;
 		};
 };
 

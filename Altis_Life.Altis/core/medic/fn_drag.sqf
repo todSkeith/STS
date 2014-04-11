@@ -22,6 +22,7 @@ _id = player addAction ["<t color=""#C90000"">" + "Release" + "</t>", {
 	_unit switchMove "AinjPpneMstpSnonWrflDnon"; 
 	player playMoveNow "AmovPercMstpSnonWnonDnon"; 
 	detach _unit; 
+	removeAllActions player;
 }];
 
 while {(player getVariable "isDragging")} do {

@@ -6,6 +6,7 @@
 	Description: This gets sent to the unconscious client to revive them
 */
 
+hintSilent "";
 player setVariable ["unconscious",false,true];
 deleteMarker name player;
 player enableSimulation true;

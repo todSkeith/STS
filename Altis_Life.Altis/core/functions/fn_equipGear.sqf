@@ -16,7 +16,7 @@
 		[[player,"images\GenC.jpg"], "life_fnc_setUniform", true, true] spawn BIS_fnc_MP;
 	};
 
-	if ((uniform player) == "C_man_hunter_1_F") then
+	if ((uniform player) == "U_I_CombatUniform") then
 	{
 		[[player,"images\ems_uni.jpg"], "life_fnc_setUniform", true, true] spawn BIS_fnc_MP;
 	};
