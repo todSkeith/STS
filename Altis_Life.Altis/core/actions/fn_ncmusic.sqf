@@ -1,4 +1,4 @@
-if(isNil nightclub_playing) then {nightclub_playing = true; publicVariable "nightclub_playing";d};
+if(isNil nightclub_player) then {nightclub_playing = true; publicVariable "nightclub_playing";d};
 if(nightclub_playing) exitWith
 {
 	hint "Wait for the Music to turn off !";
