@@ -40,6 +40,9 @@ switch (_code) do
 		if(playerSide == west && !visibleMap) then {
 			[] spawn life_fnc_copMarkers;
 		};
+		if(playerSide == independent && !visibleMap) then {
+			[] spawn life_fnc_medicMarkers;
+		};
 	};
 
 	//ESC
