@@ -90,7 +90,6 @@ class Life_Client_Core
 		class ncstage {};
 		class ncsmoke {};
 		class ncflash {};
-		class toggleActions {};
 		class fuel_consumption {};
 	};
 

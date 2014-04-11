@@ -119,7 +119,7 @@ switch (true) do
 		//if civ check for rebel license otherwise deny use of item
 		if(playerSide != west) then {
 			if (player getVariable "unconscious") exitWith {};
-			if(!(license_civ_rebel)) then {hint "You need a rebel license to use this item"};
+			if(!(license_civ_rebel)) then {hint "You need a rebel license to use this item"}
 			else {
 				if (player getVariable "unconscious") exitWith {};
 				if(([false,_item,1] call life_fnc_handleInv)) then {

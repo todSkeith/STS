@@ -24,7 +24,7 @@ diag_log "::Life Client:: Eventhandlers completed";
 //_handle = [] spawn life_fnc_setupActions;
 //diag_log "::Life Client:: Setting up user actions";
 //waitUntil {scriptDone _handle};
-diag_log "::Life Client:: User actions completed";
+//diag_log "::Life Client:: User actions completed";
 diag_log "::Life Client:: Waiting for server functions to transfer..";
 waitUntil {(!isNil {clientGangLeader})};
 diag_log "::Life Client:: Received server functions.";
@@ -102,6 +102,6 @@ life_fnc_moveIn = compileFinal
 setPlayerRespawnTime life_respawn_timer; //Set our default respawn time.
 [] spawn life_fnc_autoSave;
 [] execVM "core\monitor_esc.sqf";
-[] call life_fnc_setupActions;
+//[] call life_fnc_setupActions;
 life_abort_enabled = false;
 [] spawn life_fnc_abortEnabled; // Monitor for restrain and modify UI menus accordingly
