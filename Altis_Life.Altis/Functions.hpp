@@ -86,6 +86,7 @@ class Life_Client_Core
 		class gasman3 {};
 		class gasman4 {};
 		class nclights {};
+		class ncLightsOn {};
 		class ncmusic {};
 		class ncstage {};
 		class ncsmoke {};

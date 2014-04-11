@@ -85,7 +85,7 @@ class CfgSounds
     class nightclub
   {
     name = "nc_sound";
-	sound[] = {"\sounds\ncsong.ogg", db-10, 1};
+	sound[] = {"\sounds\ncsong.ogg", db-2, 1};
 	titles[] = {};
    };
 	class police_horn
