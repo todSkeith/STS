@@ -100,6 +100,7 @@ if(_sel == "" || _sel == "head_hit" || _sel =="body") then
 					_damage = 0;
 					if(!(_unit getVariable "unconscious")) then 
 					{
+						[[0,format["%1 was critically wounded by %2", name _unit, name _source]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 						if(vehicle _source isKindOf "LandVehicle") then
 						{
 							[[getPlayerUID _source,name _source,"187V"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;

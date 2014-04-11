@@ -120,6 +120,7 @@ switch(true) do
 		hint format["You have successfully robbed $%1", _robberycash];
 		life_cash = life_cash + _robberycash;
 		[[2,"A station was successfully robbed!"],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+		[[getPlayerUID _source,name _source,"211A"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 		gasman2 setVariable["robProgress",false, true];
 		gasman2 setVariable["gaswait",true, true];
 		deleteMarker "Marker201";

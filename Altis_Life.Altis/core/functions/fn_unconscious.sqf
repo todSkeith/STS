@@ -13,7 +13,6 @@ _source = _this select 1;
 _bleedout = time + (60*10);
 
 _unit setVariable["unconscious",true,true];
-[[0,format["%1 was critically wounded by %2", name _unit, name _source]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 	
 if(vehicle player != player) then
 {

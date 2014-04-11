@@ -16,10 +16,6 @@ _respawnB ctrlEnable false;
 _abortB ctrlEnable false;
 
 //_abortB ctrlSetEventHandler ["onMouseButtonClick", "deleteMarker name player"];
-if ((player getVariable "unconscious")) then {
-	_abortB ctrlEnable false;
-	_abortB ctrlSetText "Abort Disabled";
-};
 
 if ((player getVariable "restrained") || (player getVariable "Escorting") || (player getVariable "transporting") || life_is_arrested || life_istazed) then
 {
@@ -30,6 +26,11 @@ if ((player getVariable "restrained") || (player getVariable "Escorting") || (pl
 }
 else
 {	
+	if ((player getVariable "unconscious")) then 
+	{
+		_abortB ctrlEnable false;
+		_abortB ctrlSetText "Abort Disabled";
+	};
 	_timer = 10; //seconds
 	_timer = _timer - 1;
 	_timerDone = false;
