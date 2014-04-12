@@ -52,6 +52,41 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (__GETC__(life_coplevel) == 0): {"You are not a cop!"};
+			
+			case (__GETC__(life_adminlevel) > 0):
+			{
+				["Altis Admin Shop",
+					[
+						["arifle_MXM_F",nil,5000],
+						["arifle_MX_F",nil,5000],
+						["arifle_MXM_Black_F",nil,5000],
+						["arifle_MX_Black_F",nil,5000],
+						["arifle_MX_SW_Black_F",nil,5000],
+						["SMG_01_F",nil,1],
+						["hgun_ACPC2_F",nil,2500],
+						["hgun_Pistol_heavy_01_MRD_F",nil,2500],
+						["optic_Arco",nil,500],
+						["optic_Holosight",nil,1200],
+						["optic_Hamr",nil,1],
+						["acc_pointer_IR",nil,500],
+						["U_B_CTRG_3",nil,5000],
+						["U_B_survival_uniform",nil,5000],
+						["V_PlateCarrier_Kerry",nil,5000],
+						["V_PlateCarrierH_CTRG",nil,5000],
+						["H_HelmetB_black",nil,500],
+						["H_HelmetB_snakeskin",nil,500],
+						["ItemGPS",nil,10],
+						["ToolKit",nil,25],
+						["FirstAidKit",nil,50],
+						["Medikit",nil,100],
+						["30Rnd_65x39_caseless_mag",nil,125],
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
+						["9Rnd_45ACP_Mag",nil,20],
+						["11Rnd_45ACP_Mag",nil,20]
+					]
+				];
+			};
+			
 			case (__GETC__(life_coplevel) == 1):
 			{
 				["Recruit Shop",
@@ -228,34 +263,6 @@ switch(_shop) do
 			};
 
 			case (__GETC__(life_coplevel) == 10):
-			{
-				["Altis Admin Shop",
-					[
-						["arifle_MXM_F",nil,5000],
-						["arifle_MX_F",nil,5000],
-						["arifle_MXM_Black_F",nil,5000],
-						["arifle_MX_Black_F",nil,5000],
-						["arifle_MX_SW_Black_F",nil,5000],
-						["SMG_01_F",nil,1],
-						["hgun_ACPC2_F",nil,2500],
-						["hgun_Pistol_heavy_01_MRD_F",nil,2500],
-						["optic_Arco",nil,500],
-						["optic_Holosight",nil,1200],
-						["optic_Hamr",nil,1],
-						["acc_pointer_IR",nil,500],
-						["ItemGPS",nil,10],
-						["ToolKit",nil,25],
-						["FirstAidKit",nil,50],
-						["Medikit",nil,100],
-						["30Rnd_65x39_caseless_mag",nil,125],
-						["30Rnd_45ACP_Mag_SMG_01",nil,150],
-						["9Rnd_45ACP_Mag",nil,20],
-						["11Rnd_45ACP_Mag",nil,20]
-					]
-				];
-			};
-
-			case (__GETC__(life_adminlevel) > 1):
 			{
 				["Altis Admin Shop",
 					[
