@@ -4569,8 +4569,8 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={8447.2832,95.091232,25183.832};
-					azimut=138.453;
+					position[]={8447.3525,95.04612,25183.957};
+					azimut=504.79199;
 					special="NONE";
 					id=279;
 					side="GUER";
@@ -4578,7 +4578,7 @@ class Mission
 					player="PLAY CDG";
 					skill=0.60000002;
 					text="medic_3";
-					init="removeBackpack this; removeAllWeapons this;";
+					init="removeBackpack this; removeAllWeapons this;  this setPos [getPos this select 0, getPos this select 1, 18];";
 					description="Whitelisted Medic";
 				};
 				class Item3
@@ -5202,7 +5202,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=1292;
+		items=1293;
 		class Item0
 		{
 			position[]={8065.1616,35.674362,24985.314};
@@ -18064,6 +18064,19 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_CncWall4_F";
 			skill=0.60000002;
+		};
+		class Item1292
+		{
+			position[]={3731.7605,18.872023,12976.517};
+			azimut=266.077;
+			special="NONE";
+			id=1602;
+			side="EMPTY";
+			vehicle="UserTexture1m_F";
+			skill=0.60000002;
+			text="warn";
+			init="this setPos [getPos this select 0, getPos this select 1, 20];";
+			description="Whitelisted Medic";
 		};
 	};
 	class Markers

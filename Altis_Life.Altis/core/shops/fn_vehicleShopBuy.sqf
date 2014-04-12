@@ -238,6 +238,11 @@ if(count(nearestObjects[_sp,["Car","Ship","Air"],4]) > 0) exitWith {hint "There 
 
 _sv = false;
 
+if(count(nearestObjects[warn ,["Car","Ship","Air"],4]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
+
+_sv = false;
+
+
 if(_veh == "serv_truck") then
 {
 	_name = "Service Truck";
@@ -269,6 +274,7 @@ if(_sv) then
 if(_ems) then
 {
 	[_vehicle,"EMS_Heli",true] call life_fnc_vehicleAnimate;
+	_vehicle lock 0;
 };
 
 
