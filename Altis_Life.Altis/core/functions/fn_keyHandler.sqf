@@ -51,16 +51,6 @@ switch (_code) do
 		[] spawn life_fnc_abortEnabled;
 	};
 
-	//Ziptie (shift & Q)
-	case 16:
-	{
-		if(_shift) then {_handled = true;};
-		if(_shift && playerSide == civilian && !isNull cursorTarget && animationState cursorTarget == "Incapacitated" && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "zipTie") && speed cursorTarget < 1 && life_inv_zip > 0) then
-		{
-			[] spawn life_fnc_zipTie;
-		};
-	};
-
 	//Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10)
 	case _interactionKey:
 	{
@@ -83,8 +73,8 @@ switch (_code) do
 		{
 			[] call life_fnc_restrainAction;
 		};
-	};
-	if (player call life_fnc_isMedic) then {
+
+		if (player call life_fnc_isMedic) then {
 		if ((time - life_revive_timer) > 2) then {
 			life_revive_timer = time;
 			_players = (getPos player) nearEntities [["Man"], 3];
@@ -93,8 +83,13 @@ switch (_code) do
 					[_x] spawn life_fnc_revivePlayer;
 				};
 			} forEach _players;
-		} else {
-			hint "Please don't spam Shift + R.";
+		};
+		if(_shift && playerSide == civilian && !isNull cursorTarget && animationState cursorTarget == "Incapacitated" && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "zipTie") && speed cursorTarget < 1 && life_inv_zip > 0) then
+			{
+				[] spawn life_fnc_zipTie;
+			} else {
+				hint "Please don't spam Shift + R.";
+			};
 		};
 	};
 	//Knock out, this is experimental and yeah...

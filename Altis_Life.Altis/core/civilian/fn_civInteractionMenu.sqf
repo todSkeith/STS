@@ -30,9 +30,9 @@ _display = findDisplay 37400;
 _Btn1 = _display displayCtrl Btn1;
 _Btn2 = _display displayCtrl Btn2;
 _Btn3 = _display displayCtrl Btn3;
-/*
 _Btn4 = _display displayCtrl Btn4;
 _Btn5 = _display displayCtrl Btn5;
+/*
 _Btn6 = _display displayCtrl Btn6;
 _Btn7 = _display displayCtrl Btn7;
 _Btn8 = _display displayCtrl Btn8;
@@ -62,6 +62,15 @@ if(license_civ_bh && side cursorTarget == civilian) then {
 	_Btn4 ctrlSetText localize "STR_cInAct_Arrest";
 	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
 };
+
+if(!isNull cursorTarget && player distance cursorTarget < 3.5 && isPlayer cursorTarget && animationState cursorTarget == "Incapacitated" && !(cursorTarget getVariable["robbed",FALSE])) then
+	{
+	_Btn5 ctrlSetText localize "STR_cInAct_RobPerson"
+	_Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_robAction;";
+} else {
+	_Btn5 ctrlEnable false;
+};
+
 
 /*
 //Set Ticket Button
