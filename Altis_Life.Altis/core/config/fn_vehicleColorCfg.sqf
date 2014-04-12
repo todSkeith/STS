@@ -65,6 +65,7 @@ switch (_vehicle) do
 			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base06_co.paa","civ"],
 			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base07_co.paa","civ"],
 			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base08_co.paa","civ"],
+			["\a3\soft_f_gamma\Hatchback_01\data\hatchback_01_ext_base05_co.paa","civ"],
 			["images\hatch11.jpg","cop"],
 			["images\EMS_hatchback.jpg","Medic"]
 		];
