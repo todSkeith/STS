@@ -66,7 +66,7 @@ if(!_isVehicle) then {
 	_curTarget setVariable["transporting",false,true];
 } else {
 	_dice = random(100);
-	if(_dice < 30) then {
+	if(_dice < 50) then {
 		titleText["You now have keys to this vehicle.","PLAIN"];
 		life_vehicles set[count life_vehicles,_curTarget];
 		[[getPlayerUID player,name player,"487"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
