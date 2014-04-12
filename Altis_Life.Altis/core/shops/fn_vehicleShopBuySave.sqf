@@ -237,7 +237,8 @@ if(count(nearestObjects[_sp,["Car","Ship","Air"],4]) > 0) exitWith {hint "There 
 
 _sv = false;
 
-if(count(nearestObjects[warn ,["Car","Ship","Air"],4]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
+//EMS Heli
+if(count(nearestObjects[warn ,["Car","Ship","Air"],10]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
 
 _sv = false;
 
@@ -291,7 +292,7 @@ if(playerSide == west) then
 
 [[(getPlayerUID player),playerSide,_vehicle,_color],"TON_fnc_vehicleCreate",false,false] spawn life_fnc_MP;
 
-_vehicle lock 0;
+_vehicle lock 2;
 if((life_veh_shop == "civ_air_1" OR life_veh_shop == "civ_air_2") && (typeOf _vehicle == "B_Heli_Light_01_F")) then
 {
 	[_vehicle,"civ_littlebird",true] call life_fnc_vehicleAnimate;

@@ -79,7 +79,7 @@ diag_log "Executing client.fsm";
 waitUntil {!(isNull (findDisplay 46))};
 diag_log "Display 46 Found";
 (findDisplay 46) displayAddEventHandler ["KeyDown", "_this call life_fnc_keyHandler"];
-(findDisplay 46) displayAddEventHandler ["MouseZchanged", "_this spawn life_fnc_enableActions"];
+(findDisplay 46) displayAddEventHandler ["MouseZChanged", "_this spawn life_fnc_enableActions"];
 player addRating 99999999;
 //[] execVM "core\client\init_survival.sqf";
 diag_log "------------------------------------------------------------------------------------------------------";

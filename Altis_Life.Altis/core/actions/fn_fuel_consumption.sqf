@@ -11,9 +11,9 @@
 		_rate = 0;
         if(isNull _vehicle) exitwith {};
 		
-		if (speed _vehicle < 0) then {
-        _vehicle setFuel ( Fuel _vehicle - (_rate) * 300 );
-        };
+		// if (speed _vehicle < 0) then {
+        // _vehicle setFuel ( Fuel _vehicle - (_rate) * 300 );
+        // };
 		
         while {(alive _vehicle) and (fuel _vehicle > 0)} do {
  
@@ -62,7 +62,7 @@
 
 		if (isengineon _vehicle) then {
 		
-        _vehicle setFuel ( Fuel _vehicle - (speed _vehicle + _rate) / 55000000 );
+        _vehicle setFuel ( Fuel _vehicle - (abs(speed _vehicle) + _rate) / 55000000 );
         };
         sleep 2;
         };

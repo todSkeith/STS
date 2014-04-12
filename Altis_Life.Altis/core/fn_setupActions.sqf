@@ -9,7 +9,7 @@ switch (playerSide) do
 	case civilian:
 	{
 		//Drop fishing net
-		life_actions = [player addAction["Drop Fishing Net",life_fnc_dropFishingNet,"",0,false,false,"",'
+		life_actions = life_actions + [player addAction["Drop Fishing Net",life_fnc_dropFishingNet,"",0,false,false,"",'
 		(surfaceisWater (getPos vehicle player)) && (vehicle player isKindOf "Ship") && life_carryWeight < life_maxWeight && speed (vehicle player) < 2 && speed (vehicle player) > -1 && !life_net_dropped ']];
 		//Rob person
 		life_actions = life_actions + [player addAction["Rob Person",life_fnc_robAction,"",0,false,false,"",'
@@ -26,7 +26,7 @@ switch (playerSide) do
 		//Drop Chemlight
 		life_actions = life_actions + [player addAction["Drop Chemlight",{if(isNil "life_chemlight") exitWith {};if(isNull life_chemlight) exitWith {};detach life_chemlight; life_chemlight = nil;},"",-1,false,false,"",'!isNil "life_chemlight" && !isNull life_chemlight && vehicle player == player ']];
 		//Restrain Action
-		life_actions = [player addAction["Ziptie Hostage",life_fnc_zipTie,cursorTarget,9999999,false,false,"",'
+		life_actions = life_actions + [player addAction["Ziptie Hostage",life_fnc_zipTie,cursorTarget,9999999,false,false,"",'
 		!isNull cursorTarget && animationState cursorTarget == "Incapacitated" && cursorTarget distance player < 5 && !(cursorTarget getVariable ["zipTie",false]) ']];
 	};
 

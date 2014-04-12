@@ -27,8 +27,7 @@ if(count _fish == 0) exitWith {titleText[localize "STR_NOTF_NetDropFail","PLAIN"
 		};
 		
 		sleep 3;
-		
-		if(([true,_type,1] call life_fnc_handleInv)) then
+		if(([true,toLower(_type),1] call life_fnc_handleInv)) then
 		{
 			deleteVehicle _x;
 			titleText[format["You caught a %1",_type],"PLAIN"];
