@@ -78,7 +78,7 @@ switch (_mode) do
 			case "chainsaw" : {"life_inv_chainsaw"};
 			case "cellphone" : {"life_inv_cellphone"};
 			case "RoadConeStrip": {"life_inv_RoadConeStrip"};
-			case "RoadCone": {"life_inv_RoadCone"};
+			//case "RoadCone": {"life_inv_RoadCone"};
 			case "RoadBlockWood": {"life_inv_RoadBlockWood"};
 			case "storage1": {"life_inv_storage1"};
             case "storage2": {"life_inv_storage2"};
@@ -150,7 +150,7 @@ switch (_mode) do
 			case "life_inv_chainsaw" : {"chainsaw"};
 			case "life_inv_cellphone" : {"cellphone"};
 			case "life_inv_RoadConeStrip": {"RoadConeStrip"};
-			case "life_inv_RoadCone": {"RoadCone"};
+			//case "life_inv_RoadCone": {"RoadCone"};
 			case "life_inv_RoadBlockWood": {"RoadBlockWood"};
 			case "life_inv_storage1": {"storage1"};
             case "life_inv_storage2": {"storage2"};

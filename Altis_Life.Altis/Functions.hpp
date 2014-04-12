@@ -77,6 +77,7 @@ class Life_Client_Core
 		class pumpRepair {};
 		class packupSpikes {};
 		class packupRoadcones {};
+		class packupRoadblock {};
 		class robFederal {};
 		class storeVehicle {};
 		class robAction {};
@@ -369,7 +370,7 @@ class Life_Client_Core
 		class crabpot {};
 		class chainsaw {};
 		class RoadBlockWood {};
-		class RoadCone {};
+		//class RoadCone {};
 		class RoadConeStrip {};
 	};
 

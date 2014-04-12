@@ -3,7 +3,7 @@
 	Author: Skeith
 	
 	Description:
-	Packs up the nearest Roadcone or Roadcone strip.
+	Packs up the nearest Roadcone strip.
 */
 private["_cones1","_cones2","_cones3","_cones4","_cones5"];
 _cones1 = nearestObjects[getPos player,["RoadCone_F"],8] select 0;

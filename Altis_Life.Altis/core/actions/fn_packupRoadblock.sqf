@@ -1,48 +1,21 @@
 /*
 	File: fn_packupRoadcones.sqf
-	Author: sc
+	Author: skeith
 	
 	Description:
-	Packs up the nearest Roadcone or Roadcone strip.
+	Packs up the nearest Roadblock.
 */
 
-private["_roadblock","_roadblockobjects"];
-	_roadblock = nearestObjects[getPos player,["RoadCone_L_F"],3.5] select 0;
-if(isNil "_roadblock") then {
-	_roadblock = nearestObjects[getPos player,["RoadCone_F"],3.5] select 0;
-};
-if(isNil "_roadblock") then {
-	_roadblock = nearestObjects[getPos player,["Land_MetalBarrel_empty_F"],3.5] select 0;
-};
-if(isNil "_roadblock") exitWith {};
-if(!isnil {_roadblock getVariable "roadblock"}) then
-{	
-	switch(true) do
-	{
-	case ((typeOf _roadblock) == "RoadCone_L_F"): {
-	_roadblockobjects = _roadblock getVariable "roadblock";
-	if(([true,"RoadBlockConc",1] call life_fnc_handleInv)) then
-	{
-	titleText["You have packed up a fortified road block.","PLAIN"];
-	{deleteVehicle _x} foreach _roadblockobjects;
-	};
-};
-	case ((typeOf _roadblock) == "RoadCone_F") : {
-	_roadblockobjects = _roadblock getVariable "roadblock";
-	if(([true,"RoadBlockWood",1] call life_fnc_handleInv)) then
-	{
-	titleText["You have packed up a wooden road block.","PLAIN"];
-	{deleteVehicle _x} foreach _roadblockobjects;
-	};
-};
-	case ((typeOf _roadblock) == "Land_MetalBarrel_empty_F") : {
-	_roadblockobjects = _roadblock getVariable "roadblock";
-		if(([true,"RoadBlockRebel",1] call life_fnc_handleInv)) then
-	{
-	titleText["You have packed up a rebel road block.","PLAIN"];
-	{deleteVehicle _x} foreach _roadblockobjects;
-	};
-};
-	default {nil};
-	};
+private["_barrier1","_barrier2"];
+_barrier1 = nearestObjects[getPos player,["RoadBarrier_F"],8] select 0;
+_barrier2 = nearestObjects[getPos player,["RoadBarrier_F"],8] select 1;
+if(isNil "_barrier1") then {};
+
+if([true,"RoadBlockWood",1] call life_fnc_handleInv) then
+{
+	titleText["You have removed the Road Block.","PLAIN"];
+	player removeAction life_action_barrierPickup;
+	life_action_barrierPickup = nil;
+	deleteVehicle _barrier1;	
+	deleteVehicle _barrier2;
 };
