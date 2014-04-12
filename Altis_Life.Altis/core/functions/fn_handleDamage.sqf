@@ -94,13 +94,13 @@ if(_sel == "" || _sel == "head_hit" || _sel =="body") then
 			{
 				if (_damage >= 0.89) then
 				{
-					_unit setVariable["unconscious",true,true];
 					_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
 					_unit setDamage 0;
 					_unit allowDamage false;
 					_damage = 0;
 					if(!(_unit getVariable "unconscious")) then 
 					{
+						_unit setVariable["unconscious",true,true];
 						[[0,format["%1 was critically wounded by %2", name _unit, name _source]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 						[_unit, _source] spawn life_fnc_unconscious;
 						if(vehicle _source isKindOf "LandVehicle") then
