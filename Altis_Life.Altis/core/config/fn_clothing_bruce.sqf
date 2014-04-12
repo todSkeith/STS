@@ -101,8 +101,17 @@ switch (_filter) do
 	{
 		[
 			["B_FieldPack_ocamo",nil,1250],
+			["B_Kitbag_Base",nil,3000],
+			["B_Kitbag_rgr",nil,3000],
+			["B_Kitbag_sgg",nil,3000],
+			["B_Kitbag_cbr",nil,3000],
 			["B_Kitbag_mcamo",nil,3000],
 			["B_Bergen_sgg",nil,3000],
+			["B_Carryall_Base",nil,3000],
+			["B_Carryall_ocamo",nil,3000],
+			["B_Carryall_oucamo",nil,3000],
+			["B_Carryall_mcamo",nil,3000],
+			["B_Carryall_cbr",nil,3000],
 			["B_Carryall_khk",nil,4000]
 
 		];
