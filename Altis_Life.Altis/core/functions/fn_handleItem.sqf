@@ -508,6 +508,8 @@ if(_bool) then
 					if(_ispack) then
 					{
 						_items = (backpackItems player);
+						systemChat format ["handleItem _items: %1", _items];
+						hint format ["handleItem _items: %1", _items];
 						_index = _items find _item;
 						if(_index != -1) then
 						{
@@ -515,6 +517,8 @@ if(_bool) then
 							_items = _items - [-1];
 						};
 						clearWeaponCargo (unitBackpack player);
+						clearItemCargo (unitBackpack player);
+						clearMagazineCargo (unitBackpack player);
 						if(count _items > 0) then
 						{
 							{[_x,true,true,false,false] spawn life_fnc_handleItem;} foreach _items;
