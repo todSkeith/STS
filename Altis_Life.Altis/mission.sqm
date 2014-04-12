@@ -2215,13 +2215,15 @@ class Mission
 				{
 					position[]={3745.1064,18.870001,12970.678};
 					azimut=89.440804;
-					offsetY=18.872999;
+					offsetY=18.7;
 					special="NONE";
 					id=169;
 					side="GUER";
 					vehicle="I_soldier_F";
 					skill=0.60000002;
+
 					init="removeAllWeapons this; removeVest this; removeGoggles this; this unassignItem ""NVGoggles_INDEP""; this removeItem ""NVGoggles_INDEP"";this enableSimulation false; removeHeadgear this; this allowDamage false; this addAction[""Helicopter Shop"",life_fnc_vehicleShop,""medic_air_1""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Air"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Air"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""medic_air_1"";  }];  this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];  this addUniform ""U_I_CombatUniform""; this setObjectTexture[0, ""images\ems_uni.jpg""];";
+
 				};
 				class Item139
 				{
@@ -20183,16 +20185,17 @@ class Mission
 		};
 		class Item263
 		{
-			position[]={3733.272,18.496391,13004.833};
+			position[]={3734.3892,18.573807,13003.27};
 			name="medic_spawn_1";
 			type="Empty";
-			angle=-87.958801;
+			angle=260.04355;
 		};
 		class Item264
 		{
-			position[]={3740.531,18.844797,12989.185};
+			position[]={3744.4126,18.869888,12975.084};
 			name="medic_car_1";
 			type="Empty";
+			angle=1.8503776;
 		};
 		class Item265
 		{

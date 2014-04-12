@@ -204,6 +204,8 @@ switch (_shop) do
 	{
 		_return set[count _return,
 		["C_SUV_01_F",20000]];
+		_return set[count _return,
+		["C_Hatchback_01_F",12000]];
 
 	};
 
