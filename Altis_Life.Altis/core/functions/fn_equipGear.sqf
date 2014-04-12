@@ -16,6 +16,7 @@
 		[[player,"images\GenC.jpg"], "life_fnc_setUniform", true, true] spawn BIS_fnc_MP;
 	};
 
+	if (playerSide == independent) then {
 	if ((uniform player) == "U_I_CombatUniform") then
 	{
 		[[player,"images\ems_uni.jpg"], "life_fnc_setUniform", true, true] spawn BIS_fnc_MP;
