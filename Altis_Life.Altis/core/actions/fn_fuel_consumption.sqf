@@ -8,6 +8,7 @@
  
         private["_vehicle","_rate"];
         _vehicle = vehicle player;
+		_rate = 0;
         if(isNull _vehicle) exitwith {};
 		
 		if (speed _vehicle < 0) then {
@@ -56,7 +57,6 @@
                 case "I_Boat_Armed_01_minigun_F": {_rate = 0.00000010};
                 case "B_G_Boat_Transport_01_F": {_rate = 0.000000020};
                 case "B_Boat_Transport_01_F": {_rate = 0.000000020};
-				default {_rate = 0};
 				
         };
 
