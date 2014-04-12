@@ -304,4 +304,11 @@ switch (_code) do
 	};
 };
 
+//Thanks to Asylum
+if (_code in (actionKeys "TacticalView")) then
+{
+	hint "Tactical View is disabled.";
+	_handled = true;
+};
+
 _handled;
