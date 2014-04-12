@@ -37,12 +37,12 @@ if (isPlayer _unit) then
 	_unit setVelocity [0,0,0];
 	_unit allowDamage false;
 	_unit setCaptive true;
-	_unit playMoveNow "amovppnemstpsraswrfldnon";
+	_unit playMoveNow "AinjPpneMstpSnonWrflDnon_rolltoback";
 
 
 	while {_unit getVariable "unconscious"} do
 {
-		_unit playMoveNow "AinjPpneMstpSnonWrflDnon_rolltoback";
+		_unit switchMove "AinjPpneMstpSnonWrflDnon";
 		_unit enablesimulation false;
 		if(vehicle player != player) then
 		{
@@ -55,11 +55,11 @@ if (isPlayer _unit) then
 		}
 		else {
 			hintSilent "";
-			_unit enablesimulation false;
 			player setDamage 1;
 		};
 };
 
+	hintSilent "";
 	_unit enableSimulation true;
 	_unit allowDamage true;
 	_unit setDamage 0;

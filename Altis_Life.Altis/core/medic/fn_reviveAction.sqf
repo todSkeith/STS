@@ -7,7 +7,7 @@
 */
 
 hintSilent "";
-sleep 3;
+sleep 4;
 player setVariable ["unconscious",false,true];
 deleteMarker name player;
 player enableSimulation true;
