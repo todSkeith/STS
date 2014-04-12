@@ -106,7 +106,7 @@ switch (_filter) do
 		};
 		if(__GETC__(life_coplevel) > 4) then
 		{
-			_ret set[count _ret,["B_Carryall_Base",nil,1200]];
+			_ret set[count _ret,["B_Carryall_oli",nil,1200]];
 			_ret set[count _ret,["B_Carryall_ocamo",nil,1200]];
 			_ret set[count _ret,["B_Carryall_oucamo",nil,1200]];
 			_ret set[count _ret,["B_Carryall_mcamo",nil,1200]];
