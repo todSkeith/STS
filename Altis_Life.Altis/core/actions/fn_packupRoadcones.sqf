@@ -1,54 +1,26 @@
 /*
 	File: fn_packupRoadcones.sqf
-	Author: sc
+	Author: Skeith
 	
 	Description:
 	Packs up the nearest Roadcone or Roadcone strip.
 */
-private["_roadcones","_roadconesobjects"];
-	_roadcones = nearestObjects[getPos player,["RoadCone_L_F"],2] select 0;
-if(isNil "_roadcones") then {
-	_roadcones = nearestObjects[getPos player,["RoadCone_F"],2] select 0;
-};
-if(isNil "_roadcones") exitWith {};
-if(!isnil {_roadcones getVariable "roadcone"}) then
-{	
-	switch(true) do
-	{
-	case ((typeOf _roadcones) == "RoadCone_L_F"): {
-	_roadconesobjects = _roadcones getVariable "roadcone";
-	if (count _roadconesobjects > 1) then {
-	if(([true,"RoadConeStripB",1] call life_fnc_handleInv)) then
-	{
-	titleText["You have packed up a strip of blinking road cones.","PLAIN"];
-	{deleteVehicle _x} foreach _roadconesobjects;
-	};
-	};
-	if (count _roadconesobjects <= 1) then {
-	if(([true,"RoadConeB",1] call life_fnc_handleInv)) then
-	{
-	titleText["You have packed up a blinking road cone.","PLAIN"];
-	{deleteVehicle _x} foreach _roadconesobjects;
-	};
-	};
-};
-	case ((typeOf _roadcones) == "RoadCone_F") : {
-	_roadconesobjects = _roadcones getVariable "roadcone";
-	if (count _roadconesobjects > 1) then {
-	if(([true,"RoadConeStrip",1] call life_fnc_handleInv)) then
-	{
-	titleText["You have packed up a strip of road cones.","PLAIN"];
-	{deleteVehicle _x} foreach _roadconesobjects;
-	};
-	};
-	if (count _roadconesobjects <= 1) then {
-	if(([true,"RoadCone",1] call life_fnc_handleInv)) then
-	{
-	titleText["You have packed up a road cone.","PLAIN"];
-	{deleteVehicle _x} foreach _roadconesobjects;
-	};
-	};
-};
-	default {nil};
-	};
+private["_cones1","_cones2","_cones3","_cones4","_cones5"];
+_cones1 = nearestObjects[getPos player,["RoadCone_F"],8] select 0;
+_cones2 = nearestObjects[getPos player,["RoadCone_F"],8] select 1;
+_cones3 = nearestObjects[getPos player,["RoadCone_F"],8] select 2;
+_cones4 = nearestObjects[getPos player,["RoadCone_F"],8] select 3;
+_cones5 = nearestObjects[getPos player,["RoadCone_F"],8] select 4;
+if(isNil "_cones1") then {};
+
+if([true,"RoadConeStrip",1] call life_fnc_handleInv) then
+{
+	titleText["You have removed the cone strip.","PLAIN"];
+	player removeAction life_action_coneStripPickup;
+	life_action_coneStripPickup = nil;
+	deleteVehicle _cones1;	
+	deleteVehicle _cones2;
+	deleteVehicle _cones3;
+	deleteVehicle _cones4;
+	deleteVehicle _cones5;
 };

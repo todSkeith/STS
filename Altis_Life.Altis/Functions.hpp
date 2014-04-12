@@ -76,6 +76,7 @@ class Life_Client_Core
 		class gatherCocaine {};
 		class pumpRepair {};
 		class packupSpikes {};
+		class packupRoadcones {};
 		class robFederal {};
 		class storeVehicle {};
 		class robAction {};
