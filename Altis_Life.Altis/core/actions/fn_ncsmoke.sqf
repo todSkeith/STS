@@ -1,19 +1,15 @@
-if(ncsmoke) exitWith
+if((smokem getVariable["nightclub_smoke",false])) exitWith
 {
-	hint "Smoke is Off!";
-	sleep 3;
-	hint "";
-	ncsmoke = false;
+	hint "Wait for the smoke to turn off.";
+	smokem setVariable["nightclub_smoke",false,true];
 };
+smokem setVariable["nightclub_smoke",true,true];
+hint "Smoke is On!";
 
-
-ncsmoke = true;
-sleep 1;
-if(ncsmoke) then
+while {(smokem getVariable["nightclub_smoke",false])} do
 {
-	_Smoke = "SmokeShell" createVehicle getMarkerPos "smoke";
-		hint "Smoke is On!";
-		sleep 3;
-		hint "";
-
+	_smoke = "SmokeShell" createVehicle getMarkerPos "smoke";
+	hideObject _smoke;
+	sleep 60;
+	
 };

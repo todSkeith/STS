@@ -17,7 +17,7 @@ if(isPlayer _source && _source isKindOf "Man") then {_curWep = currentWeapon _so
 
 if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then
 {
-	if(side _source == west || (_source getVariable "bountyHunter")) then 
+	if(side _source == west) then 
 	{
 		_unit allowDamage false;
 		_damage = 0;
@@ -83,7 +83,6 @@ if(playerSide == west && side _source == west) then
 {
 	_damage = false;
 };
-
 if(_sel == "" || _sel == "head_hit" || _sel =="body") then
 		{
 			if(side _source == west && _projectile in ["B_9x21_Ball","B_556x45_dual"]) then 
@@ -101,7 +100,14 @@ if(_sel == "" || _sel == "head_hit" || _sel =="body") then
 					if(!(_unit getVariable "unconscious")) then 
 					{
 						_unit setVariable["unconscious",true,true];
-						[[0,format["%1 was critically wounded by %2", name _unit, name _source]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+						if(isNull _source && alive _unit) then
+						{
+							[[0,format["%1 was critically wounded by an environmental collision.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+						}
+						else
+						{
+							[[0,format["%1 was critically wounded by %2", name _unit, name _source]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+						};
 						[_unit, _source] spawn life_fnc_unconscious;
 						if(vehicle _source isKindOf "LandVehicle") then
 						{

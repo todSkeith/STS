@@ -128,7 +128,7 @@ class Mission
 	class Intel
 	{
 		briefingName="Altis Life RPG";
-		overviewText="Altis Life RPG 3.1.1 by Seal Team Sloth";
+		overviewText="Altis Life RPG 4.0.0 by Seal Team Sloth";
 		startWeather=0.099999994;
 		startWind=0.29999998;
 		startWindDir=30;
@@ -17172,7 +17172,7 @@ class Mission
 			side="EMPTY";
 			vehicle="Land_Laptop_unfolded_F";
 			skill=0.60000002;
-			init="this allowDamage false;    this enableSimulation false;    this addAction[""Dance Lights"",life_fnc_nclights,""nc_light""];  this addAction[""Music Switch"",life_fnc_ncmusic,""ncmusic""];  this addAction[""Smoke Switch"",life_fnc_ncsmoke,""ncsmoke""]; this addAction[""Flashing Light"",life_fnc_ncflash,""ncflash""];";
+			init="this allowDamage false;    this enableSimulation false;    this addAction[""Dance Lights"",life_fnc_nclights,""nc_light""];  this addAction[""Music Switch"",life_fnc_ncmusic,""ncmusic""];  this addAction[""Smoke Switch"",life_fnc_ncsmoke,""ncsmoke""];";
 		};
 		class Item1210
 		{
@@ -23835,7 +23835,7 @@ class Mission
 		{
 			position[]={23362.709,12.917754,19810.338};
 			name="station1_1_1_1";
-			text="Jeff Bridges - The Gas station";
+			text="Jeff Bridges - The Gas Station";
 			type="loc_Fuelstation";
 			colorName="ColorCIV";
 		};
@@ -23859,7 +23859,7 @@ class Mission
 		{
 			position[]={7807.9287,13.483763,11004.08};
 			name="cornProcess ";
-			text="S & Rs Distillery ";
+			text="Sly & Ron's Distillery ";
 			type="loc_WaterTower";
 			colorName="Color3_FD_F";
 		};
@@ -24194,7 +24194,7 @@ class Mission
 		};
 		class Item273
 		{
-			position[]={3637.7388,6.8928671,13375.373};
+			position[]={3642.0444,6.9445362,13374.286};
 			name="smoke";
 			type="Empty";
 		};

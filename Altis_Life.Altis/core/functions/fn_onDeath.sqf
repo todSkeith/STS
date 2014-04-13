@@ -19,7 +19,26 @@ if(playerSide == civilian) then
 	removeAllContainers _unit;
 };
 */
-
+if(isNull _source) then
+{
+	[[0,format["%1 was killed by an environmental collision.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+}
+else
+{
+	if(_source == _unit) then
+	{
+		switch (true) do
+		{
+			case (life_thirst == 0) : {[[0,format["%1 died of dehydration.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;};
+			case (life_hunger == 0) : {[[0,format["%1 starved to death.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP; };
+			default {[[0,format["%1 ended himself.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;};
+		};
+	}
+	else
+	{
+		[[0,format["%1 was killed by %2", name _unit, name _source]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	};
+};
 hideBody _unit;
 //Make my killer wanted!
 if(side _source != west && alive _source) then
@@ -74,7 +93,7 @@ _handle = [_unit] spawn life_fnc_dropItems;
 waitUntil {scriptDone _handle};
 
 _lostCash = life_atmcash * 0.15;
-hintSilent format ["You have died and lost %1 from your bank account for your cloning.", _lostCash];
+hintSilent format ["You have died and lost $%1 from your bank account for your cloning.", [_lostCash] call life_fnc_numberText];
 life_carryWeight = 0;
 life_thirst = 100;
 life_hunger = 100;
