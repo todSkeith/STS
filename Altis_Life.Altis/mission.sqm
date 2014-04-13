@@ -2057,7 +2057,7 @@ class Mission
 					vehicle="B_Competitor_F";
 					skill=0.60000002;
 					text="bh_store_1";
-					init="this enableSimulation false; this allowDamage false; this addAction[""Bounty Hunter Store"",life_fnc_weaponShopMenu,""bh"",0,false,false,"""",' license_civ_bh && playerSide == civilian']; this addAction[format[""%1 ($%2)"",[""license_civ_bh""] call life_fnc_varToStr,[([""bh""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""bh"",0,false,false,"""",' !license_civ_bh && playerSide == civilian '];";
+					init="this enableSimulation false;";
 				};
 				class Item125
 				{
@@ -2162,7 +2162,7 @@ class Mission
 					vehicle="B_Competitor_F";
 					skill=0.60000002;
 					text="bh_store_1_1";
-					init="this enableSimulation false; this allowDamage false; this addAction[""Bounty Hunter Store"",life_fnc_weaponShopMenu,""bh"",0,false,false,"""",' license_civ_bh && playerSide == civilian']; this addAction[format[""%1 ($%2)"",[""license_civ_bh""] call life_fnc_varToStr,[([""bh""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""bh"",0,false,false,"""",' !license_civ_bh && playerSide == civilian '];";
+					init="this enableSimulation false;";
 				};
 				class Item134
 				{
@@ -2175,7 +2175,7 @@ class Mission
 					vehicle="B_Competitor_F";
 					skill=0.60000002;
 					text="bh_store_1_2";
-					init="this enableSimulation false; this allowDamage false; this addAction[""Bounty Hunter Store"",life_fnc_weaponShopMenu,""bh"",0,false,false,"""",' license_civ_bh && playerSide == civilian']; this addAction[format[""%1 ($%2)"",[""license_civ_bh""] call life_fnc_varToStr,[([""bh""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""bh"",0,false,false,"""",' !license_civ_bh && playerSide == civilian '];";
+					init="this enableSimulation false;";
 				};
 				class Item135
 				{
@@ -19905,7 +19905,7 @@ class Mission
 		{
 			position[]={7807.9287,13.483763,11004.08};
 			name="cornProcess ";
-			text="S & Rs Distillery ";
+			text="Ron and Sly's Distillery ";
 			type="loc_WaterTower";
 			colorName="Color3_FD_F";
 		};
@@ -20180,6 +20180,7 @@ class Mission
 			type="c_unknown";
 			colorName="ColorYellow";
 		};
+		*/
 		class Item266
 		{
 			position[]={17852.08,0.0042373971,20114.984};
