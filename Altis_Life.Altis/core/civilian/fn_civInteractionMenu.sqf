@@ -63,7 +63,7 @@ if(license_civ_bh && side cursorTarget == civilian) then {
 	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
 };
 
-if(!isNull cursorTarget && player distance cursorTarget < 3.5 && isPlayer cursorTarget && animationState cursorTarget == "Incapacitated" && !(cursorTarget getVariable["robbed",FALSE])) then
+if(!isNull cursorTarget && player distance cursorTarget < 3.5 && isPlayer cursorTarget &&) then
 	{
 	_Btn5 ctrlSetText localize "STR_cInAct_RobPerson";
 	_Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_robAction;";
