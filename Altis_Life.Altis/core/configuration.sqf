@@ -295,7 +295,10 @@ sell_array =
 	["fcrabp",3000],
 	["mcrabs",700],
 	["steel",3000],
-	["lumber",4000]
+	["lumber",4000],
+	["RoadConeStrip",500],
+	["RoadCone",75],
+	["RoadBlockWood",750]
 ];
 
 __CONST__(sell_array,sell_array);
