@@ -2020,7 +2020,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1_3_F";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Forge Steel"",life_fnc_processAction,""steel"",0,false,false,"""",' life_inv_coalore > 0 && life_inv_ironore > 0 && !life_is_processing']; this addAction[""Steel Processing"",life_fnc_buyLicense,""steel"",0,false,false,"""",' !license_civ_steel && playerSide == civilian '];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Forge Steel"",life_fnc_processAction,""steel"",0,false,false,"""",' life_inv_coalore > 0 && life_inv_ironore > 0 && !life_is_processing'];  this addAction[format[""%1 ($%2)"",[""license_civ_steel""] call life_fnc_varToStr,[([""steel""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""steel"",0,false,false,"""",' !license_civ_steel && playerSide == civilian '];";
 				};
 				class Item122
 				{
@@ -20251,9 +20251,9 @@ class Mission
 		{
 			position[]={7827.0654,113.0984,16136.572};
 			name="lumbersell";
-			text="Lumber Yard";
-			type="mil_box";
-			colorName="ColorBrown";
+			text="Alan's Hardwood Supply";
+			type="c_unknown";
+			colorName="ColorGreen";
 		};
 		class Item272
 		{
