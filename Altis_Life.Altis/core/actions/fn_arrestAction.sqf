@@ -19,5 +19,5 @@ if(isNull _unit) exitWith {}; //Not valid
 
 if(isNull _unit) exitWith {}; //Not valid
 detach _unit;
-[[_unit,false],"life_fnc_jail",_unit,false] spawn life_fnc_MP;
+[[_unit,false],"life_fnc_jailDialog",_unit,false] spawn life_fnc_MP;
 [[0,format[(localize "STR_NOTF_Arrested_1"), name _unit, name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;

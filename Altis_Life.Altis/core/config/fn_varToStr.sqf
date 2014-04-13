@@ -105,7 +105,7 @@ switch (_var) do
 	case "license_civ_cement": {"Cement Mixing License"};
 	case "license_civ_moonshine": {"Distillery Agreement"};
 	case "license_civ_crabbing": {"Crabbing License"};
-	case "license_civ_steel" : {"Steel Processing"};
+	case "license_civ_steel" : {"Steel Processing License"};
 	case "license_civ_bh" : {"Bounty Hunter"};
 	case "license_civ_logging" : {"Logging License"};
 	case "license_medic_air" : {"Pilot License"};
