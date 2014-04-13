@@ -75,14 +75,15 @@ switch (_code) do
 		};
 
 		if (player call life_fnc_isMedic) then {
-		if ((time - life_revive_timer) > 2) then {
-			life_revive_timer = time;
-			_players = (getPos player) nearEntities [["Man"], 3];
+			if ((time - life_revive_timer) > 2) then {
+				life_revive_timer = time;
+				_players = (getPos player) nearEntities [["Man"], 3];
 			{
-				if (_x getVariable ["wounded", false]) then {
+			if (_x getVariable ["wounded", false]) then {
 					[_x] spawn life_fnc_revivePlayer;
 				};
-			} forEach _players;
+				} forEach _players;
+			};
 		};
 		if(_shift && playerSide == civilian && !isNull cursorTarget && animationState cursorTarget == "Incapacitated" && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "zipTie") && speed cursorTarget < 1 && life_inv_zip > 0) then
 			{
@@ -91,7 +92,7 @@ switch (_code) do
 				hint "Please don't spam Shift + R.";
 			};
 		};
-	};
+		
 	//Knock out, this is experimental and yeah...
 	case 34:
 	{
