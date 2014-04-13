@@ -21,16 +21,16 @@
  
         switch ((typeOf _vehicle)) do
         {
-                case "C_Offroad_01_F": {_rate = 0.0010};
-                case "B_G_Offroad_01_F": {_rate = 0.0010};
-                case "B_Quadbike_01_F": {_rate = 0.0010};
-                case "O_Quadbike_01_F": {_rate = 0.0010};
-                case "C_Quadbike_01_F": {_rate = 0.0010};
-				case "O_Heli_Light_02_unarmed_F": {_rate = 0.010};
+                case "C_Offroad_01_F": {_rate = 0.00010};
+                case "B_G_Offroad_01_F": {_rate = 0.00010};
+                case "B_Quadbike_01_F": {_rate = 0.00010};
+                case "O_Quadbike_01_F": {_rate = 0.00010};
+                case "C_Quadbike_01_F": {_rate = 0.00010};
+				case "O_Heli_Light_02_unarmed_F": {_rate = 0.000010};
                 case "I_Truck_02_covered_F": {_rate = 0.00000010};
-                case "I_Truck_02_transport_F": {_rate = 0.00010};
+                case "I_Truck_02_transport_F": {_rate = 0.000010};
                 case "C_Hatchback_01_F": {_rate = 0.000015};
-                case "C_Hatchback_01_sport_F": {_rate = 0.0001};
+                case "C_Hatchback_01_sport_F": {_rate = 0.00001};
                 case "C_SUV_01_F": {_rate = 0.00000000001};
                 case "C_Van_01_transport_F": {_rate = 0.000002};
                 case "I_G_Van_01_transport_F": {_rate = 0.000001};
@@ -62,7 +62,7 @@
 
 		if (isengineon _vehicle) then {
 		
-        _vehicle setFuel ( Fuel _vehicle - (abs(speed _vehicle) + _rate) / 55000000 );
+        _vehicle setFuel ( Fuel _vehicle - (abs(speed _vehicle) + _rate) / 40000000 );
         };
         sleep 2;
         };
