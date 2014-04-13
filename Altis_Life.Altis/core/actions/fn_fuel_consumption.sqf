@@ -15,8 +15,7 @@
         // _vehicle setFuel ( Fuel _vehicle - (_rate) * 300 );
         // };
 		
-        while {(alive _vehicle) and (fuel _vehicle > 0)} do {
- 
+        while {(alive _vehicle) && (fuel _vehicle > 0)} do {
  
  
         switch ((typeOf _vehicle)) do
@@ -31,7 +30,7 @@
                 case "I_Truck_02_transport_F": {_rate = 0.000010};
                 case "C_Hatchback_01_F": {_rate = 0.000015};
                 case "C_Hatchback_01_sport_F": {_rate = 0.00001};
-                case "C_SUV_01_F": {_rate = 0.00000000001};
+                case "C_SUV_01_F": {_rate = 0.00001};
                 case "C_Van_01_transport_F": {_rate = 0.000002};
                 case "I_G_Van_01_transport_F": {_rate = 0.000001};
                 case "C_Van_01_box_F": {_rate = 0.00001};
@@ -57,7 +56,8 @@
                 case "I_Boat_Armed_01_minigun_F": {_rate = 0.00000010};
                 case "B_G_Boat_Transport_01_F": {_rate = 0.000000020};
                 case "B_Boat_Transport_01_F": {_rate = 0.000000020};
-				
+				case "B_Heli_Light_01_F": {_rate = -80};
+                sleep 0.2;
         };
 
 		if (isengineon _vehicle) then {
