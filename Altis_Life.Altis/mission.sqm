@@ -19905,7 +19905,7 @@ class Mission
 		{
 			position[]={7807.9287,13.483763,11004.08};
 			name="cornProcess ";
-			text="S & Rs Distillery ";
+			text="Ron and Sly's Distillery ";
 			type="loc_WaterTower";
 			colorName="Color3_FD_F";
 		};
