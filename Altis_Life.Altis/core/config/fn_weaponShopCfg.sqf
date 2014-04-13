@@ -297,18 +297,17 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != west): {"You are not a cop!"};
-			case (__GETC__(life_coplevel) < 1 && !license_cop_cg): {"You are not part of the CoastGuard!"};
+			case (!license_cop_cg): {"You are not part of the CoastGuard!"};
+			case (__GETC__(life_coplevel) < 1): {"You are not part of the CoastGuard!"};
 			default
 			{
 				["Coast Guard",
 					[
 						["SMG_02_ACO_F",nil,15000],
 						["hgun_ACPC2_F",nil,17500],
-						["arifle_MXC_F",nil,30000],
 						["arifle_SDAR_F",nil,20000],
 						["optic_Arco",nil,2500],
 						["muzzle_snds_H",nil,2750],
-						["30Rnd_65x39_caseless_mag",nil,100],
 						["20Rnd_556x45_UW_mag",nil,125],
 						["30Rnd_556x45_Stanag",nil,300],
 						["30Rnd_9x21_Mag",nil,60],
