@@ -1,12 +1,14 @@
 //////////////////////////////////////////////////////////////////
 // Created by: Tonic and Adapted by DirtDiver for STS
-// Function Name: life_fn_itemWeight.sqf
-// Description: Sets the weight for items.
+// Function Name: life_fn_jail.sqf
+// Description: You can holler, you can even hammer, but if you
+//				break the rules he'll put you in the slammer.
 //////////////////////////////////////////////////////////////////
 
 private["_ret","_bad","_time","_bail","_esc","_countDown","_unit"];
 _ret = [_this,0,[],[[]]] call BIS_fnc_param;
 _bad = [_this,1,false,[false]] call BIS_fnc_param;
+_jailTime = [_this,2,20,[0]] call BIS_fnc_param;
 _unit = player;
 if(_bad) then { _time = time + 1100; } else { _time = time + (15 * 60); };
 
@@ -20,6 +22,7 @@ hint format["%1", _unit];
 if(isNull _unit) exitWith {}; //Dafuq?
 if(_unit != player) exitWith {}; //Dafuq?
 if(life_is_arrested) exitWith {}; //Dafuq i'm already arrested
+[[player,"AmovPercMstpSnonWnonDnon"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 player setVariable["restrained",false,true];
 player setVariable["Escorting",false,true];
 player setVariable["transporting",false,true];
@@ -27,7 +30,6 @@ player setVariable["transporting",false,true];
 titleText["You have been arrested, wait your time out. If you attempt to respawn or reconnect your time will increase!","PLAIN"];
 hint "For being arrested you have lost the following licenses if you own them\n\nFirearms License\nRebel License";
 player setPos (getMarkerPos "jail_marker");
-
 
 //Double Check that player has been sent to jail!
 if(player distance (getMarkerPos "jail_marker") > 40) then
