@@ -8,27 +8,23 @@
 private["_ret","_bad","_time","_bail","_esc","_countDown"];
 _ret = [_this,0,[],[[]]] call BIS_fnc_param;
 _bad = [_this,1,false,[false]] call BIS_fnc_param;
-_time = time + (5 * 60);
+if(_bad) then { _time = time + 1100; } else { _time = time + (15 * 60); };
 
-life_holstered = nil;
-player setDamage 0;
-
-if(count _ret > 0) then {
-	life_bail_amount = (_ret select 3);
-	_time = _time + (_ret select 4);
-} else {
-	life_bail_amount = 1500;
-};
-
+if(count _ret > 0) then { life_bail_amount = (_ret select 3); } else { life_bail_amount = 1500; _time = time + (10 * 60); };
 _esc = false;
 _bail = false;
 
-[_time] spawn
+[_bad] spawn
 {
-	private["_time"];
-	_time = _this select 0;
 	life_canpay_bail = false;
-	sleep (_time / 2);
+	if(_this select 0) then
+	{
+		sleep (10 * 60);
+	}
+		else
+	{
+		sleep (5 * 60);
+	};
 	life_canpay_bail = nil;
 };
 
@@ -36,8 +32,8 @@ while {true} do
 {
 	if((round(_time - time)) > 0) then
 	{
-		_countDown = if(round (_time - time) > 60) then {format["%1 minute(s)",round(round(_time - time) / 60)]} else {format["%1 second(s)",round(_time - time)]};
-		hintSilent format["Time Remaining:\n %1\n\nCan pay bail: %3\nBail Price: $%2",_countDown,[life_bail_amount] call life_fnc_numberText,if(isNil "life_canpay_bail") then {"Yes"} else {"No"}];
+		_countDown = (_time - time) call life_fnc_secondsToString;
+		hintSilent parseText format["Time Remaining:<br/> <t size='2'><t color='#FF0000'>%1</t></t><br/><br/>Can pay bail: %3<br/>Bail Price: $%2",_countDown,[life_bail_amount] call life_fnc_numberText,if(isNil "life_canpay_bail") then {"Yes"} else {"No"}];
 	};
 
 	if(player distance (getMarkerPos "jail_marker") > 60) exitWith
@@ -55,7 +51,7 @@ while {true} do
 	{
 
 	};
-	sleep 1;
+	sleep 0.2;
 };
 
 
