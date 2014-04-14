@@ -60,11 +60,8 @@ player createDiarySubject ["controls","Controls"];
 				"
 					If bombing (bombing can be intentionally exploding a vehicle), robbing, or killing occurs around these or in these areas it is punishable by ban.<br/><br/>
 					
-					Any vehicle spawn (shop or garage)<br/>
-					Any weapon shop<br/>
-					All Police HQs<br/>
 					Rebel Outposts<br/>
-					Donator Shops<br/><br/>
+					Donor Shops<br/><br/>
 				"
 		]
 	];
