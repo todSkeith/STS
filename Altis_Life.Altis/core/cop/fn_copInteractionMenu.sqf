@@ -65,7 +65,7 @@ _Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_ticketAction;";
 
 //SeT Jail
 _Btn6 ctrlSetText localize "STR_pInAct_Arrest";
-_Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction; systemChat format [""fn_copInteractionMenu: cursorTarget is %1 || name %2"",life_pInact_curTarget,name life_pInact_curTarget];";
+_Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
 
 //Set PutinCar
 _Btn7 ctrlSetText localize "STR_pInAct_PutInCar";
