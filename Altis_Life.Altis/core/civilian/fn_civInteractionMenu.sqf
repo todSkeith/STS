@@ -39,7 +39,7 @@ _Btn8 = _display displayCtrl Btn8;
 _Btn9 = _display displayCtrl Btn9;
 */
 
-life_cInact_curTarget = _curTarget;
+life_pInact_curTarget = _curTarget;
 
 //Set Unrestrain Button
 _Btn1 ctrlSetText localize "STR_cInAct_Unrestrain";

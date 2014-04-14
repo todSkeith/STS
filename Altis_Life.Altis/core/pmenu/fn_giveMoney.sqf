@@ -25,7 +25,7 @@ if(isNil "_unit") exitWith {ctrlShow[2001,true]; hint "The selected player is no
 hint format["You gave $%1 to %2",[(parseNumber(_amount))] call life_fnc_numberText,name _unit];
 life_cash = life_cash - (parseNumber(_amount));
 [1,false] call life_fnc_sessionHandle;
-[[_unit,_amount,player],"life_fnc_receiveMoney",_unit,false] spawn life_fnc_MP;
+[[_unit,_amount,player,format["Give Money: %1 sent %2 to %3",name player,[_amount] call life_fnc_numberText,name _unit]],"life_fnc_receiveMoney",_unit,false] spawn life_fnc_MP;
 [] call life_fnc_p_updateMenu;
 
 ctrlShow[2001,true];

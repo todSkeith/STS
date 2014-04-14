@@ -14,7 +14,7 @@ _abortB = _display displayCtrl 104;
 _respawnB = _display displayCtrl 1010; 
 _respawnB ctrlEnable false;
 _abortB ctrlEnable false;
-
+[] call life_fnc_syncData;
 //_abortB ctrlSetEventHandler ["onMouseButtonClick", "deleteMarker name player"];
 
 if ((player getVariable "restrained") || (player getVariable "Escorting") || (player getVariable "transporting") || life_is_arrested || life_istazed) then
@@ -26,11 +26,6 @@ if ((player getVariable "restrained") || (player getVariable "Escorting") || (pl
 }
 else
 {	
-	if ((player getVariable "unconscious")) then 
-	{
-		_abortB ctrlEnable false;
-		_abortB ctrlSetText "Abort Disabled";
-	};
 	_timer = 10; //seconds
 	_timer = _timer - 1;
 	_timerDone = false;
@@ -43,10 +38,18 @@ else
 	};
 	
 	waitUntil {_timerDone};
-	_abortB ctrlEnable true;
 	_respawnB ctrlEnable true;
-	_abortB ctrlSettext "Abort";
 	_respawnB ctrlSettext "Respawn";
+	if ((player getVariable "unconscious")) then 
+	{
+		_abortB ctrlEnable false;
+		_abortB ctrlSetText "Can't Abort While Unconscious";
+	}
+	else
+	{
+		_abortB ctrlSettext "Abort";
+		_abortB ctrlEnable true;
+	};
 };
 
   

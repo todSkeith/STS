@@ -92,13 +92,21 @@ if(side _source == west && vehicle _source == _source && playerSide == civilian)
 _handle = [_unit] spawn life_fnc_dropItems;
 waitUntil {scriptDone _handle};
 
-_lostCash = life_atmcash * 0.15;
+_medicsOn = playersNumber independent;
+_lostCash = 0;
+if(_medicsOn < 1) then {_lostCash = 0};
+if(_medicsOn > 0 && _medicsOn < 5) then {_lostCash = 0.05};
+if(_medicsOn >= 5) then {_lostCash = 0.15};
+_lostCash = floor(life_atmcash * _lostCash);
+if(_lostCast > 100000) then {_lostCash = 100000};
+life_atmcash = life_atmcash - _lostCash;
 hintSilent format ["You have died and lost $%1 from your bank account for your cloning.", [_lostCash] call life_fnc_numberText];
+
 life_carryWeight = 0;
 life_thirst = 100;
 life_hunger = 100;
 life_use_atm = true;
-life_atmcash = life_atmcash * 0.85;
+
 life_cash = 0;
 life_holstered_weapon = nil;
 
