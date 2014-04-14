@@ -16,7 +16,6 @@ while { player getVariable ["surrender", false] }  do {
 	player attachTo [_obj,[0,0,0]];
 	
 	waitUntil {animationState player != "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon" || !(player getVariable "surrender") || vehicle player != player || (player getVariable "restrained") || (player getVariable "zipTie")};
-	player setVariable ["surrender", false, true];
 	
 	// Check if player still alive.
 	if (!alive player) then {
@@ -25,4 +24,5 @@ while { player getVariable ["surrender", false] }  do {
 	};
 	deleteVehicle _obj;
 };
-[[player,"amovppnemstpsraswrfldnon";],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+player setVariable ["surrender", false, true];
+[[player,"amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
