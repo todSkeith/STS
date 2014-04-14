@@ -96,6 +96,7 @@ if(_sel == "" || _sel == "head_hit" || _sel =="body" || _sel == "head" || _sel =
 					_unit setVariable["unconscious",true,true];
 					if(isNull _source && alive _unit) then
 					{
+<<<<<<< HEAD
 						[[0,format["%1 was critically wounded by an environmental collision.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 					}
 					else
@@ -109,6 +110,28 @@ if(_sel == "" || _sel == "head_hit" || _sel =="body" || _sel == "head" || _sel =
 						{
 							if(side _source == civilian) then {[[getPlayerUID _source,name _source,"187A"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;};
 							[_unit] spawn life_fnc_dropItems;
+=======
+						_unit setVariable["unconscious",true,true];
+						if(isNull _source && alive _unit) then
+						{
+							[[0,format["%1 was critically wounded by an environmental collision.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+						}
+						else
+						{
+							[[0,format["%1 was critically wounded by %2", name _unit, name _source]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+						};
+						[_unit, _source] spawn life_fnc_unconscious;
+						if(side _source != west) then 
+						{
+							if(vehicle _source isKindOf "LandVehicle") then
+							{
+								[[getPlayerUID _source,name _source,"187V"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+							}
+							else
+							{
+								[[getPlayerUID _source,name _source,"187A"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+							};
+>>>>>>> 9857f434c87afce3c9c39f0dd9a8296f03e2a30b
 						};
 					};
 					[_unit, _source] spawn life_fnc_unconscious;
