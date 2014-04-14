@@ -42,31 +42,45 @@ _Btn9 = _display displayCtrl Btn9;
 life_pInact_curTarget = _curTarget;
 
 //Set Unrestrain Button
-_Btn1 ctrlSetText localize "STR_cInAct_Unrestrain";
-_Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unzip; closeDialog 0;";
+if((_curTarget getVariable["zipTie",false])) then {
+	_Btn1 ctrlSetText localize "STR_cInAct_Unrestrain";
+	_Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unzip; closeDialog 0;";
+} else {
+	_Btn1 ctrlEnable false;
+};
 
 //Set Put in Car
+if((_curTarget getVariable["Escorting",false])) then {
 _Btn2 ctrlSetText localize "STR_cInAct_PutInCar";
-_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar;";
+_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar; closeDialog 0;";
+} else {
+	_Btn2 ctrlEnable false;
+};
 
 //Set Escort Button
-if((_curTarget getVariable["Escorting",false])) then {
-	_Btn3 ctrlSetText localize "STR_cInAct_StopEscort";
-	_Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_stopEscorting; [life_pInact_curTarget] call life_fnc_civInteractionMenu;";
+if((_curTarget getVariable["zipTie",false])) then {
+	if((_curTarget getVariable["Escorting",false])) then {
+		_Btn3 ctrlSetText localize "STR_cInAct_StopEscort";
+		_Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_stopEscorting; [life_pInact_curTarget] call life_fnc_civInteractionMenu;";
+	} else {
+		_Btn3 ctrlSetText localize "STR_cInAct_Escort";
+		_Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
+	};
 } else {
-	_Btn3 ctrlSetText localize "STR_cInAct_Escort";
-	_Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
+	_Btn3 ctrlEnable false;
 };
 
 if(license_civ_bh && side cursorTarget == civilian) then {
 	_Btn4 ctrlSetText localize "STR_cInAct_Arrest";
 	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
+} else {
+	_Btn4 ctrlEnable false;
 };
 
-if(!isNull cursorTarget && player distance cursorTarget < 3.5 && isPlayer cursorTarget) then
+if(player distance cursorTarget < 3.5 && ((_curTarget getVariable["zipTie",false]) || (_curTarget getVariable["surrender",false]) || (animationState _curTarget == "Incapacitated")) && !(_curTarget getVariable["Escorting",false])) then
 	{
 	_Btn5 ctrlSetText localize "STR_cInAct_RobPerson";
-	_Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_robAction;";
+	_Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_robAction; closeDialog 0;";
 } else {
 	_Btn5 ctrlEnable false;
 };

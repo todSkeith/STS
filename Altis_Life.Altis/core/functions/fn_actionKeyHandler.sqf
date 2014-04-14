@@ -29,12 +29,12 @@ life_action_inUse = true;
 
 //If target is a player then check if we can use the cop menu.
 if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
-	if((_curTarget getVariable["restrained",false]) && !dialog && playerSide == west) then {
+	if ((_curTarget getVariable["restrained",false]) && !dialog && playerSide == west) then {
 		[_curTarget] call life_fnc_copInteractionMenu;
-		};
-		if (((_curTarget getVariable "zipTie") || (animationstate _curTarget == "Incapacitated")) && !dialog && playerSide == civilian) then {
+	};
+	if (((_curTarget getVariable "zipTie") || (_curTarget getVariable["surrender",false]) || (animationstate _curTarget == "Incapacitated")) && !dialog && playerSide == civilian) then {
 		[_curTarget] call life_fnc_civInteractionMenu;
-		};
+	};
 } else {
 	//OK, it wasn't a player so what is it?
 	private["_isVehicle","_miscItems","_money"];
