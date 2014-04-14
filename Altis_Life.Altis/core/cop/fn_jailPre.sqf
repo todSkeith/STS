@@ -15,7 +15,7 @@ if(!(_unit isKindOf "Man")) exitWith {hint "You cannot send this to jail.";}; //
 if(!isPlayer _unit) exitWith {hint "You cannot send this to jail.";}; //Not a human
 if(!(_unit getVariable "restrained")) exitWith {hint "He is not restrained!";}; //He's not restrained.
 if(side _unit != civilian) exitWith {hint "Player is not a Civ!";}; //Not a civ
-if(isNull _unit) exitWith {hint "Not valid3";}; //Not valid
+if(isNull _unit) exitWith {hint "Not valid.";}; //Not valid
 diag_log "Got Passed Checks";
 
 //Important
@@ -35,7 +35,7 @@ diag_log "Removing Bounty";
 
 
 diag_log "Executing player side of jail script (fn_jail)";
-[[player,(parseNumber _jailTime)],"life_fnc_jail",life_jail_unit,false] spawn life_fnc_MP;
+[[_unit,false,(parseNumber _jailTime)],"life_fnc_jailSys",false,false] spawn life_fnc_MP;
 [[0,format["%1 was arrested by %2 for %3 minutes", name _unit, name player, parseNumber _jailTime]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 
 

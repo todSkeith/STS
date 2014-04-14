@@ -10,23 +10,11 @@ _bad = [_this,1,false,[false]] call BIS_fnc_param;
 _unit = player;
 if(_bad) then { _time = time + 1100; } else { _time = time + (15 * 60); };
 
-if(count _ret > 0) then { life_bail_amount = (_ret select 3); } else { life_bail_amount = 1500; _time = time + (10 * 60); };
+if(count _ret > 0) then { life_bail_amount = floor ((_ret select 3) * 1.05); } else { life_bail_amount = 1500; };
 _esc = false;
 _bail = false;
 
-[_bad] spawn
-{
-	life_canpay_bail = false;
-	if(_this select 0) then
-	{
-		sleep (10 * 60);
-	}
-		else
-	{
-		sleep (5 * 60);
-	};
-	life_canpay_bail = nil;
-};
+
 
 hint format["%1", _unit];
 if(isNull _unit) exitWith {}; //Dafuq?
@@ -60,13 +48,18 @@ life_is_arrested = true;
 
 removeAllWeapons player;
 {player removeMagazine _x} foreach (magazines player);
-life_bail_amount = 15000;
-_copname = _this select 0;
-_jailTime = _this select 1;
+_jailTime = _this select 2;
 life_jail_val = _jailTime;
 _time = time + (_jailTime * 60);
 _esc = false;
 _bail = false;
+
+[] spawn
+{
+	life_canpay_bail = false;
+	sleep (_jailTime * 30);
+	life_canpay_bail = nil;
+};
 
 while {true} do
 {
