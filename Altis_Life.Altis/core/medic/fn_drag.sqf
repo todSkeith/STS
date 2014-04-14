@@ -16,12 +16,12 @@ player setVariable["isDragging",true,true];
 player setVariable["dragging",_unit,true];
 _unit attachTo [player, [0, 1.1, 0.092]];
 _unit setDir 180;
-player playMoveNow "AcinPknlMstpSnonWnonDnon";
+[[player,"AcinPknlMstpSnonWnonDnon"],"life_fnc_animSync",nil,false] spawn life_fnc_MP;
 _id = player addAction ["<t color=""#C90000"">" + "Release" + "</t>", { 
 	player setVariable["isDragging",false,true];
 	_unit = player getVariable "dragging";
-	_unit switchMove "AinjPpneMstpSnonWrflDnon"; 
-	player playMoveNow "AmovPercMstpSnonWnonDnon"; 
+	[[_unit,"AinjPpneMstpSnonWrflDnon"],"life_fnc_animSync",nil,false] spawn life_fnc_MP;
+	[[player,"AmovPercMstpSnonWnonDnon"],"life_fnc_animSync",nil,false] spawn life_fnc_MP;
 	detach _unit; 
 	removeAllActions player;
 }];

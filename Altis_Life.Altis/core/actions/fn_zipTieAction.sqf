@@ -28,11 +28,15 @@ else
 	
 while {_victim getVariable "zipTie"} do
 {
-	_victim playMove "AmovPercMstpSnonWnonDnon_Ease";
+	[[_victim,"AmovPercMstpSnonWnonDnon_Ease"],"life_fnc_animSync",nil,false] spawn life_fnc_MP;
 	waitUntil {animationState _victim != "AmovPercMstpSnonWnonDnon_Ease" || !(_victim getVariable "zipTie")};
 	if(!alive _victim) then
 	{
 		_victim setVariable ["zipTie",false,true];
+	};
+	if(vehicle player != player) then
+	{
+		if(driver (vehicle player) == player) then {player action["eject",vehicle player];};
 	};
 };
 	

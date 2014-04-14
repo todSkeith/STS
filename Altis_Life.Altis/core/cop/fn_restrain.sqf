@@ -30,7 +30,7 @@ titleText[format["You have been restrained by %1",name _cop],"PLAIN"];
 				
 while {player getVariable "restrained"} do
 {
-	player playMove "AmovPercMstpSnonWnonDnon_Ease";
+	[[player,"AmovPercMstpSnonWnonDnon_Ease"],"life_fnc_animSync",nil,false] spawn life_fnc_MP;
 	_state = vehicle player;
 	waitUntil {animationState player != "AmovPercMstpSnonWnonDnon_Ease" || !(player getvariable "restrained") || vehicle player != _state};
 			
