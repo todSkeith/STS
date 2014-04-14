@@ -294,7 +294,7 @@ sell_array =
 	["mcrab",1500],
 	["fcrabp",3000],
 	["mcrabs",700],
-	["steel",3000],
+	["steel",4500],
 	["lumber",4000],
 	["RoadConeStrip",500],
 	["RoadCone",75],
