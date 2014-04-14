@@ -109,13 +109,16 @@ if(_sel == "" || _sel == "head_hit" || _sel =="body") then
 							[[0,format["%1 was critically wounded by %2", name _unit, name _source]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 						};
 						[_unit, _source] spawn life_fnc_unconscious;
-						if(vehicle _source isKindOf "LandVehicle") then
+						if(side _source != west) then 
 						{
-							[[getPlayerUID _source,name _source,"187V"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
-						}
-						else
-						{
-							[[getPlayerUID _source,name _source,"187A"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+							if(vehicle _source isKindOf "LandVehicle") then
+							{
+								[[getPlayerUID _source,name _source,"187V"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+							}
+							else
+							{
+								[[getPlayerUID _source,name _source,"187A"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+							};
 						};
 					}
 					else
