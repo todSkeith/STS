@@ -80,3 +80,4 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 		};
 	};
 };
+systemChat format ["fn_actionKeyHandler: cursorTarget is %1 || name %2",_curTarget,name _curTarget];
