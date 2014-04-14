@@ -37,7 +37,7 @@ switch ((typeOf _vehicle)) do
 	case "B_Heli_Light_01_F": {_weight = 65;}; //LittleBird
 	case "O_Heli_Light_02_unarmed_F": {_weight = 100 ;}; //ORCA
 	case "I_Heli_Transport_02_F": {_weight = 175 ;}; //Mohawk
-	case "C_Rubberboat": {_weight = 45;};
+	case "C_Rubberboat": {_weight = 60;};
 	case "B_G_Boat_Transport_01_F": {_weight = 60;};
 	case "B_Boat_Transport_01_F": {_weight = 60;};
 	case "O_Truck_03_transport_F": {_weight = 450 ;};
