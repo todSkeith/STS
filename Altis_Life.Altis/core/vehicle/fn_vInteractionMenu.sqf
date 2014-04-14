@@ -34,43 +34,52 @@ _Btn7 = _display displayCtrl Btn7;
 
 life_vInact_curTarget = _curTarget;
 
-//Set Repair Action
+//Button 1: Repair
 if("ToolKit" in (items player)) then {_Btn1 ctrlEnable true;} else {_Btn1 ctrlEnable false;};
+
 _Btn1 ctrlSetText localize "STR_vInAct_Repair";
 _Btn1 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_repairTruck;";
 
-//Set Push Action
-if(cursorTarget isKindOf "Ship") then{
-_Btn2 ctrlSetText localize "STR_vInAct_Push";
-_Btn2 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_pushVehicle;";
-}else {
-		_Btn2 ctrlShow false;
-	};
 
-//Set Civ Pull out of Veh
-if (playerSide == civilian) then {
-_Btn3 ctrlSetText localize "STR_vInAct_PullOut";
-_Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_civPullOut;";
+//Button 2: Push
+if(cursorTarget isKindOf "Ship") then {
+	_Btn2 ctrlSetText localize "STR_vInAct_Push";
+	_Btn2 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_pushVehicle;";
 } else {
-	_Btn3 ctrlShow false;
+	_Btn2 ctrlShow false;
 };
 
+//Button 3: Pull out of Vehicle
+if(count crew _curTarget == 0) then {_Btn3 ctrlEnable false;};
+
+_Btn3 ctrlSetText localize "STR_vInAct_PullOut";
+if (playerSide == civilian) then {
+	_Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_civPullOut;";
+} else {
+	_Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_pulloutAction;";
+};
+
+//Cop exclusive buttons
 if(playerSide == west) then {
+	//Button 4: Check Vehicle Registration
 	_Btn4 ctrlSetText localize "STR_vInAct_Registration";
 	_Btn4 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_searchVehAction;";
+	
+	//Button 5: Check Driver Licenses
+	if (isPlayer driver life_vInact_curTarget) then {_Btn5 ctrlEnable true;} else {_Btn5 ctrlEnable false;};
+	_Btn5 ctrlSetText localize "STR_pInAct_checkLicenses"
+	_Btn5 buttonSetAction "[[player],""life_fnc_licenseCheck"",life_vInact_curTarget,false] spawn life_fnc_MP";
+	
+	//Button 6: Search Vehicle
+	_Btn6 ctrlSetText localize "STR_vInAct_SearchVehicle";
+	_Btn6 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_vehInvSearch;";
 
-	_Btn5 ctrlSetText localize "STR_vInAct_SearchVehicle";
-	_Btn5 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_vehInvSearch;";
-
-	_Btn6 ctrlSetText localize "STR_vInAct_PullOut";
-	_Btn6 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_pulloutAction;";
-	if(count crew _curTarget == 0) then {_Btn4 ctrlEnable false;};
-
+	//Button 7: Impound Vehicle
 	_Btn7 ctrlSetText localize "STR_vInAct_Impound";
 	_Btn7 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_impoundAction;";
 } else {
 	_Btn4 ctrlShow false;
 	_Btn5 ctrlShow false;
 	_Btn6 ctrlShow false;
-	_Btn7 ctrlShow False;
+	_Btn7 ctrlShow false;
 };

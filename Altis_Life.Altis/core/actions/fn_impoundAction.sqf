@@ -6,13 +6,13 @@
 	Impounds the vehicle
 */
 private["_vehicle","_type","_time","_price","_vehicleData","_upp","_ui","_progress","_pgText","_cP"];
-_vehicle = cursorTarget;
-if(!((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship"))) exitWith {};
+_vehicle = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
+if(!((_vehicle isKindOf "Car") && !(_vehicle isKindOf "Air") && !(_vehicle isKindOf "Ship"))) exitWith {};
 if(player distance cursorTarget > 10) exitWith {};
 if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship")) then
 {
 	_vehicleData = _vehicle getVariable["vehicle_info_owners",[]];
-	if(count _vehicleData == 0) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
+	if(count _vehicleData == 0) exitWith {hint "This vehicle has no information, it was probably spawned in through cheats. \n\nDeleting vehicle."; deleteVehicle _vehicle;}; //Bad vehicle.
 	_vehicleName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
 	[[0,format["%1 your %2 is being impounded by the police.",(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 	life_action_inUse = true;

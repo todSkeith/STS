@@ -7,7 +7,7 @@
 	Searches the vehicle for illegal items.
 */
 private["_vehicle","_vehicleInfo","_value"];
-_vehicle = cursorTarget;
+_vehicle = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 if(isNull _vehicle) exitWith {};
 if(!((_vehicle isKindOf "Air") OR (_vehicle isKindOf "Ship") OR (_vehicle isKindOf "LandVehicle"))) exitWith {};
 

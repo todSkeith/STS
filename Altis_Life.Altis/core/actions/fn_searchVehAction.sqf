@@ -2,8 +2,8 @@
 	File: fn_searchVehAction.sqf
 */
 private["_vehicle","_data"];
-_vehicle = cursorTarget;
-if((_vehicle isKindOf "Car") || !(_vehicle isKindOf "Air") || !(_vehicle isKindOf "Ship")) then
+_vehicle = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
+if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship")) then
 {
 	_owners = _vehicle getVariable "vehicle_info_owners";
 	if(isNil {_owners}) exitWith {hint "This vehicle has no information, it was probably spawned in through cheats. \n\nDeleting vehicle."; deleteVehicle _vehicle;};

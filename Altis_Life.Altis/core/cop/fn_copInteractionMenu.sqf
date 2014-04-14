@@ -38,19 +38,26 @@ _Btn8 = _display displayCtrl Btn8;
 _Btn9 = _display displayCtrl Btn9;
 life_pInact_curTarget = _curTarget;
 
-//Set Unrestrain Button
+//Button 1: Unrestrain
+if((_curTarget getVariable["zipTie",false]) || (_curTarget getVariable["restrained",false])) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
+
 _Btn1 ctrlSetText localize "STR_pInAct_Unrestrain";
 _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unrestrain; closeDialog 0;";
 
-//Set Check Licenses Button
+
+//Button 2: Check Licenses
 _Btn2 ctrlSetText localize "STR_pInAct_checkLicenses";
 _Btn2 buttonSetAction "[[player],""life_fnc_licenseCheck"",life_pInact_curTarget,FALSE] spawn life_fnc_MP";
 
-//Set Search Button
+
+//Button 3: Search Player
 _Btn3 ctrlSetText localize "STR_pInAct_SearchPlayer";
 _Btn3 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_searchAction; closeDialog 0;";
 
-//Set Escort Button
+
+//Button 4: Escort
+if((_curTarget getVariable["restrained",false])) then { _Btn4 ctrlEnable true; } else { _Btn4 ctrlEnable false; };
+
 if((_curTarget getVariable["Escorting",false])) then {
 	_Btn4 ctrlSetText localize "STR_pInAct_StopEscort";
 	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_stopEscorting; [life_pInact_curTarget] call life_fnc_copInteractionMenu;";
@@ -59,28 +66,33 @@ if((_curTarget getVariable["Escorting",false])) then {
 	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
 };
 
-//Set Ticket Button
+
+//Button 5: Give Ticket
 _Btn5 ctrlSetText localize "STR_pInAct_TicketBtn";
 _Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_ticketAction;";
 
-//SeT Jail
-_Btn6 ctrlSetText localize "STR_pInAct_Arrest";
-_Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
 
-//Set PutinCar
-_Btn7 ctrlSetText localize "STR_pInAct_PutInCar";
-_Btn7 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar;";
-
-//Test
-_Btn8 ctrlSetText localize "STR_pInAct_SeizeWeapons";
-_Btn8 buttonSetAction "[life_pInact_curTarget] call life_fnc_seizePlayerWeapon;";
-
-_Btn9 ctrlSetText localize "STR_pInAct_SeizeObjectFromGround";
-_Btn9 buttonSetAction "[life_pInact_curTarget] call life_fnc_seizeObjects;";
-
-
+//Button 6: Send to Jail
 //Check that you are near a place to jail them.
 if(!((player distance (getMarkerPos "police_hq_1") < 30) OR  (player distance (getMarkerPos "police_hq_2") < 30) OR (player distance (getMarkerPos "cop_spawn_3") < 30) OR (player distance (getMarkerPos "cop_spawn_5") < 30))) then
 {
 	_Btn6 ctrlEnable false;
 };
+
+_Btn6 ctrlSetText localize "STR_pInAct_Arrest";
+_Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
+
+
+//Button 7: Put in Vehicle
+_Btn7 ctrlSetText localize "STR_pInAct_PutInCar";
+_Btn7 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar;";
+
+
+//Button 8: Sieze Weapons
+_Btn8 ctrlSetText localize "STR_pInAct_SeizeWeapons";
+_Btn8 buttonSetAction "[life_pInact_curTarget] call life_fnc_seizePlayerWeapon;";
+
+
+//Button 9: Sieze Objects from Ground
+_Btn9 ctrlSetText localize "STR_pInAct_SeizeObjectFromGround";
+_Btn9 buttonSetAction "[life_pInact_curTarget] call life_fnc_seizeObjects;";

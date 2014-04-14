@@ -42,56 +42,47 @@ _Btn9 = _display displayCtrl Btn9;
 
 life_cInact_curTarget = _curTarget;
 
-//Set Unrestrain Button
+//Button 1: Unrestrain
+if((_curTarget getVariable["zipTie",false])) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
+
 _Btn1 ctrlSetText localize "STR_cInAct_Unrestrain";
-if((_curTarget getVariable["zipTie",false])) then {
-	_Btn1 buttonSetAction "[life_cInact_curTarget] call life_fnc_unzip; closeDialog 0;";
-} else {
-	_Btn1 ctrlEnable false;
-};
+_Btn1 buttonSetAction "[life_cInact_curTarget] call life_fnc_unzip; closeDialog 0;";
 
-//Set Put in Car
+
+//Button 2: Put in Vehicle
+if((_curTarget getVariable["Escorting",false])) then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
+
 _Btn2 ctrlSetText localize "STR_cInAct_PutInCar";
-if((_curTarget getVariable["Escorting",false])) then {
 _Btn2 buttonSetAction "[life_cInact_curTarget] call life_fnc_putInCar; closeDialog 0;";
+
+
+//Button 3: Escort
+if((_curTarget getVariable["zipTie",false])) then { _Btn3 ctrlEnable true; } else { _Btn3 ctrlEnable false; };
+
+if((_curTarget getVariable["Escorting",false])) then {
+	_Btn3 ctrlSetText localize "STR_cInAct_StopEscort";
+	_Btn3 buttonSetAction "[life_cInact_curTarget] call life_fnc_stopEscorting; [life_cInact_curTarget] call life_fnc_civInteractionMenu;";
 } else {
-	_Btn2 ctrlEnable false;
+	_Btn3 ctrlSetText localize "STR_cInAct_Escort";
+	_Btn3 buttonSetAction "[life_cInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
 };
 
-//Set Escort Button
-_Btn3 ctrlSetText localize "STR_cInAct_Escort";
-if((_curTarget getVariable["zipTie",false])) then {
-	if((_curTarget getVariable["Escorting",false])) then {
-		_Btn3 ctrlSetText localize "STR_cInAct_StopEscort";
-		_Btn3 buttonSetAction "[life_cInact_curTarget] call life_fnc_stopEscorting; [life_cInact_curTarget] call life_fnc_civInteractionMenu;";
-	} else {
-		_Btn3 ctrlSetText localize "STR_cInAct_Escort";
-		_Btn3 buttonSetAction "[life_cInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
-	};
-} else {
-	_Btn3 ctrlEnable false;
-};
 
-/*
+//Button 4: Rob person
+if(player distance cursorTarget < 3.5 && ((_curTarget getVariable["zipTie",false]) || (_curTarget getVariable["surrender",false]) || (animationState _curTarget == "Incapacitated")) && !(_curTarget getVariable["Escorting",false])) then { _Btn4 ctrlEnable true; } else { _Btn4 ctrlEnable false; };
+_Btn4 ctrlSetText localize "STR_cInAct_RobPerson";
+_Btn4 buttonSetAction "[life_cInact_curTarget] call life_fnc_robAction; closeDialog 0;";
+
+
+
+/* NONFUNCTIONAL
 if(license_civ_bh && side cursorTarget == civilian) then {
 	_Btn4 ctrlSetText localize "STR_cInAct_Arrest";
 	_Btn4 buttonSetAction "[life_cInact_curTarget] call life_fnc_arrestAction;";
 } else {
 	_Btn4 ctrlEnable false;
 };
-*/
 
-//Rob person
-_Btn4 ctrlSetText localize "STR_cInAct_RobPerson";
-if(player distance cursorTarget < 3.5 && ((_curTarget getVariable["zipTie",false]) || (_curTarget getVariable["surrender",false]) || (animationState _curTarget == "Incapacitated")) && !(_curTarget getVariable["Escorting",false])) then
-	{
-	_Btn4 buttonSetAction "[life_cInact_curTarget] call life_fnc_robAction; closeDialog 0;";
-} else {
-	_Btn4 ctrlEnable false;
-};
-
-
-/*
 //Set Ticket Button
 _Btn5 ctrlSetText localize "STR_cInAct_TicketBtn";
 _Btn5 buttonSetAction "[life_cInact_curTarget] call life_fnc_ticketAction;";
