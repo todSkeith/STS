@@ -13,12 +13,13 @@ if(!isPlayer _unit) exitWith {}; //Not a human player
 
 _unit = cursorTarget;
 player setVariable["isDragging",true,true];
+player setVariable["dragging",_unit,true];
 _unit attachTo [player, [0, 1.1, 0.092]];
 _unit setDir 180;
 player playMoveNow "AcinPknlMstpSnonWnonDnon";
 _id = player addAction ["<t color=""#C90000"">" + "Release" + "</t>", { 
 	player setVariable["isDragging",false,true];
-	_unit = cursorTarget;
+	_unit = player getVariable "dragging";
 	_unit switchMove "AinjPpneMstpSnonWrflDnon"; 
 	player playMoveNow "AmovPercMstpSnonWnonDnon"; 
 	detach _unit; 

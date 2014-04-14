@@ -26,7 +26,9 @@ if(_shooter isKindOf "Man" && alive player) then
 		_unit attachTo [_obj,[0,0,0]];
 		disableUserInput true;
 		sleep 15;
-		[[player,"amovppnemstpsraswrfldnon"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+		if (!(player getVariable["restrained",false])) then {
+            [[player,"amovppnemstpsraswrfldnon"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+        };
 		if(!(player getVariable["Escorting",false])) then {
 			detach player;
 		};

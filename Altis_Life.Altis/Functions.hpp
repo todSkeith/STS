@@ -116,8 +116,6 @@ class Life_Client_Core
 		class vehShopLicenses {};
 		class vehicleAnimate {};
 		class weaponShopCfg {};
-		//class houseContainers {};
-        //class housePrice {};
 
 		//Clothing Store Configs
 		class clothing_cop {};
@@ -207,31 +205,6 @@ class Life_Client_Core
 		class actionUpdate {};
 	};
 
- /*class Housing
-    {
-        file = "core\housing";
-        class buyHouse {};
-        class sellHouse {};
-        class createMarkers {};
-        class deleteMarkers {};
-        class getBuildID {};
-        class initHouses {};
-        class lockHouse {};
-        class lockStorage {};
-        class countBuildingPositions {};
-        class houseStoreItem {};
-        class houseTakeItem {};
-        class houseInventory {};
-        class openStorage {};
-        class placeStorage {};
-        class preCloseHouseStorage {};
-        class calcGarageSpawn {};
-        class onPut {};
-        class onTake {};
-    };
-*/
-
-
 	class Network
 	{
 		file = "core\functions\network";
@@ -300,9 +273,6 @@ class Life_Client_Core
 		class sirenLights {};
 		class licenseCheck {};
 		class licensesRead {};
-		//class houseOwnerSearch {};
-        //class houseInvSearch {};
-        //class raidHouse {};
 	};
 
 	class Medic
@@ -387,6 +357,5 @@ class Life_Client_Core
 		class impoundMenu {};
 		class unimpound {};
 		class sellGarage {};
-		//class houseMenu {};
 	};
 };

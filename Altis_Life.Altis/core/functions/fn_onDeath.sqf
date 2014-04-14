@@ -97,10 +97,20 @@ _lostCash = 0;
 if(_medicsOn < 1) then {_lostCash = 0};
 if(_medicsOn > 0 && _medicsOn < 5) then {_lostCash = 0.05};
 if(_medicsOn >= 5) then {_lostCash = 0.15};
+if(side player == independent) then {_lostCash = 0};
 _lostCash = floor(life_atmcash * _lostCash);
 if(_lostCast > 100000) then {_lostCash = 100000};
 life_atmcash = life_atmcash - _lostCash;
-hintSilent format ["You have died and lost $%1 from your bank account for your cloning.", [_lostCash] call life_fnc_numberText];
+
+if(_lostCash == 0) then
+{
+	hintSilent "No medics are on. Yay free cloning!";
+}
+else
+{
+	hintSilent format ["You have died and lost $%1 from your bank account for your cloning.", [_lostCash] call life_fnc_numberText];
+};
+
 
 life_carryWeight = 0;
 life_thirst = 100;

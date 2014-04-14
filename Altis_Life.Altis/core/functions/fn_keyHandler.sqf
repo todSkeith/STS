@@ -74,26 +74,13 @@ switch (_code) do
 			[] call life_fnc_restrainAction;
 		};
 
-		if (player call life_fnc_isMedic) then {
-			if ((time - life_revive_timer) > 2) then {
-				life_revive_timer = time;
-				_players = (getPos player) nearEntities [["Man"], 3];
-			{
-			if (_x getVariable ["wounded", false]) then {
-					[_x] spawn life_fnc_revivePlayer;
-				};
-				} forEach _players;
-			};
-		};
-		if(_shift && playerSide == civilian && !isNull cursorTarget && animationState cursorTarget == "Incapacitated" && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "zipTie") && speed cursorTarget < 1 && life_inv_zip > 0) then
+		if(_shift && playerSide == civilian && !isNull cursorTarget && (animationState cursorTarget == "Incapacitated" OR cursorTarget getVariable "playerSurrender") && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "zipTie") && speed cursorTarget < 1 && life_inv_zip > 0) then
 			{
 				[] spawn life_fnc_zipTie;
-			} else {
-				hint "Please don't spam Shift + R.";
 			};
 		};
 		
-	//Knock out, this is experimental and yeah...
+	//Shift+G Knock out, this is experimental and yeah...
 	case 34:
 	{
 		if(_shift) then {_handled = true;};
@@ -106,8 +93,8 @@ switch (_code) do
 		};
 	};
 
-	//Surrender
-	case 46:
+	//2 key Surrender
+	case 3:
 	{
 		if (_shift && !_alt && !_ctrlKey) then
 		{
@@ -190,7 +177,7 @@ switch (_code) do
 	//V Key
 	case 47:
 	{
-		if(playerSide != west && (player getVariable "restrained") OR (player getVariable "transporting")) then {_handled = true;};
+		if(player getVariable "restrained" OR player getVariable "transporting" OR player getVariable "zipTie") then {_handled = true;};
 	};
 	//F Key
 	case 33:

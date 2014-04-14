@@ -47,7 +47,7 @@ _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unzip; closeDialog 
 
 //Set Put in Car
 _Btn2 ctrlSetText localize "STR_cInAct_PutInCar";
-_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_civPutInCar;";
+_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar;";
 
 //Set Escort Button
 if((_curTarget getVariable["Escorting",false])) then {
@@ -63,7 +63,7 @@ if(license_civ_bh && side cursorTarget == civilian) then {
 	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
 };
 
-if(!isNull cursorTarget && player distance cursorTarget < 3.5 && isPlayer cursorTarget &&) then
+if(!isNull cursorTarget && player distance cursorTarget < 3.5 && isPlayer cursorTarget) then
 	{
 	_Btn5 ctrlSetText localize "STR_cInAct_RobPerson";
 	_Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_robAction;";

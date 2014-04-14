@@ -14,7 +14,7 @@ _abortB = _display displayCtrl 104;
 _respawnB = _display displayCtrl 1010; 
 _respawnB ctrlEnable false;
 _abortB ctrlEnable false;
-[] call life_fnc_syncData;
+[] call life_fnc_sessionUpdate;
 //_abortB ctrlSetEventHandler ["onMouseButtonClick", "deleteMarker name player"];
 
 if ((player getVariable "restrained") || (player getVariable "Escorting") || (player getVariable "transporting") || life_is_arrested || life_istazed) then
