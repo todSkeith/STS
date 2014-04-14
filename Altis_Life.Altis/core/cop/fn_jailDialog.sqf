@@ -4,7 +4,7 @@
 // Description: Creates Dialog for jail
 //////////////////////////////////////////////////////////////////
 
-_unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+life_arrestTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 diag_log "Creating Dialog";
 createDialog "Life_jail_ui";
