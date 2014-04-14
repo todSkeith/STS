@@ -100,7 +100,6 @@ if(_medicsOn >= 5) then {_lostCash = 0.15};
 if(side player == independent) then {_lostCash = 0};
 _lostCash = floor(life_atmcash * _lostCash);
 if(_lostCast > 100000) then {_lostCash = 100000};
-<<<<<<< HEAD
 life_atmcash = life_atmcash - _lostCash;
 
 if(_lostCash == 0) then
@@ -111,9 +110,6 @@ else
 {
 	hintSilent format ["You have died and lost $%1 from your bank account for your cloning.", [_lostCash] call life_fnc_numberText];
 };
-
-=======
->>>>>>> 9857f434c87afce3c9c39f0dd9a8296f03e2a30b
 
 if(side player != independent) then 
 {
