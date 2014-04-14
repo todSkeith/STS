@@ -31,6 +31,7 @@ life_action_inUse = true;
 if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 	if((_curTarget getVariable["restrained",false]) && !dialog && playerSide == west) then {
 		[_curTarget] call life_fnc_copInteractionMenu;
+		systemChat format ["fn_actionKeyHandler: cursorTarget is %1 || name %2",_curTarget,name _curTarget];
 		};
 		if (((_curTarget getVariable "zipTie") || (animationstate _curTarget == "Incapacitated")) && !dialog && playerSide == civilian) then {
 		[_curTarget] call life_fnc_civInteractionMenu;
@@ -80,4 +81,3 @@ if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
 		};
 	};
 };
-systemChat format ["fn_actionKeyHandler: cursorTarget is %1 || name %2",_curTarget,name _curTarget];
