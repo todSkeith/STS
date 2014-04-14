@@ -100,7 +100,6 @@ if(_medicsOn >= 5) then {_lostCash = 0.15};
 if(side player == independent) then {_lostCash = 0};
 _lostCash = floor(life_atmcash * _lostCash);
 if(_lostCash > 100000) then {_lostCash = 100000};
-life_atmcash = life_atmcash - _lostCash;
 
 if(_lostCash == 0) then
 {
