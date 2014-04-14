@@ -42,7 +42,7 @@ switch (true) do
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
-			[] spawn fnc_drugeffect_her;
+			[] spawn life_fnc_drugeffect_her;
 		};
 	};
 
@@ -56,7 +56,7 @@ switch (true) do
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
-			[] spawn fnc_drugeffect_mar;
+			[] spawn life_fnc_drugeffect_mar;
 		};
 	};
 	case (_item == "cocainep"):
@@ -64,7 +64,7 @@ switch (true) do
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
 			player setFatigue 0;
-			[] spawn fnc_drugeffect_coc;
+			[] spawn life_fnc_drugeffect_coc;
 			[] spawn
 						{
 							life_cocaine_effect = time;
