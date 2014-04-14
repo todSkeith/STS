@@ -63,7 +63,16 @@ switch (true) do
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
 		{
+			player setFatigue 0;
 			[] spawn fnc_drugeffect_coc;
+			[] spawn
+						{
+							life_cocaine_effect = time;
+							titleText["You can now run farther for 4 minutes","PLAIN"];
+							player enableFatigue false;
+							waitUntil {!alive player OR ((time - life_cocaine_effect) > (4 * 60))};
+							player enableFatigue true;
+						};
 		};
 	};
 	case (_item == "lockpick"):
