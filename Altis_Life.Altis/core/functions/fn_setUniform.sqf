@@ -12,4 +12,4 @@ _texture = [_this,1,"",[""]] call BIS_fnc_param;
 
 if(isNull _unit || _texture == "") exitWith {};
 
-_unit setObjectTexture [0, _texture];
+_unit setObjectTextureGlobal [0, _texture];

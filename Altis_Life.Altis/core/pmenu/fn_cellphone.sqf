@@ -27,6 +27,7 @@ if((__GETC__(life_adminlevel) < 1)) then
 		switch (side _x) do
 		{
 			case west: {_type = "Cop"};
+			case independent: {_type = "Medic"};
 			case civilian: {_type = "Civ"};
 		};
 		_units lbAdd format["%1 (%2)",name _x,_type];

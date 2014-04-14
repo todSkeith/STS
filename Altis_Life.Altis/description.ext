@@ -7,7 +7,7 @@ respawndelay = 10;
 RespawnDialog = 0;
 disabledAI = true;
 disableChannels[]={0,1,2};
-enableDebugConsole = 1;
+enableDebugConsole = 0;
 
 class Header
 {

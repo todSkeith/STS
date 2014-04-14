@@ -50,7 +50,7 @@ switch (_item) do
 	case "rock": {6};
 	case "cement": {5};
 	case "goldore": {5};
-	case "gold_r": {5};
+	case "gold_r": {3};
 	case "goldbar": {12};
 	case "corn": {3};
 	case "moonshine": {2};
@@ -70,5 +70,7 @@ switch (_item) do
 	case "RoadConeStrip": {10};
 	case "RoadCone": {2};
 	case "RoadBlockWood": {23};
+	case "coalore": {5};
+	case "steel": {5};
 	default {1};
 };

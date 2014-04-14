@@ -32,6 +32,7 @@ _text ctrlSetStructuredText parseText format["<img size='1.7' image='icons\bank.
 		switch (side _x) do
 		{
 			case west: {_type = "Cop"};
+			case independent: {_type = "Medic"};
 			case civilian: {_type = "Civ"};
 		};
 		_units lbAdd format["%1 (%2)",name _x,_type];

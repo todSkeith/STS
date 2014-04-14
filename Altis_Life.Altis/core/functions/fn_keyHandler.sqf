@@ -70,7 +70,7 @@ switch (_code) do
 	{
 		//Test to stop reload while restrained
 		if(_shift || (player getVariable "restrained" || player getVariable "zipTie" || player getVariable "surrender")) then {_handled = true;};
-		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget == civilian) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
+		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget == civilian) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && !(player getVariable["zipTie",false]) && !(player getVariable["surrender",false]) && speed cursorTarget < 1) then
 		{
 			[] call life_fnc_restrainAction;
 		};
@@ -84,10 +84,10 @@ switch (_code) do
 	//Shift+G Knock out, this is experimental and yeah...
 	case 34:
 	{
-		if(_shift) then {_handled = true;};
+		if(_shift || (player getVariable "restrained" || player getVariable "zipTie" || player getVariable "surrender")) then {_handled = true;};
 		if(_shift && playerSide == civilian && !isNull cursorTarget && cursorTarget isKindOf "Man" && isPlayer cursorTarget && alive cursorTarget && cursorTarget distance player < 4 && speed cursorTarget < 1) then
 		{
-			if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["restrained",false]) && !life_istazed) then
+			if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["restrained",false]) && !(player getVariable["zipTie",false]) && !(player getVariable["surrender",false]) && !life_istazed) then
 			{
 				[cursorTarget] spawn life_fnc_knockoutAction;
 			};
