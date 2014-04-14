@@ -62,13 +62,16 @@ switch(_shop) do
 						["arifle_MXM_Black_F",nil,5000],
 						["arifle_MX_Black_F",nil,5000],
 						["arifle_MX_SW_Black_F",nil,5000],
+						["arifle_MXC_Black_F",nil,5000],
 						["SMG_01_F",nil,1],
 						["hgun_ACPC2_F",nil,2500],
 						["hgun_Pistol_heavy_01_MRD_F",nil,2500],
+						["optic_MRCO",nil,500],
 						["optic_Arco",nil,500],
 						["optic_Holosight",nil,1200],
 						["optic_Hamr",nil,1],
 						["acc_pointer_IR",nil,500],
+						["acc_flashlight",nil,500],
 						["U_B_CTRG_3",nil,5000],
 						["U_B_survival_uniform",nil,5000],
 						["V_PlateCarrier_Kerry",nil,5000],
@@ -112,7 +115,6 @@ switch(_shop) do
 						["acc_flashlight",nil,750],
 						["optic_Holosight",nil,1200],
 						["optic_Arco",nil,2500],
-						["muzzle_snds_H",nil,2750],
 						["30Rnd_65x39_caseless_mag",nil,130],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150]
 					]
@@ -130,7 +132,6 @@ switch(_shop) do
 						["optic_Arco",nil,2500],
 						["optic_Holosight",nil,1200],
 						["optic_Hamr",nil,2500],
-						["muzzle_snds_H",nil,2750],
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150]
 					]
@@ -148,7 +149,6 @@ switch(_shop) do
 						["optic_Arco",nil,2500],
 						["optic_Holosight",nil,1200],
 						["optic_Hamr",nil,2000],
-						["muzzle_snds_H",nil,2750],
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150]
 					]
@@ -168,7 +168,6 @@ switch(_shop) do
 						["optic_Holosight",nil,1200],
 						["optic_Hamr",nil,2000],
 						["acc_pointer_IR",nil,2500],
-						["muzzle_snds_H",nil,2750],
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["9Rnd_45ACP_Mag",nil,200]
@@ -190,7 +189,6 @@ switch(_shop) do
 						["optic_Holosight",nil,1200],
 						["optic_Hamr",nil,2000],
 						["acc_pointer_IR",nil,2500],
-						["muzzle_snds_H",nil,2750],
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["9Rnd_45ACP_Mag",nil,200]
@@ -212,7 +210,6 @@ switch(_shop) do
 						["optic_Holosight",nil,1200],
 						["optic_Hamr",nil,2000],
 						["acc_pointer_IR",nil,2500],
-						["muzzle_snds_H",nil,2750],
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["9Rnd_45ACP_Mag",nil,200]
@@ -227,13 +224,13 @@ switch(_shop) do
 						["arifle_MXM_Black_F",nil,15000],
 						["arifle_MX_Black_F",nil,15000],
 						["arifle_MX_SW_Black_F",nil,15000],
+						["arifle_MXC_Black_F",nil,15000],
 						["SMG_01_F",nil,14000],
 						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
 						["optic_Holosight",nil,1200],
 						["optic_Hamr",nil,2000],
 						["acc_pointer_IR",nil,2500],
-						["muzzle_snds_H",nil,2750],
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["9Rnd_45ACP_Mag",nil,200]
@@ -248,13 +245,13 @@ switch(_shop) do
 						["arifle_MXM_Black_F",nil,15000],
 						["arifle_MX_Black_F",nil,15000],
 						["arifle_MX_SW_Black_F",nil,15000],
+						["arifle_MXC_Black_F",nil,15000],
 						["SMG_01_F",nil,10000],
 						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
 						["optic_Holosight",nil,1200],
 						["optic_Hamr",nil,1500],
 						["acc_pointer_IR",nil,2500],
-						["muzzle_snds_H",nil,2750],
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["9Rnd_45ACP_Mag",nil,200]
@@ -268,6 +265,7 @@ switch(_shop) do
 					[
 						["arifle_MXM_F",nil,5000],
 						["arifle_MX_F",nil,5000],
+						["arifle_MXC_Black_F",nil,5000],
 						["arifle_MXM_Black_F",nil,5000],
 						["arifle_MX_Black_F",nil,5000],
 						["arifle_MX_SW_Black_F",nil,5000],
@@ -307,7 +305,6 @@ switch(_shop) do
 						["hgun_ACPC2_F",nil,17500],
 						["arifle_SDAR_F",nil,20000],
 						["optic_Arco",nil,2500],
-						["muzzle_snds_H",nil,2750],
 						["20Rnd_556x45_UW_mag",nil,125],
 						["30Rnd_556x45_Stanag",nil,300],
 						["30Rnd_9x21_Mag",nil,60],
