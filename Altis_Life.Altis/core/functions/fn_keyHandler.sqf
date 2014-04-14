@@ -68,14 +68,17 @@ switch (_code) do
 	//Restraining (Shift + R)
 	case 19:
 	{
+		systemChat "Inside of Shift+R!";
 		if(_shift) then {_handled = true;};
 		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget == civilian) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
 		{
+			systemChat "Inside of west if statement";
 			[] call life_fnc_restrainAction;
 		};
 
-		if(_shift && playerSide == civilian && !isNull cursorTarget && (animationState cursorTarget == "Incapacitated" OR cursorTarget getVariable "playerSurrender") && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "zipTie") && speed cursorTarget < 1 && life_inv_zip > 0) then
+		if(_shift && playerSide == civilian && !isNull cursorTarget && (animationState cursorTarget == "Incapacitated" OR cursorTarget getVariable "surrender") && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "zipTie") && speed cursorTarget < 1 && life_inv_zip > 0) then
 			{
+				systemChat "Passed if statement!";
 				[] spawn life_fnc_zipTie;
 			};
 		};
