@@ -25,4 +25,4 @@ while { player getVariable ["surrender", false] }  do {
 	};
 	deleteVehicle _obj;
 };
-[[player,"amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
+[[player,"amovppnemstpsraswrfldnon";],"life_fnc_animSync",true,false] spawn life_fnc_MP;
