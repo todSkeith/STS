@@ -51,7 +51,7 @@ class Life_jail_ui
 			idc = -1;
 			text = "Jail";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call life_fnc_jailPre";
+			onButtonClick = "[_unit] call life_fnc_jailPre";
 			x = 0.45;
 			y = 0.35;
 			w = (6.25 / 40);
