@@ -8,7 +8,7 @@
 
 _target = _this select 0;
 
-[[player,"AinvPknlMstpSnonWnonDnon_medic0"],"life_fnc_animSync",nil,false] spawn life_fnc_MP;
+player playMove "AinvPknlMstpSnonWnonDnon_medic0";
 [[], "life_fnc_reviveAction", _target, false] spawn BIS_fnc_MP;
 /*
 if (alive _target) then

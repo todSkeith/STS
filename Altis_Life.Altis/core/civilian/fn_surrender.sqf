@@ -10,10 +10,10 @@ private ["_pos"];
 player setVariable ["surrender", true, true];
 
 while { player getVariable ["surrender", false] }  do {
-	[[player,"amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon"],"life_fnc_animSync",nil,false] spawn life_fnc_MP;
+	player playMove "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon";
 	_obj = "Land_ClutterCutter_small_F" createVehicle (getPosATL _unit);
 	_obj setPosATL (getPosATL _unit);
-	player attachTo [_obj,[0,0,0]];
+	_unit attachTo [_obj,[0,0,0]];
 	
 	waitUntil {animationState player != "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon" || !(player getVariable "surrender") || vehicle player != player};
 	
@@ -24,4 +24,4 @@ while { player getVariable ["surrender", false] }  do {
 	};
 	deleteVehicle _obj;
 };
-[[player,"amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon"],"life_fnc_animSync",nil,false] spawn life_fnc_MP;
+player switchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
