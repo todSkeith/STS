@@ -2,22 +2,15 @@
  //Usable by only the Seal Team Sloth Community
  //Any configurations are only permitted by the Seal Team Sloth DEV Team
 
-"colorCorrections" ppEffectEnable true;
-"colorCorrections" ppEffectAdjust [1, 1, 0, [0,0,0,0.5], [random 5 - random 5,random 5 - random 5,random 5 - random 5,random 1], [random 5 - random 5,random 5 - random 5,random 5 - random 5, random 1]];
-"colorCorrections" ppEffectCommit 1;
-"chromAberration" ppEffectEnable true;
-"chromAberration" ppEffectAdjust [0.01,0.01,true];
-"chromAberration" ppEffectCommit 1;
-sleep 40;	
-
 private["_force"];
-for "_i" from 0 to 20 do
+for "_i" from 0 to 200 do
 {
-	"colorCorrections" ppEffectEnable true;
-	"colorCorrections" ppEffectAdjust [1, 1, 0, [0,0,0,0.5], [random 5 - random 5,random 5 - random 5,random 5 - random 5,random 1], [random 5 - random 5,random 5 - random 5,random 5 - random 5, random 1]];
-	"colorCorrections" ppEffectCommit 1;	
-	sleep 25;
+        _force = random 15;
+		"chromAberration" ppEffectEnable true;
+		"chromAberration" ppEffectAdjust [0.3,0.3,true];
+		"chromAberration" ppEffectCommit 1;
+        waituntil {ppEffectCommitted "chromAberration"};
+        sleep 90;
 };
-"chromAberration" ppEffectEnable false;
-"colorCorrections" ppEffectEnable false;
-if(!alive player) exitWith {};
+ "chromAberration" ppEffectEnable false;
+ if(!alive player) exitWith {};
