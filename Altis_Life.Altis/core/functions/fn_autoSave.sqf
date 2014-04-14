@@ -5,11 +5,12 @@
 	Description:
 	Saves the player's gear every 10 minutes.
 */
-while {true} do {    //Tells the function to continually loop.
-	sleep 600;   //Sleep for 600 seconds/10 minutes
-	if (alive player) then   //If the player is alive, then do this
+while {true} do {   
+	sleep 600;   
+	if (alive player) then   
         {
-		[false] call life_fnc_sessionUpdate;  //Same function used by the "Sync" button
-		hint "Game Autosaved."   //Just to tell you that the game is saving
+		[false] call life_fnc_sessionUpdate;  
+		hint "Session Synced";  
+		if (rating player < 100000) then { player addRating 999999; };
 	};
 };
