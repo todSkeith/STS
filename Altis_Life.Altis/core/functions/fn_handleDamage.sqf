@@ -91,7 +91,7 @@ if(_sel == "" || _sel == "head_hit" || _sel =="body") then
 			} 
 			else 
 			{
-				if (_damage >= 0.89) then
+				if ((damage _unit + _damage) >= 0.89) then
 				{
 					_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
 					_unit setDamage 0;

@@ -24232,7 +24232,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=8;
+		items=7;
 		class Item0
 		{
 			position[]={5402.209,20.026863,14545.803};
@@ -24285,19 +24285,6 @@ class Mission
 		};
 		class Item3
 		{
-			position[]={14103.749,-20.562927,15013.42};
-			a=444444;
-			b=444444;
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			expCond="NUL = [] spawn life_fnc_fuel_consumption;";
-			class Effects
-			{
-			};
-		};
-		class Item4
-		{
 			position[]={6794.5776,41.334988,15585.782};
 			a=2.5;
 			b=9;
@@ -24314,7 +24301,7 @@ class Mission
 				sound="FD_Timer_F";
 			};
 		};
-		class Item5
+		class Item4
 		{
 			position[]={12039.332,27.624653,15813.489};
 			a=2;
@@ -24331,7 +24318,7 @@ class Mission
 			{
 			};
 		};
-		class Item6
+		class Item5
 		{
 			position[]={16835.877,11.876387,15468.209};
 			a=2;
@@ -24348,7 +24335,7 @@ class Mission
 			{
 			};
 		};
-		class Item7
+		class Item6
 		{
 			position[]={23357.508,12.926656,19808.773};
 			a=2;
