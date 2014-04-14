@@ -26,9 +26,9 @@ switch ((typeOf _vehicle)) do
 	case "C_Van_01_Fuel_F": {_weight = 150;};
 	case "I_G_Van_01_transport_F": {_weight = 100;};
 	case "C_Van_01_box_F": {_weight = 150;};
-	case "C_Boat_Civil_01_F": {_weight = 85;};
-	case "C_Boat_Civil_01_police_F": {_weight = 85;};
-	case "C_Boat_Civil_01_rescue_F": {_weight = 85;};
+	case "C_Boat_Civil_01_F": {_weight = 100;};
+	case "C_Boat_Civil_01_police_F": {_weight = 100;};
+	case "C_Boat_Civil_01_rescue_F": {_weight = 100;};
 	case "B_Truck_01_box_F": {_weight = 450;};
 	case "B_Truck_01_transport_F": {_weight = 325;};
 	case "B_MRAP_01_F": {_weight = 65;};
@@ -38,8 +38,8 @@ switch ((typeOf _vehicle)) do
 	case "O_Heli_Light_02_unarmed_F": {_weight = 100 ;}; //ORCA
 	case "I_Heli_Transport_02_F": {_weight = 175 ;}; //Mohawk
 	case "C_Rubberboat": {_weight = 45;};
-	case "B_G_Boat_Transport_01_F": {_weight = 45;};
-	case "B_Boat_Transport_01_F": {_weight = 45;};
+	case "B_G_Boat_Transport_01_F": {_weight = 60;};
+	case "B_Boat_Transport_01_F": {_weight = 60;};
 	case "O_Truck_03_transport_F": {_weight = 450 ;};
 	case "O_Truck_03_covered_F": {_weight = 450 ;}; //Mohawk
 	case "Land_Box_AmmoOld_F": {_weight = 700;};
