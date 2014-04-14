@@ -10,7 +10,7 @@ private["_unit", "_source"];
 _unit = _this select 0;
 hint format ["_unit is %1", _unit];
 _source = _this select 1;
-_bleedout = time + (60*10);
+_bleedout = time + (60*15);
 
 _unit setVariable["unconscious",true,true];
 	
