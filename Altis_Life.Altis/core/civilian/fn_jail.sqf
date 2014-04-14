@@ -56,10 +56,10 @@ _time = time + (_jailTime * 60);
 _esc = false;
 _bail = false;
 
-[] spawn
+[_jailTime] spawn
 {
 	life_canpay_bail = false;
-	sleep (_jailTime * 30);
+	sleep ((_this select 0) * 30);
 	life_canpay_bail = nil;
 };
 
