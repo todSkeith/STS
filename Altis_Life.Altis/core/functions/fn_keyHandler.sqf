@@ -96,7 +96,7 @@ switch (_code) do
 	//2 key Surrender
 	case 3:
 	{
-		if (_shift && !_alt && !_ctrlKey) then
+		if (!_shift && !_alt && !_ctrlKey) then
 		{
 			if (vehicle player == player && !(player getVariable ["restrained", false]) && !(player getVariable ["Escorting", false]) ) then {
 				if (player getVariable ["surrender", false]) then {
