@@ -13,7 +13,7 @@ while { player getVariable ["surrender", false] }  do {
 	player playMove "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon";
 	_obj = "Land_ClutterCutter_small_F" createVehicle (getPosATL _unit);
 	_obj setPosATL (getPosATL _unit);
-	_unit attachTo [_obj,[0,0,0]];
+	player attachTo [_obj,[0,0,0]];
 	
 	waitUntil {animationState player != "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon" || !(player getVariable "surrender") || vehicle player != player};
 	
