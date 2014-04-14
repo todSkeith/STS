@@ -340,7 +340,7 @@ class cInteraction_Menu
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = 37401;
-			text = "$STR_vInAct_Title";
+			text = "$STR_pInAct_Title";
 			x = BGX;
 			y = BGY;
 			w = BGW;
@@ -482,7 +482,7 @@ class mInteraction_Menu
 		{
 			colorBackground[] = {0,0,0,0};
 			idc = 37401;
-			text = "$STR_vInAct_Title";
+			text = "$STR_pInAct_Title";
 			x = BGX;
 			y = BGY;
 			w = BGW;

@@ -404,9 +404,9 @@
 		<Key ID="STR_cInAct_Escort">
 			<Original>Escort Player</Original>
 		</Key>
-		<key ID="STR_cInAct_RobPerson">
+		<Key ID="STR_cInAct_RobPerson">
 			<Original>Rob Person</Original>
-		</key>
+		</Key>
 	</Package>
 	<Package name="Vehicle_Interaction">
 		<Key ID="STR_vInAct_Title">

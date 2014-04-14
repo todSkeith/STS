@@ -68,7 +68,8 @@ switch (_code) do
 	//Restraining (Shift + R)
 	case 19:
 	{
-		if(_shift) then {_handled = true;};
+		//Test to stop reload while restrained
+		if(_shift || (player getVariable "restrained" || player getVariable "zipTie" || player getVariable "surrender")) then {_handled = true;};
 		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget == civilian) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && speed cursorTarget < 1) then
 		{
 			[] call life_fnc_restrainAction;
@@ -98,7 +99,7 @@ switch (_code) do
 	{
 		if (!_shift && !_alt && !_ctrlKey) then
 		{
-			if (vehicle player == player && !(player getVariable ["restrained", false]) && !(player getVariable ["Escorting", false]) ) then {
+			if (vehicle player == player && !(player getVariable ["restrained", false]) && !(player getVariable ["Escorting", false]) && !(player getVariable ["zipTie", false])) then {
 				if (player getVariable ["surrender", false]) then {
 					player setVariable ["surrender", false, true];
 				} else {

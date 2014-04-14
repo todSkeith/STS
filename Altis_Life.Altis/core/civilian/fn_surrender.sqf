@@ -15,7 +15,8 @@ while { player getVariable ["surrender", false] }  do {
 	_obj setPosATL (getPosATL _unit);
 	player attachTo [_obj,[0,0,0]];
 	
-	waitUntil {animationState player != "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon" || !(player getVariable "surrender") || vehicle player != player};
+	waitUntil {animationState player != "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon" || !(player getVariable "surrender") || vehicle player != player || (player getVariable "restrained") || (player getVariable "zipTie")};
+	player setVariable ["surrender", false, true];
 	
 	// Check if player still alive.
 	if (!alive player) then {
