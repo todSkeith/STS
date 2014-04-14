@@ -99,9 +99,13 @@ if(_medicsOn > 0 && _medicsOn < 5) then {_lostCash = 0.05};
 if(_medicsOn >= 5) then {_lostCash = 0.15};
 _lostCash = floor(life_atmcash * _lostCash);
 if(_lostCast > 100000) then {_lostCash = 100000};
-life_atmcash = life_atmcash - _lostCash;
-hintSilent format ["You have died and lost $%1 from your bank account for your cloning.", [_lostCash] call life_fnc_numberText];
 
+if(side player != independent) then 
+{
+	life_atmcash = life_atmcash - _lostCash;
+	hintSilent format ["You have died and lost $%1 from your bank account for your cloning.", [_lostCash] call life_fnc_numberText];
+};
+	
 life_carryWeight = 0;
 life_thirst = 100;
 life_hunger = 100;
