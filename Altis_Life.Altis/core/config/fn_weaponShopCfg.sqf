@@ -160,8 +160,8 @@ switch(_shop) do
 				["Altis Sergeant Shop",
 					[
 						["arifle_MXC_F",nil,15000],
-						["arifle_MXM_F",nil,30000],
-						["arifle_MX_SW_F",nil,35000],
+						["arifle_MXM_F",nil,15000],
+						["arifle_MX_SW_F",nil,15000],
 						["SMG_01_F",nil,15000],
 						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
@@ -181,8 +181,8 @@ switch(_shop) do
 				["Altis Lieutenant Shop",
 					[
 						["arifle_MX_Black_F",nil,15000],
-						["arifle_MXM_F",nil,30000],
-						["arifle_MX_SW_F",nil,35000],
+						["arifle_MXM_F",nil,15000],
+						["arifle_MX_SW_F",nil,15000],
 						["arifle_MXC_F",nil,15000],
 						["SMG_01_F",nil,15000],
 						["hgun_ACPC2_F",nil,17500],
@@ -203,8 +203,8 @@ switch(_shop) do
 				["Altis Captain Shop",
 					[
 						["arifle_MX_Black_F",nil,15000],
-						["arifle_MXM_F",nil,30000],
-						["arifle_MX_SW_F",nil,35000],
+						["arifle_MXM_F",nil,15000],
+						["arifle_MX_SW_F",nil,15000],
 						["arifle_MXC_F",nil,15000],
 						["SMG_01_F",nil,15000],
 						["hgun_ACPC2_F",nil,17500],
