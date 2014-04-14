@@ -42,7 +42,7 @@ _Btn1 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_repairTruck;";
 
 
 //Button 2: Push
-if(cursorTarget isKindOf "Ship") then {
+if(_curTarget isKindOf "Ship") then {
 	_Btn2 ctrlSetText localize "STR_vInAct_Push";
 	_Btn2 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_pushVehicle;";
 } else {
@@ -67,7 +67,7 @@ if(playerSide == west) then {
 	
 	//Button 5: Check Driver Licenses
 	if (isPlayer driver life_vInact_curTarget) then {_Btn5 ctrlEnable true;} else {_Btn5 ctrlEnable false;};
-	_Btn5 ctrlSetText localize "STR_pInAct_checkLicenses"
+	_Btn5 ctrlSetText localize "STR_pInAct_checkLicenses";
 	_Btn5 buttonSetAction "[[player],""life_fnc_licenseCheck"",life_vInact_curTarget,false] spawn life_fnc_MP";
 	
 	//Button 6: Search Vehicle
