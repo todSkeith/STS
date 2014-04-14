@@ -70,19 +70,21 @@ if((_curTarget getVariable["zipTie",false])) then {
 	_Btn3 ctrlEnable false;
 };
 
+/*
 if(license_civ_bh && side cursorTarget == civilian) then {
 	_Btn4 ctrlSetText localize "STR_cInAct_Arrest";
 	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
 } else {
 	_Btn4 ctrlEnable false;
 };
+*/
 
 if(player distance cursorTarget < 3.5 && ((_curTarget getVariable["zipTie",false]) || (_curTarget getVariable["surrender",false]) || (animationState _curTarget == "Incapacitated")) && !(_curTarget getVariable["Escorting",false])) then
 	{
-	_Btn5 ctrlSetText localize "STR_cInAct_RobPerson";
-	_Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_robAction; closeDialog 0;";
+	_Btn4 ctrlSetText localize "STR_cInAct_RobPerson";
+	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_robAction; closeDialog 0;";
 } else {
-	_Btn5 ctrlEnable false;
+	_Btn4 ctrlEnable false;
 };
 
 
