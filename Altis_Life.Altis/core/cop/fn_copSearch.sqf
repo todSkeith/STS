@@ -62,6 +62,7 @@ if(!alive _civ || player distance _civ > 5) exitWith {hint format["Couldn't sear
 
 if (side player == independent && (primaryWeapon _civ != "" || secondaryWeapon _civ != "") then {
 _out = _out + format ["<t color='#FFFF00'><t size='1.5'>Player is armed<br/><br/>", _inv];
+};
 _out = _out + format ["<t color='#FFD700'><t size='1.5'>Illegal Items:</t></t><br/>%1<br/><br/>", _inv];
 _out = _out + format ["<t color='#FF0000'><t size='1.5'>Concealed Weapons:</t></t><br/>%1<br/><br/>", _gun];
 

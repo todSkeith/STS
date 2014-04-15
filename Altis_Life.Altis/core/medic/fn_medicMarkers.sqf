@@ -25,7 +25,7 @@ if(visibleMap) then {
 		_mMarker setMarkerTypeLocal "Mil_dot";
 		_mMarker setMarkerTextLocal format["%1", name _x];
 	
-		_markers set[count _markers,[_marker,_x]];
+		_mMarkers set[count _mMarkers,[_mMarker,_x]];
 	} foreach _medics;
 	{
 		_vMarker = createMarkerLocal [format["%1_vMarker",_x],visiblePosition _x];
