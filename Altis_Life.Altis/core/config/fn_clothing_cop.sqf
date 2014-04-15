@@ -108,7 +108,6 @@ switch (_filter) do
 		};
 		if(__GETC__(life_coplevel) > 2) then
 		{
-			_ret set[count _ret,["B_TacticalPack_Base",nil,800]];
 			_ret set[count _ret,["B_TacticalPack_rgr",nil,800]];
 			_ret set[count _ret,["B_TacticalPack_mcamo",nil,800]];
 			_ret set[count _ret,["B_TacticalPack_ocamo",nil,800]];
@@ -117,7 +116,6 @@ switch (_filter) do
 		};
 		if(__GETC__(life_coplevel) > 3) then
 		{
-			_ret set[count _ret,["B_Kitbag_Base",nil,1000]];
 			_ret set[count _ret,["B_Kitbag_rgr",nil,1000]];
 			_ret set[count _ret,["B_Kitbag_sgg",nil,1000]];
 			_ret set[count _ret,["B_Kitbag_cbr",nil,1000]];
