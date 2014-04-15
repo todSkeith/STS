@@ -22,8 +22,7 @@ if(life_blacklisted) exitWith
     };
 //};
 
-private["_getRank"];
-_getRank = switch (__GETC__(life_coplevel)) do {case 1: {1}; case 2: {2}; case 3: {3}; case 4: {4}; case 5: {5}; case 6: {6}; case 7: {7}; default {0};};
+_getRank = call life_coplevel;
 player setVariable["coplevel",_getRank,true];
 
 [] call life_fnc_spawnMenu;
