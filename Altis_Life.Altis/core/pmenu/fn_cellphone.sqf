@@ -18,7 +18,7 @@ lbClear _units;
 
 if((__GETC__(life_adminlevel) < 1)) then
 {
-	ctrlShow[3020,false];
+//	ctrlShow[3020,false];
 	ctrlShow[3021,false];
 };
 {
