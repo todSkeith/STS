@@ -75,6 +75,6 @@ if (isPlayer _unit) then
 	hintSilent "";
 	_unit enableSimulation true;
 	_unit allowDamage true;
-	_unit setDamage 0;
+//	_unit setDamage 0;
 	_unit setCaptive false;
 	_unit playMove "amovppnemstpsraswrfldnon";

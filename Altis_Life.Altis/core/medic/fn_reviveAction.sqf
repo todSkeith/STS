@@ -25,6 +25,7 @@ if(getPos player select 2 < 0) then {player setPos [getPos player select 0, getP
 	"dynamicBlur" ppEffectEnable true;
 	"dynamicBlur" ppEffectAdjust [5];
 	"dynamicBlur" ppEffectCommit 0;
+	sleep 1;
 	"dynamicBlur" ppEffectAdjust [0];
 	"dynamicBlur" ppEffectCommit 10;
 	sleep 10;
