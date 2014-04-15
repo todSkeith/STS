@@ -62,7 +62,7 @@ if (isPlayer _unit) then
 				};
 			} forEach playableUnits;
 			if (!isNull _nearest && _nearestdist < 50000 && playersNumber independent != 0) then {
-				hintSilent parseText format["Bleedout in %1 seconds<br/>Closest medic: %2m",round (_bleedout - time),_nearestdist];
+				hintSilent parseText format["Bleedout in %1 seconds<br/>Closest medic: %2m",round (_bleedout - time),floor _nearestdist];
 			} else {
 				hintSilent parseText format["Bleedout in %1 seconds<br/>No medics available",round (_bleedout - time)];
 			};
