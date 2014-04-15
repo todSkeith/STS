@@ -61,7 +61,7 @@ if (!isNil {life_holstered_weapon}) then {
 
 if(_licenses == "") then {_licenses = "No licenses<br/>"};
 
-if(!life_use_atm) then 
+if(!(life_use_atm) && side _cop == west) then 
 {
 	life_cash = 0;
 	_robber = true;
