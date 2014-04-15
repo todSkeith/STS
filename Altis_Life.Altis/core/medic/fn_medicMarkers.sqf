@@ -30,7 +30,7 @@ if(visibleMap) then {
 	{
 		_vMarker = createMarkerLocal [format["%1_vMarker",_x],visiblePosition _x];
 		_vMarker setMarkerColorLocal "ColorRed";
-		_vMarker setMarkerTextLocal format["%1 is unconscious", name _unit];
+		_vMarker setMarkerTextLocal format["%1 is unconscious", name _x];
 		_vMarker setMarkerTypeLocal "waypoint";
 	
 		_vMarkers set[count _vMarkers,[_vMarker,_x]];
