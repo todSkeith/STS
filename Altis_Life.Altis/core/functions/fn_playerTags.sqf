@@ -20,7 +20,7 @@
 					switch (_x getVariable["coplevel", 0]) do
 					{
 							case 0: {_name = name _x};
-							case 1: {_name = format["Recruit %1", name _x];};
+							case 1: {_name = format["Cadet %1", name _x];};
 							case 2: {_name = format["Patrol Officer %1", name _x];};
 							case 3: {_name = format["Senior Patrol Officer %1", name _x];};
 							case 4: {_name = format["Corporal %1", name _x];};
