@@ -25,6 +25,14 @@ switch (_filter) do
 		{
 			_ret set[count _ret,["U_B_CombatUniform_mcam","Altis Police Uniform",350]];
 		};
+		if(__GETC__(life_adminlevel) > 0) then
+		{
+			_ret set[count _ret,["U_B_CTRG_1","Jamie has no friends",100]];
+			_ret set[count _ret,["U_B_CTRG_2","Jamie has no friends",100]];
+			_ret set[count _ret,["U_B_CTRG_3","Jamie has no friends",100]];
+			_ret set[count _ret,["U_B_CTRG_3","Jamie has no friends",100]];
+			_ret set[count _ret,["U_B_survival_uniform","Jamie has no friends",100]];
+		};
 	};
 
 	//Hats
@@ -35,7 +43,7 @@ switch (_filter) do
 			_ret set[count _ret,["H_Cap_blk","Cadet Hat",75]];
 		};
 
-		if(__GETC__(life_copLevel) > 1) then
+		if(__GETC__(life_coplevel) > 1) then
 		{
 			_ret set[count _ret,["H_MilCap_gry",nil,100]];
 			_ret set[count _ret,["H_HelmetB_light_black",nil,100]];
@@ -47,6 +55,12 @@ switch (_filter) do
 			_ret set[count _ret,["H_Beret_red",nil,100]];
 			_ret set[count _ret,["H_Beret_grn",nil,100]];
 		};
+		
+		if(__GETC__(life_adminlevel) > 0) then
+		{
+			_ret set[count _ret,["H_Beret_Colonel",nil,100]];
+		};
+		
 	};
 
 	//Glasses
@@ -75,6 +89,11 @@ switch (_filter) do
 		if(__GETC__(life_coplevel) > 2) then
 		{
 			_ret set[count _ret,["V_PlateCarrier1_blk",nil,1500]];
+		};
+		if(__GETC__(life_adminlevel) > 0) then
+		{
+			_ret set[count _ret,["V_PlateCarrierL_CTRG",nil,100]];
+			_ret set[count _ret,["V_PlateCarrierH_CTRG",nil,100]];
 		};
 
 	};
