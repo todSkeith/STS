@@ -108,8 +108,8 @@ switch (_code) do
 			};
 			_handled = true;
 		};
-
 	};
+	
 	//Holster (Shift - H for now)
 	case 35: {
 		if (_shift && !_alt && !_ctrlKey) then {
