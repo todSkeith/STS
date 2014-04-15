@@ -25,7 +25,7 @@ if(currentWeapon player !="")then
 		{
 			if(currentWeapon player !="Binocular") then
 			{
-				[[2,"A station is being robbed!"],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+				[[2,"A station is being robbed!"],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 				[[getPlayerUID _robber,name _robber,"211"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 				gasman3 setVariable["robProgress",true, true];
 				_Pos = position player;
@@ -58,7 +58,7 @@ if(!alive player) exitWith {life_action_inUse = false;};
 
 sleep 2;
 _robberycash = robberyreward;
-_timer = time + (3 * 60);	
+_timer = time + (5 * 60);	
 _toFar = false;
 _vault = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 
@@ -79,7 +79,7 @@ switch(true) do
 	case (_toFar):
 	{
 		hint "You are too far away!";
-		[[2,"A station robbery failed..."],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+		[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 		deleteMarker "Marker202";
 		_denied1 = false;
 		gasman3 setVariable["robProgress",false, true];
@@ -93,7 +93,7 @@ switch(true) do
 	{
 		hint "Because you died the robbery failed.";
 		_denied1 = false;
-		[[2,"A station robbery failed..."],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+		[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 		deleteMarker "Marker202";
 		gasman3 setVariable["robProgress",false, true];
 		life_action_inUse = false;
@@ -105,7 +105,7 @@ switch(true) do
 	case (life_istazed):
 	{
 		hint "You were tazed, the robbery has failed!";
-		[[2,"A station robbery failed..."],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+		[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 		deleteMarker "Marker202";
 		_denied1 = false;
 		gasman3 setVariable["robProgress",false, true];
@@ -118,7 +118,7 @@ switch(true) do
 	{
 		hint format["You have successfully robbed $%1", _robberycash];
 		life_cash = life_cash + _robberycash;
-		[[2,"A station was successfully robbed!"],"life_fnc_broadcast",nil,false] spawn life_fnc_MP;
+		[[2,"A station was successfully robbed!"],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 		[[getPlayerUID _source,name _source,"211A"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 		gasman3 setVariable["robProgress",false, true];
 		gasman3 setVariable["gaswait",true, true];
@@ -128,6 +128,6 @@ switch(true) do
 	};	
 };
 
-sleep 1200;
+sleep 2700;
 gasman3 setVariable["gaswait",false,true];
 life_action_inUse = false;
