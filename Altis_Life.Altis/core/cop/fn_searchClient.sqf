@@ -12,6 +12,9 @@ _inv = [];
 _guns = [];
 _robber = false;
 
+//Debug
+hint format ["%1 is searching you...",name _cop];
+
 //Illegal items
 {
 	_var = [_x select 0,0] call life_fnc_varHandle;
