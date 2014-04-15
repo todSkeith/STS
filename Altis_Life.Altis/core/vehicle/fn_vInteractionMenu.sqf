@@ -74,12 +74,17 @@ if(playerSide == west) then {
 	_Btn6 ctrlSetText localize "STR_vInAct_SearchVehicle";
 	_Btn6 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_vehInvSearch;";
 
-	//Button 7: Impound Vehicle
-	_Btn7 ctrlSetText localize "STR_vInAct_Impound";
-	_Btn7 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_impoundAction;";
 } else {
 	_Btn4 ctrlShow false;
 	_Btn5 ctrlShow false;
 	_Btn6 ctrlShow false;
+};
+
+//Cop exclusive buttons
+if(playerSide == west || playerSide == independent) then {
+	//Button 7: Impound Vehicle
+	_Btn7 ctrlSetText localize "STR_vInAct_Impound";
+	_Btn7 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_impoundAction;";
+} else {
 	_Btn7 ctrlShow false;
 };
