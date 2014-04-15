@@ -11,8 +11,8 @@ player setVariable ["surrender", true, true];
 
 while { player getVariable ["surrender", false] }  do {
 	player playMove "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon";
-	_obj = "Land_ClutterCutter_small_F" createVehicle (getPosATL _unit);
-	_obj setPosATL (getPosATL _unit);
+	_obj = "Land_ClutterCutter_small_F" createVehicle (getPosATL player);
+	_obj setPosATL (getPosATL player);
 	player attachTo [_obj,[0,0,0]];
 	
 	waitUntil {animationState player != "amovpercmstpsnonwnondnon_amovpercmstpssurwnondnon" || !(player getVariable "surrender") || vehicle player != player || (player getVariable "restrained") || (player getVariable "zipTie")};
@@ -24,5 +24,4 @@ while { player getVariable ["surrender", false] }  do {
 	};
 	deleteVehicle _obj;
 };
-player setVariable ["surrender", false, true];
 player switchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
