@@ -7,6 +7,9 @@
         This is for Use only on Seal Team Sloth
 */
 private ["_pos"];
+
+if (player getVariable ["unconscious",false]) exitWith {};
+
 player setVariable ["surrender", true, true];
 
 while { player getVariable ["surrender", false] }  do {
