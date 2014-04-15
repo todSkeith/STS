@@ -109,9 +109,9 @@ class Life_cell_phone {
 		class AdminMsgButton : life_RscButtonMenu 
 		{
 			idc = 3020;
-			text = "Admin Message";
+			text = "Text Medics";
 			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			onButtonClick = "[] call fnc_cell_adminmsg";
+			onButtonClick = "[] call fnc_cell_textmedic";
 			
 			x = 0.32;
 			y = 0.4;
