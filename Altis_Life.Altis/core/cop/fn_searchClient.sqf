@@ -5,7 +5,7 @@
 	Description:
 	Searches the player and he returns information back to the player.
 */
-private["_cop","_inv","_guns","_var","_val","_robber"];
+private["_cop","_inv","_guns","_var","_val","_robber","_licenses"];
 _cop = [_this,0,Objnull,[objNull]] call BIS_fnc_param;
 if(isNull _cop) exitWith {};
 _inv = [];
