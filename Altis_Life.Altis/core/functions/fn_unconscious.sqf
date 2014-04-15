@@ -6,7 +6,7 @@
 	Description: when handle damage calls this file, it will do all of the actions needed to be unconscious.
 */
 
-private["_unit", "_source"];
+private["_unit", "_source","_bleedout"];
 _unit = _this select 0;
 hint format ["_unit is %1", _unit];
 _source = _this select 1;
@@ -51,7 +51,7 @@ if (isPlayer _unit) then
 
 		if (_bleedout >= time) then {
 			
-			_hintbleedout = format["Bleedout in %1 seconds\n\n%2"<br/>,round (_bleedout - time)];
+			_hintbleedout = format["Bleedout in %1 seconds%2<br/>",round (_bleedout - time)];
 			_nearest=objNull;
 			_nearestdist=50000;
 			{
@@ -61,12 +61,11 @@ if (isPlayer _unit) then
 					_nearestdist=_dist;
 				};
 			} forEach playableUnits;
-			if (!isNull _nearest && _nearestdist != 50000 && playersNumber independent > 0) then {
-				_hintnear = format["Closest medic: %1m",floor _nearestdist];
+			if (!isNull _nearest && _nearestdist < 50000 && playersNumber independent != 0) then {
+				hintSilent parseText format["%1<br/>Closest medic: %2m",_hintbleedout,_hintnear];
 			} else {
-				_hintnear = "No medics available";
+				hintSilent parseText format["%1<br/>No medics available",_hintbleedout];
 			};
-			hintSilent parseText format["%1<br/>%2",_hintbleedout,_hintnear];
 			sleep 1;
 		} else {
 			hintSilent "";
