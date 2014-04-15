@@ -23,18 +23,45 @@ player createDiarySubject ["controls","Controls"];
 */
 	player createDiaryRecord["changelog",
 		[
-			"Official Change Log",
+			"4/15/14",
 				"
-					The official change log can be found on the BIS forums (search Altis Life RPG)
-				"
-		]
-	];
-	
-	player createDiaryRecord["changelog",
-		[
-			"Custom Change Log",
-				"
-					This section is meant for people doing their own edits to the mission, DO NOT REMOVE THE ABOVE.
+				Added: EMS<br/>
+				Added: Crab grounds<br/>
+				Added: Coal Mine<br/>
+				Added: Steel forge - 1 coal ore + 1 iron ore = 1 steel ingots<br/>
+				Added: Club sloth<br/>
+				Added: Lumbering - box truck or better is suggested<br/>
+				Added: Saw to the Lumber yard - used to cut logs<br/>
+				Added: New interaction menu - left windows key<br/>
+				Added: Carryall backpack for civilians<br/>
+				Added: Fish market to the boat shop near diamond trader<br/>
+				Added: WIldlife Poacher up north<br/>
+				Added: Police ranks will now appear next to the players name<br/>
+				Added: Road barriers and cones for police<br/>
+				Added: A few new outfits at Bruce’s<br/>
+				Changed: Re-added Gas Station robberies.<br/>
+				Changed: took away 5 cop slots and added them to EMS slots<br/>
+				Changed: Turtle Dealer name changed to Wildlife Poacher<br/>
+				Changed: You no longer lose your Rebel License when you are sent to jail<br/>
+				Changed: Bleedout timer set to 10 minutes<br/>
+				Changed: Cops now lose their gear on death and respawn with a default class set<br/>
+				Changed: Now using the arma ATM machines<br/>
+				Changed: must wait 10 seconds before you can log out<br/>
+				Changed: Cop shops will now only display what you are able to buy at your rank<br/>
+				Changed: Moved gas station robbery locations<br/>
+				Changed: Police got a new shipment of uniforms - (may change in the future)<br/>
+				Changed: When robbing someone, it no longer informs the police<br/>
+				Changed: Wanted prices have been tweaked<br/>
+				Changed: cop paychecks have been tweaked<br/>
+				Changed: Bail prices have been tweaked<br/>
+				Changed: You must wait half the time of your jail sentence before given the option to pay bail<br/>
+				Changed: Tactical View disabled<br/>
+				Changed: Cops can now unrestain people that are ziptied<br/>
+				Changed: Surrender button changed to the number 2<br/>
+				Changed: Processing times depend on how many items you are processing.<br/>
+				Changed: Ziptie button is now Shift + R<br/>
+				Changed: To pick up items on the ground, you use your left Windows key<br/>
+				Fixed: ziptied civilians can now be put in a vehicle<br/>
 				"
 		]
 	];
@@ -546,6 +573,8 @@ player createDiarySubject ["controls","Controls"];
 		[
 			"",
 				"
+				1: Open Wanted List<br/>
+				2: Surrender<br/>
 				Y: Open Player Menu<br/>
 				U: Lock and unlock cars<br/>
 				F: Cop Siren (if cop)<br/>
