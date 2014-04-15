@@ -19,13 +19,13 @@ if(isServer || playerSide == independent) then {
 	
 	while {(isPlayer _unit) && (_unit getVariable "unconscious")} do {
 		_marker setMarkerPosLocal (visiblePosition _unit);
-		if(!(isPlayer _unit) || !(_unit getVariable "unconscious")) then {
+		if(!(alive _unit) || !(_unit getVariable "unconscious")) then {
 			deleteMarker name _unit;
 		};
 		sleep 1;
 	};
 };
 
-if(!(isPlayer _unit) || !(_unit getVariable "unconscious")) then {
+if(!(alive _unit) || !(_unit getVariable "unconscious")) then {
 			deleteMarker name _unit;
 		};
