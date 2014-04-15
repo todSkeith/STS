@@ -16,15 +16,17 @@ _robber = false;
 hint format ["%1 is searching you...",name _cop];
 
 //Illegal items
-{
-	_var = [_x select 0,0] call life_fnc_varHandle;
-	_val = missionNamespace getVariable _var;
-	if(_val > 0) then
+if (side _cop == west) then {
 	{
-		_inv set[count _inv,[_x select 0,_val]];
-	};
-	missionNamespace setVariable[_var,0];
-} foreach life_illegal_items;
+		_var = [_x select 0,0] call life_fnc_varHandle;
+		_val = missionNamespace getVariable _var;
+		if(_val > 0) then
+		{
+			_inv set[count _inv,[_x select 0,_val]];
+		};
+		missionNamespace setVariable[_var,0];
+	} foreach life_illegal_items;
+};
 
 // Check for hidden weapons.
 if (uniform player != "") then {
