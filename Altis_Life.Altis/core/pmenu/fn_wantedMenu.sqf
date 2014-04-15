@@ -18,7 +18,7 @@ _units = [];
 
 ctrlSetText[2404,"Establishing connection..."];
 
-if(__GETC__(life_coplevel) < 3 && __GETC__(life_adminlevel) == 0) then
+if(player getVariable["coplevel",1] || player getVariable["coplevel",2] || player getVariable["coplevel",3]) then
 {
 	ctrlShow[2405,false];
 };
