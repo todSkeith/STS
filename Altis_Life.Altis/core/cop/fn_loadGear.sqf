@@ -8,6 +8,10 @@
 private["_allowedItems","_loadout","_primary","_launcher","_handgun","_magazines","_uniform","_vest","_backpack","_items","_primitems","_secitems","_handgunitems","_uitems","_vitems","_bitems","_handle"];
 _loadout = cop_gear;
 
+private["_getRank"];
+_getRank = switch (__GETC__(life_coplevel)) do {case 1: {1}; case 2: {2}; case 3: {3}; case 4: {4}; case 5: {5}; case 6: {6}; case 7: {7}; default {0};};
+player setVariable["coplevel",_getRank,TRUE];
+
 if(isNil "_loadout") exitWith {[] call life_fnc_copDefault;}; //Slot data doesn't exist
 if(count _loadout == 0) exitWith {[] call life_fnc_copDefault;}; //Slot data doesn't exist
 _primary = _loadout select 0;
