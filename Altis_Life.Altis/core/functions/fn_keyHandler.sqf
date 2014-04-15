@@ -87,7 +87,7 @@ switch (_code) do
 		if(_shift) then {_handled = true;};
 		if(_shift && playerSide == civilian && !isNull cursorTarget && cursorTarget isKindOf "Man" && isPlayer cursorTarget && alive cursorTarget && cursorTarget distance player < 4 && speed cursorTarget < 1) then
 		{
-			if((animationState cursorTarget != "Incapacitated") && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["restrained",false]) && !(player getVariable["zipTie",false]) && !(player getVariable["surrender",false]) && !life_istazed) then
+			if((animationState cursorTarget != "Incapacitated") && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["restrained",false]) && !(player getVariable["zipTie",false]) && !(player getVariable["surrender",false]) && !(player getVariable["unconscious",false]) && !life_istazed) then
 			{
 				[cursorTarget] spawn life_fnc_knockoutAction;
 			};
