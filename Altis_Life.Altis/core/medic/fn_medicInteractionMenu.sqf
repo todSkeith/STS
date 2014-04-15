@@ -41,9 +41,15 @@ _Btn2 = _display displayCtrl Btn2;
 //_Btn9 = _display displayCtrl Btn9;
 life_pInact_curTarget = _curTarget;
 
-//Set revive Button
+//Button 1: Revive
+if(_curTarget getVariable["unconscious",false]) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
+
 _Btn1 ctrlSetText localize "STR_pInAct_Revive";
 _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_revive; closeDialog 0;";
+
+
+//Button 2: Drag
+if(_curTarget getVariable["unconscious",false]) then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
+
 _Btn2 ctrlSetText localize "STR_pInAct_Drag";
 _Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_drag; closeDialog 0;";
-		

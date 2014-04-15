@@ -23,7 +23,7 @@ if(dialog) exitWith {}; //Don't bother when a dialog is open.
 if(vehicle player != player) exitWith {}; //He's in a vehicle, cancel!
 life_action_inUse = true;
 
-	if(playerSide == independent && _curTarget isKindOf "Man") then {
+	if(playerSide == independent && _curTarget isKindOf "Man" && _curTarget getVariable["unconscious",false]) then {
 		[_curTarget] call life_fnc_medicInteractionMenu;
 	};
 
