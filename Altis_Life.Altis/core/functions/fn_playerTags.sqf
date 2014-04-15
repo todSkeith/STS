@@ -25,9 +25,10 @@
 							case 3: {_name = format["Senior Patrol Officer %1", name _x];};
 							case 4: {_name = format["Corporal %1", name _x];};
 							case 5: {_name = format["Sergeant %1", name _x];};
-							case 6: {_name = format["CO %1", name _x];};
-							case 7: {_name = format["Superintendent %1", name _x];};
-							case 8: {_name = format["Chief %1", name _x];};
+							case 6: {_name = format["Lieutenant %1", name _x];};
+							case 7: {_name = format["Captain %1", name _x];};
+							case 8: {_name = format["Superintendent %1", name _x];};
+							case 9: {_name = format["Chief %1", name _x];};
 							default {_name = name _x;}
 					};
                     drawIcon3D ["",[1,1,1,1],_pos,0,0,0,_name,0,0.04];
