@@ -16,7 +16,8 @@
 #define Btn9 37458
 #define Title 37401
 
-if((player getVariable "unconscious")) exitWith {};
+//Too many rebels refusing to stop fighting
+//if((player getVariable "unconscious")) exitWith {};
 
 private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8","_Btn9"];
 if(!dialog) then {
@@ -39,13 +40,14 @@ _Btn9 = _display displayCtrl Btn9;
 life_pInact_curTarget = _curTarget;
 
 //Button 1: Unrestrain
-if((_curTarget getVariable["zipTie",false]) || (_curTarget getVariable["restrained",false]) && !(_curTarget getVariable["Escorting",false])) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
+if((_curTarget getVariable["zipTie",false]) || (_curTarget getVariable["restrained",false]) && !(_curTarget getVariable["Escorting",false]) && !(_curTarget getVariable["unconscious",false])) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
 
 _Btn1 ctrlSetText localize "STR_pInAct_Unrestrain";
 _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unrestrain; closeDialog 0;";
 
 
 //Button 2: Check Licenses
+if(!(_curTarget getVariable["unconscious",false])) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
 _Btn2 ctrlSetText localize "STR_pInAct_checkLicenses";
 _Btn2 buttonSetAction "[[player],""life_fnc_licenseCheck"",life_pInact_curTarget,FALSE] spawn life_fnc_MP";
 
@@ -68,6 +70,7 @@ if((_curTarget getVariable["Escorting",false])) then {
 
 
 //Button 5: Give Ticket
+if(!(_curTarget getVariable["unconscious",false])) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
 _Btn5 ctrlSetText localize "STR_pInAct_TicketBtn";
 _Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_ticketAction;";
 
@@ -84,6 +87,7 @@ _Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
 
 
 //Button 7: Put in Vehicle
+if(!(_curTarget getVariable["unconscious",false])) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
 _Btn7 ctrlSetText localize "STR_pInAct_PutInCar";
 _Btn7 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar;";
 
