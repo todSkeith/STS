@@ -81,7 +81,7 @@ switch(true) do
 {
 		case (vehicle player != player):
 	{
-		hint "Where the hell are you going? ROB LIKE A MAN!";};
+		hint "Where the hell are you going? ROB LIKE A MAN!";
 		[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 		deleteMarker "Marker200";
 		_denied1 = false;
