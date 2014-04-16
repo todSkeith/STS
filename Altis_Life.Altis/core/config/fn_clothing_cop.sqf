@@ -51,6 +51,9 @@ switch (_filter) do
 			_ret set[count _ret,["H_Cap_blk_CMMG",nil,100]];
 			_ret set[count _ret,["H_Cap_blk",nil,100]];
 			_ret set[count _ret,["H_Watchcap_khk",nil,100]];
+		};
+		if(__GETC__(life_copLevel) > 5) then 
+		{
 			_ret set[count _ret,["H_Beret_02",nil,100]];
 			_ret set[count _ret,["H_Beret_red",nil,100]];
 			_ret set[count _ret,["H_Beret_grn",nil,100]];
