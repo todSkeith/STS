@@ -18,7 +18,8 @@ waitUntil {!(isNull (findDisplay 46))};
 			systemChat format ["Medic login accepted. Medic level: %1 Admin level: %2",__GETC__(life_mediclvl),__GETC__(life_adminlevel)];
 		}
 		else {
-			default {endMission "Loser"};
+			["NotWhitelisted",false,true] call BIS_fnc_endMission;
+			sleep 35;
 		};
 //	};
 //};
