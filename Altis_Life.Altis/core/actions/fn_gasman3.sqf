@@ -21,6 +21,8 @@ if(gasman3 getVariable["robProgress",true]) exitWith
 	hint "This store is in the process of being robbed please wait.";
 };
 
+if(vehicle player != player) exitWith {hint "Im not giving you anything until you step out of that vehicle...";};
+
 if(currentWeapon player !="")then 
 		{
 			if(currentWeapon player !="Binocular") then
@@ -72,10 +74,24 @@ while {true} do
 	if((round(_timer - time)) < 1) exitWith {};
 	if(!alive player) exitWith {};
 	if(life_istazed) exitWith {};
+	if(vehicle player != player) exitWith {};
 };
 
 switch(true) do
 {
+		case (vehicle player != player):
+	{
+		hint "Where the hell are you going? ROB LIKE A MAN!";
+		[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+		deleteMarker "Marker200";
+		_denied1 = false;
+		gasman1 setVariable["robProgress",false, true];
+		life_action_inUse = false;
+		gasman1 setVariable["gaswait",true, true];
+		sleep 180;
+		gasman1 setVariable["gaswait",false, true];
+	};
+
 	case (_toFar):
 	{
 		hint "You are too far away!";
