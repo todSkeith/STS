@@ -6,9 +6,30 @@
 	Main functionality for pickaxe in mining.
 */
 closeDialog 0;
-private["_mine","_itemWeight","_diff","_itemName","_val","_array","_random","catch"];
-_catch = ["fcrab","fcrabp","mcrab","mcrabs"] call BIS_fnc_selectRandom;
-_val = round(random 5);
+private["_mine","_itemWeight","_diff","_itemName","_val","_array","_random","_catch"];
+//Weighting catches toward legal
+//_catch = ["fcrab","fcrabp","mcrab","mcrabs"] call BIS_fnc_selectRandom;
+_dice = round(random 100);
+switch (true) do {
+	//10% chance for female pregnant crab
+	case (_dice < 10): {
+		_catch = "fcrabp";
+	};
+	//30% chance for male small crab
+	case (_dice < 40): {
+		_catch = "mcrabs";
+	};
+	//45% chance for female crab
+	case (_dice < 85): {
+		_catch = "fcrab";
+	};
+	//15% chance for male crab
+	default {
+		_catch = "mcrab";
+	};
+
+//ceil used to ensure you don't get 0
+_val = ceil(random 5);
 
 switch (true) do
 {
