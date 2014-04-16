@@ -21,6 +21,8 @@ if(gasman2 getVariable["robProgress",true]) exitWith
 	hint "This store is in the process of being robbed please wait.";
 };
 
+if(vehicle player != player) exitWith {hint "Im not giving you anything until you step out of that vehicle...";};
+	
 if(currentWeapon player !="")then 
 		{
 			if(currentWeapon player !="Binocular") then
