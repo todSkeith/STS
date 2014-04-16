@@ -18,7 +18,8 @@ if(!([_val] call fnc_isnumber)) exitWith {};
 if(_unit == _from && !(_refund)) exitWith {}; //Bad boy, trying to exploit his way to riches.
 
 if (_refund) then {
-	hint format["You have been refunded $%1",[(parseNumber (_val))] call life_fnc_numberText];
+	//Using titleText because garage is already using hints
+	titleText[format["You have been refunded $%1",[(parseNumber (_val))] call life_fnc_numberText],"PLAIN"];
 } else {
 	hint format["%1 has given you $%2",name _from,[(parseNumber (_val))] call life_fnc_numberText];
 };
