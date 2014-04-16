@@ -30,7 +30,6 @@ switch (_filter) do
 			_ret set[count _ret,["U_B_CTRG_1","Jamie has no friends",100]];
 			_ret set[count _ret,["U_B_CTRG_2","Jamie has no friends",100]];
 			_ret set[count _ret,["U_B_CTRG_3","Jamie has no friends",100]];
-			_ret set[count _ret,["U_B_CTRG_3","Jamie has no friends",100]];
 			_ret set[count _ret,["U_B_survival_uniform","Jamie has no friends",100]];
 		};
 	};
