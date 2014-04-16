@@ -5,23 +5,28 @@
 	Description:
 	Searches the player and he returns information back to the player.
 */
-private["_cop","_inv","_guns","_var","_val","_robber"];
+private["_cop","_inv","_guns","_var","_val","_robber","_licenses"];
 _cop = [_this,0,Objnull,[objNull]] call BIS_fnc_param;
 if(isNull _cop) exitWith {};
 _inv = [];
 _guns = [];
 _robber = false;
 
+//Debug
+hint format ["%1 is searching you...",name _cop];
+
 //Illegal items
-{
-	_var = [_x select 0,0] call life_fnc_varHandle;
-	_val = missionNamespace getVariable _var;
-	if(_val > 0) then
+if (side _cop == west) then {
 	{
-		_inv set[count _inv,[_x select 0,_val]];
-	};
-	missionNamespace setVariable[_var,0];
-} foreach life_illegal_items;
+		_var = [_x select 0,0] call life_fnc_varHandle;
+		_val = missionNamespace getVariable _var;
+		if(_val > 0) then
+		{
+			_inv set[count _inv,[_x select 0,_val]];
+		};
+		missionNamespace setVariable[_var,0];
+	} foreach life_illegal_items;
+};
 
 // Check for hidden weapons.
 if (uniform player != "") then {
@@ -58,7 +63,7 @@ if (!isNil {life_holstered_weapon}) then {
 
 if(_licenses == "") then {_licenses = "No licenses<br/>"};
 
-if(!life_use_atm) then 
+if(!(life_use_atm) && side _cop == west) then 
 {
 	life_cash = 0;
 	_robber = true;

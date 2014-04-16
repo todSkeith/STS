@@ -51,20 +51,20 @@ if (isPlayer _unit) then
 
 		if (_bleedout >= time) then {
 			
-			_hintbleedout = format["Bleedout in %1 seconds%2<br/>",round (_bleedout - time)];
+			_hintbleedout = format["Bleedout in %1 seconds<br/>",round (_bleedout - time)];
 			_nearest=objNull;
 			_nearestdist=50000;
 			{
 				_dist=vehicle _x distance player;
-				if (isPlayer _x && _dist < _nearestdist && side _x == independent) then {
+				if (isPlayer _x && _dist < _nearestdist && side _x == independent && !(_x getVariable ["unconscious",false])) then {
 					_nearest=_x;
 					_nearestdist=_dist;
 				};
 			} forEach playableUnits;
 			if (!isNull _nearest && _nearestdist < 50000 && playersNumber independent != 0) then {
-				hintSilent parseText format["%1<br/>Closest medic: %2m",_hintbleedout,_hintnear];
+				hintSilent parseText format["Bleedout in %1 seconds<br/>Closest medic: %2m",round (_bleedout - time),floor _nearestdist];
 			} else {
-				hintSilent parseText format["%1<br/>No medics available",_hintbleedout];
+				hintSilent parseText format["Bleedout in %1 seconds<br/>No medics available",round (_bleedout - time)];
 			};
 			sleep 1;
 		} else {
@@ -75,6 +75,6 @@ if (isPlayer _unit) then
 	hintSilent "";
 	_unit enableSimulation true;
 	_unit allowDamage true;
-	_unit setDamage 0;
+//	_unit setDamage 0;
 	_unit setCaptive false;
 	_unit playMove "amovppnemstpsraswrfldnon";

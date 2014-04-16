@@ -73,8 +73,8 @@ if(life_is_arrested) then
 
 if(playerSide == west) then {
 	private["_getRank"];
-	_getRank = switch (__GETC__(life_coplevel)) do {case 1: {1}; case 2: {2}; case 3: {3}; case 4: {4}; case 5: {5}; case 6: {6}; case 7: {7}; default {0};};
-	player setVariable["coplevel",_getRank,TRUE];
+	_getRank = call life_coplevel;
+	player setVariable["coplevel",_getRank,true];
 };
 
 _unit addRating 100000;
