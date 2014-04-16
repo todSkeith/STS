@@ -83,7 +83,7 @@ switch(true) do
 	{
 		hint "Where the hell are you going? ROB LIKE A MAN!";
 		[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-		deleteMarker "Marker200";
+		deleteMarker "Marker202";
 		_denied1 = false;
 		gasman1 setVariable["robProgress",false, true];
 		life_action_inUse = false;
