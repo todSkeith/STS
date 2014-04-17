@@ -44,6 +44,8 @@ if(!isPlayer _curTarget && side _curTarget == civilian) exitWith {closeDialog 0;
 if (player getVariable["zipTie",false] || player getVariable["restrained",false] || player getVariable["surrender",false] || player getVariable ["unconscious",false]) exitWith {closeDialog 0;};
 //Can't interact with the healthy
 if (!_curTarget getVariable["unconscious",false]) exitWith {closeDialog 0;};
+//Double check player side
+if (playerSide != independent) exitWith {closeDialog 0;};
 
 life_pInact_curTarget = _curTarget;
 

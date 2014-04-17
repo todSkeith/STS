@@ -45,6 +45,8 @@ if(!isPlayer _curTarget && side _curTarget == civilian && side _curTarget == wes
 if (player getVariable["zipTie",false] || player getVariable["restrained",false] || player getVariable["surrender",false] || player getVariable ["unconscious",false]) exitWith {closeDialog 0;};
 //Can't interact with medics
 if (side _curTarget == independent) exitWith {closeDialog 0;};
+//Double check player side
+if (playerSide == west || playerSide == independent) exitWith {closeDialog 0;};
 
 
 private["_tRest","_tZip","_tUnc","_tEsc","_tSur","_tKout"];
