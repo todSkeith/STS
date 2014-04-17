@@ -70,7 +70,7 @@ switch (_code) do
 	{
 		//Test to stop reload while restrained
 		if(_shift || (player getVariable "restrained" || player getVariable "zipTie" || player getVariable "surrender") || player getVariable "unconscious") then {_handled = true;};
-		if(_shift && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && playerSide == west) then
+		if(_shift && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5) then
 		{
 			switch (playerSide) do {
 				case west:		{ [cursorTarget] call life_fnc_restrainAction; };
