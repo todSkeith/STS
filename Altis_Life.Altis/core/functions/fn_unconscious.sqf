@@ -11,6 +11,9 @@ _unit = _this select 0;
 hint format ["_unit is %1", _unit];
 _source = _this select 1;
 _bleedout = time + (60*15);
+_medicsonline = playersNumber independent;
+
+if(_medicsonline == 0) exitwith {hint "No Medics are online. You died horribly"; player setDamage 1; sleep 10; hintSilent "";};
 
 _unit setVariable["unconscious",true,true];
 	

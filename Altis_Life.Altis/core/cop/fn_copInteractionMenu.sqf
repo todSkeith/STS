@@ -40,7 +40,7 @@ _Btn9 = _display displayCtrl Btn9;
 life_pInact_curTarget = _curTarget;
 
 //Button 1: Unrestrain
-if((_curTarget getVariable["zipTie",true) || (_curTarget getVariable["restrained",true]) && !(_curTarget getVariable["Escorting",false]) && !(_curTarget getVariable["unconscious",false])) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
+if((_curTarget getVariable["zipTie",true]) || (_curTarget getVariable["restrained",true]) && !(_curTarget getVariable["Escorting",false]) && !(_curTarget getVariable["unconscious",false])) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
 
 _Btn1 ctrlSetText localize "STR_pInAct_Unrestrain";
 _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unrestrain; closeDialog 0;";
