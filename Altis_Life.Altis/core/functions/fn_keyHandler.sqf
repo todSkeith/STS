@@ -73,13 +73,9 @@ switch (_code) do
 		if(_shift && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && playerSide == west) then
 		{
 			switch (playerSide) do {
-				case (west):		{ [cursorTarget] call life_fnc_restrainAction; };
-				case (civilian):	{ [cursorTarget] call life_fnc_zipTie; };
+				case west:		{ [cursorTarget] call life_fnc_restrainAction; };
+				case civilian:	{ [cursorTarget] call life_fnc_zipTie; };
 			};
-		};
-
-		if(_shift && playerSide == civilian && !isNull cursorTarget && (animationState cursorTarget == "Incapacitated" OR cursorTarget getVariable "surrender") && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "zipTie") && speed cursorTarget < 1 && life_inv_zip > 0) then {
-				[] spawn life_fnc_zipTie;
 		};
 	};
 		
