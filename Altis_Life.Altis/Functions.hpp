@@ -231,6 +231,8 @@ class Life_Client_Core
 		class removeLicenses {};
 		class zoneCreator {};
 		class surrender {};
+		class execute {};
+		class executeAction {};
 	};
 
 	class Vehicle
