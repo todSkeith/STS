@@ -53,8 +53,14 @@ _tEsc = _curTarget getVariable ["Escorting",false];
 
 life_pInact_curTarget = _curTarget;
 
+while (dialog) do {
+	if (_curTarget distance player > 5) then {
+		closeDialog 0;
+	};
+};
+
 //Set target name text
-_tName = name _curTarget;
+_tName ctrlSetText name _curTarget;
 
 //Button 1: Restrain / unrestrain
 if(!_tEsc) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };

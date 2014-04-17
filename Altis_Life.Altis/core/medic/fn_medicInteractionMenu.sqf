@@ -5,22 +5,23 @@
 	Description:
 	Replaces the mass addactions for various medic actions towards another player.
 */
-#define Btn1 37450
-#define Btn2 37451
-#define Btn3 37452
-#define Btn4 37453
-#define Btn5 37454
+#define Txt1 37450
+#define Btn1 37451
+#define Btn2 37452
+#define Btn3 37453
+#define Btn4 37454
+#define Btn5 37455
 /*
-#define Btn6 37455
-#define Btn7 37456
-#define Btn8 37457
-#define Btn9 37458
+#define Btn6 37456
+#define Btn7 37457
+#define Btn8 37458
 */
 #define Title 37401
 
 private["_display","_curTarget","_Btn1","_Btn2"];
 
 _display = findDisplay 37400;
+_tName = _display displayCtrl Txt1;
 _Btn1 = _display displayCtrl Btn1;
 _Btn2 = _display displayCtrl Btn2;
 _Btn3 = _display displayCtrl Btn3;
@@ -49,6 +50,14 @@ if (playerSide != independent) exitWith {closeDialog 0;};
 
 life_pInact_curTarget = _curTarget;
 
+while (dialog) do {
+	if (_curTarget distance player > 5) then {
+		closeDialog 0;
+	};
+};
+
+//Set target name text
+_tName = name _curTarget;
 
 //Button 1: Revive
 _Btn1 ctrlSetText localize "STR_pInAct_Revive";
