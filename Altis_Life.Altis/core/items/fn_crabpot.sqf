@@ -8,7 +8,7 @@
 closeDialog 0;
 private["_mine","_itemWeight","_diff","_itemName","_val","_array","_random","_catch"];
 //Weighting catches toward legal
-//_catch = ["fcrab","fcrabp","mcrab","mcrabs"] call BIS_fnc_selectRandom;
+_catch = ["fcrab","fcrabp","mcrab","mcrabs"] call BIS_fnc_selectRandom;
 _dice = round(random 100);
 switch (true) do {
 	//10% chance for female pregnant crab
