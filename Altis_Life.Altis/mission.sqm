@@ -1679,13 +1679,13 @@ class Mission
 				class Item92
 				{
 					position[]={16577.973,14.273254,15989.822};
-					azimut=133.99963;
+					azimut=134;
 					special="NONE";
 					id=123;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; ";
+					init="this allowDamage false; this enableSimulation false; this addAction[""Sell Cement"",life_fnc_virt_menu,""cement""];";
 				};
 				class Item93
 				{
