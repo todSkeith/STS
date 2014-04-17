@@ -11,13 +11,28 @@
 #define Btn4 37453
 #define Btn5 37454
 #define Btn6 37455
+/*
 #define Btn7 37456
 #define Btn8 37457
 #define Btn9 37458
+*/
 #define Title 37401
 
-
 private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5"];
+
+_display = findDisplay 37400;
+_Btn1 = _display displayCtrl Btn1;
+_Btn2 = _display displayCtrl Btn2;
+_Btn3 = _display displayCtrl Btn3;
+_Btn4 = _display displayCtrl Btn4;
+_Btn5 = _display displayCtrl Btn5;
+_Btn6 = _display displayCtrl Btn6;
+/*
+_Btn7 = _display displayCtrl Btn7;
+_Btn8 = _display displayCtrl Btn8;
+_Btn9 = _display displayCtrl Btn9;
+*/
+
 if(!dialog) then {
 	createDialog "vInteraction_Menu";
 };
@@ -30,17 +45,8 @@ if(!_isVehicle) exitWith {closeDialog 0;};
 //Can't interact while restrained or dead
 if (player getVariable["zipTie",false] || player getVariable["restrained",false] || player getVariable["surrender",false] || player getVariable ["unconscious",false]) exitWith {closeDialog 0;};
 
-
-_display = findDisplay 37400;
-_Btn1 = _display displayCtrl Btn1;
-_Btn2 = _display displayCtrl Btn2;
-_Btn3 = _display displayCtrl Btn3;
-_Btn4 = _display displayCtrl Btn4;
-_Btn5 = _display displayCtrl Btn5;
-_Btn6 = _display displayCtrl Btn6;
-_Btn7 = _display displayCtrl Btn7;
-
 life_vInact_curTarget = _curTarget;
+
 
 //Button 1: Repair
 if("ToolKit" in (items player)) then {_Btn1 ctrlEnable true;} else {_Btn1 ctrlEnable false;};
@@ -73,7 +79,7 @@ if(playerSide == west) then {
 	
 	//Button 5: Check Driver Licenses
 	if (isPlayer driver life_vInact_curTarget) then {_Btn5 ctrlEnable true;} else {_Btn5 ctrlEnable false;};
-	_Btn5 ctrlSetText localize "STR_pInAct_checkLicenses";
+	_Btn5 ctrlSetText localize "STR_vInAct_checkLicenses";
 	_Btn5 buttonSetAction "[[player],""life_fnc_licenseCheck"",life_vInact_curTarget,false] spawn life_fnc_MP";
 	
 	//Button 6: Search Vehicle
