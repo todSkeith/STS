@@ -69,17 +69,19 @@ switch (_code) do
 	case 19:
 	{
 		//Test to stop reload while restrained
-		if(_shift || (player getVariable "restrained" || player getVariable "zipTie" || player getVariable "surrender")) then {_handled = true;};
-		if(_shift && playerSide == west && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && (side cursorTarget == civilian) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "restrained") && !(player getVariable["zipTie",false]) && speed cursorTarget < 1) then
+		if(_shift || (player getVariable "restrained" || player getVariable "zipTie" || player getVariable "surrender") || player getVariable "unconscious") then {_handled = true;};
+		if(_shift && !isNull cursorTarget && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && playerSide == west) then
 		{
-			[] call life_fnc_restrainAction;
-		};
-
-		if(_shift && playerSide == civilian && !isNull cursorTarget && (animationState cursorTarget == "Incapacitated" OR cursorTarget getVariable "surrender") && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "zipTie") && speed cursorTarget < 1 && life_inv_zip > 0) then
-			{
-				[] spawn life_fnc_zipTie;
+			switch (playerSide) do {
+				case (west):		{ [cursorTarget] call life_fnc_restrainAction; };
+				case (civilian):	{ [cursorTarget] call life_fnc_zipTie; };
 			};
 		};
+
+		if(_shift && playerSide == civilian && !isNull cursorTarget && (animationState cursorTarget == "Incapacitated" OR cursorTarget getVariable "surrender") && cursorTarget isKindOf "Man" && (isPlayer cursorTarget) && alive cursorTarget && cursorTarget distance player < 3.5 && !(cursorTarget getVariable "Escorting") && !(cursorTarget getVariable "zipTie") && speed cursorTarget < 1 && life_inv_zip > 0) then {
+				[] spawn life_fnc_zipTie;
+		};
+	};
 		
 	//Shift+G Knock out, this is experimental and yeah...
 	case 34:

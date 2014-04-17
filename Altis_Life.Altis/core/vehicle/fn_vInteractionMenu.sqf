@@ -12,7 +12,11 @@
 #define Btn5 37454
 #define Btn6 37455
 #define Btn7 37456
+#define Btn8 37457
+#define Btn9 37458
 #define Title 37401
+
+
 private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5"];
 if(!dialog) then {
 	createDialog "vInteraction_Menu";
@@ -23,6 +27,10 @@ if ((player getVariable "unconscious")) exitWith {};
 if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
 _isVehicle = if((_curTarget isKindOf "landVehicle") OR (_curTarget isKindOf "Ship") OR (_curTarget isKindOf "Air")) then {true} else {false};
 if(!_isVehicle) exitWith {closeDialog 0;};
+//Can't interact while restrained or dead
+if (player getVariable["zipTie",false] || player getVariable["restrained",false] || player getVariable["surrender",false] || player getVariable ["unconscious",false]) exitWith {closeDialog 0;};
+
+
 _display = findDisplay 37400;
 _Btn1 = _display displayCtrl Btn1;
 _Btn2 = _display displayCtrl Btn2;
@@ -49,15 +57,13 @@ if(_curTarget isKindOf "Ship") then {
 	_Btn2 ctrlShow false;
 };
 
+
 //Button 3: Pull out of Vehicle
 if(count crew _curTarget == 0) then {_Btn3 ctrlEnable false;};
 
 _Btn3 ctrlSetText localize "STR_vInAct_PullOut";
-if (playerSide == civilian) then {
-	_Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_civPullOut;";
-} else {
-	_Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_pulloutAction;";
-};
+_Btn3 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_pulloutAction;";
+
 
 //Cop exclusive buttons
 if(playerSide == west) then {
@@ -73,18 +79,19 @@ if(playerSide == west) then {
 	//Button 6: Search Vehicle
 	_Btn6 ctrlSetText localize "STR_vInAct_SearchVehicle";
 	_Btn6 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_vehInvSearch;";
-
+	
 } else {
 	_Btn4 ctrlShow false;
 	_Btn5 ctrlShow false;
 	_Btn6 ctrlShow false;
 };
 
-//Cop exclusive buttons
+//Cop and medic exclusive buttons
 if(playerSide == west || playerSide == independent) then {
 	//Button 7: Impound Vehicle
 	_Btn7 ctrlSetText localize "STR_vInAct_Impound";
 	_Btn7 buttonSetAction "[life_vInact_curTarget] spawn life_fnc_impoundAction;";
+	
 } else {
 	_Btn7 ctrlShow false;
 };
