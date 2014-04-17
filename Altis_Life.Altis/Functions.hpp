@@ -289,6 +289,8 @@ class Life_Client_Core
 		class revive {};
 		class reviveAction {};
 		class drag {};
+		class stabilise {};
+		class stabiliseAction {};
 	};
 
 	class Gangs
