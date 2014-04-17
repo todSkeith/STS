@@ -29,10 +29,10 @@ life_action_inUse = true;
 
 //If target is a player then check if we can use the cop menu.
 if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
-	if (!dialog && playerSide == west && (_curTarget getVariable["restrained",true]) || (_curTarget getVariable["zipTie",true])) then {
+	if (!dialog && playerSide == west && (_curTarget getVariable["restrained",true]) || (_curTarget getVariable["zipTie",true]) && cursorTarget distance player < 5.5 ) then {
 		[_curTarget] call life_fnc_copInteractionMenu;
 	};
-	if (((_curTarget getVariable ["zipTie",true]) || (_curTarget getVariable["surrender",false]) || (animationState _curTarget == "Incapacitated")) && !dialog && playerSide == civilian) then {
+	if (((_curTarget getVariable ["zipTie",true]) || (_curTarget getVariable["surrender",false]) || (animationState _curTarget == "Incapacitated")) && !dialog && playerSide == civilian && cursorTarget distance player < 5.5 ) then {
 		[_curTarget] call life_fnc_civInteractionMenu;
 	};
 } else {
