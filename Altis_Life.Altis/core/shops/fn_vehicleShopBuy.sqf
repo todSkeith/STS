@@ -8,6 +8,7 @@
 private["_index","_veh","_color","_price","_sp","_kill","_dir","_name","_sv","_fed","_double","_ems"];
 _kill = false;
 _double = false;
+_ems = false;
 switch(life_veh_shop) do
 {
 	case "civ_car_1":
@@ -239,7 +240,7 @@ if(count(nearestObjects[_sp,["Car","Ship","Air"],4]) > 0) exitWith {hint "There 
 _sv = false;
 
 //EMS Heli
-if(count(nearestObjects[warn ,["Car","Ship","Air"],10]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
+if(count(nearestObjects[warn ,["Air"],10]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
 
 _sv = false;
 

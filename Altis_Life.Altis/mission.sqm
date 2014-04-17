@@ -23877,7 +23877,7 @@ class Mission
 		};
 		class Item264
 		{
-			position[]={3744.4126,18.869888,12975.084};
+			position[]={3742.9551,18.860458,12982.156};
 			name="medic_car_1";
 			type="Empty";
 			angle=1.8503776;
