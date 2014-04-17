@@ -24,7 +24,7 @@ while {true} do
 {
 	//Timer display (TO BE REPLACED WITH A NICE GUI LAYER)
 	_countDown = if(round(_timer - time) > 60) then {format["%1 minute(s)",round(round(_timer - time) / 60)]} else {format["%1 second(s)",round(_timer - time)]};
-	hintSilent format["You need to stay within 15m!\n\nTime Remaining:\n %1\n\nDistance: %2m",_countDown,round(player distance _vault)];
+	hintSilent format["You need to stay within 5m!\n\nTime Remaining:\n %1\n\nDistance: %2m",_countDown,round(player distance _vault)];
 
 	if(player distance _vault > 5) exitWith {_toFar = true;};
 	if((round(_timer - time)) < 1) exitWith {};
