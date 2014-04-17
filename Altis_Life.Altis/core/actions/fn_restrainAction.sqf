@@ -6,16 +6,13 @@
 	Retrains the target.
 */
 private["_unit"];
-_unit = cursorTarget;
+_unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _unit) exitWith {}; //Not valid
 if((_unit getVariable "restrained")) exitWith {};
 if(side _unit == west) exitWith {};
 if(player == _unit) exitWith {};
 if(!isPlayer _unit) exitWith {};
-if (side player == civilian) then {
-	if(life_inv_ziptie < 1) exitWith {hint"You need a zip tie to restrain someone."};
-	life_inv_ziptie = life_inv_ziptie - 1;
-};
+
 //Broadcast!
 
 _unit setVariable["restrained",true,true];
