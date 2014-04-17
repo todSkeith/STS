@@ -9,7 +9,7 @@ private["_unit"];
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _unit) exitWith {}; //Not valid
 if((_unit getVariable "restrained")) exitWith {};
-if(side _unit == west) exitWith {};
+if(side _unit == west || side _unit == independent) exitWith {};
 if(player == _unit) exitWith {};
 if(!isPlayer _unit) exitWith {};
 
