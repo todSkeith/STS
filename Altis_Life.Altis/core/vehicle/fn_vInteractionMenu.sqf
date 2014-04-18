@@ -20,11 +20,11 @@
 
 private["_display","_curTarget","_tName","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7"];
 
-disableSerialization;
-
 if(!dialog) then {
 	createDialog "vInteraction_Menu";
 };
+
+disableSerialization;
 
 _display = findDisplay 37400;
 _tName = _display displayCtrl Txt1;
