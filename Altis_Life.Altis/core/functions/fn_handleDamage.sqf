@@ -85,7 +85,7 @@ if((player getVariable["restrained",false])) then
 // };
 if(_sel == "" || _sel == "head_hit" || _sel =="body" || _sel == "head" || _sel == "hand_l" || _sel == "leg_l") then
 		{
-			if ((damage _unit + _damage) >= 0.89) then
+			if ((damage _unit + _damage) >= 0.99) then
 			{
 				_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
 				_unit setDamage 0;
@@ -127,5 +127,3 @@ if(_sel == "" || _sel == "head_hit" || _sel =="body" || _sel == "head" || _sel =
 			};
 		};
 [] call life_fnc_hudUpdate;
-sleep 0.1;
-_damage;
