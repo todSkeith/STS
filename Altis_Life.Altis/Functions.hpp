@@ -31,7 +31,6 @@ class Life_Client_Core
 		class buyLicense {};
 		class chemlightUse {};
 		class restrainCiv {};
-		class unrestrainAction {};
 		class unzip {};
 		class zipTieAction {};
 		class heal {};

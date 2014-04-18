@@ -17,5 +17,5 @@ if(player getVariable ["restrained",false] || player getVariable ["zipTie",false
 life_inv_zip = life_inv_zip - 1;
 	
 [[_unit, "zip_tie",10],"life_fnc_playSound",true,false] spawn life_fnc_MP;
-[[player,_unit],"life_fnc_zipTieAction",_unit,false] spawn life_fnc_MP;
+[[player],"life_fnc_zipTieAction",_unit,false] spawn life_fnc_MP;
 
