@@ -7,12 +7,13 @@
 	Returns information on the search.
 */
 life_action_inUse = false;
-private["_civ","_guns","_gun","_inv","_license","_robber","_out","_illegal","_invs"];
+private["_civ","_guns","_gun","_inv","_license","_robber","_out","_illegal","_invs","_bleedout"];
 _civ = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 _license = [_this,1,"",[""]] call BIS_fnc_param;
 _invs = [_this,2,[],[[]]] call BIS_fnc_param;
 _robber = [_this,3,false,[false]] call BIS_fnc_param;
-_guns = _this select 4;
+_guns = [_this,4,[],[[]]] call BIS_fnc_param;
+_bleedout = [_this,5,0,[0]] call BIS_fnc_param;
 _illegal = 0;
 _inv = "";
 _gun = "";
@@ -61,14 +62,15 @@ if(!alive _civ || player distance _civ > 5) exitWith {hint format["Couldn't sear
 
 if (side player == independent) then {
 	if (primaryWeapon _civ != "" || secondaryWeapon _civ != "") then {
-		_out = _out + "<t color='#FFFF00'><t size='1.5'>Player is armed<br/><br/>";
+		_out = _out + "<t color='#FFFF00'><t size='1.5'>Armed<br/><br/>";
 	} else {
-		_out = _out + "<t color='#00FF00'><t size='1.5'>Player is unarmed<br/><br/>";
+		_out = _out + "<t color='#00AA00'><t size='1.5'>Unarmed<br/><br/>";
 	};
 } else {
 	_out = _out + format ["<t color='#FFD700'><t size='1.5'>Illegal Items:</t></t><br/>%1<br/><br/>", _inv];
 };
 _out = _out + format ["<t color='#FF0000'><t size='1.5'>Concealed Weapons:</t></t><br/>%1<br/><br/>", _gun];
+_out = _out + format ["<t color='#FFFFFF'><t size='1.5'>Bleedout in %1 seconds.</t></t><br/><br/>", round (_bleedout - time)];
 
 
 hint parseText _out;
