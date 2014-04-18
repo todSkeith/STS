@@ -11,5 +11,9 @@ if (isNull _target) exitWith {};
 if (!isPlayer _target) exitWith {};
 if(!_unit getVariable "[unconscious",false]) exitWith {};
 
+if  (!("Medikit" in (items player))) then {
+	player removeItem "FirstAidKit"
+};
+
 player playMove "AinvPknlMstpSnonWnonDnon_medic0";
 [[player], "life_fnc_stabiliseAction", _target, false] spawn BIS_fnc_MP;

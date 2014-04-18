@@ -70,11 +70,12 @@ while (dialog) do {
 _tName ctrlSetText name _curTarget;
 
 //Button 1: Restrain / unrestrain
-if(!_tZip && !_tKout && !_tSur) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
 if (_tUnc) then {
+	if("Medikit" in (items player) || "FirstAidKit" in (items player)) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
 	_Btn1 ctrlSetText localize "STR_pInAct_Stabilise";
 	_Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_stabilise; closeDialog 0;";
 } else {
+	if(!_tZip && !_tKout && !_tSur) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
 	if (_tZip) then {
 		_Btn1 ctrlSetText localize "STR_pInAct_Unrestrain";
 		_Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_unzip; closeDialog 0;";
