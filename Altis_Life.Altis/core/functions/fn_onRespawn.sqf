@@ -37,7 +37,7 @@ switch(playerSide) do
 	{
 		[] spawn life_fnc_copDefault;
 		life_holstered_weapon = nil;
-
+		_unit setVariable["unconscious",false,true];
 	};
 
 	case civilian:
@@ -45,6 +45,8 @@ switch(playerSide) do
 		_unit setVariable["restrained",false,true];
 		_unit setVariable["Escorting",false,true];
 		_unit setVariable["transporting",false,true];
+		_unit setVariable["unconscious",false,true];
+		_unit setVariable["zipTie",false,true];
 		if(headGear player != "") then {removeHeadgear player;};
 		if(goggles player != "") then {removeGoggles player;};
 		life_holstered_weapon = nil;
@@ -54,6 +56,7 @@ switch(playerSide) do
 	{
 		[] spawn life_fnc_initMedic;
 		life_holstered_weapon = nil;
+		_unit setVariable["unconscious",false,true];
 	};
 };
 
