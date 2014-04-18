@@ -62,9 +62,10 @@ while (dialog) do {
 //Set target name text
 _tName ctrlSetText name _curTarget;
 
-//Button 1: Restrain / unrestrain
+//Button 1: Restrain / unrestrain || Stabilise
 if (_tUnc) then {
 	if("Medikit" in (items player) || "FirstAidKit" in (items player)) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
+	
 	_Btn1 ctrlSetText localize "STR_pInAct_Stabilise";
 	_Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_stabilise; closeDialog 0;";
 } else {
@@ -79,15 +80,21 @@ if (_tUnc) then {
 };
 
 
-//Button 2: Escort
-if(_tRest) then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
-
-if(_tEsc) then {
-	_Btn2 ctrlSetText localize "STR_pInAct_StopEscort";
-	_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_stopEscorting; closeDialog 0;";
+//Button 2: Escort || Drag
+if(_tUnc) then {
+	if(!(player getVariable["isDragging",false])) then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
+	
+	_Btn2 ctrlSetText localize "STR_pInAct_Drag";
+	_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_drag; closeDialog 0;";
 } else {
-	_Btn2 ctrlSetText localize "STR_pInAct_Escort";
-	_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
+	if(_tRest) then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
+	if(_tEsc) then {
+		_Btn2 ctrlSetText localize "STR_pInAct_StopEscort";
+		_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_stopEscorting; closeDialog 0;";
+	} else {
+		_Btn2 ctrlSetText localize "STR_pInAct_Escort";
+		_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_escortAction; closeDialog 0;";
+	};
 };
 
 
@@ -124,6 +131,7 @@ _Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction; close
 
 //Button 7: Put in Vehicle
 if(!_tRest) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
+
 _Btn7 ctrlSetText localize "STR_pInAct_PutInCar";
 _Btn7 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar; closeDialog 0;";
 

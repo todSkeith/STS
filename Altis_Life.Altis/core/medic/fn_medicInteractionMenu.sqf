@@ -69,7 +69,7 @@ _Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_revive; closeDialog
 
 
 //Button 2: Drag
-if(!player getVariable["isDragging",false]) then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
+if(!(player getVariable["isDragging",false])) then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
 
 _Btn2 ctrlSetText localize "STR_pInAct_Drag";
 _Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_drag; closeDialog 0;";

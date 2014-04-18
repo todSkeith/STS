@@ -69,9 +69,10 @@ while (dialog) do {
 //Set target name text
 _tName ctrlSetText name _curTarget;
 
-//Button 1: Restrain / unrestrain
+//Button 1: Restrain / unrestrain || Stabilise
 if (_tUnc) then {
 	if("Medikit" in (items player) || "FirstAidKit" in (items player)) then { _Btn1 ctrlEnable true; } else { _Btn1 ctrlEnable false; };
+	
 	_Btn1 ctrlSetText localize "STR_pInAct_Stabilise";
 	_Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_stabilise; closeDialog 0;";
 } else {
@@ -86,13 +87,14 @@ if (_tUnc) then {
 };
 
 
-//Button 2: Escort
-if(_tZip || _tUnc) then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
-
+//Button 2: Escort || Drag
 if(_tUnc) then {
-	_Btn2 ctrlSetText localize "STR_pInAct_Execute";
-	_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_execute; closeDialog 0;";
+	if(!(player getVariable["isDragging",false])) then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
+	
+	_Btn2 ctrlSetText localize "STR_pInAct_Drag";
+	_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_drag; closeDialog 0;";
 } else {
+	if(_tZip) then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
 	if(_tEsc) then {
 		_Btn2 ctrlSetText localize "STR_pInAct_StopEscort";
 		_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_stopEscorting; closeDialog 0;";
@@ -110,8 +112,14 @@ _Btn3 ctrlSetText localize "STR_pInAct_PutInCar";
 _Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar; closeDialog 0;";
 
 
-//Button 4: Rob person
-if((_tZip || _tSur || _tKout) && !_tEsc) then { _Btn4 ctrlEnable true; } else { _Btn4 ctrlEnable false; };
+//Button 4: Rob person || Execute
+if(_tUnc) then {
+	_Btn2 ctrlSetText localize "STR_pInAct_Execute";
+	_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_execute; closeDialog 0;";
+} else {
+	if((_tZip || _tSur || _tKout) && !_tEsc) then { _Btn4 ctrlEnable true; } else { _Btn4 ctrlEnable false; };
+	
+	_Btn4 ctrlSetText localize "STR_pInAct_RobPerson";
+	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_robAction; closeDialog 0;";
+};
 
-_Btn4 ctrlSetText localize "STR_pInAct_RobPerson";
-_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_robAction; closeDialog 0;";
