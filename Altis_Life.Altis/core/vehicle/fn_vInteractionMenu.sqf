@@ -5,37 +5,25 @@
 	Description:
 	Replaces the mass addactions for various vehicle actions
 */
-#define Txt1 37450
-#define Btn1 37451
-#define Btn2 37452
-#define Btn3 37453
-#define Btn4 37454
-#define Btn5 37455
-#define Btn6 37456
-#define Btn7 37457
-/*
-#define Btn8 37458
-*/
+#define Btn1 37450
+#define Btn2 37451
+#define Btn3 37452
+#define Btn4 37453
+#define Btn5 37454
+#define Btn6 37455
+#define Btn7 37456
 #define Title 37401
-
-private["_display","_curTarget","_tName","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7"];
-
+private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5"];
 if(!dialog) then {
 	createDialog "vInteraction_Menu";
 };
 disableSerialization;
-
 _curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if ((player getVariable "unconscious")) exitWith {};
 if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
 _isVehicle = if((_curTarget isKindOf "landVehicle") OR (_curTarget isKindOf "Ship") OR (_curTarget isKindOf "Air")) then {true} else {false};
 if(!_isVehicle) exitWith {closeDialog 0;};
-//Can't interact while restrained or dead
-if (player getVariable["zipTie",false] || player getVariable["restrained",false] || player getVariable["surrender",false] || player getVariable ["unconscious",false]) exitWith {closeDialog 0;};
-
-
 _display = findDisplay 37400;
-_tName = _display displayCtrl Txt1;
 _Btn1 = _display displayCtrl Btn1;
 _Btn2 = _display displayCtrl Btn2;
 _Btn3 = _display displayCtrl Btn3;
@@ -43,14 +31,11 @@ _Btn4 = _display displayCtrl Btn4;
 _Btn5 = _display displayCtrl Btn5;
 _Btn6 = _display displayCtrl Btn6;
 _Btn7 = _display displayCtrl Btn7;
-/*
-_Btn8 = _display displayCtrl Btn8;
-*/
 
 life_vInact_curTarget = _curTarget;
 
 while {dialog} do {
-	if (_curTarget distance player > 5) then {
+	if ((_curTarget distance player) > 5) then {
 		closeDialog 0;
 	};
 };
