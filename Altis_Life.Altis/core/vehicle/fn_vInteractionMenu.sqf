@@ -23,8 +23,16 @@ private["_display","_curTarget","_tName","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5"
 if(!dialog) then {
 	createDialog "vInteraction_Menu";
 };
-
 disableSerialization;
+
+_curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+if ((player getVariable "unconscious")) exitWith {};
+if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
+_isVehicle = if((_curTarget isKindOf "landVehicle") OR (_curTarget isKindOf "Ship") OR (_curTarget isKindOf "Air")) then {true} else {false};
+if(!_isVehicle) exitWith {closeDialog 0;};
+//Can't interact while restrained or dead
+if (player getVariable["zipTie",false] || player getVariable["restrained",false] || player getVariable["surrender",false] || player getVariable ["unconscious",false]) exitWith {closeDialog 0;};
+
 
 _display = findDisplay 37400;
 _tName = _display displayCtrl Txt1;
@@ -38,15 +46,6 @@ _Btn7 = _display displayCtrl Btn7;
 /*
 _Btn8 = _display displayCtrl Btn8;
 */
-
-
-_curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if ((player getVariable "unconscious")) exitWith {};
-if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
-_isVehicle = if((_curTarget isKindOf "landVehicle") OR (_curTarget isKindOf "Ship") OR (_curTarget isKindOf "Air")) then {true} else {false};
-if(!_isVehicle) exitWith {closeDialog 0;};
-//Can't interact while restrained or dead
-if (player getVariable["zipTie",false] || player getVariable["restrained",false] || player getVariable["surrender",false] || player getVariable ["unconscious",false]) exitWith {closeDialog 0;};
 
 life_vInact_curTarget = _curTarget;
 
