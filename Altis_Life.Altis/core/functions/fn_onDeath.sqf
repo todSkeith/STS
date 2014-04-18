@@ -29,9 +29,11 @@ else
 	{
 		switch (true) do
 		{
-			case (life_thirst == 0) : {[[0,format["%1 died of dehydration.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;};
-			case (life_hunger == 0) : {[[0,format["%1 starved to death.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP; };
-			default {[[0,format["%1 ended himself.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;};
+			case (life_thirst == 0) : 											{[[0,format["%1 died of dehydration.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;};
+			case (life_hunger == 0) : 											{[[0,format["%1 starved to death.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP; };
+			case (life_bleedout < time && player getVariable "unconscious") :	{[[0,format["%1 bled out.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP; };
+			case (player getVariable "executed") :								{ /*Will handle this via execute script*/ };
+			default 															{[[0,format["%1 ended himself.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;};
 		};
 	}
 	else
