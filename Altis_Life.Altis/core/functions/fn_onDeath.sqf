@@ -103,7 +103,7 @@ if(_lostCash > 100000) then {_lostCash = 100000};
 
 if(_lostCash == 0) then
 {
-	hintSilent "No medics are on. Yay free cloning!";
+	hintSilent "No medics were available. You were cloned for free.";
 }
 else
 {
