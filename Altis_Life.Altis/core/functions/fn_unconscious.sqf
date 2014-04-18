@@ -11,9 +11,6 @@ _unit = _this select 0;
 hint format ["_unit is %1", _unit];
 _source = _this select 1;
 life_bleedout = time + (60*15);
-_medicsonline = playersNumber independent;
-
-if(_medicsonline == 0) exitwith {hint "No Medics are online. You died horribly"; player setDamage 1; sleep 10; hintSilent "";};
 
 _unit setVariable["unconscious",true,true];
 	
@@ -62,10 +59,10 @@ if (isPlayer _unit) then
 					_nearestdist=_dist;
 				};
 			} forEach playableUnits;
-			if (!isNull _nearest && _nearestdist < 50000 && playersNumber independent != 0) then {
+			if (!isNull _nearest && playersNumber independent != 0) then {
 				hintSilent parseText format["Bleedout in %1 seconds<br/>Closest medic: %2m",round (_bleedout - time),floor _nearestdist];
 			} else {
-				hintSilent parseText format["Bleedout in %1 seconds<br/>No medics available",round (_bleedout - time)];
+				hintSilent parseText format["Bleedout in %1 seconds<br/>No medics available. You can respawn for free.",round (_bleedout - time)];
 			};
 			sleep 1;
 		} else {
