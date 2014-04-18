@@ -11,9 +11,9 @@ if (isNull _medic) exitWith {};
 if (!isPlayer _medic) exitWith {};
 if(!player getVariable "[unconscious",false]) exitWith {};
 
-player setVariable ["unconscious",false,true];
-hintSilent format ["You are being revived by %1",name _medic];
+titleText format ["You are being revived by %1...",name _medic];
 sleep 4;
+player setVariable ["unconscious",false,true];
 //deleteMarker name player;
 player enableSimulation true;
 player allowDamage true;

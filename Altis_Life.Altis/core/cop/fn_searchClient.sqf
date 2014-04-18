@@ -69,4 +69,4 @@ if(!(life_use_atm) && side _cop == west) then
 	_robber = true;
 };
 
-[[player,_licenses,_inv,_robber,_guns],"life_fnc_copSearch",_cop,false] spawn life_fnc_MP;
+[[player,_licenses,_inv,_robber,_guns,life_bleedout],"life_fnc_copSearch",_cop,false] spawn life_fnc_MP;
