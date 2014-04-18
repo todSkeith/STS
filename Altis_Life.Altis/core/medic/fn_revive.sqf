@@ -11,8 +11,19 @@ if (isNull _target) exitWith {};
 if (!isPlayer _target) exitWith {};
 if(!_unit getVariable "[unconscious",false]) exitWith {};
 
-player playMove "AinvPknlMstpSnonWnonDnon_medic0";
 [[player], "life_fnc_reviveAction", _target, false] spawn BIS_fnc_MP;
+player playMove "AinvPknlMstpSnonWnonDr_medic0";
+sleep 9.090;
+player playMoveNow "AinvPknlMstpSnonWnonDr_medic1";
+sleep 4.761;
+player playMoveNow "AinvPknlMstpSnonWnonDr_medic2";
+sleep 7.592;
+player playMoveNow "AinvPknlMstpSnonWnonDr_medic3";
+sleep 7.592;
+player playMoveNow "AinvPknlMstpSnonWnonDr_medic4";
+sleep 4.545;
+player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
+
 
 /*
 if (alive _target) then
