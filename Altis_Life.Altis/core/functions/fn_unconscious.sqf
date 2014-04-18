@@ -6,7 +6,7 @@
 	Description: when handle damage calls this file, it will do all of the actions needed to be unconscious.
 */
 
-private["_unit", "_source","_bleedout"];
+private["_unit", "_source"];
 _unit = _this select 0;
 hint format ["_unit is %1", _unit];
 _source = _this select 1;
@@ -47,9 +47,9 @@ if (isPlayer _unit) then
 			player action ["Eject",vehicle player];
 		};
 
-		if (_bleedout >= time) then {
+		if (life_bleedout >= time) then {
 			
-			_hintbleedout = format["Bleedout in %1 seconds<br/>",round (_bleedout - time)];
+			_hintbleedout = format["Bleedout in %1 seconds<br/>",round (life_bleedout - time)];
 			_nearest=objNull;
 			_nearestdist=50000;
 			{
