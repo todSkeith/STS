@@ -22,6 +22,10 @@ private["_display","_curTarget","_tName","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5"
 
 disableSerialization;
 
+if(!dialog) then {
+	createDialog "vInteraction_Menu";
+};
+
 _display = findDisplay 37400;
 _tName = _display displayCtrl Txt1;
 _Btn1 = _display displayCtrl Btn1;
@@ -35,9 +39,6 @@ _Btn7 = _display displayCtrl Btn7;
 _Btn8 = _display displayCtrl Btn8;
 */
 
-if(!dialog) then {
-	createDialog "vInteraction_Menu";
-};
 
 _curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if ((player getVariable "unconscious")) exitWith {};

@@ -22,6 +22,10 @@ private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6",
 
 disableSerialization;
 
+if(!dialog) then {
+	createDialog "cInteraction_Menu";
+};
+
 _display = findDisplay 37400;
 _tName = _display displayCtrl Txt1;
 _Btn1 = _display displayCtrl Btn1;
@@ -36,10 +40,6 @@ _Btn8 = _display displayCtrl Btn8;
 _Btn9 = _display displayCtrl Btn9;
 */
 
-
-if(!dialog) then {
-	createDialog "cInteraction_Menu";
-};
 
 _curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
