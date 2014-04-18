@@ -18,7 +18,6 @@ player setVariable ["unconscious",false,true];
 player enableSimulation true;
 player allowDamage true;
 player setDamage 0;
-player setCaptive false;
 player playMoveNow "amovppnemstpsraswrfldnon";
 
 //Trying different method to avoid being in the ground

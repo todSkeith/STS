@@ -33,13 +33,11 @@ if (isPlayer _unit) then
 	_unit setDamage 0;
 	_unit setVelocity [0,0,0];
 	_unit allowDamage false;
-	_unit setCaptive true;
 	//[[_unit],"life_fnc_unconsciousMarker", true, false] spawn Bis_fnc_MP; --- Included into medicMarkers
 	
 	_unit setDamage 0;
 	_unit setVelocity [0,0,0];
 	_unit allowDamage false;
-	_unit setCaptive true;
 	_unit playMoveNow "AinjPpneMstpSnonWrflDnon_rolltoback";
 
 
@@ -78,6 +76,4 @@ if (isPlayer _unit) then
 	hintSilent "";
 	_unit enableSimulation true;
 	_unit allowDamage true;
-//	_unit setDamage 0;
-	_unit setCaptive false;
 	_unit playMove "amovppnemstpsraswrfldnon";
