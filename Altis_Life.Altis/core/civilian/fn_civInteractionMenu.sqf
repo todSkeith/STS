@@ -20,6 +20,8 @@
 
 private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8","_Btn9"];
 
+disableSerialization;
+
 _display = findDisplay 37400;
 _tName = _display displayCtrl Txt1;
 _Btn1 = _display displayCtrl Btn1;
@@ -38,7 +40,7 @@ _Btn9 = _display displayCtrl Btn9;
 if(!dialog) then {
 	createDialog "cInteraction_Menu";
 };
-disableSerialization;
+
 _curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
 if(!isPlayer _curTarget && side _curTarget == civilian && side _curTarget == west) exitWith {closeDialog 0;}; //Bad side check?
@@ -56,18 +58,18 @@ _tZip = _curTarget getVariable ["zipTie",false];
 _tUnc = _curTarget getVariable ["unconscious",false];
 _tEsc = _curTarget getVariable ["Escorting",false];
 _tSur = _curTarget getVariable ["surrender",false];
-if (_curTarget animationState == "Incapacitated") then { _tKout = true; } else { _tKout = false; };
+if (animationState _curTarget == "Incapacitated") then { _tKout = true; } else { _tKout = false; };
 
 life_pInact_curTarget = _curTarget;
 
-while (dialog) do {
+while {dialog} do {
 	if (_curTarget distance player > 5) then {
 		closeDialog 0;
 	};
 };
 
 //Set target name text
-_tName ctrlSetText name _curTarget;
+//_tName ctrlSetText name _curTarget;
 
 //Button 1: Restrain / unrestrain || Stabilise
 if (_tUnc) then {

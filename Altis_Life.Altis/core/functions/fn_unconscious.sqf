@@ -60,9 +60,9 @@ if (isPlayer _unit) then
 				};
 			} forEach playableUnits;
 			if (!isNull _nearest && playersNumber independent != 0) then {
-				hintSilent parseText format["Bleedout in %1 seconds<br/>Closest medic: %2m",round (_bleedout - time),floor _nearestdist];
+				hintSilent parseText format["Bleedout in %1 seconds<br/>Closest medic: %2m",round (life_bleedout - time),floor _nearestdist];
 			} else {
-				hintSilent parseText format["Bleedout in %1 seconds<br/>No medics available. You can respawn for free.",round (_bleedout - time)];
+				hintSilent parseText format["Bleedout in %1 seconds<br/>No medics available. You can respawn for free.",round (life_bleedout - time)];
 			};
 			sleep 1;
 		} else {

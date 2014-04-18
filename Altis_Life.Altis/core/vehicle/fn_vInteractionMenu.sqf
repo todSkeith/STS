@@ -12,13 +12,15 @@
 #define Btn4 37454
 #define Btn5 37455
 #define Btn6 37456
-/*
 #define Btn7 37457
+/*
 #define Btn8 37458
 */
 #define Title 37401
 
-private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5"];
+private["_display","_curTarget","_tName","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7"];
+
+disableSerialization;
 
 _display = findDisplay 37400;
 _tName = _display displayCtrl Txt1;
@@ -28,16 +30,15 @@ _Btn3 = _display displayCtrl Btn3;
 _Btn4 = _display displayCtrl Btn4;
 _Btn5 = _display displayCtrl Btn5;
 _Btn6 = _display displayCtrl Btn6;
-/*
 _Btn7 = _display displayCtrl Btn7;
+/*
 _Btn8 = _display displayCtrl Btn8;
-_Btn9 = _display displayCtrl Btn9;
 */
 
 if(!dialog) then {
 	createDialog "vInteraction_Menu";
 };
-disableSerialization;
+
 _curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if ((player getVariable "unconscious")) exitWith {};
 if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
@@ -48,14 +49,14 @@ if (player getVariable["zipTie",false] || player getVariable["restrained",false]
 
 life_vInact_curTarget = _curTarget;
 
-while (dialog) do {
+while {dialog} do {
 	if (_curTarget distance player > 5) then {
 		closeDialog 0;
 	};
 };
 
 //Set vehicle type text
-_tName ctrlSetText getText(configFile >> "CfgVehicles" >> (typeOf cursorTarget) >> "displayName");
+//_tName ctrlSetText getText(configFile >> "CfgVehicles" >> (typeOf cursorTarget) >> "displayName");
 
 //Button 1: Repair
 if("ToolKit" in (items player)) then {_Btn1 ctrlEnable true;} else {_Btn1 ctrlEnable false;};
