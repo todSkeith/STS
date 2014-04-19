@@ -94,12 +94,8 @@ if(_sel == "") then
 		_damage = 0;
 		if(!(_unit getVariable "unconscious")) then 
 		{
-<<<<<<< HEAD
 			_unit setVariable["unconscious",true,true];
 			if(isNull _source && alive _unit) then
-=======
-			if ((damage _unit + _damage) >= 0.99) then
->>>>>>> origin/master
 			{
 				[[0,format["%1 was critically wounded by an environmental collision.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 			}
@@ -129,7 +125,6 @@ if(_sel == "") then
 				_damage = 0;
 			};
 		};
-<<<<<<< HEAD
 	};
 }
 else
@@ -149,8 +144,5 @@ else
 };
 [] call life_fnc_hudUpdate;
 sleep 0.1;
-systemChat format ["Hitbox: %1 | Overall health: %2 | Hitbox health: %3 | Damage taken: %4",_sel,damage _unit,_unit getHitPointDamage _ghp,_damage];
+//systemChat format ["Hitbox: %1 | Overall health: %2 | Hitbox health: %3 | Damage taken: %4",_sel,damage _unit,_unit getHitPointDamage _ghp,_damage];
 _damage;
-=======
-[] call life_fnc_hudUpdate;
->>>>>>> origin/master
