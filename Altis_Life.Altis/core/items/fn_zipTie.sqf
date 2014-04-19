@@ -9,6 +9,7 @@ private["_unit"];
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 
 if(_unit getVariable "restrained" || _unit getVariable "Escorting" || _unit getVariable "zipTie" || _unit getVariable "unconscious") exitWith {};
+if (!(_unit getVariable ["surrender",false]) && !(animationState _unit == "Incapacitated")) exitWith {};
 if(isNull _unit) exitWith {}; //Not valid
 if(player == _unit) exitWith {};
 if(life_inv_zip == 0) exitWith {};
