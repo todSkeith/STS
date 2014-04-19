@@ -81,6 +81,7 @@ switch (_filter) do
 		*/
 		if(__GETC__(life_adminlevel) > 0) then
 		{
+			_ret set[count _ret,["U_B_CombatUniform_mcam","Altis Police Uniform",350]];
 			_ret set[count _ret,["U_B_CTRG_1",nil,100]];
 			_ret set[count _ret,["U_B_CTRG_2",nil,100]];
 			_ret set[count _ret,["U_B_CTRG_3",nil,100]];
