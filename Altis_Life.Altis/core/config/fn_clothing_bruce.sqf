@@ -33,7 +33,7 @@ switch (_filter) do
 		["U_C_WorkerCoveralls","Mechanic Coveralls",2500],
 		["U_OrestesBody","Surfing On Land",1100],
 		["U_C_Scientist","Mechanic Blue",3000],	
-		["U_NikosBody","Bad Ass Uniform",5000],
+		["U_NikosBody","Badass Uniform",5000],
 		["U_C_Journalist","Journalist Clothes",5000],
 		["U_NikosAgedBody","Business Casual",5000]
 		];
