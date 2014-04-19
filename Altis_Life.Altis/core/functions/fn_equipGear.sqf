@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_equipGear.sqf
 	Author: John "Paratus" VanderZwet
