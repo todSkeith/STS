@@ -163,19 +163,6 @@ class pInteraction_Menu
 			w = 0.24;
 			h = 0.038;
 		};
-		/*
-		class ButtonNine : life_RscButtonMenu
-		{
-			idc = 37459;
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
-			text = "";
-			sizeEx = 0.025;
-			x = BGX + 0.03;
-			y = BGY + 0.52;
-			w = 0.24;
-			h = 0.038;
-		};
-		*/
 	};
 };
 
@@ -205,7 +192,7 @@ class vInteraction_Menu
 			x = BGX;
 			y = BGY + (11 / 250);
 			w = BGW;
-			h = 0.4 - (3 / 250);
+			h = 0.562 - (22 / 250);
 		};
 		
 		class Title : life_RscTitle
@@ -241,7 +228,7 @@ class vInteraction_Menu
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = BGX;
-			y = 0.68 - (1 / 25);
+			y = 0.69 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
@@ -317,7 +304,7 @@ class vInteraction_Menu
 			w = 0.24;
 			h = 0.038;
 		};
-		/*
+		
 		class ButtonSeven : life_RscButtonMenu
 		{
 			idc = 37457;
@@ -329,7 +316,7 @@ class vInteraction_Menu
 			w = 0.24;
 			h = 0.038;
 		};
-		
+		/*
 		class ButtonEight : life_RscButtonMenu
 		{
 			idc = 37458;
@@ -371,7 +358,7 @@ class cInteraction_Menu
 			x = BGX;
 			y = BGY + (11 / 250);
 			w = BGW;
-			h = 0.4 - (22 / 250);
+			h = 0.448 - (22 / 250);
 		};
 		
 		class Title : life_RscTitle
@@ -537,7 +524,7 @@ class mInteraction_Menu
 			x = BGX;
 			y = BGY + (11 / 250);
 			w = BGW;
-			h = 0.4 - (22 / 250);
+			h = 0.486 - (22 / 250);
 		};
 		
 		class Title : life_RscTitle

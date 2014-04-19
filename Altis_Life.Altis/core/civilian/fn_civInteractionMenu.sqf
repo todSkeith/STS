@@ -20,11 +20,21 @@
 
 private["_display","_curTarget","_Btn1","_Btn2","_Btn3","_Btn4","_Btn5","_Btn6","_Btn7","_Btn8","_Btn9"];
 
-disableSerialization;
-
 if(!dialog) then {
 	createDialog "cInteraction_Menu";
 };
+disableSerialization;
+
+_curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
+if(!isPlayer _curTarget && side _curTarget == civilian && side _curTarget == west) exitWith {closeDialog 0;}; //Bad side check?
+//Can't interact while restrained or dead
+if (player getVariable["zipTie",false] || player getVariable["restrained",false] || player getVariable["surrender",false] || player getVariable ["unconscious",false]) exitWith {closeDialog 0;};
+//Can't interact with medics
+//if (side _curTarget == independent) exitWith {closeDialog 0;};
+//Double check player side
+if (playerSide == west || playerSide == independent) exitWith {closeDialog 0;};
+
 
 _display = findDisplay 37400;
 _tName = _display displayCtrl Txt1;
@@ -40,18 +50,6 @@ _Btn8 = _display displayCtrl Btn8;
 _Btn9 = _display displayCtrl Btn9;
 */
 
-
-_curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
-if(!isPlayer _curTarget && side _curTarget == civilian && side _curTarget == west) exitWith {closeDialog 0;}; //Bad side check?
-//Can't interact while restrained or dead
-if (player getVariable["zipTie",false] || player getVariable["restrained",false] || player getVariable["surrender",false] || player getVariable ["unconscious",false]) exitWith {closeDialog 0;};
-//Can't interact with medics
-if (side _curTarget == independent) exitWith {closeDialog 0;};
-//Double check player side
-if (playerSide == west || playerSide == independent) exitWith {closeDialog 0;};
-
-
 private["_tRest","_tZip","_tUnc","_tEsc","_tSur","_tKout"];
 _tRest = _curTarget getVariable ["restrained",false];
 _tZip = _curTarget getVariable ["zipTie",false];
@@ -62,14 +60,15 @@ if (animationState _curTarget == "Incapacitated") then { _tKout = true; } else {
 
 life_pInact_curTarget = _curTarget;
 
+/*Range check DOES NOT WORK
 while {dialog} do {
 	if (_curTarget distance player > 5) then {
 		closeDialog 0;
 	};
-};
+};*/
 
 //Set target name text
-//_tName ctrlSetText name _curTarget;
+_tName ctrlSetText name _curTarget;
 
 //Button 1: Restrain / unrestrain || Stabilise
 if (_tUnc) then {
@@ -116,8 +115,9 @@ _Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar; closeDial
 
 //Button 4: Rob person || Execute
 if(_tUnc) then {
-	_Btn2 ctrlSetText localize "STR_pInAct_Execute";
-	_Btn2 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_execute; closeDialog 0;";
+	if(license_civ_rebel && (primaryWeapon player != "" || secondaryWeapon player != "") then { _Btn4 ctrlEnable true; } else { _Btn4 ctrlEnable false; };
+	_Btn4 ctrlSetText localize "STR_pInAct_Execute";
+	_Btn4 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_execute; closeDialog 0;";
 } else {
 	if((_tZip || _tSur || _tKout) && !_tEsc) then { _Btn4 ctrlEnable true; } else { _Btn4 ctrlEnable false; };
 	

@@ -126,6 +126,8 @@ life_use_atm = true;
 life_cash = 0;
 life_holstered_weapon = nil;
 
+license_civ_rebel = false;
+
 [] call life_fnc_sessionUpdate;
 
 player setVariable ["restrained", false, true];

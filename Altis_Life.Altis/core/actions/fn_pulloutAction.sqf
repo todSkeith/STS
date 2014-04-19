@@ -17,7 +17,7 @@ switch (playerSide) do {
 };	
 		
 {
-	if(side _x in _good) then {
+	if(!(side _x in _good) && !(_x in _good)) then {
 		_x setVariable ["transporting",false,true];
 		_x setVariable ["Escorting",false,true];
 		[[],"life_fnc_pulloutVeh",_x,false] spawn life_fnc_MP;

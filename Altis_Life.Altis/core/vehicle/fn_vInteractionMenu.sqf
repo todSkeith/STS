@@ -49,14 +49,15 @@ _Btn8 = _display displayCtrl Btn8;
 
 life_vInact_curTarget = _curTarget;
 
+/*Range check DOES NOT WORK
 while {dialog} do {
 	if (_curTarget distance player > 5) then {
 		closeDialog 0;
 	};
-};
+};*/
 
 //Set vehicle type text
-//_tName ctrlSetText getText(configFile >> "CfgVehicles" >> (typeOf cursorTarget) >> "displayName");
+_tName ctrlSetText getText(configFile >> "CfgVehicles" >> (typeOf cursorTarget) >> "displayName");
 
 //Button 1: Repair
 if("ToolKit" in (items player)) then {_Btn1 ctrlEnable true;} else {_Btn1 ctrlEnable false;};

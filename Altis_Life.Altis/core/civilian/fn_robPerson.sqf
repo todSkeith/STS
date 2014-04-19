@@ -21,4 +21,5 @@ if(life_cash > 0) then
 	hint parseText format["You have been robbed.<br/>%1 has stolen $%2.",_robber,[life_cash] call life_fnc_numberText];
 	[[getPlayerUID _robber,name _robber,"211"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	life_cash = 0;
+	[] call life_fnc_p_updateMenu;
 };

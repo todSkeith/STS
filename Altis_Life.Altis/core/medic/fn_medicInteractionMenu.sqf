@@ -20,11 +20,19 @@
 
 private["_display","_curTarget","_Btn1","_Btn2"];
 
+if(!dialog) then {
+	createDialog "mInteraction_Menu";
+};
 disableSerialization;
 
-if(!dialog) then {
-	createDialog "pInteraction_Menu";
-};
+_curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
+if(!isPlayer _curTarget && side _curTarget == civilian) exitWith {closeDialog 0;}; //Bad side check?
+//Can't interact while restrained or dead
+if (player getVariable["zipTie",false] || player getVariable["restrained",false] || player getVariable["surrender",false] || player getVariable ["unconscious",false]) exitWith {closeDialog 0;};
+//Double check player side
+if (playerSide != independent) exitWith {closeDialog 0;};
+
 
 _display = findDisplay 37400;
 _tName = _display displayCtrl Txt1;
@@ -37,17 +45,7 @@ _Btn5 = _display displayCtrl Btn5;
 _Btn6 = _display displayCtrl Btn6;
 _Btn7 = _display displayCtrl Btn7;
 _Btn8 = _display displayCtrl Btn8;
-_Btn9 = _display displayCtrl Btn9;
 */
-
-
-_curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
-if(!isPlayer _curTarget && side _curTarget == civilian) exitWith {closeDialog 0;}; //Bad side check?
-//Can't interact while restrained or dead
-if (player getVariable["zipTie",false] || player getVariable["restrained",false] || player getVariable["surrender",false] || player getVariable ["unconscious",false]) exitWith {closeDialog 0;};
-//Double check player side
-if (playerSide != independent) exitWith {closeDialog 0;};
 
 private["_tUnc"];
 _tUnc = _curTarget getVariable ["unconscious",false];
@@ -57,18 +55,19 @@ life_pInact_curTarget = _curTarget;
 //Can't interact with the healthy
 if (!_tUnc) exitWith {closeDialog 0;};
 
+/*Range check DOES NOT WORK
 while {dialog} do {
 	if (_curTarget distance player > 5) then {
 		closeDialog 0;
 	};
-};
+};*/
 
 //Set target name text
-//_tName = name _curTarget;
+_tName = name _curTarget;
 
 //Button 1: Revive
 _Btn1 ctrlSetText localize "STR_pInAct_Revive";
-_Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_revive; closeDialog 0;";
+_Btn1 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_revive; closeDialog 0;";
 
 
 //Button 2: Drag
@@ -78,8 +77,8 @@ _Btn2 ctrlSetText localize "STR_pInAct_Drag";
 _Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_drag; closeDialog 0;";
 
 //Button 3: Stabilise
-_Btn1 ctrlSetText localize "STR_pInAct_Stabilise";
-_Btn1 buttonSetAction "[life_pInact_curTarget] call life_fnc_stabilise; closeDialog 0;";
+_Btn3 ctrlSetText localize "STR_pInAct_Stabilise";
+_Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_stabilise; closeDialog 0;";
 
 //Button 4: Examine Player
 _Btn4 ctrlSetText localize "STR_pInAct_Examine";

@@ -11,6 +11,6 @@ if (isNull _medic) exitWith {};
 if (!isPlayer _medic) exitWith {};
 if(!(player getVariable ["unconscious",false])) exitWith {};
 
-titleText format ["%1 is stabilising your wounds...",name _medic];
+titleText [format ["%1 is stabilising your wounds...",name _medic],"PLAIN"];
 sleep 4;
 life_bleedout = time + (60*15);

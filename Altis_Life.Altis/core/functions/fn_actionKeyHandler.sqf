@@ -9,7 +9,7 @@
 private["_curTarget","_isWater","_isVehicle","_miscItems","_money"];
 _curTarget = cursorTarget;
 _near = nearestObjects[getPos player,["Man","Car","Air","Ship"],5];
-if (isNull _curTarget && count _near > 1) then {
+if ((isNull _curTarget || _curTarget isKindOf "House") && count _near > 1) then {
 	_curTarget = _near select 1;
 };
 
@@ -26,6 +26,8 @@ if(isNull _curTarget) exitWith {
 };
 if(dialog) exitWith {}; //Don't bother when a dialog is open.
 if(vehicle player != player) exitWith {}; //He's in a vehicle, cancel!
+if(player distance _curTarget > ((boundingBox _curTarget select 1) select 0) + 2) exitWith {}; //Too far away
+
 life_action_inUse = true;
  
 _isVehicle = if((_curTarget isKindOf "landVehicle") OR (_curTarget isKindOf "Ship") OR (_curTarget isKindOf "Air")) then {true} else {false};

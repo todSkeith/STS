@@ -13,6 +13,10 @@ _source = _this select 1;
 life_bleedout = time + (60*15);
 
 _unit setVariable["unconscious",true,true];
+_unit setVariable["restrained",false,true];
+_unit setVariable["Escorting",false,true];
+_unit setVariable["zipTie",false,true];
+_unit setVariable["surrender",false,true];
 	
 if(vehicle player != player) then
 {

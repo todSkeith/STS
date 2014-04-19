@@ -10,6 +10,7 @@ _unit = cursorTarget;
 if(isNull _unit) exitWith {}; //Not valid
 if(!(_unit isKindOf "Man")) exitWith {}; //Not a 'Man'
 if(!isPlayer _unit) exitWith {}; //Not a human player
+if(player distance _unit > 4) exitWith {};
 
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 player setVariable["isDragging",true,true];
@@ -22,8 +23,9 @@ _dragact = player addAction ["<t color=""#C90000"">" + "Release" + "</t>", {
 	_unit = player getVariable "dragging";
 	_unit switchMove "AinjPpneMstpSnonWrflDnon"; 
 	player playMoveNow "AmovPercMstpSnonWnonDnon"; 
-	detach _unit; 
-	player removeAction _this select 2;
+	detach _unit;
+	_act = _this select 2;
+	player removeAction _act;
 },"",10,true];
 
 while {(player getVariable "isDragging")} do {

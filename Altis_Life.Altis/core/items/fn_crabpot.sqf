@@ -30,7 +30,7 @@ switch (true) do {
 };
 
 //ceil used to ensure you don't get 0
-_val = ceil(random 5);
+_val = ceil(random 3);
 
 switch (true) do
 {
