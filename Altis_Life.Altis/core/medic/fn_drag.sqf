@@ -17,7 +17,8 @@ player setVariable["isDragging",true,true];
 player setVariable["dragging",_unit,true];
 _unit attachTo [player, [0, 1.1, 0.092]];
 _unit setDir 180;
-player playMoveNow "AcinPknlMstpSnonWnonDnon";
+if(currentWeapon player != "") then {player playMoveNow "AcinPknlMstpSrasWrflDnon";} 
+else {player playMoveNow "AcinPknlMstpSnonWnonDnon";}; 
 _dragact = player addAction ["<t color=""#C90000"">" + "Release" + "</t>", { 
 	player setVariable["isDragging",false,true];
 	_unit = player getVariable "dragging";
