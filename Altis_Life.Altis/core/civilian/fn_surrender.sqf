@@ -27,4 +27,4 @@ while { player getVariable ["surrender", false] }  do {
 	};
 	//deleteVehicle _obj;
 };
-player switchMove "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";
+player playMoveNow "amovpknlmstpslowwrfldnon_amovpercmstpsraswrfldnon";

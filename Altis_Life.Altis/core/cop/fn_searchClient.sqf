@@ -61,12 +61,10 @@ if (!isNil {life_holstered_weapon}) then {
 };
 
 
-if(_licenses == "") then {_licenses = "No licenses<br/>"};
-
 if(!(life_use_atm) && side _cop == west) then 
 {
 	life_cash = 0;
 	_robber = true;
 };
 
-[[player,_licenses,_inv,_robber,_guns],"life_fnc_copSearch",_cop,false] spawn life_fnc_MP;
+[[player,_inv,_robber,_guns,life_bleedout],"life_fnc_copSearch",_cop,false] spawn life_fnc_MP;

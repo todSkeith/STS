@@ -1,82 +1,115 @@
 /*
-	File: fn_actionKeyHandler.sqf
-	Author: Bryan "Tonic" Boardwine
-	
-	Description:
-	Master action key handler, handles requests for picking up various items and
-	interacting with other players (Cops = Cop Menu for unrestrain,escort,stop escort, arrest (if near cop hq), etc).
+        File: fn_actionKeyHandler.sqf
+        Author: Bryan "Tonic" Boardwine
+       
+        Description:
+        Master action key handler, handles requests for picking up various items and
+        interacting with other players (Cops = Cop Menu for unrestrain,escort,stop escort, arrest (if near cop hq), etc).
 */
-private["_curTarget","_isWater"];
+private["_curTarget","_isWater","_isVehicle","_miscItems","_money"];
 _curTarget = cursorTarget;
+_near = nearestObjects[getPos player,["Man","Car","Air","Ship"],5];
+if ((isNull _curTarget || _curTarget isKindOf "House") && count _near > 1) then {
+	_curTarget = _near select 1;
+};
+
 if(life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
 _isWater = surfaceIsWater (getPosASL player);
 if(isNull _curTarget) exitWith {
-	if(_isWater) then {
-		private["_fish"];
-		_fish = (nearestObjects[getPos player,["Fish_Base_F"],3]) select 0;
-		if(!isNil "_fish") then {
-			[_fish] call life_fnc_catchFish;
-		};
-	};
+        if(_isWater) then {
+                private["_fish"];
+                _fish = (nearestObjects[getPos player,["Fish_Base_F"],3]) select 0;
+                if(!isNil "_fish") then {
+                        [_fish] call life_fnc_catchFish;
+                };
+        };
 };
 if(dialog) exitWith {}; //Don't bother when a dialog is open.
 if(vehicle player != player) exitWith {}; //He's in a vehicle, cancel!
+if(player distance _curTarget > ((boundingBox _curTarget select 1) select 0) + 2) exitWith {}; //Too far away
+
 life_action_inUse = true;
-
-	if(playerSide == independent && _curTarget isKindOf "Man" && _curTarget getVariable["unconscious",false]) then {
-		[_curTarget] call life_fnc_medicInteractionMenu;
-	};
-
-//If target is a player then check if we can use the cop menu.
-if(isPlayer _curTarget && _curTarget isKindOf "Man") then {
-	if (!dialog && playerSide == west && cursorTarget distance player < 5.5 && ((_curTarget getVariable["restrained",true]) || (_curTarget getVariable["zipTie",true]))) then {
-		[_curTarget] call life_fnc_copInteractionMenu;
-	};
-	if (((_curTarget getVariable ["zipTie",true]) || (_curTarget getVariable["surrender",false]) || (animationState _curTarget == "Incapacitated")) && !dialog && playerSide == civilian && cursorTarget distance player < 5.5 ) then {
-		[_curTarget] call life_fnc_civInteractionMenu;
-	};
-} else {
-	//OK, it wasn't a player so what is it?
-	private["_isVehicle","_miscItems","_money"];
-	_isVehicle = if((_curTarget isKindOf "landVehicle") OR (_curTarget isKindOf "Ship") OR (_curTarget isKindOf "Air")) then {true} else {false};
-	_miscItems = ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F"];
-	_animalTypes = ["Salema_F","Ornate_random_F","Mackerel_F","Tuna_F","Mullet_F","CatShark_F","Turtle_F"];
-	_money = "Land_Money_F";
-	
-	//It's a vehicle! open the vehicle interaction key!
-	if(_isVehicle) then {
-		if(!dialog) then {
-			if(player distance _curTarget < ((boundingBox _curTarget select 1) select 0) + 2) then {
-				[_curTarget] call life_fnc_vInteractionMenu;
-			};
-		};
-	} else {
-		//Is it a animal type?
-		if((typeOf _curTarget) in _animalTypes) then {
-			if((typeOf _curTarget) == "Turtle_F" && !alive _curTarget) then {
-				private["_handle"];
-				_handle = [_curTarget] spawn life_fnc_catchTurtle;
-				waitUntil {scriptDone _handle};
-			} else {
-				private["_handle"];
-				_handle = [_curTarget] spawn life_fnc_catchFish;
-				waitUntil {scriptDone _handle};
-			};
-		} else {
-			//OK, it wasn't a vehicle so let's see what else it could be?
-			if((typeOf _curTarget) in _miscItems) then {
-				//OK, it was a misc item (food,water,etc).
-				private["_handle"];
-				_handle = [_curTarget] spawn life_fnc_pickupItem;
-				waitUntil {scriptDone _handle};
-			} else {
-				//It wasn't a misc item so is it money?
-				if((typeOf _curTarget) == _money) then {
-					private["_handle"];
-					_handle = [_curTarget] spawn life_fnc_pickupMoney;
-					waitUntil {scriptDone _handle};
-				};
-			};
-		};
-	};
+ 
+_isVehicle = if((_curTarget isKindOf "landVehicle") OR (_curTarget isKindOf "Ship") OR (_curTarget isKindOf "Air")) then {true} else {false};
+_miscItems = ["Land_BottlePlastic_V1_F","Land_TacticalBacon_F","Land_Can_V3_F","Land_CanisterFuel_F","Land_Suitcase_F"];
+_animalTypes = ["Salema_F","Ornate_random_F","Mackerel_F","Tuna_F","Mullet_F","CatShark_F","Turtle_F"];
+_money = "Land_Money_F";
+ 
+switch (true) do
+{
+        //Players
+        case (_curTarget isKindOf "Man" && isPlayer _curTarget):
+        {
+                switch (playerSide) do
+                {
+                        //Cop
+                        case (west):
+                        {
+                                [_curTarget] call life_fnc_copInteractionMenu;
+                        };
+                       
+                        //Medic
+                        case (independent):
+                        {
+                                [_curTarget] call life_fnc_medicInteractionMenu;
+                        };
+                       
+                        //Other
+                        default
+                        {
+                                [_curTarget] call life_fnc_civInteractionMenu;
+                        };
+                };
+        };
+       
+        //NPCs
+        case (_curTarget isKindOf "Man" && !isPlayer _curTarget):
+        {
+        //Nothing at the moment
+        };
+       
+        //Vehicles
+        case (_isVehicle):
+        {
+                [_curTarget] call life_fnc_vInteractionMenu;
+        };
+       
+        //Animals
+        case ((typeOf _curTarget) in _animalTypes):
+        {
+                switch (true) do
+                {
+                        //Turtles
+                        case ((typeOf _curTarget) == "Turtle_F" && !alive _curTarget):
+                        {
+                                private["_handle"];
+                                _handle = [_curTarget] spawn life_fnc_catchTurtle;
+                                waitUntil {scriptDone _handle};
+                        };
+                       
+                        //Other
+                        default
+                        {
+                                private["_handle"];
+                                _handle = [_curTarget] spawn life_fnc_catchFish;
+                                waitUntil {scriptDone _handle};
+                        };
+                };
+        };
+       
+        //Misc virtual items
+        case ((typeOf _curTarget) in _miscItems):
+        {
+                private["_handle"];
+                _handle = [_curTarget] spawn life_fnc_pickupItem;
+                waitUntil {scriptDone _handle};
+        };
+       
+        //Money
+        case ((typeOf _curTarget) == _money):
+        {
+                private["_handle"];
+                _handle = [_curTarget] spawn life_fnc_pickupMoney;
+                waitUntil {scriptDone _handle};
+        };
 };

@@ -5,6 +5,9 @@
 //////////////////////////////////////////////////////////////////
 
 private["_display","_abortB","_respawnB", "_timer","_timerDone"];
+
+if((call life_adminlevel) > 0) exitWith {};
+
 disableSerialization;
 
 //((findDisplay 49) displayCtrl 104) ctrlEnable true;
@@ -40,7 +43,7 @@ else
 	waitUntil {_timerDone};
 	_respawnB ctrlEnable true;
 	_respawnB ctrlSettext "Respawn";
-	if ((player getVariable "unconscious")) then 
+	if (player getVariable ["unconscious",false]) then 
 	{
 		_abortB ctrlEnable false;
 		_abortB ctrlSetText "Can't Abort While Unconscious";

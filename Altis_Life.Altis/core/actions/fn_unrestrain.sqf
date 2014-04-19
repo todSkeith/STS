@@ -3,7 +3,7 @@
 */
 private["_unit"];
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(isNull _unit OR !(_unit getVariable["restrained",false])) exitWith {}; //Error check?
+if(isNull _unit) exitWith {}; //Error check?
 
 [[_unit,"AmovPercMstpSnonWnonDnon"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 _unit setVariable["restrained",false,true];

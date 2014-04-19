@@ -31,7 +31,6 @@ class Life_Client_Core
 		class buyLicense {};
 		class chemlightUse {};
 		class restrainCiv {};
-		class unrestrainAction {};
 		class unzip {};
 		class zipTieAction {};
 		class heal {};
@@ -94,6 +93,7 @@ class Life_Client_Core
 		class ncsmoke {};
 		class ncflash {};
 		class fuel_consumption {};
+		class reviveHospital {};
 	};
 
 	class Config
@@ -231,6 +231,8 @@ class Life_Client_Core
 		class removeLicenses {};
 		class zoneCreator {};
 		class surrender {};
+		class execute {};
+		class executeAction {};
 	};
 
 	class Vehicle
@@ -289,6 +291,8 @@ class Life_Client_Core
 		class revive {};
 		class reviveAction {};
 		class drag {};
+		class stabilise {};
+		class stabiliseAction {};
 	};
 
 	class Gangs

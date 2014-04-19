@@ -64,6 +64,7 @@ if(!_isVehicle) then {
 	_curTarget setVariable["restrained",false,true];
 	_curTarget setVariable["Escorting",false,true];
 	_curTarget setVariable["transporting",false,true];
+	[[_curTarget,"AmovPercMstpSnonWnonDnon"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 } else {
 	_dice = random(100);
 	if(_dice < 50) then {

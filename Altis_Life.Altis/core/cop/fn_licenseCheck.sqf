@@ -8,6 +8,7 @@
 private["_cop"];
 _cop = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _cop) exitWith {}; //Bad entry
+if(player distance _cop > 10) exitWith {};
 
 _licenses = "";
 //Licenses

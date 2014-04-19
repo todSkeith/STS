@@ -5,11 +5,28 @@
 	
 	Description: is used by the medics to revive players
 */
+private["_target","_unit"];
+_target = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+if (isNull _target) exitWith {};
+if (!isPlayer _target) exitWith {};
+if(!(_unit getVariable ["unconscious",false])) exitWith {};
+if(player distance _unit > 4) exitWith {};
 
-_target = _this select 0;
+[[player], "life_fnc_reviveAction", _target, false] spawn BIS_fnc_MP;
+[] spawn {
+	player playMove "AinvPknlMstpSnonWnonDr_medic0";
+	sleep 9.090;
+	player playMoveNow "AinvPknlMstpSnonWnonDr_medic1";
+	sleep 4.761;
+	player playMoveNow "AinvPknlMstpSnonWnonDr_medic2";
+	sleep 7.592;
+	player playMoveNow "AinvPknlMstpSnonWnonDr_medic3";
+	sleep 7.592;
+	player playMoveNow "AinvPknlMstpSnonWnonDr_medic4";
+	sleep 4.545;
+	player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
+};
 
-player playMove "AinvPknlMstpSnonWnonDnon_medic0";
-[[], "life_fnc_reviveAction", _target, false] spawn BIS_fnc_MP;
 /*
 if (alive _target) then
 	{

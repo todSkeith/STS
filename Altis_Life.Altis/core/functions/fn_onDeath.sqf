@@ -29,9 +29,11 @@ else
 	{
 		switch (true) do
 		{
-			case (life_thirst == 0) : {[[0,format["%1 died of dehydration.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;};
-			case (life_hunger == 0) : {[[0,format["%1 starved to death.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP; };
-			default {[[0,format["%1 ended himself.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;};
+			case (life_thirst == 0) : 											{[[0,format["%1 died of dehydration.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;};
+			case (life_hunger == 0) : 											{[[0,format["%1 starved to death.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP; };
+			case (life_bleedout < time && player getVariable "unconscious") :	{[[0,format["%1 bled out.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP; };
+			case (player getVariable "executed") :								{ /*Will handle this via execute script*/ };
+			default 															{[[0,format["%1 ended himself.", name _unit]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;};
 		};
 	}
 	else
@@ -103,7 +105,7 @@ if(_lostCash > 100000) then {_lostCash = 100000};
 
 if(_lostCash == 0) then
 {
-	hintSilent "No medics are on. Yay free cloning!";
+	hintSilent "No medics were available. You were cloned for free.";
 }
 else
 {
@@ -123,6 +125,8 @@ life_use_atm = true;
 
 life_cash = 0;
 life_holstered_weapon = nil;
+
+license_civ_rebel = false;
 
 [] call life_fnc_sessionUpdate;
 

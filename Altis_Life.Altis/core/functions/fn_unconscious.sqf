@@ -6,16 +6,17 @@
 	Description: when handle damage calls this file, it will do all of the actions needed to be unconscious.
 */
 
-private["_unit", "_source","_bleedout"];
+private["_unit", "_source"];
 _unit = _this select 0;
 hint format ["_unit is %1", _unit];
 _source = _this select 1;
-_bleedout = time + (60*15);
-_medicsonline = playersNumber independent;
-
-if(_medicsonline == 0) exitwith {hint "No Medics are online. You died horribly"; player setDamage 1; _unit setVariable["unconscious",false,true]; sleep 10; hintSilent "";};
+life_bleedout = time + (60*15);
 
 _unit setVariable["unconscious",true,true];
+_unit setVariable["restrained",false,true];
+_unit setVariable["Escorting",false,true];
+_unit setVariable["zipTie",false,true];
+_unit setVariable["surrender",false,true];
 	
 if(vehicle player != player) then
 {
@@ -33,13 +34,11 @@ if (isPlayer _unit) then
 	_unit setDamage 0;
 	_unit setVelocity [0,0,0];
 	_unit allowDamage false;
-	_unit setCaptive true;
 	//[[_unit],"life_fnc_unconsciousMarker", true, false] spawn Bis_fnc_MP; --- Included into medicMarkers
 	
 	_unit setDamage 0;
 	_unit setVelocity [0,0,0];
 	_unit allowDamage false;
-	_unit setCaptive true;
 	_unit playMoveNow "AinjPpneMstpSnonWrflDnon_rolltoback";
 
 
@@ -47,14 +46,15 @@ if (isPlayer _unit) then
 {
 		_unit switchMove "AinjPpneMstpSnonWrflDnon";
 		_unit enablesimulation false;
-		if(vehicle player != player) then
+		if(vehicle player != player && driver vehicle player == player) then
 		{
 			player action ["Eject",vehicle player];
+			titleText ["You can't drive in that state...","PLAIN"];
 		};
 
-		if (_bleedout >= time) then {
+		if (life_bleedout >= time) then {
 			
-			_hintbleedout = format["Bleedout in %1 seconds<br/>",round (_bleedout - time)];
+			_hintbleedout = format["Bleedout in %1 seconds<br/>",round (life_bleedout - time)];
 			_nearest=objNull;
 			_nearestdist=50000;
 			{
@@ -64,10 +64,10 @@ if (isPlayer _unit) then
 					_nearestdist=_dist;
 				};
 			} forEach playableUnits;
-			if (!isNull _nearest && _nearestdist < 50000 && playersNumber independent != 0) then {
-				hintSilent parseText format["Bleedout in %1 seconds<br/>Closest medic: %2m",round (_bleedout - time),floor _nearestdist];
-			} else {
-				hintSilent parseText format["Bleedout in %1 seconds<br/>No medics available",round (_bleedout - time)];
+			switch (true) do {
+				case (playersNumber independent == 0):	{ hintSilent parseText format["Bleedout in %1 seconds<br/>No medics available. You can respawn for free.",round (life_bleedout - time)]; };
+				case (!isNull _nearest): 				{ hintSilent parseText format["Bleedout in %1 seconds<br/>Closest medic: %2m",round (life_bleedout - time),floor _nearestdist]; };
+				default 								{ hintSilent parseText format["Bleedout in %1 seconds<br/>No medics available. You can respawn for free.",round (life_bleedout - time)]; };
 			};
 			sleep 1;
 		} else {
@@ -78,6 +78,4 @@ if (isPlayer _unit) then
 	hintSilent "";
 	_unit enableSimulation true;
 	_unit allowDamage true;
-//	_unit setDamage 0;
-	_unit setCaptive false;
 	_unit playMove "amovppnemstpsraswrfldnon";

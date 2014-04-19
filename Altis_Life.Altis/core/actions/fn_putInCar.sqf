@@ -7,7 +7,8 @@
 */
 private["_unit"];
 _unit = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(isNull _unit OR !isPlayer _unit OR _unit getVariable ["unconscious",false]) exitWith {};
+if(isNull _unit OR !isPlayer _unit) exitWith {};
+if(player distance _unit > 4) exitWith {};
 
 _nearestVehicle = nearestObjects[getPosATL player,["Car","Ship","Submarine","Air"],10] select 0;
 if(isNil "_nearestVehicle") exitWith {hint "There isn't a vehicle near by.."};

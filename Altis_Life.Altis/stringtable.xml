@@ -357,10 +357,10 @@
 			<Original>Player Interaction Menu</Original>
 		</Key>
 		<Key ID="STR_pInAct_PutInCar">
-			<Original>Put in vehicle</Original>
+			<Original>Put in Vehicle</Original>
 		</Key>
 		<Key ID="STR_pInAct_Unrestrain">
-			<Original>Un-Restrain</Original>
+			<Original>Unrestrain</Original>
 		</Key>
 		<Key ID="STR_pInAct_checkLicenses">
 			<Original>Check Licenses</Original>
@@ -392,20 +392,20 @@
 		<Key ID="STR_pInAct_Drag">
 			<Original>Drag Player</Original>
 		</Key>
-		<Key ID="STR_cInAct_Unrestrain">
-			<Original>Un-Restrain</Original>
+		<Key ID="STR_pInAct_Stabilise">
+			<Original>Stabilise</Original>
 		</Key>
-		<Key ID="STR_cInAct_PutInCar">
-			<Original>Put in vehicle</Original>
+		<Key ID="STR_pInAct_Examine">
+			<Original>Examine Player</Original>
 		</Key>
-		<Key ID="STR_cInAct_StopEscort">
-			<Original>Stop Escorting</Original>
-		</Key>
-		<Key ID="STR_cInAct_Escort">
-			<Original>Escort Player</Original>
-		</Key>
-		<Key ID="STR_cInAct_RobPerson">
+		<Key ID="STR_pInAct_RobPerson">
 			<Original>Rob Person</Original>
+		</Key>
+		<Key ID="STR_pInAct_Execute">
+			<Original>Execute</Original>
+		</Key>
+		<Key ID="STR_pInAct_Restrain">
+			<Original>Restrain</Original>
 		</Key>
 	</Package>
 	<Package name="Vehicle_Interaction">
@@ -414,6 +414,9 @@
 		</Key>
 		<Key ID="STR_vInAct_Repair">
 			<Original>Repair Vehicle</Original>
+		</Key>
+		<Key ID="STR_vInAct_checkLicenses">
+			<Original>Check Licenses</Original>
 		</Key>
 		<Key ID="STR_vInAct_Push">
 			<Original>Push Vehicle</Original>
