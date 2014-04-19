@@ -67,7 +67,7 @@ if (side player == independent) then {
 };
 _out = _out + format ["<t color='#FF0000'><t size='1.5'>Concealed Weapons:</t></t><br/>%1<br/><br/>", _gun];
 if (_civ getVariable ["unconscious",false]) then {
-	_out = _out + format ["<t color='#FFFFFF'><t size='1.5'>Bleedout in %1 seconds.</t></t><br/><br/>", round (_bleedout - time)];
+	_out = _out + format ["<t color='#FFFFFF'>Bleedout in %1 seconds.</t><br/><br/>", round (_bleedout - time)];
 };
 
 hint parseText _out;
