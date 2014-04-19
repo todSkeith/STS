@@ -69,10 +69,51 @@ if(isNil "life_clothesPurchased") exitWith
 	if(life_oldHat != "") then {player addHeadgear life_oldHat} else {removeHeadgear player;};
 	if(life_oldGlasses != "") then {player addGoggles life_oldGlasses;} else {removeGoggles player};
 	
-	if ((uniform player) == "U_Rangemaster") then
+	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 1) then
 	{
-		[[player,"images\poucad.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
+		[[player,"images\Cadet_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
 	};
+	
+	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 2) then
+	{
+		[[player,"images\PO_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
+	};
+	
+	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 3) then
+	{
+		[[player,"images\SPO_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
+	};
+	
+	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 4) then
+	{
+		[[player,"images\Corp_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
+	};
+	
+	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 5) then
+	{
+		[[player,"images\Serg_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
+	};
+	
+	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 6) then
+	{
+		[[player,"images\Lieut_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
+	};
+	
+	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 7) then
+	{
+		[[player,"images\Capt_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
+	};
+	
+	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 8) then
+	{
+		[[player,"images\SuperInt_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
+	};
+	
+	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 9) then
+	{
+		[[player,"images\Chief_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
+	};
+	
 	if ((uniform player) == "U_B_CombatUniform_mcam") then
 	{
 		[[player,"images\GenC.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;

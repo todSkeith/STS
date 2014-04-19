@@ -21,10 +21,52 @@ switch (_filter) do
 	case 0:
 	{
 		_ret set[count _ret,["U_Rangemaster","Cadet Uniform",25]];
-		if(__GETC__(life_coplevel) > 1) then
+		if((life_coplevel) > 1) then
 		{
 			_ret set[count _ret,["U_B_CombatUniform_mcam","Altis Police Uniform",350]];
 		};
+		
+		if(__GETC__(life_coplevel) = 1) then
+		{
+			_ret set[count _ret,["U_Rangemaster","Cadet Uniform",350]];
+		};
+		
+		if(__GETC__(life_coplevel) = 2) then
+		{
+			_ret set[count _ret,["U_Rangemaster","PO Uniform",450]];
+		};
+		
+		if(__GETC__(life_coplevel) = 3) then
+		{
+			_ret set[count _ret,["U_Rangemaster","SPO Uniform",550]];
+		};
+		if(__GETC__(life_coplevel) = 4) then
+		{
+			_ret set[count _ret,["U_Rangemaster","Corp Uniform",650]];
+		};
+		
+		if(__GETC__(life_coplevel) = 5) then
+		{
+			_ret set[count _ret,["U_Rangemaster","Serg Uniform",750]];
+		};
+		if(__GETC__(life_coplevel) = 6) then
+		{
+			_ret set[count _ret,["U_Rangemaster","Lieut Uniform",850]];
+		};
+		if(__GETC__(life_coplevel) = 7) then
+		{
+			_ret set[count _ret,["U_Rangemaster","Capt Uniform",950]];
+		};
+		if(__GETC__(life_coplevel) = 8) then
+		{
+			_ret set[count _ret,["U_Rangemaster","SuperInt Uniform",1000]];
+		};
+		
+		if(__GETC__(life_coplevel) = 9) then
+		{
+			_ret set[count _ret,["U_Rangemaster","Chief Uniform",1100]];
+		};
+		
 		if(__GETC__(life_adminlevel) > 0) then
 		{
 			_ret set[count _ret,["U_B_CTRG_1",nil,100]];
