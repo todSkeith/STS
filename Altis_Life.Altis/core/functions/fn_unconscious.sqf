@@ -10,7 +10,14 @@ private["_unit", "_source"];
 _unit = _this select 0;
 hint format ["_unit is %1", _unit];
 _source = _this select 1;
+<<<<<<< HEAD
 life_bleedout = time + (60*15);
+=======
+_bleedout = time + (60*15);
+_medicsonline = playersNumber independent;
+
+if(_medicsonline == 0) exitwith {hint "No Medics are online. You died horribly"; player setDamage 1; _unit setVariable["unconscious",false,true]; sleep 10; hintSilent "";};
+>>>>>>> origin/master
 
 _unit setVariable["unconscious",true,true];
 _unit setVariable["restrained",false,true];

@@ -28,7 +28,7 @@ _bitems = [];
 if(_uniform != "") then {{_uitems set[count _uitems,_x];} foreach (uniformItems player);};
 if(_vest != "") then {{_vitems set[count _vitems,_x];} foreach (vestItems player);};
 if(_backpack != "") then {{_bitems set[count _bitems,_x];} foreach (backPackItems player);};
-
+/*this doesnt seem to do anything important
 if(primaryWeapon player != "") then
 {
 	player selectWeapon (primaryWeapon player);
@@ -40,6 +40,7 @@ if(primaryWeapon player != "") then
 	};
 
 };
+*/
 
 if(secondaryWeapon player != "") then
 {

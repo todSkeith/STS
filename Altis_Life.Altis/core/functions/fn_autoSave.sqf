@@ -10,7 +10,7 @@ while {true} do {
 	if (alive player) then   
         {
 		[false] call life_fnc_sessionUpdate;  
-		hint "Session Synced";  
+		systemChat "Session AutoSynced";  
 		if (rating player < 100000) then { player addRating 999999; };
 	};
 };
