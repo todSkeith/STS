@@ -68,9 +68,11 @@ if(isNil "life_clothesPurchased") exitWith
 	if(life_oldClothes != "") then {player addUniform life_oldClothes;} else {removeUniform player};
 	if(life_oldHat != "") then {player addHeadgear life_oldHat} else {removeHeadgear player;};
 	if(life_oldGlasses != "") then {player addGoggles life_oldGlasses;} else {removeGoggles player};
-	
-	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 1) then
-	{
+
+	[] call life_fnc_equipGear;
+	/*	
+	if ((uniform player) == "U_Rangemaster") && playerSide == west) then
+	{	
 		[[player,"images\Cadet_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
 	};
 	
@@ -136,7 +138,7 @@ if(isNil "life_clothesPurchased") exitWith
 	{
 		[[player,"images\tiee11.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
 	};
-
+	*/
 
 	
 	
