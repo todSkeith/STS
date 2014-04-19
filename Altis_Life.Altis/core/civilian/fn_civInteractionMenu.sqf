@@ -115,7 +115,7 @@ _Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar; closeDial
 
 //Button 4: Rob person || Execute
 if(_tUnc) then {
-	if(license_civ_rebel && (primaryWeapon player != "" || secondaryWeapon player != "") then { _Btn4 ctrlEnable true; } else { _Btn4 ctrlEnable false; };
+	if(license_civ_rebel && (primaryWeapon player != "" || secondaryWeapon player != "")) then { _Btn4 ctrlEnable true; } else { _Btn4 ctrlEnable false; };
 	_Btn4 ctrlSetText localize "STR_pInAct_Execute";
 	_Btn4 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_execute; closeDialog 0;";
 } else {

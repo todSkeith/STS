@@ -8,6 +8,7 @@
 private["_val"];
 if(isNil {life_ticket_unit}) exitWith {hint "Person to ticket is nil"};
 if(isNull life_ticket_unit) exitWith {hint "Person to ticket doesn't exist."};
+if(player distance life_ticket_unit > 4) exitWith {hint "Person to ticket is too far away."};
 _val = ctrlText 2652;
 if(!([_val] call fnc_isnumber)) exitWith {hint "You didn't enter actual number format."};
 if((parseNumber _val) > 100000) exitWith {hint "Tickets can not be more than $100,000!"};

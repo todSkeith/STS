@@ -228,7 +228,7 @@ class vInteraction_Menu
 			text = "$STR_Global_Close";
 			onButtonClick = "closeDialog 0;";
 			x = BGX;
-			y = 0.69 - (1 / 25);
+			y = 1 - (1 / 25);
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};

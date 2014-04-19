@@ -43,7 +43,7 @@ else
 	waitUntil {_timerDone};
 	_respawnB ctrlEnable true;
 	_respawnB ctrlSettext "Respawn";
-	if ((player getVariable "unconscious")) then 
+	if (player getVariable ["unconscious",false]) then 
 	{
 		_abortB ctrlEnable false;
 		_abortB ctrlSetText "Can't Abort While Unconscious";

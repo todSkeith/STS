@@ -120,9 +120,8 @@ _Btn5 buttonSetAction "[life_pInact_curTarget] call life_fnc_ticketAction;";
 
 //Button 6: Send to Jail
 //Check that you are near a place to jail them.
-if((player distance (getMarkerPos "police_hq_1") < 30) || (player distance (getMarkerPos "police_hq_2") < 30) || (player distance (getMarkerPos "cop_spawn_3") < 30) || (player distance (getMarkerPos "cop_spawn_5") < 30)) then
+if(((player distance (getMarkerPos "police_hq_1") < 30) || (player distance (getMarkerPos "police_hq_2") < 30) || (player distance (getMarkerPos "cop_spawn_3") < 30) || (player distance (getMarkerPos "cop_spawn_5") < 30)) && _tRest && !_tEsc) then
 { _Btn6 ctrlEnable true; } else { _Btn6 ctrlEnable false; };
-if(_tRest && !_tEsc) then { _Btn6 ctrlEnable true; } else { _Btn6 ctrlEnable false; };
 
 _Btn6 ctrlSetText localize "STR_pInAct_Arrest";
 _Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
