@@ -65,7 +65,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		player playActionNow "stop";
 		if(life_interrupted) exitWith {life_interrupted = false; titleText["Action cancelled","PLAIN"]; life_action_inUse = false;};
 		if(player != vehicle player) exitWith {titleText["You must be outside of the vehicle to fix it.","PLAIN"];};
-		if(!local _veh) then { [[_veh,player],"life_fnc_repairHitPoints",_veh,false] spawn life_fnc_MP; };
+		if(!local _veh) then { _veh setDamage 0.3; };
 		titleText["You have repaired that vehicle.","PLAIN"];
 	};
 };

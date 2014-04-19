@@ -128,7 +128,7 @@ _Btn6 buttonSetAction "[life_pInact_curTarget] call life_fnc_arrestAction;";
 
 
 //Button 7: Put in Vehicle
-if(!_tRest) then { _Btn1 ctrlEnable true; } else { _Btn7 ctrlEnable false; };
+if(_tRest || _tUnc) then { _Btn1 ctrlEnable true; } else { _Btn7 ctrlEnable false; };
 
 _Btn7 ctrlSetText localize "STR_pInAct_PutInCar";
 _Btn7 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar; closeDialog 0;";

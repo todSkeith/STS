@@ -404,6 +404,9 @@
 		<Key ID="STR_pInAct_Execute">
 			<Original>Execute</Original>
 		</Key>
+		<Key ID="STR_pInAct_Restrain">
+			<Original>Restrain</Original>
+		</Key>
 	</Package>
 	<Package name="Vehicle_Interaction">
 		<Key ID="STR_vInAct_Title">

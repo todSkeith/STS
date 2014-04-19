@@ -8,11 +8,11 @@
 private["_medic"];
 _medic = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if (isNull _medic) exitWith {};
-if (!isPlayer _medic) exitWith {};
+// (!isPlayer _medic) exitWith {};
 if(!(player getVariable ["unconscious",false])) exitWith {};
 
 titleText [format ["You are being revived by %1...",name _medic],"PLAIN"];
-sleep 33.58;
+sleep 38.58;
 player setVariable ["unconscious",false,true];
 //deleteMarker name player;
 player enableSimulation true;

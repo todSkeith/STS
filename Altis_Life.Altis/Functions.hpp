@@ -93,6 +93,7 @@ class Life_Client_Core
 		class ncsmoke {};
 		class ncflash {};
 		class fuel_consumption {};
+		class reviveHospital {};
 	};
 
 	class Config

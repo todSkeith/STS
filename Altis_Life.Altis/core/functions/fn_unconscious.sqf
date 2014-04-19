@@ -46,9 +46,10 @@ if (isPlayer _unit) then
 {
 		_unit switchMove "AinjPpneMstpSnonWrflDnon";
 		_unit enablesimulation false;
-		if(vehicle player != player) then
+		if(vehicle player != player && driver vehicle player == player) then
 		{
 			player action ["Eject",vehicle player];
+			titleText ["You can't drive in that state...","PLAIN"];
 		};
 
 		if (life_bleedout >= time) then {
@@ -63,10 +64,10 @@ if (isPlayer _unit) then
 					_nearestdist=_dist;
 				};
 			} forEach playableUnits;
-			if (!isNull _nearest && playersNumber independent != 0) then {
-				hintSilent parseText format["Bleedout in %1 seconds<br/>Closest medic: %2m",round (life_bleedout - time),floor _nearestdist];
-			} else {
-				hintSilent parseText format["Bleedout in %1 seconds<br/>No medics available. You can respawn for free.",round (life_bleedout - time)];
+			switch (true) do {
+				case (playersNumber independent == 0):	{ hintSilent parseText format["Bleedout in %1 seconds<br/>No medics available. You can respawn for free.",round (life_bleedout - time)]; };
+				case (!isNull _nearest): 				{ hintSilent parseText format["Bleedout in %1 seconds<br/>Closest medic: %2m",round (life_bleedout - time),floor _nearestdist]; };
+				default 								{ hintSilent parseText format["Bleedout in %1 seconds<br/>No medics available. You can respawn for free.",round (life_bleedout - time)]; };
 			};
 			sleep 1;
 		} else {

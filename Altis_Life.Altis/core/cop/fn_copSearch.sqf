@@ -57,7 +57,7 @@ if(side player == west && count _invs > 0) then
 if(!alive _civ || player distance _civ > 5) exitWith {hint format["Couldn't search %1", name _civ]};
 
 if (side player == independent) then {
-	if (primaryWeapon _civ != "" || secondaryWeapon _civ != "") then {
+	if (primaryWeapon _civ != "" || handGunWeapon _civ != "") then {
 		_out = _out + "<t color='#FFFF00'><t size='1.5'>Armed</t></t><br/><br/>";
 	} else {
 		_out = _out + "<t color='#00AA00'><t size='1.5'>Unarmed</t></t><br/><br/>";

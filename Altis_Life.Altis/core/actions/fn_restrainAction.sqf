@@ -12,7 +12,7 @@ if((_unit getVariable "restrained")) exitWith {};
 if(side _unit == west || side _unit == independent) exitWith {};
 if(player == _unit) exitWith {};
 if(!isPlayer _unit) exitWith {};
-if(player getVariable ["restrained",false] || player getVariable ["zipTie",false] || player getVariable ["surrender",false] || player getVariable ["unconscious",false] || animationState player == "Incapacitated") exitWith {};
+if(player getVariable ["restrained",false] || player getVariable ["zipTie",false] || player getVariable ["surrender",false] || player getVariable ["unconscious",false] || (animationState player == "Incapacitated")) exitWith {};
 if(player distance _unit > 4) exitWith {};
 
 //Broadcast!

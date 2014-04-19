@@ -90,7 +90,7 @@ if (_tUnc) then {
 
 //Button 2: Escort || Drag
 if(_tUnc) then {
-	if(!(player getVariable["isDragging",false])) then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
+	if(!(player getVariable["isDragging",false]) && primaryWeapon player == "" && handGunWeapon player == "") then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
 	
 	_Btn2 ctrlSetText localize "STR_pInAct_Drag";
 	_Btn2 buttonSetAction "[life_pInact_curTarget] call life_fnc_drag; closeDialog 0;";
@@ -107,7 +107,7 @@ if(_tUnc) then {
 
 
 //Button 3: Put in Vehicle
-if(_tEsc) then { _Btn3 ctrlEnable true; } else { _Btn3 ctrlEnable false; };
+if(_tEsc || _tUnc) then { _Btn3 ctrlEnable true; } else { _Btn3 ctrlEnable false; };
 
 _Btn3 ctrlSetText localize "STR_pInAct_PutInCar";
 _Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar; closeDialog 0;";
@@ -115,7 +115,7 @@ _Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar; closeDial
 
 //Button 4: Rob person || Execute
 if(_tUnc) then {
-	if(license_civ_rebel && (primaryWeapon player != "" || secondaryWeapon player != "")) then { _Btn4 ctrlEnable true; } else { _Btn4 ctrlEnable false; };
+	if(license_civ_rebel && (primaryWeapon player != "" || handGunWeapon player != "")) then { _Btn4 ctrlEnable true; } else { _Btn4 ctrlEnable false; };
 	_Btn4 ctrlSetText localize "STR_pInAct_Execute";
 	_Btn4 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_execute; closeDialog 0;";
 } else {
