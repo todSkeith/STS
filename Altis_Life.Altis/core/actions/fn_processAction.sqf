@@ -17,7 +17,7 @@ if (side player == west) exitWith {hint "You cannot preform this action as an of
 _itemInfo = switch (_type) do
 {
 	case "oil": {[["oilu"],"oilp",135,"Processing Oil"];};
-	case "diamond": {[["diamond"],"diamondc",100,"Processing Diamond"]};
+	case "diamond": {[["diamond"],"diamondc",100,"Processing Diamonds"]};
 	case "heroin": {[["heroinu"],"heroinp",115,"Processing Heroin"]};
 	case "copper": {[["copperore"],"copper_r",65,"Processing Copper"]};
 	case "iron": {[["ironore"],"iron_r",200,"Processing Iron"]};

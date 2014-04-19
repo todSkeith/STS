@@ -30,6 +30,7 @@ while {true} do
 	if((round(_timer - time)) < 1) exitWith {};
 	if(!alive player) exitWith {};
 	if(life_istazed) exitWith {};
+	if(player getVariable "unconscious") exitWith {};
 };
 
 switch(true) do
@@ -49,6 +50,12 @@ switch(true) do
 	case (life_istazed):
 	{
 		hint "You were tazed, the robbery has failed!";
+		[[_vault,0],"TON_fnc_robberyState",false,false] spawn life_fnc_MP;
+	};
+
+	case (player getVariable "unconscious"):
+	{
+		hint "You fell unconscious to the floor!";
 		[[_vault,0],"TON_fnc_robberyState",false,false] spawn life_fnc_MP;
 	};
 	
