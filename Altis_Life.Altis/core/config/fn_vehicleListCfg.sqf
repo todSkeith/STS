@@ -215,6 +215,8 @@ switch (_shop) do
 	{
 		_return set[count _return,
 		["O_Heli_Light_02_unarmed_F",250000]];
+		_return set[count _return,
+		["B_Heli_Light_01_F",100000]];
 
 	};
 

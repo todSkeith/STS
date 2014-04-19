@@ -34,7 +34,8 @@ switch (_filter) do
 		["U_OrestesBody","Surfing On Land",1100],
 		["U_C_Scientist","Mechanic Blue",3000],	
 		["U_NikosBody","Bad Ass Uniform",5000],
-		["U_NikosAgedBody","Bussiness Casual",5000]
+		["U_C_Journalist","Journalist Clothes",5000],
+		["U_NikosAgedBody","Business Casual",5000]
 		];
 	};
 
@@ -65,6 +66,7 @@ switch (_filter) do
 			["H_Cap_tan",nil,150],
 			["H_Cap_blk_CMMG","Black Cap",200],
 			["H_Cap_headphones","HeadPhones Cap",800],
+			["H_Cap_press","Press Cap",800],
 			["H_Cap_tan",nil,150]
 		];
 	};

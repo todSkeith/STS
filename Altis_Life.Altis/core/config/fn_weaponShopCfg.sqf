@@ -81,7 +81,9 @@ switch(_shop) do
 						["30Rnd_65x39_caseless_mag",nil,125],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["9Rnd_45ACP_Mag",nil,20],
-						["11Rnd_45ACP_Mag",nil,20]
+						["11Rnd_45ACP_Mag",nil,20],
+						["16Rnd_9x21_Mag",nil,50],
+						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
 			};
@@ -112,7 +114,9 @@ switch(_shop) do
 						["optic_Holosight",nil,1200],
 						["optic_Arco",nil,2500],
 						["30Rnd_65x39_caseless_mag",nil,130],
-						["30Rnd_45ACP_Mag_SMG_01",nil,150]
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
+						["16Rnd_9x21_Mag",nil,50],
+						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
 			};
@@ -129,7 +133,9 @@ switch(_shop) do
 						["optic_Holosight",nil,1200],
 						["optic_Hamr",nil,2500],
 						["30Rnd_65x39_caseless_mag",nil,300],
-						["30Rnd_45ACP_Mag_SMG_01",nil,150]
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
+						["16Rnd_9x21_Mag",nil,50],
+						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
 			};
@@ -146,7 +152,9 @@ switch(_shop) do
 						["optic_Holosight",nil,1200],
 						["optic_Hamr",nil,2000],
 						["30Rnd_65x39_caseless_mag",nil,300],
-						["30Rnd_45ACP_Mag_SMG_01",nil,150]
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
+						["16Rnd_9x21_Mag",nil,50],
+						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
 			};
@@ -166,7 +174,9 @@ switch(_shop) do
 						["acc_pointer_IR",nil,2500],
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
-						["9Rnd_45ACP_Mag",nil,200]
+						["9Rnd_45ACP_Mag",nil,200],
+						["16Rnd_9x21_Mag",nil,50],
+						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
 			};
@@ -187,7 +197,9 @@ switch(_shop) do
 						["acc_pointer_IR",nil,2500],
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
-						["9Rnd_45ACP_Mag",nil,200]
+						["9Rnd_45ACP_Mag",nil,200],
+						["16Rnd_9x21_Mag",nil,50],
+						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
 			};
@@ -208,7 +220,9 @@ switch(_shop) do
 						["acc_pointer_IR",nil,2500],
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
-						["9Rnd_45ACP_Mag",nil,200]
+						["9Rnd_45ACP_Mag",nil,200],
+						["16Rnd_9x21_Mag",nil,50],
+						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
 			};
@@ -229,7 +243,9 @@ switch(_shop) do
 						["acc_pointer_IR",nil,2500],
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
-						["9Rnd_45ACP_Mag",nil,200]
+						["9Rnd_45ACP_Mag",nil,200],
+						["16Rnd_9x21_Mag",nil,50],
+						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
 			};
@@ -250,7 +266,9 @@ switch(_shop) do
 						["acc_pointer_IR",nil,2500],
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
-						["9Rnd_45ACP_Mag",nil,200]
+						["9Rnd_45ACP_Mag",nil,200],
+						["16Rnd_9x21_Mag",nil,50],
+						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
 			};
@@ -279,7 +297,9 @@ switch(_shop) do
 						["30Rnd_65x39_caseless_mag",nil,125],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["9Rnd_45ACP_Mag",nil,20],
-						["11Rnd_45ACP_Mag",nil,20]
+						["11Rnd_45ACP_Mag",nil,20],
+						["16Rnd_9x21_Mag",nil,50],
+						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
 			};
@@ -386,6 +406,7 @@ switch(_shop) do
 						["optic_Arco",nil,2500],
 						["optic_Hamr",nil,2500],
 						["V_Rangemaster_belt",nil,4900],
+						["V_Press_F",nil,7000],
 						["NVGoggles",nil,2000],
 						["16Rnd_9x21_Mag",nil,25],
 						["9Rnd_45ACP_Mag",nil,45],
@@ -419,6 +440,50 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (__GETC__(life_donator) == 0): {"You are not a donator!"};
+			case (__GETC__(life_adminlevel) > 0): 
+			{
+				["STS Admin Shop",
+					[
+						["hgun_Rook40_F",nil,500],
+						["hgun_PDW2000_F",nil,6500],
+						["hgun_Pistol_heavy_01_MRD_F",nil,2500],
+						["arifle_TRG20_F",nil,10000],
+						["arifle_Katiba_F",nil,15000],
+						["arifle_Katiba_C_F",nil,15000],
+						["arifle_TRG21_F",nil,12000],
+						["arifle_Mk20_F",nil,12000],
+						["arifle_Mk20C_F",nil,12000],
+						["optic_ACO_grn_smg",nil,750],
+						["optic_Arco",nil,5000],
+						["optic_MRCO",nil,5000],
+						["U_IG_leader",nil,7000],
+						["U_O_CombatUniform_oucamo",nil,5000],
+						["U_O_OfficerUniform_ocamo",nil,5000],
+						["V_PlateCarrierIA2_dgtl",nil,7000],
+						["H_HelmetSpecO_blk",nil,1000],
+						["H_HelmetO_ocamo",nil,1000],
+						["H_HelmetIA_net",nil,1000],
+						["B_FieldPack_ocamo",nil,900],
+						["B_Kitbag_mcamo",nil,1500],
+						["B_Bergen_sgg",nil,1500],
+						["B_Carryall_oli",nil,3000],
+						["B_Carryall_ocamo",nil,3000],
+						["B_Carryall_oucamo",nil,3000],
+						["B_Carryall_mcamo",nil,3000],
+						["B_Carryall_khk",nil,3000],
+						["B_Carryall_cbr",nil,3000],
+						["NVGoggles",nil,350],
+						["ToolKit",nil,50],
+						["itemgps",nil,50],
+						["FirstAidKit",nil,25],
+						["16Rnd_9x21_Mag",nil,25],
+						["30Rnd_9x21_Mag",nil,75],
+						["11Rnd_45ACP_Mag",nil,85],
+						["30Rnd_556x45_Stanag",nil,125],
+						["30Rnd_65x39_caseless_green",nil,125]
+					]
+				];
+			};
 			case (__GETC__(life_donator) == 1):
 			{
 				["STS Donator Shop Tier 1",
@@ -429,7 +494,12 @@ switch(_shop) do
 						["B_FieldPack_ocamo",nil,900],
 						["B_Kitbag_mcamo",nil,1500],
 						["B_Bergen_sgg",nil,1500],
+						["B_Carryall_oli",nil,3000],
+						["B_Carryall_ocamo",nil,3000],
+						["B_Carryall_oucamo",nil,3000],
+						["B_Carryall_mcamo",nil,3000],
 						["B_Carryall_khk",nil,3000],
+						["B_Carryall_cbr",nil,3000],
 						["ToolKit",nil,50],
 						["itemgps",nil,50],
 						["16Rnd_9x21_Mag",nil,25],
@@ -449,7 +519,12 @@ switch(_shop) do
 						["B_FieldPack_ocamo",nil,900],
 						["B_Kitbag_mcamo",nil,1500],
 						["B_Bergen_sgg",nil,1500],
+						["B_Carryall_oli",nil,3000],
+						["B_Carryall_ocamo",nil,3000],
+						["B_Carryall_oucamo",nil,3000],
+						["B_Carryall_mcamo",nil,3000],
 						["B_Carryall_khk",nil,3000],
+						["B_Carryall_cbr",nil,3000],
 						["NVGoggles",nil,350],
 						["ToolKit",nil,50],
 						["itemgps",nil,50],
@@ -473,7 +548,12 @@ switch(_shop) do
 						["B_FieldPack_ocamo",nil,900],
 						["B_Kitbag_mcamo",nil,1500],
 						["B_Bergen_sgg",nil,1500],
+						["B_Carryall_oli",nil,3000],
+						["B_Carryall_ocamo",nil,3000],
+						["B_Carryall_oucamo",nil,3000],
+						["B_Carryall_mcamo",nil,3000],
 						["B_Carryall_khk",nil,3000],
+						["B_Carryall_cbr",nil,3000],
 						["NVGoggles",nil,350],
 						["ToolKit",nil,50],
 						["itemgps",nil,50],

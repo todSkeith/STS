@@ -27,10 +27,10 @@ switch (_filter) do
 		};
 		if(__GETC__(life_adminlevel) > 0) then
 		{
-			_ret set[count _ret,["U_B_CTRG_1","Jamie has no friends",100]];
-			_ret set[count _ret,["U_B_CTRG_2","Jamie has no friends",100]];
-			_ret set[count _ret,["U_B_CTRG_3","Jamie has no friends",100]];
-			_ret set[count _ret,["U_B_survival_uniform","Jamie has no friends",100]];
+			_ret set[count _ret,["U_B_CTRG_1",nil,100]];
+			_ret set[count _ret,["U_B_CTRG_2",nil,100]];
+			_ret set[count _ret,["U_B_CTRG_3",nil,100]];
+			_ret set[count _ret,["U_B_survival_uniform",nil,100]];
 		};
 	};
 
@@ -86,7 +86,7 @@ switch (_filter) do
 			["G_Aviator",nil,75],
 			["G_Squares",nil,10],
 			["G_Lowprofile",nil,30],
-			["G_Tatical_Clear",nil,50],
+			["G_Tactical_Black",nil,50],
 			["G_Combat",nil,55]
 		];
 	};
