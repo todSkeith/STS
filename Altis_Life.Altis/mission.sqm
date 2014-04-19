@@ -5174,7 +5174,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=1664;
+		items=1665;
 		class Item0
 		{
 			position[]={8065.1616,35.674362,24985.314};
@@ -21762,6 +21762,17 @@ class Mission
 			vehicle="Land_CncBarrier_stripes_F";
 			skill=0.60000002;
 			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1664
+		{
+			position[]={23663.307,13.98492,20006.883};
+			azimut=-215.46861;
+			special="NONE";
+			id=1971;
+			side="EMPTY";
+			vehicle="Land_CncWall4_F";
+			leader=1;
+			skill=0.60000002;
 		};
 	};
 	class Markers
