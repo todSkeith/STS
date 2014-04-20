@@ -82,14 +82,14 @@ switch (_var) do
 
 
 	//License Block
-	case "license_civ_driver": {"Driver License"};
+	case "license_civ_driver": {"Drivers License"};
 	case "license_civ_air": {"Pilot License"};
 	case "license_civ_heroin": {"Heroin Training"};
 	case "license_civ_gang": {"Gang License"};
 	case "license_civ_oil": {"Oil Processing License"};
 	case "license_civ_dive": {"Diving License"};
 	case "license_civ_boat": {"Boating License"};
-	case "license_civ_gun": {"Firearm License"};
+	case "license_civ_gun": {"Firearms License"};
 	case "license_cop_air": {"Pilot License"};
 	case "license_cop_cg": {"Coast Guard License"};
 	case "license_civ_rebel": {"Rebel Training"};
