@@ -288,7 +288,7 @@
 	</Package>
 	<Package name="Wanted_Menu">
 		<Key ID="STR_Wanted_Title">
-			<Original>APD Wanted List</Original>
+			<Original>ALE Wanted List</Original>
 		</Key>
 		<Key ID="STR_Wanted_Pardon">
 			<Original>Pardon</Original>
