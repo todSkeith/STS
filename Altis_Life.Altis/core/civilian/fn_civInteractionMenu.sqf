@@ -56,6 +56,7 @@ _tZip = _curTarget getVariable ["zipTie",false];
 _tUnc = _curTarget getVariable ["unconscious",false];
 _tEsc = _curTarget getVariable ["Escorting",false];
 _tSur = _curTarget getVariable ["surrender",false];
+_pDrag = player getVariable ["isDragging", false];
 if (animationState _curTarget == "Incapacitated") then { _tKout = true; } else { _tKout = false; };
 
 life_pInact_curTarget = _curTarget;
@@ -107,7 +108,7 @@ if(_tUnc) then {
 
 
 //Button 3: Put in Vehicle
-if(_tEsc || _tUnc) then { _Btn3 ctrlEnable true; } else { _Btn3 ctrlEnable false; };
+if(_tEsc || _tUnc && _pDrag) then { _Btn3 ctrlEnable true; } else { _Btn3 ctrlEnable false; };
 
 _Btn3 ctrlSetText localize "STR_pInAct_PutInCar";
 _Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar; closeDialog 0;";
