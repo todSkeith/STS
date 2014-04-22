@@ -1792,7 +1792,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_polo_3_F";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Medical Assistance"",life_fnc_healHospital];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Medical Assistance"",life_fnc_healHospital]; this addAction[""Emergency treatment"",life_fnc_reviveHospital];";
 				};
 				class Item102
 				{
@@ -1866,7 +1866,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_polo_3_F";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Medical Assistance"",life_fnc_healHospital];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Medical Assistance"",life_fnc_healHospital]; this addAction[""Emergency treatment"",life_fnc_reviveHospital];";
 				};
 				class Item108
 				{
@@ -2172,7 +2172,7 @@ class Mission
 					side="GUER";
 					vehicle="I_soldier_F";
 					skill=0.60000002;
-					init="removeAllWeapons this; removeVest this; removeGoggles this; this unassignItem ""NVGoggles_INDEP""; this removeItem ""NVGoggles_INDEP"";removeHeadgear this; this enableSimulation false; this allowDamage false; this addAction[""Medical Assistance"",life_fnc_healHospital]; this addAction[""Emergency treatment"",life_fnc_reviveHospital]; this addUniform ""U_I_CombatUniform""; this setObjectTexture [0, ""images\ems_uni.jpg""]; ";
+					init="removeAllWeapons this; removeVest this; removeGoggles this; this unassignItem ""NVGoggles_INDEP""; this removeItem ""NVGoggles_INDEP"";removeHeadgear this; this enableSimulation false; this allowDamage false; this addAction[""Medical Assistance"",life_fnc_healHospital]; this addAction[""Emergency treatment"",life_fnc_reviveHospital]; this setObjectTexture [0, ""images\ems_uni.jpg""]; ";
 				};
 				class Item134
 				{
@@ -2247,7 +2247,7 @@ class Mission
 					vehicle="C_man_polo_3_F";
 					leader=1;
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Medical Assistance"",life_fnc_healHospital];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Medical Assistance"",life_fnc_healHospital];this addAction[""Emergency treatment"",life_fnc_reviveHospital];";
 				};
 			};
 		};
