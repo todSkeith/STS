@@ -12,5 +12,6 @@ while {true} do {
 		[false] call life_fnc_sessionUpdate;  
 		systemChat "Session AutoSynced";  
 		if (rating player < 100000) then { player addRating 999999; };
+		[] call life_fnc_equipGear;
 	};
 };
