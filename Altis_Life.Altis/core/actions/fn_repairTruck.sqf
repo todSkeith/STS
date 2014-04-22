@@ -27,6 +27,9 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		_progress progressSetPosition 0.01;
 		_cP = 0.01;
 		
+		//Remove toolkit
+		player removeItem "ToolKit";
+		
 		//Set vehicle hitpoints to 35% damage if higher
 		if (local _veh) then {
 			_veh spawn {
