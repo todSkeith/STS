@@ -35,12 +35,6 @@ if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle
 						[_unit,_source] spawn life_fnc_tazed;
 					};
 
-					if(vehicle player isKindOf "Helicopter") then
-					{
-						player action ["Eject", vehicle player];
-						[_unit, _source] spawn life_fnc_tazed;
-					};
-
 					if(vehicle player == player) then
 					{
 						[_unit,_source] spawn life_fnc_tazed;
@@ -57,12 +51,6 @@ if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle
 					{
 						player action ["Eject",vehicle player];
 						[_unit,_source] spawn life_fnc_tazed;
-					};
-
-					if(vehicle player isKindOf "Helicopter") then
-					{
-						player action ["Eject", vehicle player];
-						[_unit, _source] spawn life_fnc_tazed;
 					};
 
 					if(vehicle player == player) then
