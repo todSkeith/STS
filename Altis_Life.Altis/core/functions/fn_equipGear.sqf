@@ -32,6 +32,11 @@ switch (true) do {
 	case ((uniform player) == "U_C_Poloshirt_salmon"): {
 		[[player,"images\pol3.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
 	};
+	
+	case ((uniform player) == "U_C_Poloshirt_blue"): {
+		[[player,"images\polosts.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
+	};
+	
 	case ((uniform player) == "U_C_Scientist"): {
 		[[player,"images\mech.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
 	};

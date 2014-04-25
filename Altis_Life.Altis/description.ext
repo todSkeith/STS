@@ -1,6 +1,7 @@
 author = "STS Dev Team";
 onLoadName = "Altis Life RPG v4.0.0";
 onLoadMission = "A RPG game mode developed by TAW_Tonic";
+loadScreen = "images\stslogo.jpg";
 joinUnassigned = 1;
 respawn = BASE;
 respawndelay = 10;

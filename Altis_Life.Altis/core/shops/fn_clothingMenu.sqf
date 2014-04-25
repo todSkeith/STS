@@ -138,6 +138,13 @@ if(isNil "life_clothesPurchased") exitWith
 	{
 		[[player,"images\tiee11.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
 	};
+	
+	f ((uniform player) == "U_C_Poloshirt_blue") then
+	{
+		[[player,"images\polosts.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
+	};
+	
+	
 	*/
 
 	

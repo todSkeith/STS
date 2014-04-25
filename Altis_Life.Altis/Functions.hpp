@@ -277,6 +277,7 @@ class Life_Client_Core
 		class licensesRead {};
 		class jailDialog {};
 		class jailPre {};
+		class copOpener {};
 	};
 
 	class Medic

@@ -240,7 +240,7 @@ if(count(nearestObjects[_sp,["Car","Ship","Air"],4]) > 0) exitWith {hint "There 
 _sv = false;
 
 //EMS Heli
-if(count(nearestObjects[warn ,["Air"],10]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
+if(count(nearestObjects[_sp ,["Air"],23]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
 
 _sv = false;
 
