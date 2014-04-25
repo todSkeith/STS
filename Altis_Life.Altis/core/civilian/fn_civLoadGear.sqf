@@ -70,5 +70,3 @@ if(primaryWeapon player != "") then
 {
 	player selectWeapon (primaryWeapon player);
 };
-
-{player removeMagazine _x;} foreach (magazines player);
