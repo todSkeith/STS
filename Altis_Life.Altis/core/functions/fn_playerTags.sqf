@@ -22,15 +22,15 @@ onEachFrame
 				_height = 0.7;
 				switch (_x getVariable["coplevel", 0]) do
 				{
-					case 1 : {_name = format["Recrut %1", name _x];_icon = MISSION_ROOT + "images\cadet_icon.paa";};
-					case 2 : {_name = format["Officer %1", name _x];_icon = MISSION_ROOT + "images\PO_icon.paa";};
-                    case 3 : {_name = format["Detective %1", name _x];_icon = MISSION_ROOT + "images\SPO_icon.paa";};					
-					case 4 : {_name = format["Sergeant %1", name _x];_icon = MISSION_ROOT + "images\Copr_icon.paa";};
-					case 5 : {_name = format["Lieutenant %1", name _x];_icon = MISSION_ROOT + "images\Srg_icon.paa";};
-					case 6 : {_name = format["Captain %1", name _x];_icon = MISSION_ROOT + "images\Luiet_icon.paa";};
-					case 7 : {_name = format["Major %1", name _x];_icon = MISSION_ROOT + "images\Capt_icon.paa";};
-					case 8 : {_name = format["General %1", name _x];_icon = MISSION_ROOT + "images\SuperInt_icon.paa";};
-					case 9 : {_name = format["General %1", name _x];_icon = MISSION_ROOT + "images\Chief_icon.paa";};
+					case 1 : {_name = format["Recrut %1", name _x];_icon = MISSION_ROOT + "icons\cadet_icon.paa";};
+					case 2 : {_name = format["PO %1", name _x];_icon = MISSION_ROOT + "icons\PO_icon.paa";};
+                    case 3 : {_name = format["SPO %1", name _x];_icon = MISSION_ROOT + "icons\SPO_icon.paa";};					
+					case 4 : {_name = format["Corpl %1", name _x];_icon = MISSION_ROOT + "icons\Copr_icon.paa";};
+					case 5 : {_name = format["Serg %1", name _x];_icon = MISSION_ROOT + "icons\Srg_icon.paa";};
+					case 6 : {_name = format["Lieut %1", name _x];_icon = MISSION_ROOT + "icons\Luiet_icon.paa";};
+					case 7 : {_name = format["Capt %1", name _x];_icon = MISSION_ROOT + "icons\Capt_icon.paa";};
+					case 8 : {_name = format["SuperInt %1", name _x];_icon = MISSION_ROOT + "icons\SuperInt_icon.paa";};
+					case 9 : {_name = format["Chief %1", name _x];_icon = MISSION_ROOT + "icons\Chief_icon.paa";};
 					default {_name = name _x;}
 				};
                 
