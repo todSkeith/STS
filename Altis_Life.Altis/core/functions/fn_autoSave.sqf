@@ -9,6 +9,7 @@ while {true} do {
 	sleep 600;   
 	if (alive player) then   
         {
+		playerPosition = [getpos player select 0, getpos player select 1, 0];
 		[false] call life_fnc_sessionUpdate;  
 		systemChat "Session AutoSynced";  
 		if (rating player < 100000) then { player addRating 999999; };
