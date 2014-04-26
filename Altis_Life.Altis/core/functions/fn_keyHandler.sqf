@@ -79,6 +79,15 @@ switch (_code) do
 		};
 	};
 		
+	 // O Key, police gate opener
+        case 24:
+	{
+		if (!_shift && !_alt && !_ctrlKey && (playerSide == west)) then {
+			[] call life_fnc_copOpener;
+		};
+	};	
+	
+		
 	//Shift+G Knock out, this is experimental and yeah...
 	case 34:
 	{
