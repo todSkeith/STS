@@ -23,6 +23,19 @@ player createDiarySubject ["controls","Controls"];
 */
 	player createDiaryRecord["changelog",
 		[
+			"4/30/14",
+				"
+				Added: Persistence<br/>
+				Added: Magazines save (make sure to unload your gun or you will lose that mag)<br/>
+				Added: new medic spawn/hospital in rodopoli<br/>
+				Added: Housing<br/>
+				
+				"
+		]
+	];
+
+	player createDiaryRecord["changelog",
+		[
 			"4/15/14",
 				"
 				Added: EMS<br/>
