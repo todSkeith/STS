@@ -192,8 +192,7 @@ life_inv_items =
 	"life_inv_cellphone",
 	"life_inv_RoadCone",
 	"life_inv_RoadConeStrip",
-	"life_inv_RoadBlockWood",
-	"life_inv_boltcutter",
+	"life_inv_RoadBlockWood"
 ];
 
 //Setup variable inv vars.
