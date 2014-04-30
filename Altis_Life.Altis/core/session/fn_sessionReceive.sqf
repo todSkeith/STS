@@ -96,15 +96,15 @@ switch(__GETC__(life_donator)) do
 
 switch(__GETC__(life_coplevel)) do
 {
-	case 1: {life_paycheck = life_paycheck + 5000;};//Recruit
-	case 2: {life_paycheck = life_paycheck + 5000;};//PO
-	case 3: {life_paycheck = life_paycheck + 5000;};//SPO
-	case 4: {life_paycheck = life_paycheck + 5000;};//CPL
-	case 5: {life_paycheck = life_paycheck + 5000;};//Sgt
-	case 6: {life_paycheck = life_paycheck + 5000;};//Lt.
-	case 7: {life_paycheck = life_paycheck + 5000;};//Capt.
-	case 8: {life_paycheck = life_paycheck + 5000;};//SuperI
-	case 9: {life_paycheck = life_paycheck + 5000;};//Chief
+	case 1: {life_paycheck = life_paycheck + 100;};//Recruit
+	case 2: {life_paycheck = life_paycheck + 500;};//PO
+	case 3: {life_paycheck = life_paycheck + 750;};//SPO
+	case 4: {life_paycheck = life_paycheck + 1000;};//CPL
+	case 5: {life_paycheck = life_paycheck + 1250;};//Sgt
+	case 6: {life_paycheck = life_paycheck + 1500;};//Lt.
+	case 7: {life_paycheck = life_paycheck + 1750;};//Capt.
+	case 8: {life_paycheck = life_paycheck + 2000;};//SuperI
+	case 9: {life_paycheck = life_paycheck + 2500;};//Chief
 	case 10: {life_paycheck = life_paycheck + 5000;};//Admin
 };
 
