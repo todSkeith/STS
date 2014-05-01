@@ -213,6 +213,7 @@ class Life_Client_Core
 		class MP {};
 		class MPexec {};
 		class netSetVar {};
+		class jumpFnc {};
 	};
 
 	class Civilian

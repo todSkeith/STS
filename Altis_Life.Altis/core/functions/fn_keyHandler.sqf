@@ -44,7 +44,20 @@ switch (_code) do
 			[] spawn life_fnc_medicMarkers;
 		};
 	};
+	
+	
+	// C Key    for Jumping
 
+	    case 46:
+    {
+    if(_shift) then{
+        if(animationState player != "AovrPercMrunSrasWrflDf" && {isTouchingGround player} && {stance player == "STAND"} && {speed player > 2}) then {
+            [[player],"life_fnc_jumpFnc",nil,FALSE] call life_fnc_MP;
+            _handled = true;
+        };
+        };
+    };
+		
 	//ESC
 	case 1:
 	{
