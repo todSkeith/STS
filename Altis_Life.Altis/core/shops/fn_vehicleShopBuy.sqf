@@ -218,10 +218,21 @@ switch(life_veh_shop) do
 		_sp = getMarkerPos "medic_car_1";
 		_dir = markerDir "medic_car_1";
 	};
+	case "medic_car_2":
+	{
+		_sp = getMarkerPos "medic_car_2";
+		_dir = markerDir "medic_car_2";
+	};
 	case "medic_air_1":
 	{
 		_sp = getMarkerPos "medic_air_1";
 		_dir = markerDir "medic_air_1";
+		_ems = false;
+	};
+	case "medic_air_2":
+	{
+		_sp = getMarkerPos "medic_air_2";
+		_dir = markerDir "medic_air_2";
 		_ems = true;
 	};
 };

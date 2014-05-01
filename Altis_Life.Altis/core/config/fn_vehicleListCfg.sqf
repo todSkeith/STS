@@ -210,8 +210,26 @@ switch (_shop) do
 		["C_Hatchback_01_F",8000]];
 
 	};
+	
+	case "medic_car_2":
+	{
+		_return set[count _return,
+		["C_SUV_01_F",14000]];
+		_return set[count _return,
+		["C_Hatchback_01_F",8000]];
+
+	};
 
 	case "medic_air_1":
+	{
+		_return set[count _return,
+		["O_Heli_Light_02_unarmed_F",150000]];
+		_return set[count _return,
+		["B_Heli_Light_01_F",60000]];
+
+	};
+	
+	case "medic_air_2":
 	{
 		_return set[count _return,
 		["O_Heli_Light_02_unarmed_F",150000]];
