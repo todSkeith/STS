@@ -53,6 +53,12 @@ class CfgSounds
     sound[] = {"\sounds\tazer.ogg", 0.25, 1};
     titles[] = {};
   };
+    class Flashbang
+  {
+      name = "Flashbang";
+    sound[] = {"\sounds\flashbang.ogg", 1.0, 1};
+    titles[] = {};
+  };
 	class car_unlock
   {
     name = "car_unlock";
