@@ -23,6 +23,6 @@ waitUntil {!(isNull (findDisplay 46))};
 		};
 //	};
 //};
-player setPos getMarkerPos "medic_spawn_1";
+[] call life_fnc_spawnMenu;
 [] call life_fnc_medicLoadGear;
 [] call life_fnc_equipGear;

@@ -7,9 +7,9 @@
 */
 private["_spawnPos"];
 _positionArray = playerPosition;
-if(_positionArray select 0 != 0 || isNil _positionArray) then 
+if(_positionArray select 0 != 0 && _positionArray select 1 != 0 && _positionArray select 2 != 0 &&) then 
 {
-	player setpos playerPosition;
+	player setpos _positionArray;
 }
 else
 {
