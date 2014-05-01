@@ -33,7 +33,7 @@ switch(_shop) do
 						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
 						["Binocular",nil,150],
 						["ItemGPS",nil,100],
-						["MiniGrenade","Flashbang",1000],
+						["GrenadeHand_stone","Flashbang",],
 						["ToolKit",nil,250],
 						["FirstAidKit",nil,150],
 						["Medikit",nil,1000],
