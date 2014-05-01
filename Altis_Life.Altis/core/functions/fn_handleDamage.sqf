@@ -16,7 +16,7 @@ _curWep = "";
 if(isPlayer _source && _source isKindOf "Man") then {_curWep = currentWeapon _source;};
 
 // Stun grenades
-if (_projectile in ["GrenadeHand_stone"]) then{
+if (_projectile in ["MiniGrenade"]) then{
 	_damage = 0;
 	[] spawn life_fnc_handleFlashbang;
 	};
