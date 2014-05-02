@@ -89,14 +89,13 @@ if((player getVariable["restrained",false])) then
 // {
 	// _damage = 0;
 // };
-//if(_sel == "" || _sel == "head_hit" || _sel =="body" || _sel == "head" || _sel == "hand_l" || _sel == "leg_l") then
-if(_sel == "") then
+if(_sel == "" || _sel == "head_hit" || _sel =="body" || _sel == "head" || _sel == "hand_l" || _sel == "leg_l") then
 {
 	if ((damage _unit + _damage) > 0.99) then
 	{
-		_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
 		_unit setDamage 0;
 		_unit allowDamage false;
+		_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
 		_damage = 0;
 		if(!(_unit getVariable "unconscious")) then 
 		{
@@ -122,14 +121,7 @@ if(_sel == "") then
 		}
 		else
 		{
-			if(_sel == "head" && (_unit getVariable "unconscious") && _damage >= 1) then
-			{
-				_damage = 1;
-			}
-			else 
-			{
-				_damage = 0;
-			};
+			_damage = 0;
 		};
 	};
 }
@@ -142,5 +134,4 @@ else
 	};
 };
 [] call life_fnc_hudUpdate;
-sleep 0.1;
 //systemChat format ["Hitbox: %1 | Overall health: %2 | Hitbox health: %3 | Damage taken: %4",_sel,damage _unit,_unit getHitPointDamage _ghp,_damage];
