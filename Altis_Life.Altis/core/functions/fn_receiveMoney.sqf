@@ -15,7 +15,7 @@ if(player != _unit) exitWith {};
 if(!([_val] call fnc_isnumber)) exitWith {};
 
 //Replaced exploit check to allow refunds
-if(_unit == _from && !(_refund)) exitWith {}; //Bad boy, trying to exploit his way to riches.
+//if(_unit == _from && !(_refund)) exitWith {}; //Bad boy, trying to exploit his way to riches. BROKE THE REFUNDING!
 
 if (_refund) then {
 	//Using titleText because garage is already using hints

@@ -59,10 +59,16 @@ switch(playerSide) do
 
 	case independent:
 	{
-		[] spawn life_fnc_initMedic;
 		life_holstered_weapon = nil;
+		_unit setVariable["restrained",false,true];
+		_unit setVariable["Escorting",false,true];
+		_unit setVariable["transporting",false,true];
 		_unit setVariable["unconscious",false,true];
+		_unit setVariable["zipTie",false,true];
 		_unit setVariable["executed",false,true];
+		[] call life_fnc_medicLoadGear;
+		[] call life_fnc_equipGear;
+
 	};
 };
 

@@ -16,7 +16,7 @@ _curWep = "";
 if(isPlayer _source && _source isKindOf "Man") then {_curWep = currentWeapon _source;};
 
 // Stun grenades
-if (_projectile in ["MiniGrenade"]) then{
+if (_projectile in ["mini_Grenade"]) then{
 	_damage = 0;
 	[] spawn life_fnc_handleFlashbang;
 	};
@@ -32,7 +32,7 @@ if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle
 			_damage = 0;
 			if(_curwep == "arifle_SDAR_F") then
 			{
-				if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 100) then
+				if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 300) then
 				{
 					_damage = 0;
 					if(typeOf (vehicle player) == "B_Quadbike_01_F") then
@@ -135,20 +135,12 @@ if(_sel == "") then
 }
 else
 {
-	_ghp = switch (_sel) do
+	if (((_unit getHitPointDamage _sel) + _damage) > 0.99) then
 	{
-		case ("body"): { "HitBody" };
-		case ("head"): { "HitHead" };
-		case ("hand_l"): { "HitHands" };
-		case ("leg_l"): { "HitLegs" };
-	};
-	if (((_unit getHitPointDamage _ghp) + _damage) > 0.99) then
-	{
-		_unit setHitPointDamage [_ghp,0.99];
+		_unit setHitPointDamage [_sel,0.99];
 		_damage = 0;
 	};
 };
 [] call life_fnc_hudUpdate;
 sleep 0.1;
 //systemChat format ["Hitbox: %1 | Overall health: %2 | Hitbox health: %3 | Damage taken: %4",_sel,damage _unit,_unit getHitPointDamage _ghp,_damage];
-_damage;

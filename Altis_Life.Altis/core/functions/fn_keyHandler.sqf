@@ -46,9 +46,9 @@ switch (_code) do
 	};
 	
 	
-	// C Key    for Jumping
+	// 3 Key    for Jumping
 
-	    case 46:
+	    case 4:
     {
     if(_shift) then{
         if(animationState player != "AovrPercMrunSrasWrflDf" && {isTouchingGround player} && {stance player == "STAND"} && {speed player > 2}) then {
