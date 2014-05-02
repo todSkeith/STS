@@ -92,6 +92,7 @@ life_action_in_use = false;
 life_thirst = 100;
 life_hunger = 100;
 life_paycheck_period = 5; //Five minutes
+life_rent_period = 30; // 30 minutes
 life_cash = 0;
 life_impound_car = 350;
 life_impound_boat = 250;
@@ -113,6 +114,7 @@ switch (playerSide) do
 	{
 		life_atmcash = 35000; //Starting Bank Money
 		life_paycheck = 350; //Paycheck Amount
+		life_rent = 15000;
 	};
 	case independent:
 	{
@@ -192,7 +194,10 @@ life_inv_items =
 	"life_inv_cellphone",
 	"life_inv_RoadCone",
 	"life_inv_RoadConeStrip",
-	"life_inv_RoadBlockWood"
+	"life_inv_RoadBlockWood",
+	"life_inv_storage1",
+    "life_inv_storage2",
+    "life_inv_crowbar"
 ];
 
 //Setup variable inv vars.
@@ -226,7 +231,8 @@ life_licenses =
 	["license_civ_steel","civ"],
 	["license_civ_bh","civ"],
 	["license_civ_logging","civ"],
-	["license_medic_air","medic"]
+	["license_medic_air","medic"],
+	["license_civ_home", "civ"]
 ];
 
 //Setup License Variables
@@ -336,7 +342,10 @@ buy_array =
 	["RoadConeStrip",750],
 	["RoadCone",150],
 	["RoadBlockWood",1500],
-	["moonshine", 950]
+	["moonshine", 950],
+	["storage1",50000],
+    ["storage2",250000],
+    ["crowbar", 15000]
 ];
 __CONST__(buy_array,buy_array);
 

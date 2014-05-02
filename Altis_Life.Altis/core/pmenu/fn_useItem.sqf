@@ -38,6 +38,11 @@ switch (true) do
 		};
 	};
 
+	case(_item ==  "crowbar"):
+	{
+			[] spawn life_fnc_crowbar;
+	};
+
 	case (_item == "heroinp"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then
@@ -237,6 +242,7 @@ switch (true) do
 		hint "This item isn't usable.";
 	};
 };
+
 
 [] call life_fnc_p_updateMenu;
 [] call life_fnc_hudUpdate;

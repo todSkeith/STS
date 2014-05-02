@@ -10,7 +10,7 @@ private["_curTarget","_isWater","_isVehicle","_miscItems","_money"];
 _curTarget = cursorTarget;
 _near = nearestObjects[getPos player,["Man","Car","Air","Ship"],5];
 if ((isNull _curTarget || _curTarget isKindOf "House") && count _near > 1) then {
-	_curTarget = _near select 1;
+        _curTarget = _near select 1;
 };
 
 if(life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.

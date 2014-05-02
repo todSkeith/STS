@@ -82,6 +82,7 @@ switch (_mode) do
 			case "RoadBlockWood": {"life_inv_RoadBlockWood"};
 			case "storage1": {"life_inv_storage1"};
             case "storage2": {"life_inv_storage2"};
+            case "crowbar": {"life_inv_crowbar"};
 		};
 	};
 	case 1:
@@ -154,6 +155,7 @@ switch (_mode) do
 			case "life_inv_RoadBlockWood": {"RoadBlockWood"};
 			case "life_inv_storage1": {"storage1"};
             case "life_inv_storage2": {"storage2"};
+            case "life_inv_crowbar": {"crowbar"};
 		};
 	};
 };

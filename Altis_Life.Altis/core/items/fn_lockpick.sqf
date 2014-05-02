@@ -42,6 +42,15 @@ while {true} do
 	_cP = _cP + 0.01;
 	_progressBar progressSetPosition _cP;
 	_titleText ctrlSetText format["%3 (%1%2)...",round(_cP * 100),"%",_title];
+
+	switch (_cP) do
+	{
+		case 0.2: {[[_curTarget, "locked_door",30],"life_fnc_playSound",true,false] spawn BIS_fnc_MP;};
+		case 0.4: {[[_curTarget, "locked_door",30],"life_fnc_playSound",true,false] spawn BIS_fnc_MP;};
+		case 0.6: {[[_curTarget, "locked_door",30],"life_fnc_playSound",true,false] spawn BIS_fnc_MP;};
+		case 0.8: {[[_curTarget, "locked_door",30],"life_fnc_playSound",true,false] spawn BIS_fnc_MP;};
+	};
+
 	if(_cP >= 1 OR !alive player) exitWith {};
 	if(life_istazed) exitWith {}; //Tazed
 	if(life_interrupted) exitWith {};
@@ -65,15 +74,20 @@ if(!_isVehicle) then {
 	_curTarget setVariable["Escorting",false,true];
 	_curTarget setVariable["transporting",false,true];
 	[[_curTarget,"AmovPercMstpSnonWnonDnon"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
-} else {
+
 	_dice = random(100);
 	if(_dice < 35) then {
-		titleText["You now have keys to this vehicle.","PLAIN"];
-		life_vehicles set[count life_vehicles,_curTarget];
-		[[getPlayerUID player,name player,"487"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+			if(_isVehicle && !(_curTarget isKindOf "House")) then {
+				titleText["You now have keys to this vehicle.","PLAIN"];
+				life_vehicles set[count life_vehicles,_curTarget];
+				[[getPlayerUID player,name player,"487"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+			};
+
 	} else {
-		[[getPlayerUID player,name player,"215"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
-		[[0,format["%1 was seen trying to lockpick a car.",name player]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-		titleText["The lockpick broke.","PLAIN"];
+	if(_isVehicle && !(_curTarget isKindOf "House")) then {
+		
+			[[getPlayerUID player,name player,"215"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+			[[0,format["%1 was seen trying to lockpick a car.",name player]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+			titleText["The lockpick broke.","PLAIN"];
+		};
 	};
-};

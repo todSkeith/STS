@@ -102,11 +102,18 @@ class CfgSounds
 	titles[] = {};
    };
    class medic_Siren
-  {
+   {
     name = "medic_Siren";
 	sound[] = {"\sounds\medic_Siren.ogg", 1.0, 1};
 	titles[] = {};
    };
+   class locked_door
+   {
+    name = "locked_door";
+	sound[] = {"\sounds\locked_door.ogg", 3.0, 1};
+	titles[] = {};
+	};
+
 };
 
 class CfgDebriefing
