@@ -197,8 +197,8 @@ class Life_Client_Core
 		class actionKeyHandler {};
 		class unconsciousMarker {};
 		class autoSave {};
-		//class updateCash {};
-        //class vehicleGarage {};
+		class updateCash {};
+        class vehicleGarage {};
 		class unconscious {};
 		class enablecollisionwith {};
 		class disablecollisionwith {};
@@ -280,6 +280,9 @@ class Life_Client_Core
 		class jailDialog {};
 		class jailPre {};
 		class copOpener {};
+		class houseOwnerSearch {};
+        class houseInvSearch {};
+        class raidHouse {};
 	};
 
 	class Medic
@@ -343,6 +346,7 @@ class Life_Client_Core
 		file = "core\items";
 		class pickaxeUse {};
 		class lockpick {};
+		class crowbar {};
 		class spikeStrip {};
 		class zipTie {};
 		class jerryRefuel {};
@@ -366,5 +370,31 @@ class Life_Client_Core
 		class impoundMenu {};
 		class unimpound {};
 		class sellGarage {};
+		class houseMenu {};
 	};
+	class Housing
+    {
+        file = "core\housing";
+        class houseInteractionMenu {};
+        class buyHouse {};
+        class sellHouse {}; 
+        class createMarkers {};
+        class deleteMarkers {};
+        class getBuildID {};
+        class initHouses {};
+        class lockHouse {};
+        class lockStorage {};
+        class countBuildingPositions {};
+        class houseStoreItem {};
+        class houseTakeItem {};
+        class houseInventory {};
+        class openStorage {};
+        class placeStorage {};
+        class preCloseHouseStorage {};
+        class calcGarageSpawn {};
+        class onPut {};
+        class onTake {};
+        class breakingin {};
+        class findBuildID {};
+    };
 };
