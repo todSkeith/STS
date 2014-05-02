@@ -6,6 +6,7 @@
 	Initializes the civilian.
 */
 private["_spawnPos"];
+_positionArray = playerPosition;
 
 if(_positionArray select 0 != 0) then 
 {
