@@ -116,6 +116,10 @@ class Life_Client_Core
 		class vehShopLicenses {};
 		class vehicleAnimate {};
 		class weaponShopCfg {};
+	    
+        class houseContainers {};
+        class housePrice {};
+    
 
 		//Clothing Store Configs
 		class clothing_cop {};

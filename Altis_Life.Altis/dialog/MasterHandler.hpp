@@ -23,3 +23,5 @@
 #include "pInteraction.h"
 #include "preJail.hpp"
 #include "nightclub.hpp"
+#include "trunkHouse.hpp"
+#include "house.hpp"

@@ -13,7 +13,6 @@
 	deleteMarkerLocal _x;
 }forEach life_houses_markers;
 
-if(__GETC__(life_donator) >= __GETC__(HOUSING_DONATOR_LEVEL)) then {	
 	for "_i" from 1 to (count life_houses) do
 	{
 		_house = nearestObject [((life_houses select (_i-1)) select 0), "House_F"];
@@ -77,7 +76,6 @@ if(__GETC__(life_donator) >= __GETC__(HOUSING_DONATOR_LEVEL)) then {
 		};	
 		life_houses_markers set [count life_houses_markers, _marker];
 	};
-};
 
 player addEventHandler ["Take",{_this spawn life_fnc_onTake;}];
 player addEventHandler ["Put",{_this spawn life_fnc_onPut;}];

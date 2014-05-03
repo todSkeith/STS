@@ -58,6 +58,7 @@ class Mission
 		"A3_Structures_F_EPC_Civ_Accessories",
 		"A3_Structures_F_Civ_SportsGrounds",
 		"A3_Structures_F_EPC_Civ_Garbage",
+		"A3_Air_F_Heli_Light_01",
 		"A3_Structures_F_Naval_Piers",
 		"A3_Soft_F_Quadbike",
 		"a3_soft_f_beta_quadbike",
