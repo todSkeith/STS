@@ -239,6 +239,7 @@ class Life_Client_Core
 		class surrender {};
 		class execute {};
 		class executeAction {};
+		class jailFeed {};
 	};
 
 	class Vehicle
