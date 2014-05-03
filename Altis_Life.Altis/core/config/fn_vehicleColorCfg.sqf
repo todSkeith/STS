@@ -159,7 +159,7 @@ switch (_vehicle) do
 	{
 		_ret =
 		[
-			["images\hr3.jpg","cop"],
+			["images\hr3.jpg","cop","images\hrb.jpg"],
 			["#(argb,8,8,3)color(0.05,0.05,0.05,1)","fed"]
 		];
 	};

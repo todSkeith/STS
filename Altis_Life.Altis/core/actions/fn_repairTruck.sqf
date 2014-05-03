@@ -26,9 +26,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 		_pgText ctrlSetText format["%2 (1%1)...","%",_upp];
 		_progress progressSetPosition 0.01;
 		_cP = 0.01;
-		
-		//Remove toolkit
-		player removeItem "ToolKit";
+				
 		
 		//Set vehicle hitpoints to 35% damage if higher
 		if (local _veh) then {
@@ -52,6 +50,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 			if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
 				[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 				player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
+				player removeItem "ToolKit";
 			};
 			sleep 0.27;
 			_cP = _cP + 0.01;

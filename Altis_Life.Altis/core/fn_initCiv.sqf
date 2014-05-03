@@ -36,6 +36,7 @@ else
 	};
 };
 
+[] call life_fnc_equipGear;
 [] call life_fnc_zoneCreator;
 [] call life_fnc_initHouses;
 
