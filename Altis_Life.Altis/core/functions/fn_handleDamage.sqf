@@ -91,7 +91,7 @@ if((player getVariable["restrained",false])) then
 // };
 if(_sel == "" || _sel == "head_hit" || _sel =="body" || _sel == "head") then
 {
-	if ((damage _unit + _damage) > 0.99) then
+	if ((damage _unit + _damage) > 0.9999) then
 	{
 		_unit setDamage 0;
 		_unit allowDamage false;
