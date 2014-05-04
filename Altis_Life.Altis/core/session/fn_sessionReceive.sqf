@@ -56,8 +56,6 @@ switch (playerSide) do
 
 	case civilian:
 	{
-		life_houses = (_session select 9);
-        life_houses_markers = [];
 		if((getPlayerUID player) != (_session select 0)) exitWith {}; //Data didn't match.
 		life_cash = parseNumber(_session select 2);
 		life_atmcash = parseNumber(_session select 3);
@@ -73,8 +71,9 @@ switch (playerSide) do
 		civ_gear = (_session select 8);
 		[] spawn life_fnc_civLoadGear;
 		__CONST__(life_coplevel,0);
-		life_houses = (_session select 9);
-        life_houses_markers = [];
+		PlayerPosition = (_session select 9);
+		//life_houses = (_session select 10); //Where is life houses getting called in the DB?  doesnt look like its getting called in the Players Table
+        //life_houses_markers = [];
 	};
 
 	case independent:
