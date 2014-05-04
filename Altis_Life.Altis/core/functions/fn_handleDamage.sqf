@@ -89,7 +89,7 @@ if((player getVariable["restrained",false])) then
 // {
 	// _damage = 0;
 // };
-if(_sel == "" || _sel == "head_hit" || _sel =="body" || _sel == "head" || _sel == "hand_l" || _sel == "leg_l") then
+if(_sel == "" || _sel == "head_hit" || _sel =="body" || _sel == "head") then
 {
 	if ((damage _unit + _damage) > 0.99) then
 	{
