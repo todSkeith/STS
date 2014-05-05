@@ -19,7 +19,7 @@ _owners = _house getVariable["life_homeOwners", []];
 _owner = (getPlayerUID player) in _owners;
 _price = [typeOf _house] call life_fnc_housePrice;
 
-if(__GETC__(life_donator) >= __GETC__(HOUSING_DONATOR_LEVEL)) then {
+//if(life_donator >= HOUSING_DONATOR_LEVEL) then {
 	if (_owner) then
 	{
 		_price = _price * 0.75;	// Sell price is 3/4 full cost
@@ -41,9 +41,9 @@ if(__GETC__(life_donator) >= __GETC__(HOUSING_DONATOR_LEVEL)) then {
 			ctrlSetText[12504,format["This property is on the market!"]];
 		};
 	};
-} else {
-	ctrlSetText[12504,format["You need donatorlevel %1 to buy a house.", __GETC__(HOUSING_DONATOR_LEVEL)]];
-	ctrlShow[12512,false];
-	ctrlShow[12516,false];
-	ctrlShow[12508,false];
-};
+//} else {
+	//ctrlSetText[12504,format["You need donatorlevel %1 to buy a house.", __GETC__(HOUSING_DONATOR_LEVEL)]];
+	//ctrlShow[12512,false];
+	//ctrlShow[12516,false];
+	//ctrlShow[12508,false];
+//};

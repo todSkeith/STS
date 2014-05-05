@@ -11,6 +11,12 @@
 ****** Backend Variables *****
 *****************************
 */
+life_public_houses = [
+    "1119182",
+    "1575036",
+    "1815646"
+];
+HOUSING_DONATOR_LEVEL = 0;
 life_disable_actions = false;
 life_query_time = time;
 life_action_delay = time;

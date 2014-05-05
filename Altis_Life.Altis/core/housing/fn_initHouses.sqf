@@ -9,9 +9,9 @@
 	Edited and Modified by: CDawg
 */
 
-{
-	deleteMarkerLocal _x;
-}forEach life_houses_markers;
+//{
+//	deleteMarkerLocal _x;
+//}forEach life_houses_markers;
 
 	for "_i" from 1 to (count life_houses) do
 	{

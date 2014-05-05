@@ -75,7 +75,7 @@ switch (_side) do
 
 	case independent:
 	{
-		[
+		_markers = [
 			["medic_spawn_1","Kavala","icons\IconSloth.paa"],
 			["medic_spawn_2","Rodopoli","icons\IconSloth.paa"]
 
