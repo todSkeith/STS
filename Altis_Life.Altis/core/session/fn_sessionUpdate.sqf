@@ -46,6 +46,7 @@ switch (playerSide) do
 };
 
 _packet set[8,name player];
+playerPosition = getpos player;
 _packet set[9, playerPosition];
 
 [_packet,"TON_fnc_update",false,false] spawn life_fnc_MP;

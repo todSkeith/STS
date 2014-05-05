@@ -71,7 +71,7 @@ switch (playerSide) do
 		civ_gear = (_session select 8);
 		[] spawn life_fnc_civLoadGear;
 		__CONST__(life_coplevel,0);
-		PlayerPosition = (_session select 9);
+		playerPosition = (_session select 9);
 		//life_houses = (_session select 10); //Where is life houses getting called in the DB?  doesnt look like its getting called in the Players Table
         //life_houses_markers = [];
 	};
