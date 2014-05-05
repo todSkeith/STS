@@ -5,128 +5,70 @@
 	Description:
 	Fetches specific key items from the civilian for a persistent state.
 */
-private["_ret","_uItems","_bItems","_vItems","_pItems","_hItems","_yItems","_uMags","_vMags","_bMags","_pMag","_hMag","_uni","_ves","_bag","_handled"];
-_ret = [];
-
-_ret set[count _ret,uniform player];
-_ret set[count _ret,vest player];
-_ret set[count _ret,backpack player];
-_ret set[count _ret,goggles player];
-_ret set[count _ret,headgear player];
-_ret set[count _ret,assignedItems player];
-_ret set[count _ret,primaryWeapon player];
-_ret set[count _ret,handGunWeapon player];
-
-_uItems = [];
-_uMags  = [];
-_bItems = [];
-_bMags  = [];
-_vItems = [];
-_vMags  = [];
-_pItems = [];
-_hItems = [];
-_yItems = [];
-
-if(uniform player != "") then
+private["_primary,_launcher","_handgun","_magazines","_uniform","_vest","_backpack","_items","_primitems","_secitems","_handgunitems","_uitems","_vitems","_bitems","_headgear","_goggles"];
+_primitems = [];
+_secitems = [];
+_handgunitems = [];
+_primary = primaryWeapon player;
+_launcher = secondaryWeapon player;
+_handgun = handGunWeapon player;
+_magazines = [];
+_uniform = uniform player;
+_vest = vest player;
+_backpack = backpack player;
+_items = assignedItems player;
+if(primaryWeapon player != "") then {_primitems = primaryWeaponItems player;};
+if (secondaryWeapon player != "") then { _secItems = secondaryWeaponItems player; };
+if(handgunWeapon player != "") then {_handgunItems = handgunItems player;};
+_headgear = headgear player;
+_goggles = goggles player;
+_uitems = [];
+_vitems = [];
+_bitems = [];
+_yitems = [];
+if(_uniform != "") then {{_uitems set[count _uitems,_x];} foreach (uniformItems player);};
+if(_vest != "") then {{_vitems set[count _vitems,_x];} foreach (vestItems player);};
+if(_backpack != "") then {{_bitems set[count _bitems,_x];} foreach (backPackItems player);};
+/*this doesnt seem to do anything important
+if(primaryWeapon player != "") then
 {
-    {
-        if (_x in (magazines player)) then {
-            _uMags = _uMags + [_x];
-        } else {
-            _uItems = _uItems + [_x];
-        };
-    } forEach (uniformItems player);
+	player selectWeapon (primaryWeapon player);
+
+	if(currentMagazine player != "") then
+	{
+		_primItems = life_holstered_items;
+		_magazines set[count _magazines,0];
+	};
+
+};
+*/
+
+if(secondaryWeapon player != "") then
+{
+	player selectWeapon (secondaryWeapon player);
+	if(currentMagazine player != "") then
+	{
+		 _secItems = life_holstered_items;
+		_magazines set[count _magazines,0];
+	};
+
 };
 
-if(backpack player != "") then
+if(handgunWeapon player != "") then
 {
-    {
-        if (_x in (magazines player)) then {
-            _bMags = _bMags + [_x];
-        } else {
-            _bItems = _bItems + [_x];
-        };
-    } forEach (backpackItems player);
-};
+	player selectWeapon (handgunWeapon player);
+	if(currentMagazine player != "") then
+	{
+		_handgunItems = life_holstered_items;
+		_magazines set[count _magazines,0];
+	};
 
-if(vest player != "") then
-{
-    {
-        if (_x in (magazines player)) then {
-            _vMags = _vMags + [_x];
-        } else {
-            _vItems = _vItems + [_x];
-        };
-    } forEach (vestItems player);
 };
+player selectWeapon (primaryWeapon player);
 
-if (count (primaryWeaponMagazine player) > 0 ) then
-{
-    _pMag = ((primaryWeaponMagazine player) select 0);
-    if (_pMag != "") then
-    {
-        _uni = player canAddItemToUniform _pMag;
-        _ves = player canAddItemToVest _pMag;
-        _bag = player canAddItemToBackpack _pMag;
-        _handled = false;
-        if (_ves) then
-        {
-            _vMags = _vMags + [_pMag];
-            _handled = true;
-        };
-        if (_uni AND !_handled) then
-        {
-            _uMags = _uMags + [_pMag];
-            _handled = true;
-        };
-        if (_bag AND !_handled) then
-        {
-            _bMags = _bMags + [_pMag];
-            _handled = true;
-        };
-    };
-};
-
-if (count (handgunMagazine player) > 0 ) then
-{
-    _hMag = ((handgunMagazine player) select 0);
-    if (_hMag != "") then
-    {
-        _uni = player canAddItemToUniform _hMag;
-        _ves = player canAddItemToVest _hMag;
-        _bag = player canAddItemToBackpack _hMag;
-        _handled = false;
-        if (_ves) then
-        {
-            _vMags = _vMags + [_hMag];
-            _handled = true;
-        };
-        if (_uni AND !_handled) then
-        {
-            _uMags = _uMags + [_hMag];
-            _handled = true;
-        };
-        if (_bag AND !_handled) then
-        {
-            _bMags = _bMags + [_hMag];
-            _handled = true;
-        };
-    };
-};
-
-if(count (primaryWeaponItems player) > 0) then
-{
-    {
-        _pItems = _pItems + [_x];
-    } forEach (primaryWeaponItems player);
-};
-
-if(count (handGunItems player) > 0) then
-{
-    {
-        _hItems = _hItems + [_x];
-    } forEach (handGunItems player);
-};
+if(isNil "_primitems") then {_primitems = ["","",""];};
+if(isNil "_secItems") then {_secItems = ["","",""];};
+if(isNil "_handgunItems") then {_handgunItems = ["","",""];};
 
 {
     _name = (_x select 0);
@@ -154,14 +96,4 @@ if(count (handGunItems player) > 0) then
     ["life_inv_RoadBlockWood",life_inv_RoadBlockWood],["life_inv_storage1",life_inv_storage1],["life_inv_storage2",life_inv_storage2]
 ];
 
-_ret set[count _ret,_uItems];
-_ret set[count _ret,_uMags];
-_ret set[count _ret,_bItems];
-_ret set[count _ret,_bMags];
-_ret set[count _ret,_vItems];
-_ret set[count _ret,_vMags];
-_ret set[count _ret,_pItems];
-_ret set[count _ret,_hItems];
-_ret set[count _ret,_yItems];
-
-civ_gear = _ret;
+civ_gear = [_primary,_launcher,_handgun,_magazines,_uniform,_vest,_backpack,_items,_primitems,_secitems,_handgunitems,_uitems,_vitems,_bitems,_headgear,_goggles,_yItems];
