@@ -8,7 +8,6 @@
 
 private["_unit", "_source"];
 _unit = _this select 0;
-hint format ["_unit is %1", _unit];
 _source = _this select 1;
 life_bleedout = time + (60*15);
 
@@ -17,7 +16,9 @@ _unit setVariable["restrained",false,true];
 _unit setVariable["Escorting",false,true];
 _unit setVariable["zipTie",false,true];
 _unit setVariable["surrender",false,true];
-	
+
+[] call life_fnc_sessionUpdate;
+
 if(vehicle player != player) then
 {
 	player action ["Eject",vehicle player];

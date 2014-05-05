@@ -10,7 +10,11 @@ _positionArray = playerPosition;
 
 if(_positionArray select 0 != 0) then 
 {
-	player setpos _positionArray;
+	player setpos [_positionArray select 0, _positionArray select 1, _PositionArray select 2];
+	if(_positionArray select 3) then
+	{
+		[player, player] spawn life_fnc_unconscious;
+	};
 }
 else
 {

@@ -33,4 +33,3 @@ if(!StartProgress) then
 };
 StartProgress = true;
 player setVariable ["bountyHunter", false, true];
-player setVariable ["unconscious", false, true];
