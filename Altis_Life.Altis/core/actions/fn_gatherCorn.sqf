@@ -8,7 +8,7 @@ _sum = ["corn",3,life_carryWeight,life_maxWeight] call life_fnc_calWeightDiff;
 
 if(_sum > 0) then
 {
-	life_action_in_use = true;
+	life_action_inUse = true;
 	titleText["Picking Corn...","PLAIN"];
 	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
 	player playMove "AinvPercMstpSnonWnonDnon_Putdown_AmovPercMstpSnonWnonDnon";
@@ -23,4 +23,4 @@ if(_sum > 0) then
 	hint "Your inventory space is full.";
 };
 
-life_action_in_use = false;
+life_action_inUse = false;
