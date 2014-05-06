@@ -640,7 +640,7 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={14026.03,26.918367,18704.047};
+					position[]={14027.04,26.966797,18703.932};
 					azimut=-25.853388;
 					offsetY=0.5;
 					special="NONE";
@@ -1209,7 +1209,7 @@ class Mission
 				};
 				class Item51
 				{
-					position[]={25829.154,21.02936,21450.023};
+					position[]={25831.016,20.917124,21445.988};
 					azimut=-81.861168;
 					special="NONE";
 					id=82;
@@ -5322,8 +5322,9 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={3647.9895,13.352778,13013.136};
-					azimut=12.288525;
+					position[]={3645.6753,11.512851,13042.292};
+					azimut=101.62;
+					offsetY=0.60000002;
 					id=315;
 					side="CIV";
 					vehicle="C_man_p_beggar_F_euro";
@@ -5342,7 +5343,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={14068.734,24.154333,18827.367};
+					position[]={14069.122,23.939051,18801.709};
 					azimut=121.91637;
 					id=316;
 					side="CIV";
@@ -5362,8 +5363,8 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={25776.848,22.779903,21509.996};
-					azimut=-43.647278;
+					position[]={25765.143,21.659346,21463.014};
+					azimut=44.031227;
 					id=317;
 					side="CIV";
 					vehicle="C_man_p_beggar_F_euro";
@@ -5382,8 +5383,9 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={16868.215,20.288216,12621.979};
-					azimut=95.318497;
+					position[]={16891.752,20.335142,12646.402};
+					azimut=-75.3517;
+					offsetY=0.60000002;
 					id=318;
 					side="CIV";
 					vehicle="C_man_p_beggar_F_euro";
@@ -22887,17 +22889,18 @@ class Mission
 		};
 		class Item1748
 		{
-			position[]={3648.04,13.35204,13014.146};
-			azimut=-168.5636;
+			position[]={3646.6875,11.546368,13042.25};
+			azimut=-79.231903;
+			offsetY=0.60000002;
 			id=2067;
 			side="EMPTY";
 			vehicle="Land_CashDesk_F";
 			skill=0.60000002;
-			init="this enableSimulation false; this allowDamage false;";
+			init="this enableSimulation false; this allowDamage false; this setVectorUp [0,0,1];";
 		};
 		class Item1749
 		{
-			position[]={14069.532,24.163971,18826.811};
+			position[]={14069.92,23.964706,18801.152};
 			azimut=-58.935734;
 			id=2068;
 			side="EMPTY";
@@ -22907,8 +22910,8 @@ class Mission
 		};
 		class Item1750
 		{
-			position[]={25776.211,22.800253,21510.723};
-			azimut=-224.49944;
+			position[]={25765.84,21.692839,21463.674};
+			azimut=-136.82092;
 			id=2069;
 			side="EMPTY";
 			vehicle="Land_CashDesk_F";
@@ -22917,8 +22920,9 @@ class Mission
 		};
 		class Item1751
 		{
-			position[]={16869.162,20.265419,12621.853};
-			azimut=-85.533577;
+			position[]={16890.826,20.360186,12646.691};
+			azimut=-256.20401;
+			offsetY=0.5;
 			id=2070;
 			side="EMPTY";
 			vehicle="Land_CashDesk_F";
@@ -23929,7 +23933,7 @@ class Mission
 		};
 		class Item100
 		{
-			position[]={14031.233,27.108479,18706.088};
+			position[]={14026.745,26.930912,18704.592};
 			name="license_shop_1";
 			text="DMV";
 			type="c_unknown";
@@ -25392,15 +25396,16 @@ class Mission
 		};
 		class Item282
 		{
-			position[]={3647.6873,13.332285,13013.324};
+			position[]={3645.8625,11.50482,13042.594};
 			name="house_marker";
 			text="Real Estate Agent";
 			type="mil_box";
 			colorName="ColorYellow";
+			angle=89.331703;
 		};
 		class Item283
 		{
-			position[]={14068.875,24.160172,18827.424};
+			position[]={14069.263,23.936226,18801.766};
 			name="house_marker_1";
 			text="Real Estate Agent";
 			type="mil_box";
@@ -25409,21 +25414,21 @@ class Mission
 		};
 		class Item284
 		{
-			position[]={25776.693,22.778927,21509.959};
+			position[]={25765.098,21.661833,21463.166};
 			name="house_marker_2";
 			text="Real Estate Agent";
 			type="mil_box";
 			colorName="ColorYellow";
-			angle=-55.935802;
+			angle=31.74271;
 		};
 		class Item285
 		{
-			position[]={16868.303,20.28755,12622.103};
+			position[]={16891.646,20.337805,12646.313};
 			name="house_marker_3";
 			text="Real Estate Agent";
 			type="mil_box";
 			colorName="ColorYellow";
-			angle=83.030014;
+			angle=-87.640144;
 		};
 		class Item286
 		{
