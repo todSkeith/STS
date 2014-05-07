@@ -72,8 +72,8 @@ switch (playerSide) do
 		[] spawn life_fnc_civLoadGear;
 		__CONST__(life_coplevel,0);
 		playerPosition = (_session select 9);
-		life_houses = [] call bruuudis_fnc_queryHouses; //Where is life houses getting called in the DB?  doesnt look like its getting called in the Players Table
-        life_houses_markers = [];
+		//life_houses = [] call bruuudis_fnc_queryHouses; //Where is life houses getting called in the DB?  doesnt look like its getting called in the Players Table
+        //life_houses_markers = [];
 	};
 
 	case independent:
