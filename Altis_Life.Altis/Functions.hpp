@@ -11,6 +11,7 @@ class Life_Client_Core
 		class initCop {};
 		class initMedic {};
 		class welcomeNotification {};
+		class config_housing {};
 	};
 
 	class Admin
@@ -133,6 +134,7 @@ class Life_Client_Core
 	{
 		file = "core\session";
 		class sessionSetup {};
+		class houseSession {};
 		class sessionReceive {};
 		class sessionUpdate {};
 		class sessionCreate {};
