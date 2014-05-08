@@ -361,6 +361,7 @@ class Life_Client_Core
 		class RoadBlockWood {};
 		//class RoadCone {};
 		class RoadConeStrip {};
+		class lethal {};
 	};
 
 	class Dialog_Controls

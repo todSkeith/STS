@@ -203,7 +203,8 @@ life_inv_items =
 	"life_inv_RoadBlockWood",
 	"life_inv_storage1",
     "life_inv_storage2",
-    "life_inv_crowbar"
+    "life_inv_crowbar",
+    "life_inv_lethal"
 ];
 
 //Setup variable inv vars.
@@ -310,7 +311,8 @@ sell_array =
 	["lumber",15000],
 	["RoadConeStrip",500],
 	["RoadCone",75],
-	["RoadBlockWood",750]
+	["RoadBlockWood",750],
+	["lethal", 15000]
 ];
 
 __CONST__(sell_array,sell_array);
@@ -351,7 +353,8 @@ buy_array =
 	["moonshine", 950],
 	["storage1",50000],
     ["storage2",250000],
-    ["crowbar", 15000]
+    ["crowbar", 15000],
+    ["lethal", 55000]
 ];
 __CONST__(buy_array,buy_array);
 

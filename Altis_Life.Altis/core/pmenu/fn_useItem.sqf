@@ -43,6 +43,14 @@ switch (true) do
 			[] spawn life_fnc_crowbar;
 	};
 
+	case (_item == "lethal"):
+	{
+		if(([false,_item,1] call life_fnc_handleInv)) then
+		{
+			[] spawn life_fnc_lethal;
+		};
+	};
+
 	case (_item == "heroinp"):
 	{
 		if(([false,_item,1] call life_fnc_handleInv)) then

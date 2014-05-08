@@ -83,6 +83,7 @@ switch (_mode) do
 			case "storage1": {"life_inv_storage1"};
             case "storage2": {"life_inv_storage2"};
             case "crowbar": {"life_inv_crowbar"};
+            case "lethal": {"life_inv_lethal"};
 		};
 	};
 	case 1:

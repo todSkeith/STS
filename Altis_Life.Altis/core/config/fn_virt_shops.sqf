@@ -21,7 +21,7 @@ switch (_shop) do
 	case "salt": {["Salt Dealer",["salt_r"]]};
 	case "cop": {["Cop Item Shop",["donuts","coffee","spikeStrip","water","rabbit","apple","redgull","fuelF"]]};
 	case "cement": {["Cement Dealer",["cement"]]};
-	case "rebel": {["Rebel Item Shop",["lockpick","zip","crowbar"]]};
+	case "rebel": {["Rebel Item Shop",["lockpick","zip","crowbar","lethal"]]};
 	case "moonshine": {["Distributor",["moonshine"]]};
 	//case "medic" : {["donuts","coffee","water","rabbit","apple","redgull","fuelF"]]};
 	case "logging" : {["Alan's Hardwood Supply",["chainsaw","lumber"]]};

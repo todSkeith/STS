@@ -79,6 +79,7 @@ switch (_var) do
     case "life_inv_storage2": {"House Storage Large"};
     case "license_civ_home": {"Home Owner License"};
     case "life_inv_crowbar": {"Crowbar"};
+    case "life_inv_lethal": {"Lethal Injection"};
 
 
 

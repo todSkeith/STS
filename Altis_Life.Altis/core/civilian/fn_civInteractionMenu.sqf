@@ -56,6 +56,7 @@ _tZip = _curTarget getVariable ["zipTie",false];
 _tUnc = _curTarget getVariable ["unconscious",false];
 _tEsc = _curTarget getVariable ["Escorting",false];
 _tSur = _curTarget getVariable ["surrender",false];
+_lethal = life_inv_lethal;
 if (animationState _curTarget == "Incapacitated") then { _tKout = true; } else { _tKout = false; };
 
 life_pInact_curTarget = _curTarget;
@@ -125,3 +126,9 @@ _Btn3 buttonSetAction "[life_pInact_curTarget] call life_fnc_putInCar; closeDial
 	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_robAction; closeDialog 0;";
 //};
 
+// Button 5: Lethal Injection
+if(_tUnc) then {
+	if(license_civ_rebel && (primaryWeapon player != "" || handGunWeapon player != "") && life_inv_lethal > 0) then { _Btn5 ctrlEnable true; } else { _Btn5 ctrlEnable false; };
+	_Btn5 ctrlSetText localize "STR_pInAct_Execute";
+	_Btn5 buttonSetAction "[life_pInact_curTarget] spawn life_fnc_lethal; closeDialog 0; [false,_item,1] call life_fnc_handleInv";
+};
