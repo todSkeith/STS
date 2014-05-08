@@ -34,7 +34,7 @@ if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle
 			_damage = 0;
 			if(_curwep == "arifle_SDAR_F") then
 			{
-				if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 300) then
+				if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 100) then
 				{
 					_damage = 0;
 					if(typeOf (vehicle player) == "B_Quadbike_01_F") then
@@ -77,6 +77,7 @@ if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle
 				_damage = 0;
 			};
 		};
+
 	//};
 };
 
@@ -91,13 +92,15 @@ if((player getVariable["restrained",false])) then
 // {
 	// _damage = 0;
 // };
-if(_sel == "" || _sel == "head_hit" || _sel =="body" || _sel == "head") then
+//if(_sel == "" || _sel == "head_hit" || _sel =="body" || _sel == "head" || _sel == "hand_l" || _sel == "leg_l") then
+if(_sel == "") then
 {
-	if ((damage _unit + _damage) > 0.9999) then
+	if ((damage _unit + _damage) > 0.99) then
 	{
+		_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
 		_unit setDamage 0;
 		_unit allowDamage false;
-		_unit playMove "AinjPpneMstpSnonWrflDnon_rolltoback";
+
 		_damage = 0;
 		if(!(_unit getVariable "unconscious")) then 
 		{
@@ -123,17 +126,33 @@ if(_sel == "" || _sel == "head_hit" || _sel =="body" || _sel == "head") then
 		}
 		else
 		{
-			_damage = 0;
+			if(_sel == "head" && (_unit getVariable "unconscious") && _damage >= 1) then
+			{
+				_damage = 1;
+			}
+			else 
+			{
+				_damage = 0;
+			};
 		};
 	};
 }
 else
 {
-	if (((_unit getHitPointDamage _sel) + _damage) > 0.99) then
+
+	_ghp = switch (_sel) do
 	{
-		_unit setHitPointDamage [_sel,0.99];
+		case ("body"): { "HitBody" };
+		case ("head"): { "HitHead" };
+		case ("hand_l"): { "HitHands" };
+		case ("leg_l"): { "HitLegs" };
+	};
+	if (((_unit getHitPointDamage _ghp) + _damage) > 0.99) then
+	{
+		_unit setHitPointDamage [_ghp,0.99];
 		_damage = 0;
 	};
 };
 [] call life_fnc_hudUpdate;
 //systemChat format ["Hitbox: %1 | Overall health: %2 | Hitbox health: %3 | Damage taken: %4",_sel,damage _unit,_unit getHitPointDamage _ghp,_damage];
+_damage;
