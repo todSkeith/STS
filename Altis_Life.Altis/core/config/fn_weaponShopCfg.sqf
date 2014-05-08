@@ -64,7 +64,10 @@ switch(_shop) do
 						["arifle_MX_SW_Black_F",nil,0],
 						["arifle_MXC_Black_F",nil,0],
 						["SMG_01_F",nil,0],
+						["MiniGrenade","Flashbang",0],
 						["hgun_ACPC2_F",nil,0],
+						["hgun_P07_snds_F","Stun Pistol",0],
+						["arifle_sdar_F","Taser Rifle",0],
 						["hgun_Pistol_heavy_01_MRD_F",nil,0],
 						["optic_MRCO",nil,0],
 						["optic_Arco",nil,0],
@@ -80,10 +83,17 @@ switch(_shop) do
 						["Medikit",nil,0],
 						["30Rnd_65x39_caseless_mag",nil,0],
 						["30Rnd_45ACP_Mag_SMG_01",nil,0],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",0],
+						["30Rnd_556x45_Stanag",nil,0],
 						["9Rnd_45ACP_Mag",nil,0],
 						["11Rnd_45ACP_Mag",nil,0],
 						["16Rnd_9x21_Mag",nil,0],
-						["30Rnd_9x21_Mag",nil,0]
+						["30Rnd_9x21_Mag",nil,0],
+						["NVGoggles_OPFOR",nil,2000],
+						["Chemlight_red",nil,300],
+						["Chemlight_yellow",nil,300],
+						["Chemlight_green",nil,300],
+						["Chemlight_blue",nil,300]
 					]
 				];
 			};
@@ -420,6 +430,7 @@ switch(_shop) do
 			{
 				["STS Admin Shop",
 					[
+						["hgun_P07_snds_F","Stun Pistol",0],
 						["hgun_Rook40_F",nil,0],
 						["hgun_PDW2000_F",nil,0],
 						["hgun_Pistol_heavy_01_MRD_F",nil,0],
@@ -452,6 +463,7 @@ switch(_shop) do
 						["ToolKit",nil,0],
 						["itemgps",nil,0],
 						["FirstAidKit",nil,0],
+						["MiniGrenade","Flashbang",0],
 						["16Rnd_9x21_Mag",nil,0],
 						["30Rnd_9x21_Mag",nil,0],
 						["11Rnd_45ACP_Mag",nil,0],

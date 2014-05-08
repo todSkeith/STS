@@ -36,6 +36,9 @@
 		<Key ID="STR_Admin_GetID">
 			<Original>Get ID</Original>
 		</Key>
+		<Key ID="STR_AdminCommands">
+			<Original>Admin Commands</Original>
+		</Key>
 	</Package>
 	<Package name="ATM_Menu">
 		<Key ID="STR_ATM_Title">
