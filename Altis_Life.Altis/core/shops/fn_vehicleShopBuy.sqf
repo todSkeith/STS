@@ -227,13 +227,13 @@ switch(life_veh_shop) do
 	{
 		_sp = getMarkerPos "medic_air_1";
 		_dir = markerDir "medic_air_1";
-		_ems = false;
+		_ems = true;
 	};
 	case "medic_air_2":
 	{
 		_sp = getMarkerPos "medic_air_2";
 		_dir = markerDir "medic_air_2";
-		_ems = true;
+		_ems = false;
 	};
 };
 _index = lbCurSel 2302;
