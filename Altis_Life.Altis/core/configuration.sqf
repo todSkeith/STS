@@ -11,6 +11,7 @@
 ****** Backend Variables *****
 *****************************
 */
+life_houses_markers = [];
 life_public_houses = [
     "1119182",
     "1575036",

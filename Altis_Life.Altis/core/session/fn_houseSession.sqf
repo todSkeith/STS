@@ -7,4 +7,4 @@
 */
 
 life_houses = _this;
-life_houses_markers = [];
+//life_houses_markers = [];

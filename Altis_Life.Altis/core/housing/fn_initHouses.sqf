@@ -9,9 +9,9 @@
 	Edited and Modified by: CDawg
 */
 
-//{
-//	deleteMarkerLocal _x;
-//}forEach life_houses_markers;
+{
+	deleteMarkerLocal _x;
+}forEach life_houses_markers;
 
 	for "_i" from 1 to (count life_houses) do
 	{
@@ -25,7 +25,8 @@
 		_marker setMarkerShapeLocal "ICON";
 		_marker setMarkerColorLocal "ColorBlue";
 		_marker setMarkerTypeLocal "mil_end";	
-		//diag_log format ["house : %1", _house];
+		life_houses_markers set [count life_houses_markers, _marker];
+		//diag_log format ["life_houses_markers: ", life_houses_markers];
 		_positions = [_house] call life_fnc_countBuildingPositions;
 		_containers = _house getVariable ["containers", []];
 		_weaponsAdded = false;
@@ -74,7 +75,6 @@
 				};
 			}forEach _containers;
 		};	
-		life_houses_markers set [count life_houses_markers, _marker];
 	};
 
 player addEventHandler ["Take",{_this spawn life_fnc_onTake;}];
