@@ -125,4 +125,4 @@ if(_tUnc) then {
 	
 	_Btn4 ctrlSetText localize "STR_pInAct_RobPerson";
 	_Btn4 buttonSetAction "[life_pInact_curTarget] call life_fnc_robAction; closeDialog 0;";
-//};
+};
