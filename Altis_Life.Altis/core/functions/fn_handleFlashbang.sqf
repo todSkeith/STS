@@ -50,3 +50,5 @@ while {_effects} do {
 ppEffectDestroy _hndl;
 ppEffectDestroy _hnd2;
 ppEffectDestroy _hnd3;
+
+player setHitPointDamage ["HitLegs",0];

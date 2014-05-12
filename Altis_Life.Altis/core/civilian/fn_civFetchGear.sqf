@@ -84,7 +84,7 @@ if(isNil "_handgunItems") then {_handgunItems = ["","",""];};
     ["life_inv_fishingpoles",life_inv_fishingpoles],["life_inv_water",life_inv_water],["life_inv_donuts",life_inv_donuts],["life_inv_turtlesoup",life_inv_turtlesoup],
     ["life_inv_coffee",life_inv_coffee],["life_inv_fuelF",life_inv_fuelF],["life_inv_fuelE",life_inv_fuelE],["life_inv_pickaxe",life_inv_pickaxe],
     ["life_inv_tbacon",life_inv_tbacon],["life_inv_lockpick",life_inv_lockpick],["life_inv_redgull",life_inv_redgull],["life_inv_peach",life_inv_peach],
-    ["life_inv_chainsaw",life_inv_chainsaw],["life_inv_crowbar",life_inv_crowbar],["life_inv_spikestrip",life_inv_spikeStrip],["life_inv_log",life_inv_log],
+    ["life_inv_chainsaw",life_inv_chainsaw],["life_inv_crowbar",life_inv_crowbar],["life_inv_lethal",life_inv_lethal],["life_inv_spikestrip",life_inv_spikeStrip],["life_inv_log",life_inv_log],
     ["life_inv_lumber",life_inv_lumber],["life_inv_oilu",life_inv_oilu],["life_inv_oilp",life_inv_oilp],["life_inv_heroinu",life_inv_heroinu],["life_inv_heroinp",life_inv_heroinp],
     ["life_inv_cannabis",life_inv_cannabis],["life_inv_marijuana",life_inv_marijuana],["life_inv_turtlesoup",life_inv_turtlesoup],["life_inv_copperore",life_inv_copperore],
     ["life_inv_ironore",life_inv_ironore],["life_inv_ironr",life_inv_ironr],["life_inv_copperr",life_inv_copperr],["life_inv_goldore",life_inv_goldore],["life_inv_goldr",life_inv_goldr],

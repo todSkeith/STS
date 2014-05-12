@@ -157,6 +157,7 @@ switch (_mode) do
 			case "life_inv_storage1": {"storage1"};
             case "life_inv_storage2": {"storage2"};
             case "life_inv_crowbar": {"crowbar"};
+			case "life_inv_lethal": {"lethal"};
 		};
 	};
 };
