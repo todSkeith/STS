@@ -21,6 +21,41 @@ player createDiarySubject ["controls","Controls"];
 		]
 	];
 */
+
+player createDiaryRecord["changelog",
+		[
+			"5/12/14",
+				"
+				Added: Housing - max 5 houses<br/>
+				Added: House licenses<br/>
+				Added: Able to rob houses- Need crowbar<br/>
+				Added: Storage units for houses<br/>
+				Added: Club sloth Sign<br/>
+				Added: House Alarms<br/>
+				Added: Crowbars to rebel outpost<br/>
+				Added: Ability for police to raid homes<br/>
+				Added: Able to crowbar house doors open- 10% chance of breaking item and 15% of successful robbery <br/>
+				Added: Buyable garages- Counts as a house<br/>
+				Added: Burglary and attempted burglary to the wanted list<br/>
+				Added: Able to save virtual and physical items in houses<br/>
+				Added: All gear and virtual items will now save when you log out<br/>
+				Added: Persistent spawn - where ever you log out, you log back in at the same spot<br/>
+				Added: Able to picklock handcuffs<br/>
+				Added: New spawn point for Medics<br/>
+				Added: All hospitals can now heal players when they are down<br/>
+				Added: New clothing at Bruce’s<br/>
+				Added: Skin for Medic hummingbird<br/>
+				Added: Police can open Bar Gates by pressing O when near them<br/>
+				Added: Flashbangs for rebels and police<br/>
+				Added: Lethal Injections- Sold at Rebel Outpost
+				Changed: Police paychecks have been reverted back<br/>
+				Changed: Reduced the cost of medic vehicles<br/>
+				Changed: Shops in Kavala and Athira have been moved around<br/>
+				Fixed: Could not spawn helicopter at medic helipad<br/>
+				Fixed: Loading screen logo<br/>
+				"
+		]
+	];
 	player createDiaryRecord["changelog",
 		[
 			"4/30/14",
