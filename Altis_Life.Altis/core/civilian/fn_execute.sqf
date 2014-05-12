@@ -16,6 +16,7 @@ if(_unit getVariable ["executed",false]) exitWith {};
 
 player playMove "AinvPknlMstpSnonWnonDnon_medic1"; //idk what animation to really do...
 [[player],"life_fnc_executeAction",_unit,false] spawn life_fnc_MP;
+[false,"lethal",1] call life_fnc_handleInv;
 sleep 3;
 [[0,format["%1 was finished off by %2", name _unit, name player]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 [[getPlayerUID player,name player,"187"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
