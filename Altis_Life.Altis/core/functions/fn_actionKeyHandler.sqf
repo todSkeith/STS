@@ -8,6 +8,26 @@
 */
 private["_curTarget","_isWater","_isVehicle","_miscItems","_money"];
 _curTarget = cursorTarget;
+
+_animalTypes = ["Salema_F","Ornate_random_F","Mackerel_F","Tuna_F","Mullet_F","CatShark_F","Turtle_F"];
+
+if ((typeOf cursorTarget) in _animalTypes) then
+{
+	if ((typeOf cursorTarget) == "Turtle_F" && !alive cursorTarget) then
+	{
+	private["_handle"];
+	hint "catching t?";
+	_handle = [cursorTarget] spawn life_fnc_catchTurtle;
+	waitUntil {scriptDone _handle};
+	}
+	else
+	{
+	private["_handle"];
+	_handle = [cursorTarget] spawn life_fnc_catchFish;
+	waitUntil {scriptDone _handle};
+	};
+};
+
 _near = nearestObjects[getPos player,["Man","Car","Air","Ship"],5];
 if ((isNull _curTarget || _curTarget isKindOf "House") && count _near > 1) then {
         _curTarget = _near select 1;
@@ -15,15 +35,6 @@ if ((isNull _curTarget || _curTarget isKindOf "House") && count _near > 1) then 
 
 if(life_action_inUse) exitWith {}; //Action is in use, exit to prevent spamming.
 _isWater = surfaceIsWater (getPosASL player);
-if(isNull _curTarget) exitWith {
-        if(_isWater) then {
-                private["_fish"];
-                _fish = (nearestObjects[getPos player,["Fish_Base_F"],3]) select 0;
-                if(!isNil "_fish") then {
-                        [_fish] call life_fnc_catchFish;
-                };
-        };
-};
 if(dialog) exitWith {}; //Don't bother when a dialog is open.
 if(vehicle player != player) exitWith {}; //He's in a vehicle, cancel!
 if(player distance _curTarget > ((boundingBox _curTarget select 1) select 0) + 2) exitWith {}; //Too far away
