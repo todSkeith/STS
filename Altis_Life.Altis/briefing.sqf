@@ -26,6 +26,7 @@ player createDiaryRecord["changelog",
 		[
 			"5/12/14",
 				"
+				Server has been reset<br/>
 				Added: Housing - max 5 houses<br/>
 				Added: House licenses<br/>
 				Added: Able to rob houses- Need crowbar<br/>
@@ -52,6 +53,7 @@ player createDiaryRecord["changelog",
 				Changed: Reduced the cost of medic vehicles<br/>
 				Changed: Shops in Kavala and Athira have been moved around<br/>
 				Fixed: Could not spawn helicopter at medic helipad<br/>
+				Fixed: Fishing<br/>
 				Fixed: Loading screen logo<br/>
 				"
 		]
