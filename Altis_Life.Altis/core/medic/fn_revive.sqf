@@ -26,6 +26,9 @@ if(player distance _unit > 4) exitWith {};
 	sleep 4.545;
 	player playMoveNow "AinvPknlMstpSnonWnonDr_medic5";
 };
+ _reward = 500;
+ life_atmcash = life_atmcash + _reward;
+hint format["You have revived %1\n\nYou have received $%2 for saving a life!",_target,_reward];
 
 /*
 if (alive _target) then

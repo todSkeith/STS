@@ -96,16 +96,16 @@ switch(__GETC__(life_donator)) do
 
 switch(__GETC__(life_coplevel)) do
 {
-	case 1: {life_paycheck = life_paycheck + 5000;};//Recruit
-	case 2: {life_paycheck = life_paycheck + 5000;};//PO
-	case 3: {life_paycheck = life_paycheck + 5000;};//SPO
-	case 4: {life_paycheck = life_paycheck + 5000;};//CPL
-	case 5: {life_paycheck = life_paycheck + 5000;};//Sgt
-	case 6: {life_paycheck = life_paycheck + 5000;};//Lt.
-	case 7: {life_paycheck = life_paycheck + 5000;};//Capt.
-	case 8: {life_paycheck = life_paycheck + 5000;};//SuperI
-	case 9: {life_paycheck = life_paycheck + 5000;};//Chief
-	case 10: {life_paycheck = life_paycheck + 5000;};//Admin
+	case 1: {life_paycheck = life_paycheck;};//Recruit
+	case 2: {life_paycheck = life_paycheck;};//PO
+	case 3: {life_paycheck = life_paycheck;};//SPO
+	case 4: {life_paycheck = life_paycheck;};//CPL
+	case 5: {life_paycheck = life_paycheck;};//Sgt
+	case 6: {life_paycheck = life_paycheck;};//Lt.
+	case 7: {life_paycheck = life_paycheck;};//Capt.
+	case 8: {life_paycheck = life_paycheck;};//SuperI
+	case 9: {life_paycheck = life_paycheck;};//Chief
+	case 10: {life_paycheck = life_paycheck;};//Admin
 };
 
 if((getPlayerUID player) != (_session select 0)) exitWith {[] spawn life_fnc_sessionCreate;}; //Since it didn't match create the session again?
