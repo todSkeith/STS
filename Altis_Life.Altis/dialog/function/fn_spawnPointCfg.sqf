@@ -36,7 +36,8 @@ switch (_side) do
 			["civ_spawn_4","Sofia","icons\IconSloth.paa"]
 		];
 		
-		/*if(__GETC__(life_donator) >= __GETC__(HOUSING_DONATOR_LEVEL) && license_civ_home) then {		
+		if(license_civ_home) then 
+		{		
 		
 			_houses = [
 				"Land_i_House_Small_01_V1_F",
@@ -70,7 +71,7 @@ switch (_side) do
 					_i = _i + 1;
 				};
 			}forEach life_houses;		
-		};*/
+		};
 	};
 
 	case independent:
