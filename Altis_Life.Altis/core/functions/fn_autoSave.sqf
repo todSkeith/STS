@@ -6,7 +6,7 @@
 	Saves the player's gear every 10 minutes.
 */
 while {true} do {   
-	sleep 600;   
+	sleep (480 + random 120);   
 	if (alive player) then   
         {
 		playerPosition = [getpos player select 0, getpos player select 1, 0];
