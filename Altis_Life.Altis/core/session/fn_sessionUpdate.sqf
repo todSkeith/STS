@@ -46,7 +46,7 @@ switch (playerSide) do
 };
 
 _packet set[8,name player];
-playerPosition = getpos player;
+playerPosition = [(getpos player select 0),(getpos player select 1), 0];
 playerPosition set[count playerPosition, player getVariable "unconscious"];
 _packet set[9, playerPosition];
 
