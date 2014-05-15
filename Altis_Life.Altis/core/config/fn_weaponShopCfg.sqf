@@ -91,9 +91,10 @@ switch(_shop) do
 						["30Rnd_9x21_Mag",nil,0],
 						["NVGoggles_OPFOR",nil,2000],
 						["Chemlight_red",nil,300],
-						["Chemlight_yellow",nil,300],
-						["Chemlight_green",nil,300],
-						["Chemlight_blue",nil,300]
+						["Chemlight_yellow",nil,0],
+						["Chemlight_green",nil,0],
+						["Chemlight_blue",nil,0],
+						["100Rnd_65x39_caseless_mag","Sell This To Give Comp",0]
 					]
 				];
 			};

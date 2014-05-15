@@ -392,6 +392,7 @@ life_weapon_shop_array =
 	["arifle_MX_F",7500],
 	["arifle_MXC_F",5000],
 	["arifle_MXM_F",8500],
+	["100Rnd_65x39_caseless_mag",100000],
 	["MineDetector",500],
 	["optic_Holosight",275],
 	["acc_pointer_IR",175],
