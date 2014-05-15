@@ -1860,8 +1860,8 @@ class Mission
 				};
 				class Item107
 				{
-					position[]={13963.536,24.484789,18711.174};
-					azimut=-60.918896;
+					position[]={13982.47,24.68586,18673.449};
+					azimut=-143.98291;
 					special="NONE";
 					id=138;
 					side="CIV";
@@ -24600,7 +24600,7 @@ class Mission
 		};
 		class Item183
 		{
-			position[]={13959.846,24.338749,18715.143};
+			position[]={13982.756,24.739082,18674.045};
 			name="hospital_marker_2";
 			text="Hospital";
 			type="loc_Hospital";
