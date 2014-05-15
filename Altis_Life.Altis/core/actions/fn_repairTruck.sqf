@@ -15,6 +15,7 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 	if("ToolKit" in (items player)) then
 	{
 		life_action_inUse = true;
+		player removeItem "ToolKit";
 		_displayName = getText(configFile >> "CfgVehicles" >> (typeOf _veh) >> "displayName");
 		_upp = format["Repairing %1",_displayName];
 		//Setup our progress bar.
@@ -33,8 +34,8 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 			_veh spawn {
 				_vehHPs = ["HitRGlass","HitLGlass","HitGlass1","HitGlass2","HitGlass3","HitGlass4","HitGlass5","HitGlass6","HitBody","HitFuel","HitLFWheel","HitLBWheel","HitLMWheel","HitLF2Wheel","HitRFWheel","HitRBWheel","HitRMWheel","HitRF2Wheel","HitEngine","HitHull","HitAvionics","HitVRotor","HitHRotor"];
 				{
-					if (_this getHitPointDamage _x > 0.35) then {
-						_this setHitPointDamage [_x,0.35];
+					if (_this getHitPointDamage _x > 0) then {
+						_this setHitPointDamage [_x,0];
 					};
 					//systemChat format ["%1 repaired on %2",_x,_this];
 					sleep 1.15;
@@ -50,7 +51,6 @@ if((_veh isKindOf "Car") OR (_veh isKindOf "Ship") OR (_veh isKindOf "Air")) the
 			if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
 				[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
 				player playMoveNow "AinvPknlMstpSnonWnonDnon_medic_1";
-				//player removeItem "ToolKit";
 			};
 			sleep 0.27;
 			_cP = _cP + 0.01;
