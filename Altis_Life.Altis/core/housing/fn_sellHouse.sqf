@@ -7,6 +7,7 @@
 
 	Edited and Modified by: CDawg
 */
+if(true) exitWith {closeDialog 0; titleText ["Selling houses is temporarily disabled","PLAIN"];} // SELLING DISABLED UNTIL FIXED
 private["_house", "_buildingID", "_buildingName", "_owners", "_isLocked", "_uid", "_price", "_val", "_i", "_j", "_house"];
 
 _house = cursorTarget;
