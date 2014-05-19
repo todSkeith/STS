@@ -258,8 +258,10 @@ switch (_code) do
 			};
 
 			_locked = locked _veh;
+			_owners = _veh getvariable "vehicle_info_owners";
+			_uid = getPlayerUID player;
 
-			if(_veh in life_vehicles && player distance _veh < 8) then
+			if((_veh in life_vehicles || _uid in _owners select 0) && player distance _veh < 8) then
 			{
 				if(_locked == 2) then
 				{
