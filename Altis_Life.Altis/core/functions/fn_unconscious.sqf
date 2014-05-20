@@ -77,6 +77,6 @@ if (isPlayer _unit) then
 		};
 };
 	hintSilent "";
-	_unit enableSimulation true;
-	_unit allowDamage true;
-	_unit playMove "amovppnemstpsraswrfldnon";
+	//_unit enableSimulation true;
+	//_unit allowDamage true;
+	//_unit playMove "amovppnemstpsraswrfldnon";
