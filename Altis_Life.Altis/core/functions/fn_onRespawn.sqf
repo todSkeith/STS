@@ -54,7 +54,7 @@ switch(playerSide) do
 		_unit setVariable["executed",false,true];
 		if(headGear player != "") then {removeHeadgear player;};
 		if(goggles player != "") then {removeGoggles player;};
-		life_holstered_weapon = false;
+		life_holstered_weapon = nil;
 	};
 
 	case independent:
@@ -100,3 +100,5 @@ cutText ["","BLACK IN"];
 
 [] call life_fnc_civFetchGear;
 [1,true] call life_fnc_sessionHandle;
+
+life_holstered = false;
