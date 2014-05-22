@@ -368,7 +368,7 @@ life_weapon_shop_array =
 	["ItemGPS",45],
 	["ToolKit",50],
 	["FirstAidKit",25],
-	["Medikit",450],
+	["Medikit",50],
 	["NVGoggles",350],
 	["16Rnd_9x21_Mag",15],
 	["20Rnd_556x45_UW_mag",35],
