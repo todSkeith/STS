@@ -54,7 +54,7 @@ switch(playerSide) do
 		_unit setVariable["executed",false,true];
 		if(headGear player != "") then {removeHeadgear player;};
 		if(goggles player != "") then {removeGoggles player;};
-		life_holstered_weapon = nil;
+		life_holstered_weapon = false;
 	};
 
 	case independent:
