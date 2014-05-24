@@ -46,8 +46,16 @@ switch (playerSide) do
 };
 
 _packet set[8,name player];
-playerPosition = [(getpos player select 0),(getpos player select 1), 0];
-playerPosition set[count playerPosition, player getVariable "unconscious"];
+if(life_is_arrested) then 
+{
+	playerPosition = [0, 0, 0,false]
+}
+else 
+{
+	playerPosition = [(getpos player select 0),(getpos player select 1), 0];
+	playerPosition set[count playerPosition, player getVariable "unconscious"];
+};
+
 _packet set[9, playerPosition];
 
 [_packet,"TON_fnc_update",false,false] spawn life_fnc_MP;

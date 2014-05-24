@@ -8,10 +8,11 @@
 private["_target","_unit"];
 _target = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if (isNull _target) exitWith {};
+if (life_action_inUse) exitWith {};
 if (!isPlayer _target) exitWith {};
 if(!(_unit getVariable ["unconscious",false])) exitWith {};
 if(player distance _unit > 4) exitWith {};
-
+life_action_inUse = true;
 [[player], "life_fnc_reviveAction", _target, false] spawn BIS_fnc_MP;
 [] spawn {
 	player playMove "AinvPknlMstpSnonWnonDr_medic0";
@@ -29,7 +30,7 @@ if(player distance _unit > 4) exitWith {};
  _reward = 500;
  life_atmcash = life_atmcash + _reward;
 hint format["You have revived %1\n\nYou have received $%2 for saving a life!",_target,_reward];
-
+life_action_inUse = false;
 /*
 if (alive _target) then
 	{

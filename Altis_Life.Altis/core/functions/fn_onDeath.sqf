@@ -127,7 +127,7 @@ life_cash = 0;
 life_holstered_weapon = nil;
 
 license_civ_rebel = false;
-playerPosition = [0,0,0];
+playerPosition = [0,0,0,false];
 [] call life_fnc_sessionUpdate;
 
 player setVariable ["restrained", false, true];
