@@ -92,7 +92,7 @@ if(_isVehicle) then {
 					clearItemCargoGlobal _box;
 					clearBackpackCargoGlobal _box;
 				
-					if(typeOf _box == "B_supplyCrate_F" && !(_weaponsAdded)) then {
+					if(typeOf _box == "Box_IND_WpsSpecial_F" && !(_weaponsAdded)) then {
 						
 					//diag_log format ["%1", _cargo];
 					
@@ -141,7 +141,7 @@ if(_isVehicle) then {
 
 			sleep 300;
 
-			_boxes = nearestObjects [_house, ["Land_Box_AmmoOld_F","B_supplyCrate_F"], 5]; 
+			_boxes = nearestObjects [_house, ["Land_Box_AmmoOld_F","Box_IND_WpsSpecial_F"], 5]; 
 			_house setVariable ["life_locked", 1, true];
 			_house setVariable ["storage_locked", 0, true];
 		

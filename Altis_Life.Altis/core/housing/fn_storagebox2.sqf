@@ -1,7 +1,7 @@
 		private["_item", "_house", "_houseId", "_owners", "_uid", "_maxCount", "_count", "_handle", "_box", "_containers", "_containerId", "_pos", "_storageData"];
 
 
-		_box= "B_supplyCrate_F" createVehicle [0,0,0];
+		_box= "Box_IND_WpsSpecial_F" createVehicle [0,0,0];
 		_box attachTo[player,[0,2,0]];
 		_box setDir 90;
 		

@@ -46,7 +46,7 @@
 				clearItemCargoGlobal _box;
 				clearBackpackCargoGlobal _box;
 				
-				if(typeOf _box == "B_supplyCrate_F" && !(_weaponsAdded)) then {
+				if(typeOf _box == "Box_IND_WpsSpecial_F" && !(_weaponsAdded)) then {
 					
 					//diag_log format ["%1", _cargo];
 					

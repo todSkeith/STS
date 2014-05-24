@@ -19,7 +19,7 @@ if(_num < 1) exitWith {hint "You can't enter anything below 1!";};
 
 _weight = 0;
 _used = (cursorTarget getVariable ["Trunk", [[],0]]) select 1;
-_boxes = nearestObjects [position player, ["Land_Box_AmmoOld_F","B_supplyCrate_F"], 5];
+_boxes = nearestObjects [position player, ["Land_Box_AmmoOld_F","Box_IND_WpsSpecial_F"], 5];
 {	
 	_box_data = [_x] call life_fnc_vehicleWeight;
 	_weight = _weight + (_box_data select 0);

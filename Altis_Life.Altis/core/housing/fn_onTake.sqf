@@ -20,7 +20,7 @@ if(_owner == "") exitWith {
 };
 // quick'n dirty
 
-if(typeOf _container == "B_supplyCrate_F") then {
+if(typeOf _container == "Box_IND_WpsSpecial_F") then {
 	
 	_wc = getWeaponCargo _container;
 	_mc = getMagazineCargo _container;

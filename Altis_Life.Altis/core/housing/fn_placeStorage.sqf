@@ -14,7 +14,7 @@ _owners = _house getVariable["life_homeOwners", []];
 _uid = getPlayerUID player;
 
 if (player distance _house > 20) exitWith { hint "You must be inside a house to place storage."; };
-if (_item == "storage2" && count (nearestObjects [position _house, ["B_supplyCrate_F"], 5]) > 0) exitWith { hint "You can just place one large storage."; };
+if (_item == "storage2" && count (nearestObjects [position _house, ["Box_IND_WpsSpecial_F"], 5]) > 0) exitWith { hint "You can just place one large storage."; };
 if (_item == "storage1" && count (nearestObjects [position _house, ["Land_Box_AmmoOld_F"], 5]) > 0) exitWith { hint "You can just place one small storage."; };
 if (!(_uid in _owners)) exitWith { hint "You do not own this house and cannot place storage within it."; };
 
@@ -37,7 +37,7 @@ switch (_item) do {
 		_box allowDamage false;
 	};
 	case "storage2" : {
-		_box = "B_supplyCrate_F" createVehicle _pos;		
+		_box = "Box_IND_WpsSpecial_F" createVehicle _pos;		
 		_box setPosATL _pos;
 		_box allowDamage false;
 	};
