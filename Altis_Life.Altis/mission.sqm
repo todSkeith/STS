@@ -5416,7 +5416,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=1399;
+		items=1451;
 		class Item0
 		{
 			position[]={8065.1616,35.674362,24985.314};
@@ -19411,10 +19411,582 @@ class Mission
 			vehicle="Land_CncWall4_F";
 			skill=0.60000002;
 		};
+		class Item1399
+		{
+			position[]={14133.243,17.319159,16432.912};
+			azimut=-191.34363;
+			special="NONE";
+			id=1719;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1400
+		{
+			position[]={14136.507,17.366053,16433.557};
+			azimut=-191.34363;
+			special="NONE";
+			id=1720;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1401
+		{
+			position[]={14139.746,17.372328,16434.203};
+			azimut=-191.34363;
+			special="NONE";
+			id=1721;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1402
+		{
+			position[]={14143.636,17.382544,16434.965};
+			azimut=-191.34363;
+			special="NONE";
+			id=1722;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1403
+		{
+			position[]={14146.899,17.364597,16435.609};
+			azimut=-191.34363;
+			special="NONE";
+			id=1723;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1404
+		{
+			position[]={14150.139,17.344774,16436.256};
+			azimut=-191.34363;
+			special="NONE";
+			id=1724;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1405
+		{
+			position[]={14154.374,17.375154,16437.141};
+			azimut=-191.34363;
+			special="NONE";
+			id=1725;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1406
+		{
+			position[]={14157.638,17.42038,16437.785};
+			azimut=-191.34363;
+			special="NONE";
+			id=1726;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1407
+		{
+			position[]={14160.877,17.44273,16438.432};
+			azimut=-191.34363;
+			special="NONE";
+			id=1727;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1408
+		{
+			position[]={14164.77,17.453079,16439.307};
+			azimut=-191.34363;
+			special="NONE";
+			id=1728;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1409
+		{
+			position[]={14168.033,17.476812,16439.951};
+			azimut=-191.34363;
+			special="NONE";
+			id=1729;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1410
+		{
+			position[]={14171.272,17.542971,16440.598};
+			azimut=-191.34363;
+			special="NONE";
+			id=1730;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1411
+		{
+			position[]={14175.162,17.582325,16441.359};
+			azimut=-191.34363;
+			special="NONE";
+			id=1731;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1412
+		{
+			position[]={14178.426,17.518566,16442.004};
+			azimut=-191.34363;
+			special="NONE";
+			id=1732;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1413
+		{
+			position[]={14181.665,17.495955,16442.65};
+			azimut=-191.34363;
+			special="NONE";
+			id=1733;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1414
+		{
+			position[]={14185.9,17.434788,16443.535};
+			azimut=-191.34363;
+			special="NONE";
+			id=1734;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1415
+		{
+			position[]={14189.164,17.417187,16444.18};
+			azimut=-191.34363;
+			special="NONE";
+			id=1735;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1416
+		{
+			position[]={14192.403,17.390858,16444.826};
+			azimut=-191.34363;
+			special="NONE";
+			id=1736;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1417
+		{
+			position[]={14138.052,17.940683,16412.389};
+			azimut=-188.81111;
+			special="NONE";
+			id=1737;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1418
+		{
+			position[]={14141.338,17.921803,16412.896};
+			azimut=-188.81111;
+			special="NONE";
+			id=1738;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1419
+		{
+			position[]={14144.604,17.903051,16413.396};
+			azimut=-188.81111;
+			special="NONE";
+			id=1739;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1420
+		{
+			position[]={14148.521,17.880594,16413.984};
+			azimut=-188.81111;
+			special="NONE";
+			id=1740;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1421
+		{
+			position[]={14151.811,17.8617,16414.488};
+			azimut=-188.81111;
+			special="NONE";
+			id=1741;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1422
+		{
+			position[]={14155.078,17.849907,16414.99};
+			azimut=-188.81111;
+			special="NONE";
+			id=1742;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1423
+		{
+			position[]={14159.343,17.8433,16415.682};
+			azimut=-188.81111;
+			special="NONE";
+			id=1743;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1424
+		{
+			position[]={14162.635,17.838247,16416.184};
+			azimut=-188.81111;
+			special="NONE";
+			id=1744;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1425
+		{
+			position[]={14165.9,17.838919,16416.688};
+			azimut=-188.81111;
+			special="NONE";
+			id=1745;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1426
+		{
+			position[]={14170.063,17.833162,16417.434};
+			azimut=-189.67981;
+			special="NONE";
+			id=1746;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1427
+		{
+			position[]={14173.346,17.822475,16417.982};
+			azimut=-189.67981;
+			special="NONE";
+			id=1747;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1428
+		{
+			position[]={14176.601,17.816484,16418.535};
+			azimut=-189.67981;
+			special="NONE";
+			id=1748;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1429
+		{
+			position[]={14180.512,17.810402,16419.184};
+			azimut=-189.67981;
+			special="NONE";
+			id=1749;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1430
+		{
+			position[]={14183.793,17.805292,16419.736};
+			azimut=-189.67981;
+			special="NONE";
+			id=1750;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1431
+		{
+			position[]={14187.048,17.800217,16420.287};
+			azimut=-189.67981;
+			special="NONE";
+			id=1751;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1432
+		{
+			position[]={14191.308,17.795269,16421.047};
+			azimut=-189.67981;
+			special="NONE";
+			id=1752;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1433
+		{
+			position[]={14194.59,17.794537,16421.598};
+			azimut=-189.67981;
+			special="NONE";
+			id=1753;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1434
+		{
+			position[]={14197.844,17.792879,16422.152};
+			azimut=-189.67981;
+			special="NONE";
+			id=1754;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1435
+		{
+			position[]={14131.271,17.31896,16430.785};
+			azimut=-102.30046;
+			special="NONE";
+			id=1755;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1436
+		{
+			position[]={14131.978,17.388903,16427.543};
+			azimut=-102.30046;
+			special="NONE";
+			id=1756;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1437
+		{
+			position[]={14132.678,17.484066,16424.314};
+			azimut=-102.30046;
+			special="NONE";
+			id=1757;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1438
+		{
+			position[]={14133.503,17.7302,16420.441};
+			azimut=-102.30046;
+			special="NONE";
+			id=1758;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1439
+		{
+			position[]={14134.209,17.943981,16417.191};
+			azimut=-102.30046;
+			special="NONE";
+			id=1759;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1440
+		{
+			position[]={14134.905,17.949799,16413.965};
+			azimut=-102.30046;
+			special="NONE";
+			id=1760;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1441
+		{
+			position[]={14203.657,17.330011,16445.299};
+			azimut=-114.54731;
+			special="NONE";
+			id=1761;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1442
+		{
+			position[]={14205.032,17.443096,16442.264};
+			azimut=-114.54731;
+			special="NONE";
+			id=1762;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1443
+		{
+			position[]={14206.398,17.548487,16439.262};
+			azimut=-114.54731;
+			special="NONE";
+			id=1763;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1444
+		{
+			position[]={14208.033,17.635361,16435.645};
+			azimut=-114.54731;
+			special="NONE";
+			id=1764;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1445
+		{
+			position[]={14209.409,17.709414,16432.619};
+			azimut=-114.54731;
+			special="NONE";
+			id=1765;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1446
+		{
+			position[]={14210.774,17.725418,16429.604};
+			azimut=-114.54731;
+			special="NONE";
+			id=1766;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1447
+		{
+			position[]={14202.014,17.787142,16422.855};
+			azimut=-189.67981;
+			special="NONE";
+			id=1767;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1448
+		{
+			position[]={14205.268,17.785736,16423.41};
+			azimut=-189.67981;
+			special="NONE";
+			id=1768;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1449
+		{
+			position[]={14209.452,17.765614,16424.84};
+			azimut=-192.03459;
+			special="NONE";
+			id=1769;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
+		class Item1450
+		{
+			position[]={14212.681,17.744596,16425.527};
+			azimut=-192.03459;
+			special="NONE";
+			id=1770;
+			side="EMPTY";
+			vehicle="Land_CncBarrier_stripes_F";
+			skill=0.60000002;
+			init=" this allowDamage false; this allowDamage false; this setVectorUp [0,0,1];";
+		};
 	};
 	class Markers
 	{
-		items=288;
+		items=289;
 		class Item0
 		{
 			position[]={8459.6777,104.56568,25131.203};
@@ -21716,6 +22288,16 @@ class Mission
 			position[]={14146.075,16.927031,16473.121};
 			name="kart_1";
 			type="Empty";
+		};
+		class Item288
+		{
+			position[]={14128.725,17.22946,16438.742};
+			name="Phat Boys Go Karts";
+			text="God's Go Karts ";
+			type="mil_box";
+			colorName="Color2_FD_F";
+			a=0.5;
+			b=0.5;
 		};
 	};
 	class Sensors

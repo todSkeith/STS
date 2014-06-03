@@ -26,7 +26,7 @@ switch (_filter) do
 		["U_C_Poloshirt_tricolour","Poloshirt Tricolor",350],
 		["U_C_Poor_2","Rag tagged clothes",250],
 		["U_C_HunterBody_grn","Green Hunter",1500],
-		["U_IG_Guerilla2_2","Green stripped shirt & Pants",650],
+		["U_IG_Guerilla2_2","Green stripped shirt & Pants",650],																												
 		["U_IG_Guerilla3_1","Brown Jacket & Pants",735],
 		["U_IG_Guerilla2_3","The Outback Rangler",1200],
 		["U_OG_Guerilla3_2","Tie Suite",5000],
@@ -35,7 +35,18 @@ switch (_filter) do
 		["U_C_Scientist","Mechanic Blue",3000],	
 		["U_NikosBody","Badass Uniform",5000],
 		["U_C_Journalist","Journalist Clothes",5000],
-		["U_NikosAgedBody","Business Casual",5000]
+		["U_NikosAgedBody","Business Casual",5000],
+		["U_C_Driver_1_black",nil,1500],
+ 		["U_C_Driver_1_blue",nil,1500],
+ 		["U_C_Driver_1_red",nil,1500],
+ 		["U_C_Driver_1_orange",nil,1500],
+ 		["U_C_Driver_1_green",nil,1500],
+ 		["U_C_Driver_1_white",nil,1500],
+ 		["U_C_Driver_1_yellow",nil,1500],
+ 		["U_C_Driver_2",nil,3500],
+ 		["U_C_Driver_1",nil,3600],
+ 		["U_C_Driver_3",nil,3700],
+ 		["U_C_Driver_4",nil,3700]
 		];
 	};
 
@@ -67,7 +78,17 @@ switch (_filter) do
 			["H_Cap_blk_CMMG","Black Cap",200],
 			["H_Cap_headphones","HeadPhones Cap",800],
 			["H_Cap_press","Press Cap",800],
-			["H_Cap_tan",nil,150]
+			["H_Cap_tan",nil,150],
+			["H_RacingHelmet_1_black_F",nil,1000],
+ 			["H_RacingHelmet_1_red_F",nil,1000],
+ 			["H_RacingHelmet_1_white_F",nil,1000],
+ 			["H_RacingHelmet_1_blue_F",nil,1000],
+ 			["H_RacingHelmet_1_yellow_F",nil,1000],
+ 			["H_RacingHelmet_1_green_F",nil,1000],
+ 			["H_RacingHelmet_1_F",nil,2500],
+ 			["H_RacingHelmet_2_F",nil,2500],
+ 			["H_RacingHelmet_3_F",nil,2500],
+ 			["H_RacingHelmet_4_F",nil,2500]
 		];
 	};
 
