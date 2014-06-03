@@ -95,7 +95,7 @@ switch(_shop) do
 						["Chemlight_yellow",nil,0],
 						["Chemlight_green",nil,0],
 						["Chemlight_blue",nil,0],
-						["20Rnd_762x51_Mag","Sell This To Give Comp",0]
+						["20Rnd_762x51_mag","Sell This To Give Comp",0]
 					]
 				];
 			};
