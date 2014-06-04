@@ -22162,7 +22162,7 @@ class Mission
 		{
 			position[]={7827.0654,113.0984,16136.572};
 			name="lumbersell";
-			text="Lumber Yard";
+			text="Glock's Chop and Stock Lumber Yard";
 			type="mil_box";
 			colorName="ColorBrown";
 		};
