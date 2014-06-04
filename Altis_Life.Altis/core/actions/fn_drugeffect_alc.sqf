@@ -28,4 +28,5 @@ sleep 6;
 "dynamicBlur" ppEffectEnable false;
 "chromAberration" ppEffectEnable false;
 resetCamShake;
+
 if(!alive player) exitWith {};
