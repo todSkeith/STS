@@ -15,7 +15,7 @@ for "_i" from 0 to 44 do
 	"chromAberration" ppEffectCommit 1;
 	addcamShake[random 3, 1, random 3];
 	sleep 1;
-}
+};
 
 //Stop the ppeffects
 "chromAberration" ppEffectAdjust [0,0,true];
