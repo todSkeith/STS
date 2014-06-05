@@ -124,5 +124,5 @@ if(_tUnc) then {
 	if((_tZip || _tSur || _tKout) && !_tEsc) then { _Btn4 ctrlEnable true; } else { _Btn4 ctrlEnable false; };
 	
 	_Btn4 ctrlSetText localize "STR_pInAct_RobPerson";
-	_Btn4 buttonSetAction "player playMove ""AinvPknlMstpSnonWnonDnon_medic1""; sleep 3; [life_pInact_curTarget] call life_fnc_robAction; closeDialog 0;";
+	_Btn4 buttonSetAction "player playMove "AinvPknlMstpSnonWnonDnon_medic1"; sleep 3; [life_pInact_curTarget] call life_fnc_robAction; closeDialog 0;";
 };
