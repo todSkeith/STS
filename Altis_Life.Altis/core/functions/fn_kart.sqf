@@ -12,7 +12,7 @@ life_action_inUse = true;
 
 while {_spawned} do
 {
-	waitUntil{((_kart distance (getMarkerPos "kart_1")) > 75)};
+	waitUntil{((_kart distance (getMarkerPos "kart_1")) > 200)};
 	if((_kart distance (getMarkerPos "kart_1")) > 75) then
 	{
 		hint "Please stay within the track";

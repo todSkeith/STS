@@ -420,8 +420,6 @@ life_garage_prices =
 	["B_Truck_01_transport_F",25650],
 	["B_Truck_01_box_F", 35000],
 	["O_MRAP_02_F",45000],
-	["B_Heli_Light_01_F",45000],
-	["O_Heli_Light_02_unarmed_F",65000],
 	["C_Rubberboat",400],
 	["C_Boat_Civil_01_F",4500],
 	["B_Boat_Transport_01_F",450],
@@ -430,6 +428,17 @@ life_garage_prices =
 	["B_SDV_01_F",25000],
 	["B_MRAP_01_F",7500]
 ];
+
+if(playerSide == independent) then 
+{
+	life_garage_prices set [count life_garage_prices, ["B_Heli_Light_01_F",15000]];
+	life_garage_prices set [count life_garage_prices, ["O_Heli_Light_02_unarmed_F",25000]];
+}
+else 
+{
+	life_garage_prices set [count life_garage_prices, ["B_Heli_Light_01_F",45000]];
+	life_garage_prices set [count life_garage_prices, ["O_Heli_Light_02_unarmed_F",65000]];
+};
 __CONST__(life_garage_prices,life_garage_prices);
 
 life_garage_sell =
