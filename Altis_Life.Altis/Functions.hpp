@@ -136,6 +136,7 @@ class Life_Client_Core
 		class houseSession {};
 		class sessionReceive {};
 		class sessionUpdate {};
+		class quickSync {};
 		class sessionCreate {};
 		class sessionHandle {};
 		class syncData {};

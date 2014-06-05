@@ -6,7 +6,7 @@
 	Description: when handle damage calls this file, it will do all of the actions needed to be unconscious.
 */
 
-private["_unit", "_source"];
+private["_unit", "_source","_paramName","_param"];
 _unit = _this select 0;
 _source = _this select 1;
 life_bleedout = time + (60*15);
@@ -17,7 +17,11 @@ _unit setVariable["Escorting",false,true];
 _unit setVariable["zipTie",false,true];
 _unit setVariable["surrender",false,true];
 
-[] call life_fnc_sessionUpdate;
+
+_param = [(getpos player select 0),(getpos player select 1), 0];
+_param set[count _param, player getVariable "unconscious"];
+_paramName = "playerPosition";
+[_paramName,_param] spawn life_fnc_quickSync;
 
 if(vehicle player != player) then
 {
