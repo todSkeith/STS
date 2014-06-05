@@ -19,11 +19,3 @@ switch (playerSide) do
 	};
 
 };
-//[_packet,"TON_fnc_quickUpdate",false,false] spawn life_fnc_MP;
-/*
-_paramName = "playerPosition";
-_param = [(getpos player select 0),(getpos player select 1), 0];
-_param set [count _param, player getvariable "unconscious"];
-_packet = [player,name player,playerSide,getPlayerUID player,_paramName,_param];
-[_packet] call TON_fnc_quickUpdate;
-*/

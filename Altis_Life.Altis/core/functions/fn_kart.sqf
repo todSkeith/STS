@@ -19,5 +19,6 @@ while {_spawned} do
 		_kart setVelocity [0, 0, 0];
 		deleteVehicle _kart;
 		_spawned = false;
+		life_action_inUse = false;
 	};
 };
