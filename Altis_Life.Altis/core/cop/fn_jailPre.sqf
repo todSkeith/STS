@@ -24,8 +24,8 @@ diag_log "Text Recived from Value Box";
 
 diag_log "Start Value Check";
 if(!([_jailTime] call fnc_isnumber)) exitWith {hint "Please Enter a number."};
-if((parseNumber _jailTime) > 45) exitWith {hint "You can't jail someone for more than 45 minutes!"};
-if((parseNumber _jailTime) < 1) exitWith {hint "You can't jail someone for less that 1 minute!"};
+if((parseNumber _jailTime) > 90) exitWith {hint "You can't jail someone for more than 90 minutes!"};
+if((parseNumber _jailTime) < 1) exitWith {hint "You can't jail someone for less than 1 minute!"};
 diag_log "End Value Check";
 
 life_jail_unit = _unit;
