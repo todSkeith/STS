@@ -136,8 +136,7 @@ if(_sel == "") then
 			};
 		};
 	};
-};
-/*
+}
 else
 {
 
@@ -157,5 +156,4 @@ else
 
 [] call life_fnc_hudUpdate;
 //systemChat format ["Hitbox: %1 | Overall health: %2 | Hitbox health: %3 | Damage taken: %4",_sel,damage _unit,_unit getHitPointDamage _ghp,_damage];
-*/
 _damage;
