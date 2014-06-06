@@ -55,15 +55,5 @@ if(!_preset) then
             _vehicle animate ["HideConstruction", 0];
 
 		};
-		
-		
-		case "EMS_Heli":
-		{
-			_vehicle setPos [getPos warn select 0, getPos warn select 1, 20];
-			sleep 2;
-			_vehicle setDamage 0;
-			sleep 0.5;
-
-		};
 	};
 };
