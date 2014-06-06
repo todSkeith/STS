@@ -142,10 +142,10 @@ else
 
 	_ghp = switch (_sel) do
 	{
-		case ("body"): { "HitBody" };
-		case ("head"): { "HitHead" };
-		case ("hand_l"): { "HitHands" };
-		case ("leg_l"): { "HitLegs" };
+		case "body": { "HitBody" };
+		case "head": { "HitHead" };
+		case "hand_l": { "HitHands" };
+		case "leg_l": { "HitLegs" };
 	};
 	if (((_unit getHitPointDamage _ghp) + _damage) > 0.99) then
 	{
