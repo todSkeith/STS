@@ -211,6 +211,7 @@ class Life_Client_Core
 		class enableActions {};
 		class actionUpdate {};
 		class kart {};
+		class kart2 {};
 	};
 
 	class Network
