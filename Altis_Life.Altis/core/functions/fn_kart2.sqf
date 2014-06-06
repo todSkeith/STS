@@ -12,8 +12,9 @@ life_action_inUse = true;
 
 while {_spawned} do
 {
-	waitUntil{((_kart distance (getMarkerPos "kart_2")) > 75)};
-	if((_kart distance (getMarkerPos "kart_2")) > 75) then
+	//waitUntil{((_kart distance (getMarkerPos "kart_2")) > 75)};
+	sleep 15;
+	if((_kart distance (getMarkerPos "kart_2")) > 75 || !alive _kart) then
 	{
 		hint "Please stay within the track";
 		_kart setVelocity [0, 0, 0];
