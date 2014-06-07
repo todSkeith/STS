@@ -7,8 +7,8 @@
 */
 
 private["_unit", "_source","_paramName","_param"];
-_unit = _this select 0;
-_source = _this select 1;
+_unit = [_this,0,player,[Objnull]] call BIS_fnc_param;
+_source = _this select 1; //Not used?
 life_bleedout = time + (60*15);
 
 _unit setVariable["unconscious",true,true];
