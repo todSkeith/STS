@@ -26,6 +26,7 @@ if(!dialog) then {
 disableSerialization;
 
 _curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+if(life_action_inUse) exitWith {closeDialog 0;}; //already doing something
 if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
 if(!isPlayer _curTarget && side _curTarget == civilian) exitWith {closeDialog 0;}; //Bad side check?
 //Can't interact while restrained or dead
