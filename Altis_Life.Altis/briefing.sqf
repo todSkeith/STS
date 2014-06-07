@@ -22,6 +22,28 @@ player createDiarySubject ["controls","Controls"];
 	];
 */
 
+		[
+			"6/7/14",
+				"
+				Added: Go-karts (must have DLC)<br/>
+				Added: Two Go-kart track<br/>
+				Added: New sync system - Should fix the issues of losing money, positions, etc (still sync data)<br/>
+				Added: Go-kart uniforms to bruce’s<br/>
+				Added Vermin scope for cops and rebels<br/>
+				Added: New helicopter spawn for medics in kavala<br/>
+				Changed: Medic helicopter garage prices<br/>
+				Changed: Increased the amount of time police can send you to jail<br/>
+				Removed: Hunters and Ifrits<br/>
+				Fixed: Should no longer be stuck in jail<br/>
+				Fixed: Holstering your weapon and logging out no longer makes you lose your weapon<br/>
+				Fixed: Only medics can now access the medic outpost<br/>
+				Fixed: You will no longer be revived if you log out and then log back in when you are downed<br/>
+                Fixed: Drug and alcohol effects, should no longer last forever<br/>
+				"
+		]
+	];
+
+
 player createDiaryRecord["changelog",
 		[
 			"5/12/14",
