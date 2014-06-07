@@ -25,8 +25,8 @@ if (_projectile in ["mini_Grenade"]) then{
 
 if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then
 {
-	//if(side _source == west) then 
-	//{
+	if(side _source == west || _source getVariable ["bountyhunter",false]) then 
+	{
 		_unit allowDamage false;
 		_damage = 0;
 		if(_projectile in ["B_9x21_Ball","B_556x45_dual"]) then
@@ -78,7 +78,7 @@ if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle
 			};
 		};
 
-	//};
+	};
 };
 
 _unit allowDamage true;
