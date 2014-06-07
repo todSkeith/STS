@@ -139,7 +139,12 @@ if(_sel == "") then
 }
 else
 {
+	if (_sel == "head_hit" || _sel == "body" || _sel == "head") then {
+		_damage = 0;
+	};
+};
 
+/* I wish I knew why this shit doesn't work when it used to work fine before
 	_ghp = switch (_sel) do
 	{
 		case "body": { "HitBody" };
@@ -152,7 +157,7 @@ else
 		_unit setHitPointDamage [_ghp,0.99];
 		_damage = 0;
 	};
-};
+*/
 
 [] call life_fnc_hudUpdate;
 //systemChat format ["Hitbox: %1 | Overall health: %2 | Hitbox health: %3 | Damage taken: %4",_sel,damage _unit,_unit getHitPointDamage _ghp,_damage];
