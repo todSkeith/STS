@@ -20,7 +20,7 @@ player createDiarySubject ["controls","Controls"];
 				"
 		]
 	];
-
+*/
 player createDiaryRecord["changelog",
 		[
 			"6/7/14",
