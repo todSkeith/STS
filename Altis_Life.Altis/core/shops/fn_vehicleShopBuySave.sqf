@@ -235,7 +235,7 @@ switch(life_veh_shop) do
 };
 _index = lbCurSel 2302;
 _veh = lbData[2302,_index];
-if(_veh == "B_G_Offroad_01_armed_F" OR _veh == "B_MRAP_01_hmg_F") exitWith {hint "This vehicle cannot be bought permanently";};
+if(_veh in ["B_G_Offroad_01_armed_F","B_MRAP_01_hmg_F","B_MRAP_01_F","O_MRAP_02_F"]) exitWith {hint "This vehicle cannot be bought permanently";};
 if(!([_veh] call life_fnc_vehShopLicenses) && playerSide != independent) exitWith {hint "You do not have the required license!"};
 _color = lbValue[2303,(lbCurSel 2303)];
 _price = lbValue[2302,(lbCurSel 2302)];

@@ -153,6 +153,8 @@ switch (_shop) do
 		if(license_civ_rebel) then
 		{
 			_return set[count _return,
+			["O_MRAP_02_F",175000]];
+			_return set[count _return,
 			["B_G_Offroad_01_armed_F",750000]];
 		};
 	};
@@ -168,6 +170,8 @@ switch (_shop) do
 
 		if(license_civ_rebel) then
 		{
+			_return set[count _return,
+			["O_MRAP_02_F",175000]];
 			_return set[count _return,
 			["B_G_Offroad_01_armed_F",750000]];
 		};
@@ -242,10 +246,19 @@ switch (_shop) do
 		["C_Offroad_01_F",5000]];
 		_return set[count _return,
 		["C_SUV_01_F",20000]];
+		if(__GETC__(life_coplevel) > 4) then
+		{
+			_return set[count _return,
+			["B_MRAP_01_F",50000]];
+		};
 		if(__GETC__(life_adminlevel) > 0) then
 		{
 			_return set[count _return,
 			["B_MRAP_01_F",15000]];
+		};
+		if(__GETC__(life_donator) > 2) then
+		{
+			_return set[count _return,["C_Hatchback_01_sport_F",10000]];
 		};
 	};
 
@@ -257,10 +270,19 @@ switch (_shop) do
 		["C_Offroad_01_F",5000]];
 		_return set[count _return,
 		["C_SUV_01_F",20000]];
+		if(__GETC__(life_coplevel) > 4) then
+		{
+			_return set[count _return,
+			["B_MRAP_01_F",50000]];
+		};
 		if(__GETC__(life_adminlevel) > 0) then
 		{
 			_return set[count _return,
 			["B_MRAP_01_F",15000]];
+		};
+		if(__GETC__(life_donator) > 2) then
+		{
+			_return set[count _return,["C_Hatchback_01_sport_F",10000]];
 		};
 	};
 
@@ -272,10 +294,19 @@ switch (_shop) do
 		["C_Offroad_01_F",5000]];
 		_return set[count _return,
 		["C_SUV_01_F",20000]];
+		if(__GETC__(life_coplevel) > 4) then
+		{
+			_return set[count _return,
+			["B_MRAP_01_F",50000]];
+		};
 		if(__GETC__(life_adminlevel) > 0) then
 		{
 			_return set[count _return,
 			["B_MRAP_01_F",15000]];
+		};
+		if(__GETC__(life_donator) > 2) then
+		{
+			_return set[count _return,["C_Hatchback_01_sport_F",10000]];
 		};
 	};
 
@@ -287,10 +318,19 @@ switch (_shop) do
 		["C_Offroad_01_F",5000]];
 		_return set[count _return,
 		["C_SUV_01_F",20000]];
+		if(__GETC__(life_coplevel) > 4) then
+		{
+			_return set[count _return,
+			["B_MRAP_01_F",50000]];
+		};
 		if(__GETC__(life_adminlevel) > 0) then
 		{
 			_return set[count _return,
 			["B_MRAP_01_F",15000]];
+		};
+		if(__GETC__(life_donator) > 2) then
+		{
+			_return set[count _return,["C_Hatchback_01_sport_F",10000]];
 		};
 	};
 
