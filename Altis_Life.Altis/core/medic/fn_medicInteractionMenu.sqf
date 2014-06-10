@@ -26,13 +26,13 @@ if(!dialog) then {
 disableSerialization;
 
 _curTarget = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
-if(life_action_inUse) exitWith {closeDialog 0;}; //already doing something
 if(isNull _curTarget) exitWith {closeDialog 0;}; //Bad target
 if(!isPlayer _curTarget && side _curTarget == civilian) exitWith {closeDialog 0;}; //Bad side check?
 //Can't interact while restrained or dead
-if (player getVariable["zipTie",false] || player getVariable["restrained",false] || player getVariable["surrender",false] || player getVariable ["unconscious",false]) exitWith {closeDialog 0;};
+if (player getVariable["zipTie",false] || player getVariable["restrained",false] || player getVariable["surrender",false]) exitWith {closeDialog 0;};
 //Double check player side
 if (playerSide != independent) exitWith {closeDialog 0;};
+if (life_reviving) exitWith {closeDialog 0;};
 
 
 _display = findDisplay 37400;

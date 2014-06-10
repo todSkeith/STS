@@ -23004,7 +23004,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=291;
+		items=292;
 		class Item0
 		{
 			position[]={8459.6777,104.56568,25131.203};
@@ -25334,6 +25334,14 @@ class Mission
 			colorName="ColorKhaki";
 			a=0.5;
 			b=0.5;
+		};
+		class Item291
+		{
+			position[]={3925.6118,18.522749,12904.547};
+			name="med_airShop";
+			text="Medic Air Shop";
+			type="n_air";
+			colorName="ColorRed";
 		};
 	};
 	class Sensors

@@ -12,9 +12,9 @@ if (isNull _medic) exitWith {};
 if(!(player getVariable ["unconscious",false])) exitWith {};
 
 titleText [format ["You are being revived by %1...",name _medic],"PLAIN"];
+player setVariable ["unconscious",false,true];
 sleep 38.58;
 if (!alive player) exitWith {}; //stops reviving if they died
-player setVariable ["unconscious",false,true];
 //deleteMarker name player;
 player enableSimulation true;
 player allowDamage true;

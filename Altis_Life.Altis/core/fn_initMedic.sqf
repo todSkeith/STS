@@ -14,7 +14,7 @@ waitUntil {!(isNull (findDisplay 46))};
 //{
 //	case (!(str(player) in ["medic_nil"])):
 //	{
-		if((__GETC__(life_medicLvl)) < 1 && (__GETC__(life_adminlevel)) == 0) then {
+		if((__GETC__(life_medicLvl)) == 1 || (__GETC__(life_adminlevel)) > 0) then {
 			//systemChat format ["Medic login accepted. Medic level: %1 Admin level: %2",__GETC__(life_mediclvl),__GETC__(life_adminlevel)];
 		}
 		else {
