@@ -25,8 +25,8 @@ if (_projectile in ["mini_Grenade"]) then{
 
 if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then
 {
-	if(side _source == west || _source getVariable ["bountyhunter",false]) then 
-	{
+	//if(side _source == west) then 
+	//{
 		_unit allowDamage false;
 		_damage = 0;
 		if(_projectile in ["B_9x21_Ball","B_556x45_dual"]) then
@@ -78,7 +78,7 @@ if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle
 			};
 		};
 
-	};
+	//};
 };
 
 _unit allowDamage true;
@@ -102,7 +102,7 @@ if(_sel == "") then
 		_unit allowDamage false;
 
 		_damage = 0;
-		if(!(_unit getVariable "unconscious")) then 
+		if(!(_unit getVariable ["unconscious", false])) then 
 		{
 			_unit setVariable["unconscious",true,true];
 			if(isNull _source && alive _unit) then
@@ -139,12 +139,7 @@ if(_sel == "") then
 }
 else
 {
-	if (_sel == "head_hit" || _sel == "body" || _sel == "head") then {
-		_damage = 0;
-	};
-};
 
-/* I wish I knew why this shit doesn't work when it used to work fine before
 	_ghp = switch (_sel) do
 	{
 		case "body": { "HitBody" };
@@ -157,7 +152,7 @@ else
 		_unit setHitPointDamage [_ghp,0.99];
 		_damage = 0;
 	};
-*/
+};
 
 [] call life_fnc_hudUpdate;
 //systemChat format ["Hitbox: %1 | Overall health: %2 | Hitbox health: %3 | Damage taken: %4",_sel,damage _unit,_unit getHitPointDamage _ghp,_damage];
