@@ -2,8 +2,6 @@
 	Monitor ESC Menu,
 	this file is temporary and will be rolled into a FSM later on.
 */
-if((call life_adminlevel) > 0) exitWith {};
-
 while {true} do
 {
 	waitUntil {!isNull (findDisplay 49)};
