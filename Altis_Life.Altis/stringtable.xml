@@ -437,6 +437,24 @@
 			<Original>Impound Vehicle</Original>
 		</Key>
 	</Package>
+	<Package name="House_Interaction">
+		<Key ID="STR_hInAct_Title">
+			<Original>House Interaction Menu</Original>
+		</Key>
+		<Key ID="STR_hInAct_Property">
+			<Original>Property Market</Original>
+		</Key>
+		<Key ID="STR_hInAct_Lock">
+			<Original>Lock House</Original>
+		</Key>
+		<Key ID="STR_hInAct_Unlock">
+			<Original>Unlock House</Original>
+		</Key>
+		<Key ID="STR_hInAct_OpenStorage">
+			<Original>Open Storage</Original>
+		</Key>
+	</Package>
+
 </Project>
 <Project name="Virtual Ammobox System">
 	<Package name="Main">
