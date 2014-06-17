@@ -1,4 +1,5 @@
-/*
+#include <macro.h>
+*
 	File: fn_buyHouse.sqf
 	Author: John "Paratus" VanderZwet
 	
@@ -21,7 +22,7 @@ _buildingID = [_house] call life_fnc_getBuildID;
 _buildingName = getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
 
 if (!license_civ_home) exitWith {hint "You do not have a home owners license!";};
-if (count life_houses > 4) exitWith {hint "You may only own five houses at one time.";};
+if ((count life_houses > 4) && (__GETC__(life_adminlevel) = 0)) exitWith {hint "You may only own five houses at one time.";};
 if (_price < 0 || _buildingID in life_public_houses || format["%1", _owners] != "[]") exitWith{hint "This building is not for sale";};
 if (life_atmcash < _price) exitWith {hint format["You do not have $%1 in your bank to purchase %2",[_price] call life_fnc_numberText,_buildingName];};
 
