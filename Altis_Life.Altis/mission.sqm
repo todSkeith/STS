@@ -73,8 +73,7 @@ class Mission
 		"A3_Characters_F_Kart",
 		"A3_Structures_F_Kart_Civ_SportsGrounds",
 		"A3_Soft_F_Kart_Kart_01",
-		"A3_Air_F_Beta_Heli_Transport_01",
-		"A3_Modules_F_Curator_Curator"
+		"A3_Air_F_Beta_Heli_Transport_01"
 	};
 	addOnsAuto[]=
 	{
@@ -85,7 +84,6 @@ class Mission
 		"A3_Characters_F_Beta",
 		"A3_Characters_F_INDEP",
 		"A3_Characters_F_Kart",
-		"A3_Modules_F_Curator_Curator",
 		"A3_Structures_F_Civ_Garbage",
 		"A3_Structures_F_Civ_Constructions",
 		"A3_Signs_F",
@@ -5545,12 +5543,13 @@ class Mission
 		};
 		class Item154
 		{
-			side="LOGIC";
+			side="CIV";
 			class Vehicles
 			{
 				items=1;
 				class Item0
 				{
+<<<<<<< HEAD
 <<<<<<< HEAD
 					position[]={14.280303,-0.036152262,14.778564};
 					class args
@@ -5587,20 +5586,26 @@ class Mission
 					offsetY=0.60000002;
 					special="NONE";
 >>>>>>> origin/master
+=======
+					position[]={8475.4248,177.67638,18270.77};
+					azimut=130;
+					offsetY=0.60000002;
+					special="NONE";
+>>>>>>> parent of 4450588... added module for Zeus. rest will be serverside
 					id=326;
-					side="LOGIC";
-					vehicle="ModuleCurator_F";
+					side="CIV";
+					vehicle="C_Driver_2_F";
 					leader=1;
-					lock="UNLOCKED";
 					skill=0.60000002;
-					text="STS_Zeus";
+					text="gasman1_5";
+					init="this enableSimulation false;       this allowDamage false;       this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];      this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];";
 				};
 			};
 		};
 	};
 	class Vehicles
 	{
-		items=1770;
+		items=1772;
 		class Item0
 		{
 			position[]={8065.1616,35.674362,24985.314};
@@ -23057,10 +23062,32 @@ class Mission
 			vehicle="Land_PlasticBarrier_01_line_x6_F";
 			skill=0.60000002;
 		};
+		class Item1770
+		{
+			position[]={8475.7559,177.73676,18269.426};
+			azimut=155;
+			offsetY=0.69999999;
+			id=2097;
+			side="EMPTY";
+			vehicle="Land_CashDesk_F";
+			skill=0.60000002;
+			init="this enableSimulation false; this allowDamage false;";
+		};
+		class Item1771
+		{
+			position[]={8476.8887,177.65892,18270.639};
+			azimut=447.44101;
+			offsetY=0.69999999;
+			id=2098;
+			side="EMPTY";
+			vehicle="Land_CashDesk_F";
+			skill=0.60000002;
+			init="this enableSimulation false; this allowDamage false;";
+		};
 	};
 	class Markers
 	{
-		items=292;
+		items=293;
 		class Item0
 		{
 			position[]={8459.6777,104.56568,25131.203};
@@ -25399,10 +25426,19 @@ class Mission
 			type="n_air";
 			colorName="ColorRed";
 		};
+		class Item292
+		{
+			position[]={8475.1484,177.65489,18271.207};
+			name="station1_6";
+			text="Carl's Premium Gas";
+			type="loc_Fuelstation";
+			colorName="ColorCIV";
+			angle=-0.677463;
+		};
 	};
 	class Sensors
 	{
-		items=7;
+		items=8;
 		class Item0
 		{
 			position[]={5402.209,20.026863,14545.803};
@@ -25520,6 +25556,23 @@ class Mission
 			expActiv="{_x execVM ""core\functions\fn_repairshop.sqf""} forEach thislist ";
 			class Effects
 			{
+			};
+		};
+		class Item7
+		{
+			position[]={8480.7031,177.82245,18264.48};
+			a=2.5;
+			b=9;
+			angle=89.161697;
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			expCond="{vehicle _x iskindof ""LandVehicle""} count thislist > 0;";
+			expActiv="{_x execVM ""core\functions\fn_repairshop.sqf""} forEach thislist ";
+			class Effects
+			{
+				sound="FD_Timer_F";
 			};
 		};
 	};
