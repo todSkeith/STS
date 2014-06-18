@@ -5557,7 +5557,7 @@ class Mission
 						items=4;
 						class Item0
 						{
-							value="";
+							value="#adminLogged";
 							parentCls="ModuleCurator_F";
 							typeName="Owner";
 						};
