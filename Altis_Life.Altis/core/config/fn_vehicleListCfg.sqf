@@ -152,8 +152,8 @@ switch (_shop) do
 
 		if(license_civ_rebel) then
 		{
-			_return set[count _return,
-			["O_MRAP_02_F",175000]];
+			//_return set[count _return,
+			//["O_MRAP_02_F",175000]];
 			_return set[count _return,
 			["B_G_Offroad_01_armed_F",750000]];
 		};
@@ -170,8 +170,8 @@ switch (_shop) do
 
 		if(license_civ_rebel) then
 		{
-			_return set[count _return,
-			["O_MRAP_02_F",175000]];
+			//_return set[count _return,
+			//["O_MRAP_02_F",175000]];
 			_return set[count _return,
 			["B_G_Offroad_01_armed_F",750000]];
 		};
