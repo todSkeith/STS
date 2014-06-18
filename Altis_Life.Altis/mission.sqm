@@ -5551,6 +5551,7 @@ class Mission
 				items=1;
 				class Item0
 				{
+<<<<<<< HEAD
 					position[]={14.280303,-0.036152262,14.778564};
 					class args
 					{
@@ -5580,6 +5581,12 @@ class Mission
 							typeName="Forced";
 						};
 					};
+=======
+					position[]={8475.4248,177.67638,13270.77};
+					azimut=130;
+					offsetY=0.60000002;
+					special="NONE";
+>>>>>>> origin/master
 					id=326;
 					side="LOGIC";
 					vehicle="ModuleCurator_F";

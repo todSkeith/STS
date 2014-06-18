@@ -32,10 +32,7 @@ onEachFrame
 					case (9) : {_name = format["Chief %1", name _x];_icon = MISSION_ROOT + "icons\Chief_icon.paa";};
 					default {_name = name _x; _icon = ""; _width = 0; _height = 0;}
 				};
-                if (_x getVariable["coplevel", 0] > 0) then
-				{
-					_icon = [((_x getVariable["coplevel", 0]) - 1),"texture"] call BIS_fnc_rankParams;
-				};
+
                 drawIcon3D [_icon,[1,1,1,1],_pos,_width,_height,0,_name,0,0.04];
             };
         };
