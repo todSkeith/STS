@@ -7,9 +7,10 @@
 
 	Edited and Modified by: CDawg
 */
-private["_house","_veh_data"];
-if(dialog) exitWith {};
-_house = cursorTarget;//[_this,0,Objnull,[Objnull]] call BIS_fnc_param;
+private["_house","_veh_data","_used"];
+//if(dialog) exitWith {};
+_house = nearestObject [player, "House_F"];
+
 if(isNull _house OR (count (_house getVariable["containers", []]) < 1)) exitWith {systemChat "Bad House";}; //Either a null or invalid vehicle type.
 
 if((_house getVariable ["trunk_in_use",false])) exitWith {hint "This storage is in use, only one person can use it at a time."};

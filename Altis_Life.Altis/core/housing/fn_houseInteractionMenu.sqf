@@ -50,13 +50,13 @@ _Btn7 = _display displayCtrl Btn7;
 _Btn8 = _display displayCtrl Btn8;
 _Btn9 = _display displayCtrl Btn9;
 */
-
+_house = nearestObject [player, "House"];
 life_hInact_curTarget = _house;
 _tName ctrlSetText "House Interaction Menu";
 private["_tRest","_tZip","_tUnc","_tEsc"];
 
-//Button 1: House Purchase/Sell Menu
 
+//Button 1: House Purchase/Sell Menu
 	_Btn1 ctrlSetText localize "STR_hInAct_Property";
 	_Btn1 buttonSetAction "[life_hInact_curTarget] call life_fnc_houseMenu;";
 
@@ -72,11 +72,11 @@ if ((_house getVariable["life_locked",0]) == 0) then {
 };
 
 //Button 3: Open Storage
-if (((player distance cursorTarget) < 3)) then { _Btn3 ctrlEnable true; } else { _Btn3 ctrlEnable false; };
-if((!isNull cursorTarget && (player distance cursorTarget) < 3 && cursorTarget isKindOf "House" && (count (cursorTarget getVariable["containers", []]) > 0))) then {
-	_Btn3 ctrlSetText localize "STR_hInAct_OpenStorage";
-	_Btn3 buttonSetAction "[life_hInact_curTarget] call life_fnc_openStorage; closeDialog 0;";
-};
+//if (((player distance cursorTarget) < 6)) then { _Btn3 ctrlEnable true; } else { _Btn3 ctrlEnable false; };
+//if(!isNull cursorTarget && (player distance cursorTarget) < 6 && cursorTarget isKindOf "House" && (count (cursorTarget getVariable["containers", []]) > 0) && (((getPlayerUID player) in (cursorTarget getVariable["life_homeOwners", []])) || (cursorTarget getVariable["life_locked", 1]) == 0))  then {
+//	_Btn3 ctrlSetText localize "STR_hInAct_OpenStorage";
+//	_Btn3 buttonSetAction "[life_hInact_curTarget] call life_fnc_openStorage; closeDialog 0;";
+//};
 
 //Button 4: Toggle Storage Locks
 /*if(_house getVariable["storage_locked",0]) then {
