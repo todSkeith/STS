@@ -41,7 +41,7 @@ if(primaryWeapon player != "") then
 	};
 
 };
-*/
+
 
 if(secondaryWeapon player != "") then
 {
@@ -65,6 +65,7 @@ if(handgunWeapon player != "") then
 
 };
 player selectWeapon (primaryWeapon player);
+*/
 
 if(isNil "_primitems") then {_primitems = ["","",""];};
 if(isNil "_secItems") then {_secItems = ["","",""];};
