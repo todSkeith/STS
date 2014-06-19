@@ -119,9 +119,11 @@ switch (_code) do
 		if (_shift && !_alt && !_ctrlKey) then {
 			if(holstered) then {
 				player action ["hideWeapon",player,player,0];
+				holstered = false;
 			}
 			else {
 				player action ["hideWeapon",player,player,100];
+				holstered = true;
 			}
 		};
 	};
