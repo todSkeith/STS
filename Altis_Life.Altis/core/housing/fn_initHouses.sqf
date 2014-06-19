@@ -8,7 +8,7 @@
 
 	Edited and Modified by: CDawg
 */
-
+private ["_boxPosition"];
 {
 	deleteMarkerLocal _x;
 }forEach life_houses_markers;
@@ -20,7 +20,7 @@
 		_house allowDamage false;
 		_marker = createMarkerLocal [format["house_%1", _i], ((life_houses select (_i-1)) select 0)];
 		_cargo = ((life_houses select (_i-1)) select 2);
-		//diag_log format ["cargo : %1", _cargo];
+	//diag_log format ["cargo : %1", _cargo];
 		_marker setMarkerTextLocal getText(configFile >> "CfgVehicles" >> (typeOf _house) >> "displayName");
 		_marker setMarkerShapeLocal "ICON";
 		_marker setMarkerColorLocal "ColorBlue";
@@ -32,14 +32,18 @@
 		_weaponsAdded = false;
 		
 		if(count _containers > 0) then {
-			{
+
+				_boxPosition = (_x select 3);
 				_pos = position _house;
-				_pos = [(_pos select 0), (_pos select 1), (_pos select 2) + 1];
-				_box = (_x select 2) createVehicle _pos;
+
+				hint format["_boxPosition = %1",_boxPosition];
+
+				_box = (_x select 2) createVehicle _boxPosition;
+				_box setPos [(_boxPosition select 0), (_boxPosition select 1), (_boxPosition select 2)];
+
 				_box setVariable["storage", (_x select 3), true];
 				_box setVariable["Trunk", [[],0], true];
 				_box setVariable["owner", getPlayerUID player, true];
-				_box setPosATL [_pos select 0, (_pos select 1), _pos select 2];	
 				
 				clearWeaponCargoGlobal _box; 
 				clearMagazineCargoGlobal _box;
@@ -73,8 +77,7 @@
 					
 					_weaponsAdded = true;
 				};
-			}forEach _containers;
-		};	
+			}forEach _containers;	
 	};
 
 player addEventHandler ["Take",{_this spawn life_fnc_onTake;}];

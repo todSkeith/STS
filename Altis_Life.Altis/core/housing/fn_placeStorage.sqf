@@ -6,10 +6,10 @@
 	place a storage container in a house
 */
 
-private["_item", "_house", "_houseId", "_owners", "_uid", "_maxCount", "_count", "_handle", "_box", "_containers", "_containerId", "_pos", "_storageData"];
+private["_boxposition", "_item", "_house", "_houseId", "_owners", "_uid", "_maxCount", "_count", "_handle", "_box", "_containers", "_containerId", "_pos", "_storageData"];
 
 _item = [_this,0,"",[""]] call BIS_fnc_param;
-_house = getPos player nearestObject "House_F"; 
+_house = nearestObject [player, "House"]; 
 _owners = _house getVariable["life_homeOwners", []];
 _uid = getPlayerUID player;
 
@@ -31,7 +31,7 @@ if (_count >= _maxCount) exitWith { hint "You cannot place any more containers a
 switch (_item) do {
 	case "storage1" : {
 		_box= "Land_Box_AmmoOld_F" createVehicle [0,0,0];
-		_box attachTo[player,[0,2,0]];
+		_box attachTo[player,[0,2,1.5]];
 		_box setDir 90;
 
 		clearWeaponCargoGlobal _box; 
@@ -42,7 +42,7 @@ switch (_item) do {
 		_box allowdamage false;
 
 		life_storage1_box = _box;
-		life_action_storageBoxDeploy = player addAction["Place Storage Box",{if(!isNull life_storage1_box) then {detach life_storage1_box; life_storage1_box = ObjNull;}; player removeAction life_action_storageBoxDeploy; life_action_storageBoxDeploy = nil;},"",999,false,false,"",'!isNull life_storage1_box'];
+		life_action_storageBoxDeploy = player addAction["Place Storage Box",{if(!isNull life_storage1_box) then {detach life_storage1_box; life_storage1_box = ObjNull; [_item] call life_fnc_updateBoxes;}; player removeAction life_action_storageBoxDeploy; life_action_storageBoxDeploy = nil;},"",999,false,false,"",'!isNull life_storage1_box'];
 		hint "Placing storage container...";
 		waitUntil {isNull life_storage1_box;};
 		hint "";
@@ -50,7 +50,7 @@ switch (_item) do {
 
 	case "storage2" : {
 		_box= "Box_IND_WpsSpecial_F" createVehicle [0,0,0];
-		_box attachTo[player,[0,2,0]];
+		_box attachTo[player,[0,2,1.5]];
 		_box setDir 90;
 
 		clearWeaponCargoGlobal _box; 
@@ -61,16 +61,18 @@ switch (_item) do {
 		_box allowdamage false;
 
 		life_storage2_box = _box;
-		life_action_storageBoxDeploy = player addAction["Place Storage Box",{if(!isNull life_storage2_box) then {detach life_storage2_box; life_storage2_box = ObjNull;}; player removeAction life_action_storageBoxDeploy; life_action_storageBoxDeploy = nil;},"",999,false,false,"",'!isNull life_storage2_box'];
+		life_action_storageBoxDeploy = player addAction["Place Storage Box",{if(!isNull life_storage2_box) then {detach life_storage2_box; life_storage2_box = ObjNull; [_item] call life_fnc_updateBoxes;}; player removeAction life_action_storageBoxDeploy; life_action_storageBoxDeploy = nil;},"",999,false,false,"",'!isNull life_storage2_box'];
 		hint "Placing storage container...";
 		waitUntil {isNull life_storage2_box;};
 		hint "";
 		};
 };
 
+_boxPosition = [(getPos _box select 0),(getPos _box select 1),(getPos _box select 2)-1];
+
 _houseId = [_house] call life_fnc_getBuildID;
 _containerId = format ["%1_%2", _houseId, _count];
-_storageData = [_containerId, _item, typeOf _box];
+_storageData = [_containerId, _item, typeOf _box, _boxposition];
 _containers set [count _containers, _storageData];
 _house setVariable ["containers", _containers, true];
 _box setVariable["owner", getPlayerUID player, true];
@@ -80,3 +82,5 @@ _handle = [] spawn life_fnc_sessionUpdate;
 //sleep 0.5;
 
 [[_house, _containers, playerSide, [[],0]],"BRUUUDIS_fnc_updateHouseStorage",false,false] spawn BIS_fnc_MP;
+
+
