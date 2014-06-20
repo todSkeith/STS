@@ -97,11 +97,11 @@ waitUntil {scriptDone _handle};
 _medicsOn = playersNumber independent;
 _lostCash = 0;
 if(_medicsOn < 1) then {_lostCash = 0};
-if(_medicsOn > 0 && _medicsOn < 5) then {_lostCash = 0.02};
-if(_medicsOn >= 5) then {_lostCash = 0.05};
+if(_medicsOn > 0 && _medicsOn < 5) then {_lostCash = 0.01};
+//if(_medicsOn >= 5) then {_lostCash = 0.05};
 if(side player == independent) then {_lostCash = 0};
 _lostCash = floor(life_atmcash * _lostCash);
-if(_lostCash > 100000) then {_lostCash = 100000};
+if(_lostCash > 50000) then {_lostCash = 50000};
 
 if(_lostCash == 0) then
 {

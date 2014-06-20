@@ -25,8 +25,8 @@ if (_projectile in ["mini_Grenade"]) then{
 
 if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then
 {
-	//if(side _source == west) then 
-	//{
+	if(side _source == west || player getVariable["playerIsBH",false]) then 
+	{
 		_unit allowDamage false;
 		_damage = 0;
 		if(_projectile in ["B_9x21_Ball","B_556x45_dual"]) then
@@ -78,7 +78,7 @@ if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle
 			};
 		};
 
-	//};
+	};
 };
 
 _unit allowDamage true;
@@ -126,7 +126,7 @@ if(_sel == "") then
 		}
 		else
 		{
-			if(_sel == "head" && (_unit getVariable "unconscious") && _damage >= 1) then
+			if((_sel == "head" || _sel == "head_hit") && !(_unit getVariable "unconscious") && _damage >= 1 && _source) then
 			{
 				_damage = 1;
 			}
@@ -143,7 +143,7 @@ else
 	_ghp = switch (_sel) do
 	{
 		case "body": { "HitBody" };
-		case "head": { "HitHead" };
+		//case "head": { "HitHead" };
 		case "hand_l": { "HitHands" };
 		case "leg_l": { "HitLegs" };
 	};
