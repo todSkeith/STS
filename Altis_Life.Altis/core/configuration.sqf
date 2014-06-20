@@ -303,7 +303,7 @@ sell_array =
 	["glass",900],
 	["fuelF",500],
 	["spikeStrip",1200],
-	["moonshine",950],
+	["moonshine",750],
 	["cement",1450],
 	["fcrab",400],
 	["mcrab",700],
