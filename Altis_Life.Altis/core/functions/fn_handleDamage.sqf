@@ -15,79 +15,6 @@ _curWep = "";
 
 if(isPlayer _source && _source isKindOf "Man") then {_curWep = currentWeapon _source;};
 
-// Stun grenades
-if (_projectile in ["mini_Grenade"]) then{
-	_unit allowDamage false;
-	_damage = 0;
-	[] spawn life_fnc_handleFlashbang;
-	_unit allowDamage true;
-	};
-
-if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then
-{
-	if(side _source == west || player getVariable["playerIsBH",false]) then 
-	{
-		_unit allowDamage false;
-		_damage = 0;
-		if(_projectile in ["B_9x21_Ball","B_556x45_dual"]) then
-		{
-			_damage = 0;
-			if(_curwep == "arifle_SDAR_F") then
-			{
-				if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 100) then
-				{
-					_damage = 0;
-					if(typeOf (vehicle player) == "B_Quadbike_01_F") then
-					{
-						player action ["Eject",vehicle player];
-						[_unit,_source] spawn life_fnc_tazed;
-					};
-
-					if(vehicle player == player) then
-					{
-						[_unit,_source] spawn life_fnc_tazed;
-					};
-				};
-			}
-			else
-			{
-				_damage = 0;
-				if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 100) then
-				{
-					_damage = 0;
-					if(typeOf (vehicle player) == "B_Quadbike_01_F") then
-					{
-						player action ["Eject",vehicle player];
-						[_unit,_source] spawn life_fnc_tazed;
-					};
-
-					if(vehicle player == player) then
-					{
-						[_unit,_source] spawn life_fnc_tazed;
-					};
-				};
-			};
-		}
-		else
-		{
-			_damage = 0;
-			//player allowDamage true;
-			if(_projectile == "") then
-			{
-				_damage = 0;
-			};
-		};
-
-	};
-};
-
-_unit allowDamage true;
-	
-if((player getVariable["restrained",false])) then
-{
-	_damage = 0;
-};
-
 // if(playerSide == west && side _source == west) then
 // {
 	// _damage = 0;
@@ -152,6 +79,78 @@ else
 		_unit setHitPointDamage [_ghp,0.99];
 		_damage = 0;
 	};
+};
+
+if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle_SDAR_F"]) then
+{
+	if(side _source == west || player getVariable["playerIsBH",false]) then 
+	{
+		_unit allowDamage false;
+		_damage = 0;
+		if(_projectile in ["B_9x21_Ball","B_556x45_dual"]) then
+		{
+			_damage = 0;
+			if(_curwep == "arifle_SDAR_F") then
+			{
+				if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 100) then
+				{
+					_damage = 0;
+					if(typeOf (vehicle player) == "B_Quadbike_01_F") then
+					{
+						player action ["Eject",vehicle player];
+						[_unit,_source] spawn life_fnc_tazed;
+					};
+
+					if(vehicle player == player) then
+					{
+						[_unit,_source] spawn life_fnc_tazed;
+					};
+				};
+			}
+			else
+			{
+				_damage = 0;
+				if(!life_istazed && !(player getVariable["restrained",false]) && player distance _source < 100) then
+				{
+					_damage = 0;
+					if(typeOf (vehicle player) == "B_Quadbike_01_F") then
+					{
+						player action ["Eject",vehicle player];
+						[_unit,_source] spawn life_fnc_tazed;
+					};
+
+					if(vehicle player == player) then
+					{
+						[_unit,_source] spawn life_fnc_tazed;
+					};
+				};
+			};
+		}
+		else
+		{
+			_damage = 0;
+			//player allowDamage true;
+			if(_projectile == "") then
+			{
+				_damage = 0;
+			};
+		};
+
+	};
+};
+
+// Stun grenades
+if (_projectile in ["mini_Grenade"]) then
+{
+	_unit allowDamage false;
+	_damage = 0;
+	[] spawn life_fnc_handleFlashbang;
+	_unit allowDamage true;
+};
+
+if((player getVariable["restrained",false])) then
+{
+	_damage = 0;
 };
 
 [] call life_fnc_hudUpdate;
