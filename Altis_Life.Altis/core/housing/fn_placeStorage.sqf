@@ -42,7 +42,7 @@ switch (_item) do {
 		_box allowdamage false;
 
 		life_storage1_box = _box;
-		life_action_storageBoxDeploy = player addAction["Place Storage Box",{if(!isNull life_storage1_box) then {detach life_storage1_box; life_storage1_box = ObjNull; [_item] call life_fnc_updateBoxes;}; player removeAction life_action_storageBoxDeploy; life_action_storageBoxDeploy = nil;},"",999,false,false,"",'!isNull life_storage1_box'];
+		life_action_storageBoxDeploy = player addAction["Place Storage Box",{if(!isNull life_storage1_box) then {detach life_storage1_box; life_storage1_box = ObjNull;}; player removeAction life_action_storageBoxDeploy; life_action_storageBoxDeploy = nil;},"",999,false,false,"",'!isNull life_storage1_box'];
 		hint "Placing storage container...";
 		waitUntil {isNull life_storage1_box;};
 		hint "";
@@ -61,18 +61,19 @@ switch (_item) do {
 		_box allowdamage false;
 
 		life_storage2_box = _box;
-		life_action_storageBoxDeploy = player addAction["Place Storage Box",{if(!isNull life_storage2_box) then {detach life_storage2_box; life_storage2_box = ObjNull; [_item] call life_fnc_updateBoxes;}; player removeAction life_action_storageBoxDeploy; life_action_storageBoxDeploy = nil;},"",999,false,false,"",'!isNull life_storage2_box'];
+		life_action_storageBoxDeploy = player addAction["Place Storage Box",{if(!isNull life_storage2_box) then {detach life_storage2_box; life_storage2_box = ObjNull;}; player removeAction life_action_storageBoxDeploy; life_action_storageBoxDeploy = nil;},"",999,false,false,"",'!isNull life_storage2_box'];
 		hint "Placing storage container...";
 		waitUntil {isNull life_storage2_box;};
 		hint "";
 		};
 };
 
-_boxPosition = [(getPos _box select 0),(getPos _box select 1),(getPos _box select 2)-1];
+_boxDirection = getDir _box;
+_boxPosition = [(getPos _box select 0),(getPos _box select 1),(getPos _box select 2),(getPosATL _box select 2)];
 
 _houseId = [_house] call life_fnc_getBuildID;
 _containerId = format ["%1_%2", _houseId, _count];
-_storageData = [_containerId, _item, typeOf _box, _boxposition];
+_storageData = [_containerId, _item, typeOf _box, _boxPosition, _boxDirection];
 _containers set [count _containers, _storageData];
 _house setVariable ["containers", _containers, true];
 _box setVariable["owner", getPlayerUID player, true];

@@ -14,7 +14,7 @@ _boxPosition = [(getPos _box select 0),(getPos _box select 1),(getPos _box selec
 
 _houseId = [_house] call life_fnc_getBuildID;
 _containerId = format ["%1_%2", _houseId, _count];
-_storageData = [_containerId, _item, typeOf _box, boxposition];
+_storageData = [_containerId, _item, typeOf _box, _boxposition];
 _containers set [count _containers, _storageData];
 _house setVariable ["containers", _containers, true];
 _box setVariable["owner", getPlayerUID player, true];
