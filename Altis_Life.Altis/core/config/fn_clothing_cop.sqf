@@ -127,7 +127,6 @@ switch (_filter) do
 		{
 			_ret set[count _ret,["H_HelmetB",nil,100]];
 			_ret set[count _ret,["H_HelmetB_black",nil,100]];
-			_ret set[count _ret,["H_HelmetB_camo",nil,100]];
 			_ret set[count _ret,["H_HelmetB_desert",nil,100]];
 			_ret set[count _ret,["H_HelmetB_grass",nil,100]];
 			_ret set[count _ret,["H_HelmetB_sand",nil,100]];
