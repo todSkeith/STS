@@ -43,7 +43,7 @@ switch ((typeOf _vehicle)) do
 	case "O_Truck_03_transport_F": {_weight = 450 ;};
 	case "O_Truck_03_covered_F": {_weight = 450 ;}; //Mohawk
 	case "Land_Box_AmmoOld_F": {_weight = 700;};
-	case "Box_IND_WpsSpecial_F": {_weight = 1000;};
+	case "B_supplyCrate_F": {_weight = 1000;};
 	case "Land_i_House_Small_01_V1_F": {_weight = 100};
 	case "Land_i_House_Small_01_V2_F": {_weight = 100};
 	case "Land_i_House_Small_01_V3_F": {_weight = 100};
