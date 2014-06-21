@@ -31,7 +31,7 @@
 			{
 
 				_boxPosition = (_x select 3);
-				_boxPosition = [(_boxPosition select 0), (_boxPosition select 1), (_boxPosition select 2)-1.1, (_boxPosition select 3)];
+				_boxPosition = [(_boxPosition select 0), (_boxPosition select 1), (_boxPosition select 2), (_boxPosition select 3)];
 				_boxPositionXYZ = [(_boxPosition select 0), (_boxPosition select 1), (_boxPosition select 2)];
 				_boxDirection = (_x select 4);
 
@@ -39,7 +39,7 @@
 				_box setVariable["storage", (_x select 3), true];
 				_box setVariable["Trunk", [[],0], true];
 				_box setVariable["owner", getPlayerUID player, true];
-				_box setPosATL [_boxPosition select 0, (_boxPosition select 1), (_boxPosition select 3)-1.1];	
+				_box setPosATL [_boxPosition select 0, (_boxPosition select 1), (_boxPosition select 3)-0.9];	
 				_box setDir _boxDirection;
 				_box enableCollisionWith _house;
 				_box enableSimulation false;

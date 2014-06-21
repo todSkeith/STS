@@ -14,7 +14,7 @@ _owners = _house getVariable["life_homeOwners", []];
 _uid = getPlayerUID player;
 
 if (player distance _house > 20) exitWith { hint "You must be inside a house to place storage."; };
-if (_item == "storage2" && count (nearestObjects [position _house, ["Box_IND_WpsSpecial_F"], 5]) > 0) exitWith { hint "You can just place one large storage."; };
+if (_item == "storage2" && count (nearestObjects [position _house, ["B_supplyCrate_F"], 5]) > 3) exitWith { hint "You can just place one large storage."; };
 if (_item == "storage1" && count (nearestObjects [position _house, ["Land_Box_AmmoOld_F"], 5]) > 0) exitWith { hint "You can just place one small storage."; };
 if (!(_uid in _owners)) exitWith { hint "You do not own this house and cannot place storage within it."; };
 
@@ -31,7 +31,7 @@ if (_count >= _maxCount) exitWith { hint "You cannot place any more containers a
 switch (_item) do {
 	case "storage1" : {
 		_box= "Land_Box_AmmoOld_F" createVehicle [0,0,0];
-		_box attachTo[player,[0,2,1.5]];
+		_box attachTo[player,[0,2,0]];
 		_box setDir 90;
 
 		clearWeaponCargoGlobal _box; 
@@ -49,8 +49,8 @@ switch (_item) do {
 		};
 
 	case "storage2" : {
-		_box= "Box_IND_WpsSpecial_F" createVehicle [0,0,0];
-		_box attachTo[player,[0,2,1.5]];
+		_box= "B_supplyCrate_F" createVehicle [0,0,0];
+		_box attachTo[player,[0,2,13]];
 		_box setDir 90;
 
 		clearWeaponCargoGlobal _box; 

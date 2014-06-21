@@ -60,7 +60,7 @@ _j = 0;
 [] call life_fnc_createMarkers;
 
 _house = cursorTarget;
-_boxes = nearestObjects [position _house, ["Land_Box_AmmoOld_F","Box_IND_WpsSpecial_F"], 5]; 
+_boxes = nearestObjects [position _house, ["Land_Box_AmmoOld_F","B_supplyCrate_F"], 5]; 
 
 {
 	deleteVehicle _x;

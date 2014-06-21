@@ -15,25 +15,11 @@ disableSerialization;
 _tInv = (findDisplay 8500) displayCtrl 8502;
 _pInv = (findDisplay 8500) displayCtrl 8503;
 
-(findDisplay 8500) displayAddEventHandler ["KeyDown", {
-	private ["_handled","_shift","_alt","_code","_ctrl","_alt","_ctrlKey","_veh","_locked", "_dialog"];
-	_ctrl = _this select 0;
-	_code = _this select 1;
-	_shift = _this select 2;
-	_ctrlKey = _this select 3;
-	_alt = _this select 4;
-	switch (_code) do
-	{
-		case 1 : {
-			[] call life_fnc_preCloseHouseStorage;
-		};
-	};
-}];
 lbClear _tInv;
 lbClear _pInv;
 _weight = 0;
 _used = (_house getVariable ["Trunk", [[],0]]) select 1;
-_boxes = nearestObjects [position _house, ["Land_Box_AmmoOld_F","Box_IND_WpsSpecial_F"], 5];
+_boxes = nearestObjects [position _house, ["Land_Box_AmmoOld_F","B_supplyCrate_F"], 5];
 {	
 	_box_data = [_x] call life_fnc_vehicleWeight;
 	_weight = _weight + (_box_data select 0);

@@ -353,8 +353,8 @@ buy_array =
 	["RoadCone",150],
 	["RoadBlockWood",1500],
 	["moonshine", 950],
-	["storage1",50000],
-    ["storage2",250000],
+//	["storage1",50000],
+    ["storage2",100000],
     ["crowbar", 15000],
     ["lethal", 55000]
 ];
