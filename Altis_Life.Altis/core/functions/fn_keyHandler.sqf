@@ -298,6 +298,10 @@ switch (_code) do
 	};
 };
 
+if (_code in (actionKeys "Throw") && (player getVariable "restrained" OR player getVariable "transporting" OR player getVariable "zipTie" OR player getVariable "unconscious" OR player getVariable "surrender" or (animationState player == "Incapacitated"))) then {
+	_handled = true;
+};
+
 //Thanks to Asylum
 if (_code in (actionKeys "TacticalView")) then
 {
