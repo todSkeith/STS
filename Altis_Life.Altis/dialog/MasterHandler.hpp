@@ -25,3 +25,4 @@
 #include "nightclub.hpp"
 #include "trunkHouse.hpp"
 #include "house.hpp"
+#include "confirm.hpp"
