@@ -15,7 +15,7 @@ _chance = random(100);
 if (_chance < 101) then 
 {	
 	player setVariable["zipTie",true,true];
-	if (playerSide == "west") then {
+	if (playerSide == west) then {
 		life_copGrp = group player;
 		[player] joinSilent grpNull;
 	};
@@ -36,7 +36,7 @@ while {player getVariable "zipTie"} do
 	if(!alive player) then
 	{
 		player setVariable ["zipTie",false,true];
-		if (playerSide == "west") then {
+		if (playerSide == west) then {
 			[player] joinSilent life_copGrp;
 		};
 	};
