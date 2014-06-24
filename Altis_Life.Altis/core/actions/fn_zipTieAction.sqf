@@ -15,6 +15,10 @@ _chance = random(100);
 if (_chance < 101) then 
 {	
 	player setVariable["zipTie",true,true];
+	if (playerSide == west) then {
+		life_copGrp = group player;
+		[player] joinSilent grpNull;
+	};
 	[[format["%1 has turned to a life of kidnapping!",name _attacker]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 	[[getPlayerUID _attacker,name _attacker,"207"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 }
@@ -32,6 +36,9 @@ while {player getVariable "zipTie"} do
 	if(!alive player) then
 	{
 		player setVariable ["zipTie",false,true];
+		if (playerSide == west) then {
+			[player] joinSilent life_copGrp;
+		};
 	};
 };
 	
