@@ -21,7 +21,7 @@ if(_owner == "") exitWith {
 };
 
 // Naughty window stealingcheck
-if(_owner != getPlayerUID _unit || _isLocked == 1) exitWith {
+if(_owner != getPlayerUID _unit && _isLocked == 1) exitWith {
 	
 	private ["_mags", "_weapons", "_items", "_backpack"];
 	_weapons = weapons _unit;
@@ -50,12 +50,7 @@ if(_owner != getPlayerUID _unit || _isLocked == 1) exitWith {
 		_container addBackpackCargoGlobal [_item, 1];
 	};
 	
-	removeAllWeapons player;
-	removeAllItems player;
-	removeBackpack _unit;
-	removeVest _unit;
-	
-	hint "You are not allowed to take stuff from this ammobox! You have lost all items!";
+	hint "Stop trying to steal items.";
 	disableSerialization;
 	_gearDisplay = displayNull;
 	waitUntil {

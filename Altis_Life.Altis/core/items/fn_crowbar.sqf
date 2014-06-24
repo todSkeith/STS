@@ -14,6 +14,7 @@ _distance = ((boundingBox _curTarget select 1) select 0) + 2;
 if(player distance _curTarget > _distance) exitWith {}; //Too far
 _isVehicle = if(_curTarget isKindOf "House") then {true} else {false};
 _item = lbData[2005,(lbCurSel 2005)];
+_house = nearestObject [player, "House_F"];
 
 _hid = [_house] call life_fnc_getBuildID;
 [[_hid, playerSide],"BRUUUDIS_fnc_queryWeaponStorage",false,false] spawn life_fnc_MP;
@@ -76,11 +77,11 @@ if(_isVehicle) then {
 				_isLocked = _curTarget getVariable["life_locked", 0];
 				_isLocked = 0;
 
-	_house = nearestObject [player, "House_F"];
-	_cargo = ((houseWeaponInformation select 0) select 0);
-	_containers = ((houseWeaponInformation select 0) select 1);
+				_cargo = ((houseWeaponInformation select 0) select 0);
+				_containers = ((houseWeaponInformation select 0) select 1);
+				_weaponsAdded = false;
 
-	if(count _containers > 0) then {
+				if(count _containers > 0) then {
 
 				_boxPosition = ((_containers select 0) select 3);
 				_boxPosition = [(_boxPosition select 0), (_boxPosition select 1), (_boxPosition select 2), (_boxPosition select 3)];
@@ -153,11 +154,10 @@ if(_isVehicle) then {
 					};	
 				};	
 
-			}forEach _containers;
+				player addEventHandler ["Take",{_this spawn life_fnc_onTake;}];
+				player addEventHandler ["Put",{_this spawn life_fnc_onPut;}];
 
-			player addEventHandler ["Take",{_this spawn life_fnc_onTake;}];
-			player addEventHandler ["Put",{_this spawn life_fnc_onPut;}];
-			
+			}forEach _containers;
 
 			for "_i" from 1 to _numDoors do
 			{
