@@ -55,36 +55,51 @@ life_hInact_curTarget = _house;
 _tName ctrlSetText "House Interaction Menu";
 private["_tRest","_tZip","_tUnc","_tEsc"];
 
-
+if (playerSide == civilian) then {
 //Button 1: House Purchase/Sell Menu
 	_Btn1 ctrlSetText localize "STR_hInAct_Property";
 	_Btn1 buttonSetAction "[life_hInact_curTarget] call life_fnc_houseMenu;";
+} else {
+	_Btn1 ctrlSetText localize "STR_hInAct_OwnerSearch";
+	_Btn1 buttonSetAction "[life_hInact_curTarget] call life_fnc_houseOwnerSearch;";
+};
 
-
+if (playerside == civilian) then {
 //Button 2: Lock / Unlock doors
-if ((getPlayerUID player) in (cursorTarget getVariable["life_homeOwners", []])) then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
-if ((_house getVariable["life_locked",0]) == 0) then {
-	_Btn2 ctrlSetText localize "STR_hInAct_Lock";
-	_Btn2 buttonSetAction "[life_hInact_curTarget] call life_fnc_lockHouse; closeDialog 0;";
+	if ((getPlayerUID player) in (cursorTarget getVariable["life_homeOwners", []])) then { _Btn2 ctrlEnable true; } else { _Btn2 ctrlEnable false; };
+	if ((_house getVariable["life_locked",0]) == 0) then {
+		_Btn2 ctrlSetText localize "STR_hInAct_Lock";
+		_Btn2 buttonSetAction "[life_hInact_curTarget] call life_fnc_lockHouse; closeDialog 0;";
+	} else {
+		_btn2 ctrlSetText localize "STR_hInAct_Unlock";
+		_btn2 buttonSetAction "[life_hInact_curTarget] call life_fnc_lockHouse; closeDialog 0;";
+	};
 } else {
-	_btn2 ctrlSetText localize "STR_hInAct_Unlock";
-	_btn2 buttonSetAction "[life_hInact_curTarget] call life_fnc_lockHouse; closeDialog 0;";
+		_Btn2 ctrlSetText localize "STR_hInAct_RaidHouse";
+		_Btn2 buttonSetAction "[life_hInact_curTarget] spawn life_fnc_raidHouse;";
 };
 
-//Button 3: Open Storage
-//if (((player distance cursorTarget) < 6)) then { _Btn3 ctrlEnable true; } else { _Btn3 ctrlEnable false; };
-//if(!isNull cursorTarget && (player distance cursorTarget) < 6 && cursorTarget isKindOf "House" && (count (cursorTarget getVariable["containers", []]) > 0) && (((getPlayerUID player) in (cursorTarget getVariable["life_homeOwners", []])) || (cursorTarget getVariable["life_locked", 1]) == 0))  then {
-//	_Btn3 ctrlSetText localize "STR_hInAct_OpenStorage";
-//	_Btn3 buttonSetAction "[life_hInact_curTarget] call life_fnc_openStorage; closeDialog 0;";
-//};
+if (playerSide == civilian) then {
+	//Button 3: Open Storage
+	//if (((player distance cursorTarget) < 6)) then { _Btn3 ctrlEnable true; } else { _Btn3 ctrlEnable false; };
+	//if(!isNull cursorTarget && (player distance cursorTarget) < 6 && cursorTarget isKindOf "House" && (count (cursorTarget getVariable["containers", []]) > 0) && (((getPlayerUID player) in (cursorTarget getVariable["life_homeOwners", []])) || (cursorTarget getVariable["life_locked", 1]) == 0))  then {
+	//	_Btn3 ctrlSetText localize "STR_hInAct_OpenStorage";
+	//	_Btn3 buttonSetAction "[life_hInact_curTarget] call life_fnc_openStorage; closeDialog 0;";
+	//};
 
-//Button 4: Toggle Storage Locks
-/*if(_house getVariable["storage_locked",0]) then {
-
-	_Btn4 ctrlSetText localize "STR_hInAct_LockStorage";
-	_Btn4 buttonSetAction "[life_hInact_curTarget] call life_fnc_lockStorage; closeDialog 0;";
 } else {
-	_Btn4 ctrlSetText localize "STR_hInAct_UnlockStorage";
-	_Btn4 buttonSetAction "[life_hInact_curTarget] call life_fnc_lockStorage; closeDialog 0;";
+	
+	_Btn3 ctrlSetText localize "STR_hInAct_SearchInventory";
+	_Btn3 buttonSetAction "[life_hInact_curTarget] call life_fnc_houseInvSearch;";
 };
-*/
+
+	//Button 4: Toggle Storage Locks
+	/*if(_house getVariable["storage_locked",0]) then {
+
+		_Btn4 ctrlSetText localize "STR_hInAct_LockStorage";
+		_Btn4 buttonSetAction "[life_hInact_curTarget] call life_fnc_lockStorage; closeDialog 0;";
+	} else {
+		_Btn4 ctrlSetText localize "STR_hInAct_UnlockStorage";
+		_Btn4 buttonSetAction "[life_hInact_curTarget] call life_fnc_lockStorage; closeDialog 0;";
+	};
+	*/

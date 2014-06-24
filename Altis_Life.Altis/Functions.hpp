@@ -135,6 +135,7 @@ class Life_Client_Core
 		file = "core\session";
 		class sessionSetup {};
 		class houseSession {};
+		class houseWeaponInformation {};
 		class sessionReceive {};
 		class sessionUpdate {};
 		class quickSync {};

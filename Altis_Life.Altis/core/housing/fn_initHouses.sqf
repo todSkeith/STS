@@ -42,7 +42,6 @@
 				_box setPosATL [_boxPosition select 0, (_boxPosition select 1), (_boxPosition select 3)-0.9];	
 				_box setDir _boxDirection;
 				_box enableCollisionWith _house;
-				_box enableSimulation false;
 				
 				clearWeaponCargoGlobal _box; 
 				clearMagazineCargoGlobal _box;

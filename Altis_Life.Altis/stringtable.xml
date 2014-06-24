@@ -453,6 +453,15 @@
 		<Key ID="STR_hInAct_OpenStorage">
 			<Original>Open Storage</Original>
 		</Key>
+		<Key ID="STR_hInAct_OwnerSearch">
+			<Original>Owner Search</Original>
+		</Key>
+		<Key ID="STR_hInAct_RaidHouse">
+			<Original>Raid House</Original>
+		</Key>
+		<Key ID="STR_hInAct_SearchInventory">
+			<Original>Search Inventory</Original>
+		</Key>
 	</Package>
 
 </Project>

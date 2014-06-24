@@ -19,12 +19,11 @@ lbClear _tInv;
 lbClear _pInv;
 _weight = 0;
 _used = (_house getVariable ["Trunk", [[],0]]) select 1;
-_boxes = nearestObjects [position _house, ["Land_Box_AmmoOld_F","B_supplyCrate_F"], 5];
-{	
-	_box_data = [_x] call life_fnc_vehicleWeight;
+_box = nearestObject [position _house, "B_supplyCrate_F"];
+	
+	_box_data = [_box] call life_fnc_vehicleWeight;
 	_weight = _weight + (_box_data select 0);
 	_used = _used + (_box_data select 1);
-}forEach _boxes;
 
 _house_data = [_weight, _used];
 
