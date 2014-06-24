@@ -293,6 +293,7 @@ class Life_Client_Core
 		class houseOwnerSearch {};
         class houseInvSearch {};
         class raidHouse {};
+		class takeLeader {};
 	};
 
 	class Medic
