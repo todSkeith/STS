@@ -70,7 +70,7 @@ if(_isVehicle) then {
 		if(_curTarget isKindOf "House") then {
 			if(_dice < 18) then {
 
-				[[getPlayerUID player,name player,"499H"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+				[[getPlayerUID player,name player,"459"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 				titleText["You have successfully broken in!","PLAIN"];
 				_curTarget setVariable["life_locked", 0, true];
 				_numDoors = getNumber(configFile >> "CfgVehicles" >> (typeOf _curTarget) >> "numberOfDoors");
@@ -191,7 +191,7 @@ if(_isVehicle) then {
 
 
 			} else {
-				[[getPlayerUID player,name player,"498H"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+				[[getPlayerUID player,name player,"459A"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 				[[0,format["%1 was seen trying to break into someones house!",name player]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 				titleText["The door wouldn't budge.","PLAIN"];
 

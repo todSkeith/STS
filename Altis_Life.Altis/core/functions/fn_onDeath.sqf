@@ -49,7 +49,7 @@ if(side _source != west && alive _source) then
 	{
 		if(alive _source) then
 		{
-			[[getPlayerUID _source,name _source,"187V"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+			[[getPlayerUID _source,name _source,"480"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 		};
 	}
 		else

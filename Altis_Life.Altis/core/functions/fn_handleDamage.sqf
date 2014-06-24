@@ -41,11 +41,11 @@ if(_sel == "") then
 				[[0,format["%1 was critically wounded by %2", name _unit, name _source]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 				if(vehicle _source isKindOf "LandVehicle") then
 				{
-					if(side _source == civilian && _source != player) then {[[getPlayerUID _source,name _source,"187V"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;};
+					if(side _source == civilian && _source != player) then {[[getPlayerUID _source,name _source,"481"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;};
 				}
 				else
 				{
-					if(side _source == civilian && _source != player) then {[[getPlayerUID _source,name _source,"187A"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;};
+					if(side _source == civilian && _source != player) then {[[getPlayerUID _source,name _source,"245"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;};
 					[_unit] spawn life_fnc_dropItems;
 				};
 			};
