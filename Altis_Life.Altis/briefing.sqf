@@ -338,7 +338,7 @@ player createDiaryRecord["changelog",
 				"
 				1. All ALE members are to be on teamspeak at all times when playing as a police officer in the STS Life Server.<br/>
 				2. Use of lethal force must be limited to situations where a life is in imminent danger. Use of lethal force just because you feel on edge about someone will result in appropriate punishment.<br/>
-				3. Non-lethal Force can be used to safely incapacitate any non-compliant persons. Misfiring of non-lethal weapons on purpose will result in removal from ALE. Non-lethal weapons are currently:<br/<br/>
+				3. Non-lethal Force can be used to safely incapacitate any non-compliant persons. Misfiring of non-lethal weapons on purpose will result in removal from ALE. Non-lethal weapons are currently:<br/><br/>
 
 				3a. P07 (silenced) pistol<br/>
 				3b. SDAR rifle<br/><br/>
