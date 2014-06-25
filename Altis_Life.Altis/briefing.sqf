@@ -23,6 +23,32 @@ player createDiarySubject ["controls","Controls"];
 */
 player createDiaryRecord["changelog",
 		[
+			"6/25/14",
+				"
+				Added: Placeable Persistant Storage Boxes<br/>
+				Added: Entirely new Map system (declutter)<br/>
+				Added: A new Changelog!<br/>
+				Added: New Gas Stations!<br/>
+				Added: Temporary Hunters<br/>
+				Added: Lots of new Police Hats!<br/>
+				Changed: Server Rules<br/>
+				Changed: Old Storage System<br/>
+				Changed: Holstering System<br/>
+				Changed: Jail Time<br/>
+				Removed: Civilians can no longer use Tazers (for now...)<br/>
+				Fixed: Range-Check on Shops<br/>
+				Fixed: Raiding and Breaking into houses<br/>
+				Fixed: Item Storage Saving<br/>
+				Fixed: Police can no longer impound destroyed vehicles<br/>
+                Fixed: General Medic Bugs<br/>
+                Fixed: Stabilize Exploit among others<br/>
+                Fixed: Medics and Police now take critical damage correctly<br/>
+
+				"
+		]
+	];
+player createDiaryRecord["changelog",
+		[
 			"6/7/14",
 				"
 				Added: Go-karts (must have DLC)<br/>
@@ -187,9 +213,9 @@ player createDiaryRecord["changelog",
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
 				
 				1. Roleplay scenarios cannot be INITIATED in safezones, however aggressors or defenders may pursue those and only those into a safezone area as long as they are involved in an ongoing roleplay scenario.<br/>
-				1a. For example, police chasing a wanted criminal. The police must only deal with the one individual that they previous initiated roleplay with, and must ignore any other persons in the area regardless of wanted level or illegal items.<br/>
-				2.  Safe zone rule applies to the following area(s):<br/>
-				2a.  Rebel Outposts<br/>
+				1a. For example, police chasing a wanted criminal. The police must only deal with the one individual that they previous initiated roleplay with, and must ignore any other persons in the area regardless of wanted level or illegal items.<br/><br/>
+				2. Safe zone rule applies to the following area(s):<br/>
+				2a. Rebel Outposts<br/>
 				2b. Donator Shops<br/><br/>
 				"
 		]
@@ -202,8 +228,8 @@ player createDiaryRecord["changelog",
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
 				
 				1. VDM (Vehicular Deathmatching) is our most common ban reason and is strictly forbidden.<br/>
-				2. Pushing a boat with the intention of hurting or killing someone. This is not RP, it is just a flaw in the mechanics.<br/>
-				3. The following actions are forbidden:<br/><br/>
+				2. Pushing a boat with the intention of hurting or killing someone. This is not RP, it is just a flaw in the mechanics.<br/><br/>
+				3. The following actions are forbidden:<br/>
 				3a. Deliberately running people over, except in cases where it cannot be avoided.<br/>
 				3b. Deliberately positioning yourself to get run over.<br/>
 				3c. Ramming another vehicle or structure in order to cause an explosion.<br/>
@@ -221,8 +247,8 @@ player createDiaryRecord["changelog",
 		[
 			"Communication", 
 				"
-				1. The preferred method of communication to begin roleplay is via phone message as this is the most obvious. Voice or text chat are also acceptable but can sometimes be missed in noisy or spammy situations.<br/>
-				2. The following actions are forbidden:<br/><br/>
+				1. The preferred method of communication to begin roleplay is via phone message as this is the most obvious. Voice or text chat are also acceptable but can sometimes be missed in noisy or spammy situations.<br/><br/>
+				2. The following actions are forbidden:<br/>
 				2a. Excessive usage of voice chat in Side Channel.<br/>
 				2b. Spamming of text on any channel or via phone messaging system.<br/>
 				2c. Misuse of the text message system sending useless messages to admins, police or medics. An example would be taunting police because you got away via text message.<br/><br/>
@@ -254,15 +280,13 @@ player createDiaryRecord["changelog",
 				"
 				
 				1. New Life Rule is to be followed by all players.<br/>
-				2. If under the effects of NLR, you may not return to the general location of your death or involve yourself in any roleplay scenarios or events related to your death in any way, including observation, until 15 minutes have passed or roleplay has been completely resolved.<br/>
-				4. NLR applies if any of the following are TRUE:<br/><br/>
-
+				2. If under the effects of NLR, you may not return to the general location of your death or involve yourself in any roleplay scenarios or events related to your death in any way, including observation, until 15 minutes have passed or roleplay has been completely resolved.<br/><br/>
+				4. NLR applies if any of the following are TRUE:<br/>
 				4a. You have completely died in-game and have respawned.<br/>
 				4b. You have been revived by a medic from a CRITICALLY WOUNDED state, when not involved in an on-going RP scenario.<br/>
 				4c. You have been sent to jail, and have completed your full sentence OR posted bail.<br/><br/>
 
-				5. NLR does NOT apply if any of the following are TRUE:<br/><br/>
-
+				5. NLR does NOT apply if any of the following are TRUE:<br/>
 				5a. A downed civilian has been transported by a fellow civilian to a hospital and has paid a doctor to revive and heal the player back to a functioning state.<br/>
 				5b. A downed police officer has been transported by a fellow police officer and has paid a doctor to revive and heal the player back to a functioning state.<br/>
 				5c. A downed civilian has been transported by a police officer to a hospital and has paid a doctor to revive and heal the player back to a functioning state.<br/>
@@ -274,12 +298,11 @@ player createDiaryRecord["changelog",
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"Miscellaneous", 
+			"General", 
 				"
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
 				
-				1. The following actions are forbidden:<br/><br/>
-
+				1. The following actions are forbidden:<br/>
 				1a. Stealing from another player's backpack without permission.<br/>
 				1b. Usage of any items or vehicles not normally obtainable within the mission except with the permission of a senior moderator or above.<br/>
 				1c. Abuse of any game or mission exploits or usage of cheats or foreign scripts.<br/>
@@ -296,9 +319,9 @@ player createDiaryRecord["changelog",
 		[
 			"Teamspeak", 
 				"
-				1. Each faction must stick to their own designated teamspeak channels at all times.<br/>
-				2. The only exceptions to this rule are:<br/><br/>
+				1. Each faction must stick to their own designated teamspeak channels at all times.<br/><br/>
 
+				2. The only exceptions to this rule are:<br/>
 				2a. ALE may join the Rescue Dept. channels if a situation calls for it.<br/>
 				2b. Rescue Dept. members may join ANY teamspeak channel if a situation calls for it.<br/><br/>
 
@@ -310,9 +333,9 @@ player createDiaryRecord["changelog",
 		[
 			"Meta-Gaming & Power-Gaming", 
 				"
-				1. Meta-gaming is using an out-of-character action to gain advantage in-game, or using knowledge that the out-of-character person knows, but their in-game character should not. The only exception to this rule is using teamspeak for your gang, group or squad. Using teamspeak to meta-game other groups by joining their channel is not acceptable.<br/>
-				2. Power-gaming is using extreme roleplay or unrealistic ideas to benefit your character, to which it is overly hard or near impossible for others to counter. Some examples follow:<br/><br/>
+				1. Meta-gaming is using an out-of-character action to gain advantage in-game, or using knowledge that the out-of-character person knows, but their in-game character should not. The only exception to this rule is using teamspeak for your gang, group or squad. Using teamspeak to meta-game other groups by joining their channel is not acceptable.<br/><br/>
 
+				2. Power-gaming is using extreme roleplay or unrealistic ideas to benefit your character, to which it is overly hard or near impossible for others to counter. Some examples follow:<br/>
 				2a. All members of your gang have brain implants for player tracking<br/>
 				2b. Having comms equipment in places such as your rectum.<br/><br/>
 
@@ -322,7 +345,7 @@ player createDiaryRecord["changelog",
 
 	player createDiaryRecord ["serverrules",
 		[
-			"Civilian General Rules & Information",
+			"Civilian General",
 				"
 				1. Civilians must not initiate any aggression towards a Rescue Dept. member. This includes robbing, murdering and kidnapping.<br/>
 				2. Civilians must not wear any cop uniforms or vests. Uniforms and vests may be stored as “trophies” inside storage and/or persistent storage, but must never be worn.<br/>
@@ -334,12 +357,12 @@ player createDiaryRecord["changelog",
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"ALE General Rules & Information",
+			"ALE General",
 				"
 				1. All ALE members are to be on teamspeak at all times when playing as a police officer in the STS Life Server.<br/>
-				2. Use of lethal force must be limited to situations where a life is in imminent danger. Use of lethal force just because you feel on edge about someone will result in appropriate punishment.<br/>
-				3. Non-lethal Force can be used to safely incapacitate any non-compliant persons. Misfiring of non-lethal weapons on purpose will result in removal from ALE. Non-lethal weapons are currently:<br/><br/>
+				2. Use of lethal force must be limited to situations where a life is in imminent danger. Use of lethal force just because you feel on edge about someone will result in appropriate punishment.<br/><br/>
 
+				3. Non-lethal Force can be used to safely incapacitate any non-compliant persons. Misfiring of non-lethal weapons on purpose will result in removal from ALE. Non-lethal weapons are currently:<br/>
 				3a. P07 (silenced) pistol<br/>
 				3b. SDAR rifle<br/><br/>
 
@@ -360,10 +383,9 @@ player createDiaryRecord["changelog",
 
 	player createDiaryRecord ["serverrules",
 		[
-			"ALE Raids, Search Warrants, Area Camping, Checkpoints",
+			"ALE Operations",
 				"
-				1. Area Raids:<br/><br/>
-
+				1. Area Raids:<br/>
 				1a. A raid is a group (squad) of 4 or more police officers with an officer of at least the rank SERGEANT in charge and calling any shots.<br/>
 				1b. Persons (civs) in the raid area can only be restrained or searched if there is probable cause that they are doing something illegal.<br/>
 				1c. Lethal force (Section 3/b) must always be in place when performing any raids.<br/>
@@ -371,18 +393,15 @@ player createDiaryRecord["changelog",
 				1e. If all police officers die within the raid area, the raid is considered a failure and cannot be raided again for 20 minutes.<br/>
 				1d. Officers may call for backup to a raid as long as there is at least 1 officer still alive in the area.<br/><br/>
 
-				2. Housing Raids/Warrants:<br/><br/>
-
+				2. Housing Raids/Warrants:<br/>
 				2a. In order to raid a house, officers must request and await a warrant in the appropriate forum. If the home owner is online, the officer in charge of the house search/raid must link the home owner the warrant post. If the home owner is offline, the home owner must be sent a forum PM with a link to the search warrant if possible. The ONLY exception to a warrant is the following:<br/>
 				2a:i. Police may follow an individual into a player owned house if the player has a bounty and police have previously (within the last 10 minutes) been in pursuit of the player.<br/><br/>
 
-				3. Camping:<br/><br/>
-
+				3. Camping:<br/>
 				3a. Camping is the prolonged presence of police officers in a location other than any police buildings/checkpoints/headquarters, cities, towns and villages.<br/>
 				3b. Police officers are to maintain an adequate distance from any known “illegal” areas unless performing a raid.<br/><br/>
 
-				4. Checkpoints:<br/><br/>
-
+				4. Checkpoints:<br/>
 				4a. In order for a checkpoint to be legal, there must be at least 3 officers within the vicinity of the checkpoint.<br/>
 				4b. Custom checkpoints may be set up, as long as they abide by the following:<br/>
 				4b:i. Are at least 500 meters away from any known “illegal” areas.<br/>
@@ -395,7 +414,7 @@ player createDiaryRecord["changelog",
 
 	player createDiaryRecord ["serverrules",
 		[
-			"Altis Rescue Department General Rules & Information",
+			"Altis Rescue Department",
 				"
 				1. All Rescue Dept. members are to be on teamspeak at all times when playing as a Medic when in the STS Life Server.<br/>
 				2. Medics must wait until a roleplay scenario is over before treating patients.<br/>
@@ -409,9 +428,9 @@ player createDiaryRecord["changelog",
 
 	player createDiaryRecord ["serverrules",
 		[
-			"Guidelines & Miscellaneous Information",
+			"Contraband",
 				"
-				1. Illegal Vehicles, Items & Weapons:<br/><br/>
+				1. Illegal Vehicles, Items and Weapons:<br/><br/>
 
 				1a. Illegal Vehicles are listed below:<br/>
 				1b. Ifrit<br/>
@@ -438,7 +457,6 @@ player createDiaryRecord["changelog",
 				3h. Heroin (processed and unprocessed)<br/>
 				3i. Weed (processed and unprocessed)<br/>
 				3j. Moonshine (processed)<br/><br/>
-
 
 				"
 		]
