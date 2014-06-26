@@ -36,7 +36,7 @@ switch (_side) do
 			["civ_spawn_4","Sofia","icons\IconSloth.paa"]
 		];
 		if(playerPosition == [0,0,0] || playerPosition distance spawn_island < 1200) then {
-		_markers set [count _markers, [playerPosition,"Previous Position","icons\IconSloth.paa"];
+		_markers set [count _markers, [playerPosition,"Previous Position","icons\IconSloth.paa"]];
 		};
 		if(license_civ_home) then 
 		{		
