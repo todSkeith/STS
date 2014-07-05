@@ -5,8 +5,6 @@
 	
 	Description:
 	store an item in a house
-
-	Edited and Modified by: CDawg
 */
 private["_ctrl","_num","_totalWeight","_itemWeight","_veh_data","_inv","_index","_val"];
 disableSerialization;

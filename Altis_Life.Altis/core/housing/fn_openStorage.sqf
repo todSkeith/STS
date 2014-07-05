@@ -4,12 +4,10 @@
 	
 	Description:
 	open the house storage
-
-	Edited and Modified by: CDawg
 */
 private["_house","_veh_data"];
 if(dialog) exitWith {};
-_house = nearestObject [position player, "House"];//[_this,0,Objnull,[Objnull]] call BIS_fnc_param;
+_house = cursorTarget;//[_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 if(isNull _house OR (count (_house getVariable["containers", []]) < 1)) exitWith {systemChat "Bad House";}; //Either a null or invalid vehicle type.
 
 if((_house getVariable ["trunk_in_use",false])) exitWith {hint "This storage is in use, only one person can use it at a time."};
@@ -20,13 +18,12 @@ ctrlSetText[8501,format["House Trunk - %1",getText(configFile >> "CfgVehicles" >
 
 _weight = 0;
 _used = (_house getVariable ["Trunk", [[],-1]]) select 1;
-_box = nearestObject [position _house, "B_supplyCrate_F"];
-	
-	_box_data = [_box] call life_fnc_vehicleWeight;
+_boxes = nearestObjects [position _house, ["Land_Box_AmmoOld_F","B_supplyCrate_F"], 5];
+{	
+	_box_data = [_x] call life_fnc_vehicleWeight;
 	_weight = _weight + (_box_data select 0);
 	_used = _used + (_box_data select 1);
-
-_house_data = [_weight, _used];
+}forEach _boxes;
 
 _veh_data = [_weight, _used];
 

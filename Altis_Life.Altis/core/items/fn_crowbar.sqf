@@ -36,8 +36,7 @@ _playerpos = position player;
 _weaponsAdded = false;
 
 _breakin = [] spawn life_fnc_breakingin;
-
-while {true} do
+while {_isVehicle} do
 {
 	if(animationState player != "AinvPknlMstpSnonWnonDnon_medic_1") then {
 		[[player,"AinvPknlMstpSnonWnonDnon_medic_1"],"life_fnc_animSync",true,false] spawn life_fnc_MP;
