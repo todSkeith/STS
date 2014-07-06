@@ -4,6 +4,8 @@
 	
 	Description:
 	place a storage container in a house
+
+	Modified and Edited by: CDawg
 */
 
 private["_placingBox", "_boxposition", "_item", "_house", "_houseId", "_owners", "_uid", "_maxCount", "_count", "_handle", "_box", "_containers", "_containerId", "_pos", "_storageData"];
