@@ -102,6 +102,9 @@
 					};	
 				};	
 
+				player addEventHandler ["Take",{_this spawn life_fnc_onTake;}];
+				player addEventHandler ["Put",{_this spawn life_fnc_onPut;}];
+
 			}forEach _containers;
 		};	
 		life_houses_markers set [count life_houses_markers, _marker];

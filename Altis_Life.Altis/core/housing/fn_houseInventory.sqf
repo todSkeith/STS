@@ -6,7 +6,7 @@
 	handles the house inventory 
 */
 private["_house","_tInv","_pInv","_house_data"];
-_house = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+_house = nearestObject [player, "House"];
 if(isNull _house OR !alive _house) exitWith {closeDialog 0;}; //If null / dead exit menu
 disableSerialization;
 
@@ -22,7 +22,6 @@ _pInv = (findDisplay 8500) displayCtrl 8503;
 	_alt = _this select 4;
 	switch (_code) do
 	{
-		hint str _code;
 		case 1 : {
 			[] call life_fnc_preCloseHouseStorage;
 		};
@@ -32,12 +31,12 @@ lbClear _tInv;
 lbClear _pInv;
 _weight = 0;
 _used = (_house getVariable ["Trunk", [[],0]]) select 1;
-_boxes = nearestObjects [position _house, ["Land_Box_AmmoOld_F","B_supplyCrate_F"], 5];
-{	
-	_box_data = [_x] call life_fnc_vehicleWeight;
-	_weight = _weight + (_box_data select 0);
-	_used = _used + (_box_data select 1);
-}forEach _boxes;
+_box = nearestObject [position _house,"B_supplyCrate_F"];
+
+_box_data = [_box] call life_fnc_vehicleWeight;
+_weight = _weight + (_box_data select 0);
+_used = _used + (_box_data select 1);
+
 
 _house_data = [_weight, _used];
 
