@@ -26,7 +26,7 @@ switch (_side) do
 			["cop_spawn_6","Coast Guard HQ","icons\policeIcon.paa"]
 		];
 	};
-	
+
 	case civilian:
 	{
 		_markers = [
@@ -40,7 +40,7 @@ switch (_side) do
 		};
 		if(license_civ_home) then 
 		{		
-		
+
 			_houses = [
 				"Land_i_House_Small_01_V1_F",
 				"Land_i_House_Small_01_V2_F",
@@ -56,19 +56,19 @@ switch (_side) do
 				"Land_i_House_Big_02_V2_F",
 				"Land_i_House_Big_02_V3_F"
 			];
-			
+
 			_i = 1;
 			{
 				_house = nearestObject [(_x select 0), "House_F"];
 				if((typeOf _house) in _houses) then {
-					
+
 					_mkName  = format["civ_spawn_home_%1", _i];
-					
+
 					if (isNil (_mkName)) then {
 						_mk = createMarkerLocal [_mkName, (_x select 0)];
 						_mk setMarkerAlphaLocal 0;
 					};
-					
+
 					_markers set [count _markers, [_mkName, format ["Home %1", _i], "icons\IconSloth.paa"]];
 					_i = _i + 1;
 				};
