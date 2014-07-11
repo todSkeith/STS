@@ -64,10 +64,19 @@ _progress progressSetPosition 0.01;
 _cP = 0.01;
 
 life_is_processing = true;
+
 if((!_hasLicense)&&(life_cash < _cost)) exitWith {
 	hint format["You need $%1 to process without a license!",[_cost] call life_fnc_numberText];
 	5 cutText ["","PLAIN"]; life_is_processing = false;
 };
+
+//Removes the old items
+{
+	if(!([false,_x,_oldVal] call life_fnc_handleInv)) exitWith {
+		5 cutText ["","PLAIN"]; life_is_processing = false;
+	};
+} foreach _oldItem;
+
 _delayInt = _oldVal * 0.03;
 while{true} do {
 	sleep _delayInt;
@@ -79,14 +88,8 @@ while{true} do {
 };
 
 if(player distance _vendor > 10) exitWith {hint "You need to stay within 10m to process."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-if((!_hasLicense)&&(life_cash < _cost)) exitWith {hint format["You need $%1 to process without a license!",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 if(!(alive player)) exitWith {hint "You need to be alive to process."; 5 cutText ["","PLAIN"]; life_is_processing = false;};
-//Removes the old items
-{
-	if(!([false,_x,_oldVal] call life_fnc_handleInv)) exitWith {
-		5 cutText ["","PLAIN"]; life_is_processing = false;
-	};
-} foreach _oldItem;
+if((!_hasLicense)&&(life_cash < _cost)) exitWith {hint format["You need $%1 to process without a license!",[_cost] call life_fnc_numberText]; 5 cutText ["","PLAIN"]; life_is_processing = false;};
 
 //Adds the new item
 if(!([true,_newItem,_oldVal] call life_fnc_handleInv)) exitWith {
