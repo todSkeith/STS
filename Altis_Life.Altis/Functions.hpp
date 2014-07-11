@@ -294,6 +294,7 @@ class Life_Client_Core
         class houseInvSearch {};
         class raidHouse {};
 		class takeLeader {};
+		class trackBounty {};
 	};
 
 	class Medic
