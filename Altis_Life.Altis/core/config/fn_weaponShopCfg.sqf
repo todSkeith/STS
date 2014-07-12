@@ -359,11 +359,10 @@ switch(_shop) do
 			{
 				["Mohammed's Jihadi Shop",
 					[
-						["arifle_TRG20_F",nil,20000],
+						["arifle_MK20C_F",nil,20000],
+						["arifle_MK20_F",nil,25000],
 						["arifle_Katiba_F",nil,35000],
 						["arifle_Katiba_C_F",nil,30000],
-						["arifle_TRG21_F",nil,25000],
-						["arifle_Mk20_F",nil,25000],
 						["arifle_SDAR_F",nil,20000],
 						["SMG_01_F",nil,20000],
 						["MiniGrenade","Flashbang",40000],
@@ -397,6 +396,7 @@ switch(_shop) do
 					[
 						["hgun_Rook40_F",nil,6500],
 						["hgun_Pistol_heavy_02_F",nil,9850],
+						["hgun_pistol_heavy_01_F",nil,9850],
 						["hgun_ACPC2_F",nil,11500],
 						["hgun_PDW2000_F",nil,20000],
 						["optic_ACO_grn_smg",nil,2500],
@@ -406,8 +406,9 @@ switch(_shop) do
 						["V_Press_F",nil,7000],
 						["NVGoggles",nil,2000],
 						["16Rnd_9x21_Mag",nil,25],
-						["9Rnd_45ACP_Mag",nil,45],
 						["6Rnd_45ACP_Cylinder",nil,50],
+						["11Rnd_45ACP_Mag",nil,85],
+						["9Rnd_45ACP_Mag",nil,45],
 						["30Rnd_9x21_Mag",nil,75]
 					]
 				];
@@ -420,18 +421,43 @@ switch(_shop) do
 		switch(true) do
 		{
 			case (playerSide != civilian): {"You are a cop!"};
+			case (!(license_civ_bh)): {"You do not have a Bounty Hunting License!"};
 			default
 			{
 				["Bounty Hunter Shop",
 					[
+						["arifle_sdar_F","Taser Rifle",10000],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
 						["hgun_P07_snds_F","Stun Pistol",2000],
-						["16Rnd_9x21_Mag",nil,50]
+						["16Rnd_9x21_Mag","Stun Pistol Magazine",50]
+						
 					]
 				];
 			};
 		};
 	};
-
+	
+	case "c3":
+	{
+		switch(true) do
+		{
+			case (playerSide != civilian): {"You are a cop!"};
+			case (!(license_civ_c3)): {"You do not have a Class III Weapons License!"};
+			default
+			{
+				["Class III Weapons Shop",
+					[
+						["arifle_MK20C_plain_F",nil,20000],
+						["arifle_MK20_plain_F",nil,25000],
+						["arifle_TRG20_F",nil,20000],
+						["arifle_TRG21_F",nil,25000],
+						["30Rnd_556x45_Stanag",nil,300]
+					]
+				];
+			};
+		};
+	};
+	
 	case "donator":
 	{
 		switch(true) do
@@ -513,7 +539,8 @@ switch(_shop) do
 					[
 						["hgun_Rook40_F",nil,750],
 						["hgun_PDW2000_F",nil,6500],
-						["arifle_MK20C_plain_F",nil,25000],
+						["arifle_MK20C_plain_F",nil,15000],
+						["arifle_Mk20_plain_F",nil,17500],
 						["optic_ACO_grn_smg",nil,750],
 						["B_FieldPack_ocamo",nil,900],
 						["B_Kitbag_mcamo",nil,1500],
@@ -541,7 +568,8 @@ switch(_shop) do
 						["hgun_Rook40_F",nil,500],
 						["hgun_PDW2000_F",nil,6500],
 						["hgun_pistol_heavy_01_F",nil,5850],
-						["arifle_Mk20C_F",nil,25000],
+						["arifle_Mk20C_plain_F",nil,15000],
+						["arifle_Mk20_plain_F",nil,17500],
 						["optic_ACO_grn_smg",nil,750],
 						["optic_MRCO",nil,10000],
 						["B_FieldPack_ocamo",nil,900],
