@@ -82,10 +82,7 @@ class Life_Client_Core
 		class robAction {};
 		class sellTurtle {};
 		class payrepair {};
-		class gasman1 {};
-		class gasman2 {};
-		class gasman3 {};
-		class gasman4 {};
+		class robStation {};
 		class nclights {};
 		class ncLightsOn {};
 		class ncmusic {};
