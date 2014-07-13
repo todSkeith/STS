@@ -1532,7 +1532,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; this addAction[""Donator Weapon Shop"",life_fnc_weaponShopMenu,""donator"",0,false,false,"""",' !isNil ""life_donator"" && (call life_donator) > 0 && playerSide == civilian']; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance'];";
+					init="this allowDamage false; this enableSimulation false; this addAction[""Mercenary Munitions Cache"",life_fnc_weaponShopMenu,""merc"",0,false,false,"""",'playerSide == civilian']; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance'];";
 				};
 				class Item79
 				{
@@ -1543,7 +1543,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this allowDamage false; this enableSimulation false; this addAction[""Donator Weapon Shop"",life_fnc_weaponShopMenu,""donator"",0,false,false,"""",' !isNil ""life_donator"" && (call life_donator) > 0 && playerSide == civilian']; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance'];";
+					init="this allowDamage false; this enableSimulation false; this addAction[""Mercenary Munitions Cache"",life_fnc_weaponShopMenu,""merc"",0,false,false,"""",'playerSide == civilian']; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance'];";
 				};
 				class Item80
 				{
@@ -1554,7 +1554,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Donator Vehicle Shop"",life_fnc_vehicleShop,""donator_2""];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Mercenary Vehicle Depot"",life_fnc_vehicleShop,""merc_2""];";
 				};
 				class Item81
 				{
@@ -1565,7 +1565,7 @@ class Mission
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
-					init="this enableSimulation false; this allowDamage false; this addAction[""Donator Vehicle Shop"",life_fnc_vehicleShop,""donator_1""];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Mercenary Vehicle Depot"",life_fnc_vehicleShop,""merc_1""];";
 				};
 				class Item82
 				{
@@ -24315,28 +24315,28 @@ class Mission
 		class Item116
 		{
 			position[]={11607.845,23.600693,11966.289};
-			name="donator_1";
+			name="merc_1";
 			type="Empty";
 			angle=77.938637;
 		};
 		class Item117
 		{
 			position[]={11609.357,23.620655,11957.764};
-			name="donator_1_1";
+			name="merc_1_1";
 			type="Empty";
 			angle=77.938637;
 		};
 		class Item118
 		{
 			position[]={14154.433,77.306969,21261.822};
-			name="donator_2";
+			name="merc_2";
 			type="Empty";
 			angle=81.255051;
 		};
 		class Item119
 		{
 			position[]={14154.241,77.323952,21254.738};
-			name="donator_2_1";
+			name="merc_2_1";
 			type="Empty";
 			angle=80.1147;
 		};
