@@ -16,4 +16,4 @@ if(!life_is_arrested) = true then
     life_hunger = 100;
   };
 [] call life_fnc_hudUpdate;
-titleText["The Commissary has provided you with food and water.","PLAIN"];
+titleText["The Commissary has provided you with a hearty meal.","PLAIN"];
