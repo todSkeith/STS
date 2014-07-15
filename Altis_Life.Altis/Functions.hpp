@@ -348,6 +348,7 @@ class Life_Client_Core
 		class chopShopMenu {};
 		class chopShopSelection {};
 		class chopShopSell {};
+		class donatorLevel {};
 	};
 
 	class Items
