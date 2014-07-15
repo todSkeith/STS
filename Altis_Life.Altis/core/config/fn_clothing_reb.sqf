@@ -28,7 +28,9 @@ switch (_filter) do
 			["U_O_CombatUniform_oucamo",nil,17500],
 			["U_I_CombatUniform",nil,30000],
 			["U_I_CombatUniform_shortsleeve",nil,25000],
-			["U_O_GhillieSuit",nil,50000]
+			["U_O_GhillieSuit",nil,50000],
+			["U_BG_Guerrilla_6_1",nil,20000],
+			["U_BG_Guerilla1_1",nil,5000]
 		];
 	};
 	
@@ -44,8 +46,7 @@ switch (_filter) do
 			["H_MilCap_oucamo",nil,1200],
 			["H_Bandanna_camo",nil,650],
 			["H_Bandanna_khk_hs",nil,1000],
-			["H_MilCap_dgtl",nil,1500],
-			["H_MilCap_gry",nil,1500]
+			["H_MilCap_dgtl",nil,1500]
 
 		];
 	};
@@ -62,7 +63,10 @@ switch (_filter) do
 			["G_Sport_BlackWhite",nil,20],
 			["G_Squares",nil,10],
 			["G_Lowprofile",nil,30],
-			["G_Combat",nil,55]
+			["G_Combat",nil,55],
+			["G_Balaclava_blk",nil,2500],
+			["G_Balaclava_oli",nil,2500],
+			["G_Balaclava_combat",nil,3500]
 		];
 	};
 	
@@ -72,6 +76,7 @@ switch (_filter) do
 		[
 			["V_TacVest_khk",nil,12500],
 			["V_BandollierB_cbr",nil,4500],
+			["V_BandollierB_blk",nil,4500],
 			["V_HarnessO_brn",nil,7500],
 			["V_PlateCarrierIA2_dgtl",nil,15000],
 			["V_PlateCarrierIA1_dgtl",nil,15000]

@@ -18,6 +18,7 @@ switch (_filter) do
 	case 0:
 	{
 		[
+		["U_Marshal","Marshal Uniform", 1000],
 		["U_C_Poloshirt_blue","Poloshirt STS",250],
 		["U_C_Poloshirt_burgundy","Poloshirt Burgundy",275],
 		["U_C_Poloshirt_redwhite","Poloshirt Red/White",150],
@@ -54,6 +55,7 @@ switch (_filter) do
 	case 1:
 	{
 		[
+			["H_Cap_marshal","Marshal Hat",175],
 			["H_Bandanna_camo","Camo Bandanna",120],
 			["H_Bandanna_surfer","Surfer Bandanna",130],
 			["H_Bandanna_gry","Grey Bandanna",150],
@@ -96,6 +98,14 @@ switch (_filter) do
 	case 2:
 	{
 		[
+			["G_Bandanna_aviator","Aviator Bandanna",500],
+			["G_Bandanna_beast","Beast Bandanna",500],
+			["G_Bandanna_blk","Black Bandanna",500],
+			["G_Bandanna_khk","Khaki Bandanna",500],
+			["G_Bandanna_oli","Olive Bandanna",500],
+			["G_Bandanna_shades","Bandanna with Shades",500],
+			["G_Bandanna_sport","Sport Bandanna",500],
+			["G_Bandanna_tan","Tan Bandanna",500],
 			["G_Shades_Black",nil,25],
 			["G_Shades_Blue",nil,20],
 			["G_Sport_Blackred",nil,20],

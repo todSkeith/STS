@@ -142,6 +142,8 @@ switch (_filter) do
 		{
 			_ret set[count _ret,["H_HelmetB_snakeskin",nil,100]];
 			_ret set[count _ret,["H_Beret_Colonel",nil,100]];
+			_ret set[count _ret,["H_MilCap_blue",nil,100]];
+
 		};
 		
 	};
@@ -163,6 +165,11 @@ switch (_filter) do
 			["G_Tactical_Black",nil,50],
 			["G_Combat",nil,55]
 		];
+
+		if(__GETC__(life_adminlevel) > 0) then
+		{
+			_ret set[count _ret,["G_Goggles_VR",nil,100]];
+		};
 	};
 
 	//Vest
