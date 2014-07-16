@@ -1,1 +1,13 @@
-Multiplayer scenarios exported from the in-game editor are stored here. You can also place downloaded custom scenarios in this folder and host them on Multiplayer servers.
+IMPORTANT INFORMATION REGARDING THIS MISSION
+
+This is a heavily modified version of Tonic's Altis Life mission.
+Many new code additions and textures are COPYRIGHTED.
+
+We do enjoy contributing to the ArmA community, and so if you would
+like to reproduce elements of our server we may simply offer code
+or assistance to you but you MUST contact us before distributing our
+code or art assets in a public game environment.
+
+You may reach us at www.sealteamsloth.com.
+
+Thank you!
