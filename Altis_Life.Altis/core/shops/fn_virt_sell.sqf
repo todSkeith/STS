@@ -13,7 +13,7 @@ _index = [_type,__GETC__(sell_array)] call fnc_index;
 [] call life_fnc_donatorLevel;
 
 if(_index == -1) exitWith {};
-_price = round((((__GETC__(sell_array) select _index) select 1) / 100)*donatorLevel);
+_price = round((((__GETC__(sell_array) select _index) select 1)/100)*donatorLevel);
 _var = [_type,0] call life_fnc_varHandle;
 
 _amount = ctrlText 2405;
