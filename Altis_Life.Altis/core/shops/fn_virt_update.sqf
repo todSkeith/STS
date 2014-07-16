@@ -28,7 +28,7 @@ ctrlSetText[2403,format["%1", _shop_data select 0]];
 	_index = [_x,__GETC__(buy_array)] call fnc_index;
 	if(_index != -1) then
 	{
-		_price = round(((__GETC__(buy_array) select _index) select 1) / donatorLevel);
+		_price = round((((__GETC__(buy_array) select _index) select 1) / 100 ) *donatorLevel);
 		_item_list lbAdd format["%1  ($%2)",_name,[_price] call life_fnc_numberText];
 		_item_list lbSetData [(lbSize _item_list)-1,_x];
 		_item_list lbSetValue [(lbSize _item_list)-1,_price];
