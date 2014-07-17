@@ -170,6 +170,7 @@ switch(_shop) do
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["16Rnd_9x21_Mag",nil,50],
+						["acc_pointer_IR",nil,5000],
 						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
