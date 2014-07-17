@@ -74,7 +74,7 @@ switch (_item) do {
 [false,_item,1] call life_fnc_handleInv;
 
 while {_placingBox} do {
-	if((player distance _house) > 6) then {
+	if((player distance _house) > 5) then {
 		deleteVehicle _box;
 
 		hint "You can only place Storage inside your house!";
@@ -83,7 +83,7 @@ while {_placingBox} do {
 
 	} else {
 
-	if((player distance _house) < 6) then {
+	if((player distance _house) < 5) then {
 		hint "Storage placed!";
 		_placingBox = false;
 
