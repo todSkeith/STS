@@ -403,7 +403,7 @@ switch(_shop) do
 						["optic_Arco",nil,2500],
 						["optic_Hamr",nil,2500],
 						["V_Rangemaster_belt",nil,4900],
-						["V_Press_F",nil,7000],
+						["V_Press_F",nil,30000],
 						["NVGoggles",nil,2000],
 						["16Rnd_9x21_Mag",nil,25],
 						["6Rnd_45ACP_Cylinder",nil,50],

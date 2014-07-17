@@ -47,7 +47,10 @@ switch (_filter) do
  		["U_C_Driver_2",nil,3500],
  		["U_C_Driver_1",nil,3600],
  		["U_C_Driver_3",nil,3700],
- 		["U_C_Driver_4",nil,3700]
+ 		["U_C_Driver_4",nil,3700],
+		["U_B_Protagonist_VR",nil,3700],
+		["U_I_Protagonist_VR",nil,3700],
+		["U_O_Protagonist_VR",nil,3700]
 		];
 	};
 
@@ -118,7 +121,8 @@ switch (_filter) do
 			["G_Lady_Dark",nil,150],
 			["G_Lady_Blue",nil,150],
 			["G_Lowprofile",nil,30],
-			["G_Combat",nil,55]
+			["G_Combat",nil,55],
+			["G_Goggles_VR",nil,55]
 		];
 	};
 
