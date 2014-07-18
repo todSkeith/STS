@@ -107,7 +107,7 @@ switch(_shop) do
 						["arifle_sdar_F","Taser Rifle",10000],
 						["hgun_P07_snds_F","Stun Pistol",2000],
 						["hgun_P07_F",nil,7500],
-						["SMG_02_F",nil,20000],
+						["SMG_02_F",nil,15000],
 						["muzzle_snds_L",nil,650],
 						["16Rnd_9x21_Mag",nil,50],
 						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
@@ -120,8 +120,13 @@ switch(_shop) do
 			{
 				["Altis Patrol Officer Shop",
 					[
-						["arifle_MXC_F",nil,15000],
-						["SMG_01_F",nil,20000],
+						["arifle_MX_Black_F",nil,15000],
+						["arifle_MXM_Black_F",nil,15000],
+						["arifle_MXC_Black_F",nil,15000],
+						["SMG_01_F",nil,15000],
+						["SMG_02_F",nil,15000],
+						["arifle_sdar_F","Taser Rifle",10000],
+						["hgun_P07_snds_F","Stun Pistol",2000],
 						["acc_flashlight",nil,750],
 						["optic_Holosight",nil,1200],
 						["optic_Holosight_smg",nil,1200],
@@ -129,6 +134,7 @@ switch(_shop) do
 						["30Rnd_65x39_caseless_mag",nil,130],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["16Rnd_9x21_Mag",nil,50],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
 						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
@@ -138,9 +144,13 @@ switch(_shop) do
 			{
 				["Altis Senior Patrol Officer Shop",
 					[
-						["arifle_MX_F",nil,15000],
-						["arifle_MXC_F",nil,15000],
-						["SMG_01_F",nil,18000],
+						["arifle_MX_Black_F",nil,15000],
+						["arifle_MXM_Black_F",nil,15000],
+						["arifle_MXC_Black_F",nil,15000],
+						["SMG_01_F",nil,15000],
+						["SMG_02_F",nil,15000],
+						["arifle_sdar_F","Taser Rifle",10000],
+						["hgun_P07_snds_F","Stun Pistol",2000],
 						["acc_flashlight",nil,750],
 						["optic_Arco",nil,2500],
 						["optic_Holosight",nil,1200],
@@ -149,6 +159,7 @@ switch(_shop) do
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["16Rnd_9x21_Mag",nil,50],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
 						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
@@ -158,9 +169,13 @@ switch(_shop) do
 			{
 				["Altis Corporal Shop",
 					[
-						["arifle_MX_F",nil,15000],
-						["arifle_MXC_F",nil,15000],
-						["SMG_01_F",nil,16000],
+						["arifle_MX_Black_F",nil,15000],
+						["arifle_MXM_Black_F",nil,15000],
+						["arifle_MXC_Black_F",nil,15000],
+						["SMG_01_F",nil,15000],
+						["SMG_02_F",nil,15000],
+						["arifle_sdar_F","Taser Rifle",10000],
+						["hgun_P07_snds_F","Stun Pistol",2000],
 						["MiniGrenade","Flashbang",20000],
 						["acc_flashlight",nil,750],
 						["optic_Arco",nil,2500],
@@ -170,6 +185,7 @@ switch(_shop) do
 						["30Rnd_65x39_caseless_mag",nil,300],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["16Rnd_9x21_Mag",nil,50],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
 						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
@@ -179,10 +195,13 @@ switch(_shop) do
 			{
 				["Altis Sergeant Shop",
 					[
-						["arifle_MXC_F",nil,15000],
-						["arifle_MXM_F",nil,15000],
-						["arifle_MX_SW_F",nil,15000],
+						["arifle_MX_Black_F",nil,15000],
+						["arifle_MXM_Black_F",nil,15000],
+						["arifle_MXC_Black_F",nil,15000],
 						["SMG_01_F",nil,15000],
+						["SMG_02_F",nil,20000],
+						["arifle_sdar_F","Taser Rifle",10000],
+						["hgun_P07_snds_F","Stun Pistol",2000],
 						["MiniGrenade","Flashbang",20000],
 						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
@@ -194,6 +213,7 @@ switch(_shop) do
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["9Rnd_45ACP_Mag",nil,200],
 						["16Rnd_9x21_Mag",nil,50],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
 						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
@@ -205,9 +225,11 @@ switch(_shop) do
 					[
 						["arifle_MX_Black_F",nil,15000],
 						["arifle_MXM_Black_F",nil,15000],
-						["arifle_MX_SW_F",nil,15000],
-						["arifle_MXC_F",nil,15000],
+						["arifle_MXC_Black_F",nil,15000],
 						["SMG_01_F",nil,15000],
+						["SMG_02_F",nil,15000],
+						["arifle_sdar_F","Taser Rifle",10000],
+						["hgun_P07_snds_F","Stun Pistol",2000],
 						["MiniGrenade","Flashbang",20000],
 						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
@@ -219,6 +241,7 @@ switch(_shop) do
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["9Rnd_45ACP_Mag",nil,200],
 						["16Rnd_9x21_Mag",nil,50],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
 						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
@@ -230,9 +253,11 @@ switch(_shop) do
 					[
 						["arifle_MX_Black_F",nil,15000],
 						["arifle_MXM_Black_F",nil,15000],
-						["arifle_MX_SW_F",nil,15000],
 						["arifle_MXC_Black_F",nil,15000],
 						["SMG_01_F",nil,15000],
+						["SMG_02_F",nil,15000],
+						["arifle_sdar_F","Taser Rifle",10000],
+						["hgun_P07_snds_F","Stun Pistol",2000],
 						["MiniGrenade","Flashbang",20000],
 						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
@@ -244,6 +269,7 @@ switch(_shop) do
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["9Rnd_45ACP_Mag",nil,200],
 						["16Rnd_9x21_Mag",nil,50],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
 						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
@@ -257,7 +283,10 @@ switch(_shop) do
 						["arifle_MX_Black_F",nil,15000],
 						["arifle_MX_SW_Black_F",nil,15000],
 						["arifle_MXC_Black_F",nil,15000],
-						["SMG_01_F",nil,14000],
+						["SMG_01_F",nil,15000],
+						["SMG_02_F",nil,15000],
+						["arifle_sdar_F","Taser Rifle",10000],
+						["hgun_P07_snds_F","Stun Pistol",2000],
 						["MiniGrenade","Flashbang",20000],
 						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
@@ -269,6 +298,7 @@ switch(_shop) do
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["9Rnd_45ACP_Mag",nil,200],
 						["16Rnd_9x21_Mag",nil,50],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
 						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
@@ -282,7 +312,10 @@ switch(_shop) do
 						["arifle_MX_Black_F",nil,15000],
 						["arifle_MX_SW_Black_F",nil,15000],
 						["arifle_MXC_Black_F",nil,15000],
-						["SMG_01_F",nil,10000],
+						["SMG_01_F",nil,15000],
+						["SMG_02_F",nil,15000],
+						["arifle_sdar_F","Taser Rifle",10000],
+						["hgun_P07_snds_F","Stun Pistol",2000],
 						["MiniGrenade","Flashbang",20000],
 						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
@@ -294,6 +327,7 @@ switch(_shop) do
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["9Rnd_45ACP_Mag",nil,200],
 						["16Rnd_9x21_Mag",nil,50],
+						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
 						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
