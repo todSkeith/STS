@@ -131,6 +131,7 @@ switch(_shop) do
 						["optic_Holosight",nil,1200],
 						["optic_Holosight_smg",nil,1200],
 						["optic_Arco",nil,2500],
+						["optic_Hamr",nil,4000],
 						["30Rnd_65x39_caseless_mag",nil,130],
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["16Rnd_9x21_Mag",nil,50],
@@ -178,6 +179,7 @@ switch(_shop) do
 						["hgun_P07_snds_F","Stun Pistol",2000],
 						["MiniGrenade","Flashbang",20000],
 						["acc_flashlight",nil,750],
+						["acc_pointer_IR",nil,5000],
 						["optic_Arco",nil,2500],
 						["optic_Holosight",nil,1200],
 						["optic_Holosight_smg",nil,1200],
@@ -186,7 +188,6 @@ switch(_shop) do
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["16Rnd_9x21_Mag",nil,50],
 						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
-						["acc_pointer_IR",nil,5000],
 						["30Rnd_9x21_Mag",nil,60]
 					]
 				];
