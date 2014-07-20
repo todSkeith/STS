@@ -1,20 +1,28 @@
 /*
+File:fn_robStation.sqf
+Server file:fn_robGasStation.sqf
+
 Author: CDawg & Morph
 */
 
-private["_robber"];
+private["_station","_robber"];
 
-_robber = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
-_pos = GetPos player;
 _station = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
+_robber = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
+_uid = getPlayerUID player;
 _robberycash = 0; 
-_timer = 420;
+_progresstimer = 60;
 _denied1 = false;
 _hint = "preloop success";
 
 if(playerSide == west) exitWith 
 {
 	hint "What do you think you're doing? You're a cop not a criminal!";
+};
+
+if(playerSide == independent) exitWith 
+{
+	hint "What do you think you're doing? You're on duty!";
 };
 
 if(_station getVariable["gaswait",true]) exitWith 
@@ -36,12 +44,8 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 	{
 		[[2,"A station is being robbed!"],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 		[[getPlayerUID _robber,name _robber,"211"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
-		_station setVariable["robProgress",true, true];
-		_stationPos = position _station;
-		_marker = createMarker [format["mk_%1",getPlayerUID _robber], _stationPos];
-		_marker setMarkerColor "ColorRed";
-		_marker setMarkerText "Station is being robbed!";
-		_marker setMarkerType "mil_warning";
+		_station setVariable["robProgress",true,true];
+		
 		_number = (round(ceil(random 11)));
 		if (_number == 1) then {robberyreward = 500};
 		if (_number == 2) then {robberyreward = 1000};
@@ -54,126 +58,105 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 		if (_number == 9) then {robberyreward = 20000};
 		if (_number == 10) then {robberyreward = 25000};
 		if (_number == 11) then {robberyreward = 30000};
+		
+		_robberycash = robberyreward; 
+		
 		life_action_inUse = true;
 		hint "marker success";
+	
+		[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+	
+		for [{_p=0}, {_p<=_progresstimer}, {_p=_p+1}] do
+		{ 
+			hint format["Robbery Progress: %1/100%2\nPlease stay within 15 meters to continue the robbery.", (round((_p/_progresstimer)*100)),"%"];
+			sleep 1;
 
-	_robberycash = robberyreward; 
+			if !(alive player) exitWith 
+				{
+					hint "The robbery failed, because you died.";
+					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+					life_action_inUse = false;
+					_station setVariable["robFail",true,true];
+					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+				};
+	
+				if (player getVariable "unconscious") exitWith 
+				{
+					hint "The robbery failed, because you were wounded.";
+					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+					life_action_inUse = false;
+					_station setVariable["robFail",true,true];
+					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+				};
+	
+				if (player getVariable "restrained") exitWith 
+				{
+					hint "The robbery failed, because you were restrained.";
+					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+					life_action_inUse = false;
+					_station setVariable["robFail",true,true];
+					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+				};
+	
+				if (player getVariable "surrendered") exitWith 
+				{
+					hint "The robbery failed, because you surrendered.";
+					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+					life_action_inUse = false;
+					_station setVariable["robFail",true,true];
+					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+				};
+	
+				if (player getVariable "zipTie") exitWith 
+				{
+					hint "The robbery failed.";
+					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+					life_action_inUse = false;
+					_station setVariable["robFail",true,true];
+					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+				};
+	
+				if((player distance _station) > 15) exitWith 
+				{
+					hint "You are too far away! The robbery failed.";
+					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+					life_action_inUse = false;
+					_station setVariable["robFail",true,true];
+					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+				};
 		
-	for [{_p=0}, {_p<=_timer}, {_p=_p+1}] do
-	{ 
-	hint format["Robbery Progress: %1/100%2\nPlease stay within 15 meters to continue the robbery.", (round((_p/_timer)*100)),"%"];
-	sleep 1;
+				if(life_istazed) exitWith 
+				{
+					hint "You were tazed, the robbery has failed!";
+					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+					life_action_inUse = false;
+					_station setVariable["robFail",true,true];
+					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+				};
 	
-	
-	if !(alive player) exitWith 
-	{
-		hint "The robbery failed, because you died.";
-		_denied1 = false;
-		[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-		deleteMarker format["mk_%1",getPlayerUID _robber];
-		_station setVariable["robProgress",false, true];
-		life_action_inUse = false;
-		_station setVariable["gaswait",true, true];
-		sleep 180;
-		_station setVariable["gaswait",false,false];
-	};
-	
-	if (player getVariable ["unconscious"]) exitWith 
-	{
-		hint "The robbery failed, because you were wounded.";
-		_denied1 = false;
-		[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-		deleteMarker format["mk_%1",getPlayerUID _robber];
-		_station setVariable["robProgress",false, true];
-		life_action_inUse = false;
-		_station setVariable["gaswait",true, true];
-		sleep 180;
-		_station setVariable["gaswait",false,false];
-	};
-	
-	if (player getVariable ["restrained"]) exitWith 
-	{
-		hint "The robbery failed, because you were restrained.";
-		_denied1 = false;
-		[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-		deleteMarker format["mk_%1",getPlayerUID _robber];
-		_station setVariable["robProgress",false, true];
-		life_action_inUse = false;
-		_station setVariable["gaswait",true, true];
-		sleep 180;
-		_station setVariable["gaswait",false,false];
-	};
-	
-		if (player getVariable ["surrendered"]) exitWith 
-	{
-		hint "The robbery failed, because you surrendered.";
-		_denied1 = false;
-		[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-		deleteMarker format["mk_%1",getPlayerUID _robber];
-		_station setVariable["robProgress",false, true];
-		life_action_inUse = false;
-		_station setVariable["gaswait",true, true];
-		sleep 180;
-		_station setVariable["gaswait",false,false];
-	};
-	
-	if((player distance _station) > 15) exitWith 
-	{
-		hint "You are too far away! The robbery failed.";
-		[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-		deleteMarker format["mk_%1",getPlayerUID _robber];
-		_denied1 = false;
-		_station setVariable["robProgress",false, true];
-		life_action_inUse = false;
-		_station setVariable["gaswait",true, true];
-		sleep 180;
-		_station setVariable["gaswait",false,false];
-	};
-		
-	if(life_istazed) exitWith 
-	{
-		hint "You were tazed, the robbery has failed!";
-		[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-		deleteMarker format["mk_%1",getPlayerUID _robber];
-		_denied1 = false;
-		_station setVariable["robProgress",false, true];
-		life_action_inUse = false;
-		_station setVariable["gaswait",true, true];
-		sleep 180;
-		_station setVariable["gaswait",false,false];
-	};
-	
-	if(vehicle player != player) exitWith 
-	{
-		hint "Where the hell are you going? ROB LIKE A MAN!";
-		[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-		deleteMarker format["mk_%1",getPlayerUID _robber];
-		_denied1 = false;
-		_station setVariable["robProgress",false, true];
-		life_action_inUse = false;
-		_station setVariable["gaswait",true, true];
-		sleep 180;
-		_station setVariable["gaswait",false,false];
-	};
+				if(vehicle player != player) exitWith 
+				{
+					hint "Where the hell are you going? ROB LIKE A MAN!";
+					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+					life_action_inUse = false;
+					_station setVariable["robFail",true,true];
+					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+				};
 
-	if(_p == _timer) exitWith 
-	{
-		hint format["You have successfully robbed $%1", _robberycash];
-		life_cash = life_cash + _robberycash;
-		[[2,"A station was successfully robbed!"],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-		[[getPlayerUID _source,name _source,"211A"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
-		_station setVariable["robProgress",false, true];
-		_station setVariable["gaswait",true, true];
-		deleteMarker format["mk_%1",getPlayerUID _robber];
-		_denied1 = false;
-		life_action_inUse = false;
-	};
+				if(_p == _progresstimer) exitWith 
+				{
+					hint format["You have successfully robbed $%1", _robberycash];
+					life_cash = life_cash + _robberycash;
+					[[2,"A station was successfully robbed!"],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+					[[getPlayerUID _source,name _source,"211A"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
+					life_action_inUse = false;					
+					_station setVariable["robSuccess",true, true];
+					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+				};
 		
-};
+		};
 } else {hint "HAHA! You think you can hold me up with your bare hands! What a joke!"; _denied1 = true};		
 
 if(_denied1) exitWith {};
 
-sleep 2700;
-_station setVariable["gaswait",false,false];
-life_action_inUse = false;
+
