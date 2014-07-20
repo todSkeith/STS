@@ -74,7 +74,8 @@ class Mission
 		"A3_Structures_F_Kart_Civ_SportsGrounds",
 		"A3_Soft_F_Kart_Kart_01",
 		"A3_Air_F_Beta_Heli_Transport_01",
-		"A3_Modules_F_Curator_Curator"
+		"A3_Modules_F_Curator_Curator",
+		"A3_Modules_F"
 	};
 	addOnsAuto[]=
 	{
@@ -84,6 +85,7 @@ class Mission
 		"A3_Characters_F_OPFOR",
 		"A3_Characters_F_Beta",
 		"A3_Characters_F_INDEP",
+		"A3_Modules_F",
 		"A3_Characters_F_Kart",
 		"A3_Structures_F_Civ_Garbage",
 		"A3_Structures_F_Civ_Constructions",
@@ -621,14 +623,14 @@ class Mission
 				class Item1
 				{
 					position[]={9193.0742,14.384123,21677.879};
-					azimut=-178.41841;
+					azimut=-178.418;
 					special="NONE";
 					id=32;
 					side="EAST";
 					vehicle="O_Soldier_F";
 					skill=0.60000002;
 					text="reb_1";
-					init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;this addAction[""Rebel Item Shop"",life_fnc_virt_menu,""rebel"",0,false,false,"""",' playerSide == civilian']; this addAction[""Rebel Clothing Shop"",life_fnc_clothingMenu,""reb"",0,false,false,"""",' license_civ_rebel && playerSide == civilian']; this addAction[""Rebel Weapon Shop"",life_fnc_weaponShopMenu,""rebel"",0,false,false,"""",' license_civ_rebel && playerSide == civilian'];  this addAction[format[""%1 ($%2)"",[""license_civ_rebel""] call life_fnc_varToStr,[([""rebel""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""rebel"",0,false,false,"""",' !license_civ_rebel && playerSide == civilian ']; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance'];";
+					init="removeallWeapons this;  this enableSimulation false;  this allowDamage false;this addAction[""Rebel Item Shop"",life_fnc_virt_menu,""rebel"",0,false,false,"""",' playerSide == civilian']; this addAction[""Rebel Clothing Shop"",life_fnc_clothingMenu,""reb"",0,false,false,"""",' license_civ_rebel && playerSide == civilian']; this addAction[""Rebel Weapon Shop"",life_fnc_weaponShopMenu,""rebel"",0,false,false,"""",' license_civ_rebel && playerSide == civilian'];  this addAction[format[""%1 ($%2)"",[""license_civ_rebel""] call life_fnc_varToStr,[([""rebel""] call life_fnc_licensePrice)] call life_fnc_numberText],life_fnc_buyLicense,""rebel"",0,false,false,"""",' !license_civ_rebel && playerSide == civilian ']; this addAction[""<t color='#ADFF2F'>ATM</t>"",life_fnc_atmMenu]; this addAction[""Banking Insurance ($1,000)"",{if(life_atmcash > 1000) then {life_has_insurance = true; life_atmcash = life_atmcash - 1000};},"""",0,false,false,"""",'!life_has_insurance']; this allowDamage false; this enableSimulation false; this addAction[""Rebel Market"",life_fnc_virt_menu,""market""];";
 				};
 				class Item2
 				{
@@ -2090,7 +2092,7 @@ class Mission
 				class Item126
 				{
 					position[]={3398.5723,4.7887592,13104.417};
-					azimut=-382.34204;
+					azimut=-382.34201;
 					offsetY=0.5;
 					special="NONE";
 					id=157;
@@ -2188,7 +2190,7 @@ class Mission
 					side="GUER";
 					vehicle="I_soldier_F";
 					skill=0.60000002;
-					init="this setObjectTexture [0, ""images\ems_uni.jpg""]; removeAllWeapons this; removeVest this; removeGoggles this; this unassignItem ""NVGoggles_INDEP""; this removeItem ""NVGoggles_INDEP"";removeHeadgear this; this enableSimulation false; this allowDamage false; this addAction[""Car Shop"",life_fnc_vehicleShop,""medic_car_1""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""medic_car_1"";  },"""", 1,true,true,"""", 'playerSide == independent'];  this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store'];";
+					init="this setObjectTexture [0, ""images\ems_uni.jpg""]; removeAllWeapons this; removeVest this; removeGoggles this; this unassignItem ""NVGoggles_INDEP""; this removeItem ""NVGoggles_INDEP"";removeHeadgear this; this enableSimulation false; this allowDamage false; this addAction[""Car Shop"",life_fnc_vehicleShop,""medic_car_1""]; this addAction[""Vehicle Garage"",  {   [[getPlayerUID player,playerSide,""Car"",player],""TON_fnc_getVehicles"",false,false] spawn life_fnc_MP; life_garage_type = ""Car"";   createDialog ""Life_impound_menu"";   disableSerialization;   ctrlSetText[2802,""Fetching Vehicles....""];   life_garage_sp = ""medic_car_1"";  },"""", 1,true,true,"""", 'playerSide == independent'];  this addAction[""Store vehicle in Garage"",life_fnc_storeVehicle,"""",0,false,false,"""",'!life_garage_store']; this allowDamage false; this enableSimulation false; this addAction[""Cafeteria"",life_fnc_virt_menu,""market""];";
 				};
 				class Item135
 				{
