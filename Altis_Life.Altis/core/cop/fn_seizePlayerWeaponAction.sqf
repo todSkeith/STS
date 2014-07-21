@@ -5,8 +5,9 @@
 // Adapted from: Skalicon
 //////////////////////////////////////////////////////////////////
 
-_unit = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
-if(isNull _unit) exitWith {};
+private["_cop"];
+_cop = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
+if(isNull _cop) exitWith {};
 
 removeAllWeapons player;
 
@@ -18,4 +19,4 @@ life_holstered_weapon = nil;
 [] call life_fnc_civFetchGear;
 [] call life_fnc_sessionUpdate; //Should make weapon remove persistent
 [] call life_fnc_civLoadGear;
-titleText [format["Your weapons have been seized by %1.", name _unit],"PLAIN"];
+titleText [format["Your weapons have been seized by %1.",name _cop],"PLAIN"];
