@@ -1971,19 +1971,19 @@ class Mission
 				class Item116
 				{
 					position[]={12034.286,27.624285,15810.049};
-					azimut=725.81854;
+					azimut=725.81897;
 					special="NONE";
 					id=147;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
 					text="gasman2";
-					init="this enableSimulation false; this allowDamage false; this addAction[""Rob Station"",life_fnc_robStation,""gasman2""]; this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""]; this addAction[""Market"",life_fnc_virt_menu,""market""]; this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Question Employee"",life_fnc_questionGasStation,"""",0,false,false,"""",' vehicle player == player && player distance _target < 5 && playerSide == west && !life_action_inUse ']; this addAction[""Rob Station"",life_fnc_robStation,""gasman2""]; this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""]; this addAction[""Market"",life_fnc_virt_menu,""market""]; this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];";
 				};
 				class Item117
 				{
 					position[]={6801.251,41.089218,15579.893};
-					azimut=635.59351;
+					azimut=635.59399;
 					offsetY=0.60000002;
 					special="NONE";
 					id=148;
@@ -1991,12 +1991,12 @@ class Mission
 					vehicle="C_man_1";
 					skill=0.60000002;
 					text="gasman1";
-					init="this enableSimulation false; this allowDamage false; this addAction[""Rob Station"",life_fnc_robStation,""gasman1""]; this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];      this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Question Employee"",life_fnc_questionGasStation,"""",0,false,false,"""",' vehicle player == player && player distance _target < 5 && playerSide == west && !life_action_inUse ']; this addAction[""Rob Station"",life_fnc_robStation,""gasman1""]; this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];      this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];";
 				};
 				class Item118
 				{
 					position[]={16830.684,11.119707,15471.397};
-					azimut=790.74353;
+					azimut=790.74402;
 					offsetY=1.3;
 					special="NONE";
 					id=149;
@@ -2004,19 +2004,19 @@ class Mission
 					vehicle="C_man_1";
 					skill=0.60000002;
 					text="gasman3";
-					init="this enableSimulation false; this allowDamage false; this addAction[""Rob Station"",life_fnc_robStation,""gasman3""]; this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];  this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];";
+					init="this enableSimulation false; this addAction[""Question Employee"",life_fnc_questionGasStation,"""",0,false,false,"""",' vehicle player == player && player distance _target < 5 && playerSide == west && !life_action_inUse ']; this allowDamage false; this addAction[""Rob Station"",life_fnc_robStation,""gasman3""]; this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];  this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];";
 				};
 				class Item119
 				{
 					position[]={23359.893,12.923474,19812.881};
-					azimut=505.83694;
+					azimut=505.83701;
 					special="NONE";
 					id=150;
 					side="CIV";
 					vehicle="C_man_1";
 					skill=0.60000002;
 					text="gasman4";
-					init="this enableSimulation false; this allowDamage false; this addAction[""Rob Station"",life_fnc_robStation,""gasman4""]; this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];      this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];";
+					init="this enableSimulation false; this allowDamage false; this addAction[""Question Employee"",life_fnc_questionGasStation,"""",0,false,false,"""",' vehicle player == player && player distance _target < 5 && playerSide == west && !life_action_inUse ']; this addAction[""Rob Station"",life_fnc_robStation,""gasman4""]; this addAction[""General Store"",life_fnc_weaponShopMenu,""genstore""];      this addAction[""Market"",life_fnc_virt_menu,""market""];      this addAction[""Repair Job"",life_fnc_payrepair,""payrepair""];";
 				};
 				class Item120
 				{

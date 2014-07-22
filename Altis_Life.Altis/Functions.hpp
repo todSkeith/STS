@@ -280,6 +280,7 @@ class Life_Client_Core
 		class seizePlayerWeaponAction {};
 		class radar {};
 		class questionDealer {};
+		class questionGasStation {};
 		class copInteractionMenu {};
 		class sirenLights {};
 		class licenseCheck {};

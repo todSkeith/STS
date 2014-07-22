@@ -43,7 +43,6 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 
 	{
 		[[2,"A station is being robbed!"],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
-		[[getPlayerUID _robber,name _robber,"211"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 		_station setVariable["robProgress",true,true];
 		
 		_number = (round(ceil(random 11)));
@@ -64,7 +63,7 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 		life_action_inUse = true;
 		hint "marker success";
 	
-		[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+		[[_station,_robber],"TON_fnc_robGasStation",_station,true] spawn life_fnc_MP;
 	
 		for [{_p=0}, {_p<=_progresstimer}, {_p=_p+1}] do
 		{ 
@@ -77,7 +76,54 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 					life_action_inUse = false;
 					_station setVariable["robFail",true,true];
-					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+					
+					private["_array","_ind","_val"];
+					_array = _station getVariable["Robbers",[]];
+					_ind = [getPlayerUID player,_array] call fnc_index;
+					
+					if(_ind != -1) then
+					{
+						_val = (_array select _ind) select 2;
+						_val = _val + 2500;
+						_array set[_ind,[getPlayerUID player,name player,_val]];
+						_station setVariable["Robbers",_array,true];
+					}
+					
+					else
+					{
+						_array set[count _array,[getPlayerUID player,name player,2500]];
+						_station setVariable["Robbers",_array,true];
+					};
+					
+					[[_station,_robber],"TON_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+				};
+	
+					if (life_knockout) exitWith 
+				{
+					hint "The robbery failed, because you were knocked out.";
+					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
+					life_action_inUse = false;
+					_station setVariable["robFail",true,true];
+					
+					private["_array","_ind","_val"];
+					_array = _station getVariable["Robbers",[]];
+					_ind = [getPlayerUID player,_array] call fnc_index;
+					
+					if(_ind != -1) then
+					{
+						_val = (_array select _ind) select 2;
+						_val = _val + 2500;
+						_array set[_ind,[getPlayerUID player,name player,_val]];
+						_station setVariable["Robbers",_array,true];
+					}
+					
+					else
+					{
+						_array set[count _array,[getPlayerUID player,name player,2500]];
+						_station setVariable["Robbers",_array,true];
+					};
+					
+					[[_station,_robber],"TON_fnc_robGasStation",_station,true] spawn life_fnc_MP;
 				};
 	
 				if (player getVariable "unconscious") exitWith 
@@ -86,7 +132,26 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 					life_action_inUse = false;
 					_station setVariable["robFail",true,true];
-					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+					
+					private["_array","_ind","_val"];
+					_array = _station getVariable["Robbers",[]];
+					_ind = [getPlayerUID player,_array] call fnc_index;
+					
+					if(_ind != -1) then
+					{
+						_val = (_array select _ind) select 2;
+						_val = _val + 2500;
+						_array set[_ind,[getPlayerUID player,name player,_val]];
+						_station setVariable["Robbers",_array,true];
+					}
+					
+					else
+					{
+						_array set[count _array,[getPlayerUID player,name player,2500]];
+						_station setVariable["Robbers",_array,true];
+					};
+					
+					[[_station,_robber],"TON_fnc_robGasStation",_station,true] spawn life_fnc_MP;
 				};
 	
 				if (player getVariable "restrained") exitWith 
@@ -95,7 +160,26 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 					life_action_inUse = false;
 					_station setVariable["robFail",true,true];
-					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+					
+					private["_array","_ind","_val"];
+					_array = _station getVariable["Robbers",[]];
+					_ind = [getPlayerUID player,_array] call fnc_index;
+					
+					if(_ind != -1) then
+					{
+						_val = (_array select _ind) select 2;
+						_val = _val + 2500;
+						_array set[_ind,[getPlayerUID player,name player,_val]];
+						_station setVariable["Robbers",_array,true];
+					}
+					
+					else
+					{
+						_array set[count _array,[getPlayerUID player,name player,2500]];
+						_station setVariable["Robbers",_array,true];
+					};
+					
+					[[_station,_robber],"TON_fnc_robGasStation",_station,true] spawn life_fnc_MP;
 				};
 	
 				if (player getVariable "surrendered") exitWith 
@@ -104,7 +188,26 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 					life_action_inUse = false;
 					_station setVariable["robFail",true,true];
-					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+					
+					private["_array","_ind","_val"];
+					_array = _station getVariable["Robbers",[]];
+					_ind = [getPlayerUID player,_array] call fnc_index;
+					
+					if(_ind != -1) then
+					{
+						_val = (_array select _ind) select 2;
+						_val = _val + 2500;
+						_array set[_ind,[getPlayerUID player,name player,_val]];
+						_station setVariable["Robbers",_array,true];
+					}
+					
+					else
+					{
+						_array set[count _array,[getPlayerUID player,name player,2500]];
+						_station setVariable["Robbers",_array,true];
+					};
+					
+					[[_station,_robber],"TON_fnc_robGasStation",_station,true] spawn life_fnc_MP;
 				};
 	
 				if (player getVariable "zipTie") exitWith 
@@ -113,7 +216,26 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 					life_action_inUse = false;
 					_station setVariable["robFail",true,true];
-					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+					
+					private["_array","_ind","_val"];
+					_array = _station getVariable["Robbers",[]];
+					_ind = [getPlayerUID player,_array] call fnc_index;
+					
+					if(_ind != -1) then
+					{
+						_val = (_array select _ind) select 2;
+						_val = _val + 2500;
+						_array set[_ind,[getPlayerUID player,name player,_val]];
+						_station setVariable["Robbers",_array,true];
+					}
+					
+					else
+					{
+						_array set[count _array,[getPlayerUID player,name player,2500]];
+						_station setVariable["Robbers",_array,true];
+					};
+					
+					[[_station,_robber],"TON_fnc_robGasStation",_station,true] spawn life_fnc_MP;
 				};
 	
 				if((player distance _station) > 15) exitWith 
@@ -122,7 +244,26 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 					life_action_inUse = false;
 					_station setVariable["robFail",true,true];
-					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+					
+					private["_array","_ind","_val"];
+					_array = _station getVariable["Robbers",[]];
+					_ind = [getPlayerUID player,_array] call fnc_index;
+					
+					if(_ind != -1) then
+					{
+						_val = (_array select _ind) select 2;
+						_val = _val + 2500;
+						_array set[_ind,[getPlayerUID player,name player,_val]];
+						_station setVariable["Robbers",_array,true];
+					}
+					
+					else
+					{
+						_array set[count _array,[getPlayerUID player,name player,2500]];
+						_station setVariable["Robbers",_array,true];
+					};
+					
+					[[_station,_robber],"TON_fnc_robGasStation",_station,true] spawn life_fnc_MP;
 				};
 		
 				if(life_istazed) exitWith 
@@ -131,7 +272,26 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 					life_action_inUse = false;
 					_station setVariable["robFail",true,true];
-					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+					
+					private["_array","_ind","_val"];
+					_array = _station getVariable["Robbers",[]];
+					_ind = [getPlayerUID player,_array] call fnc_index;
+					
+					if(_ind != -1) then
+					{
+						_val = (_array select _ind) select 2;
+						_val = _val + 2500;
+						_array set[_ind,[getPlayerUID player,name player,_val]];
+						_station setVariable["Robbers",_array,true];
+					}
+					
+					else
+					{
+						_array set[count _array,[getPlayerUID player,name player,2500]];
+						_station setVariable["Robbers",_array,true];
+					};
+					
+					[[_station,_robber],"TON_fnc_robGasStation",_station,true] spawn life_fnc_MP;
 				};
 	
 				if(vehicle player != player) exitWith 
@@ -140,7 +300,26 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 					[[2,"A station robbery failed..."],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 					life_action_inUse = false;
 					_station setVariable["robFail",true,true];
-					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+					
+					private["_array","_ind","_val"];
+					_array = _station getVariable["Robbers",[]];
+					_ind = [getPlayerUID player,_array] call fnc_index;
+					
+					if(_ind != -1) then
+					{
+						_val = (_array select _ind) select 2;
+						_val = _val + 2500;
+						_array set[_ind,[getPlayerUID player,name player,_val]];
+						_station setVariable["Robbers",_array,true];
+					}
+					
+					else
+					{
+						_array set[count _array,[getPlayerUID player,name player,2500]];
+						_station setVariable["Robbers",_array,true];
+					};
+					
+					[[_station,_robber],"TON_fnc_robGasStation",_station,true] spawn life_fnc_MP;
 				};
 
 				if(_p == _progresstimer) exitWith 
@@ -151,7 +330,26 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 					[[getPlayerUID _source,name _source,"211A"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 					life_action_inUse = false;					
 					_station setVariable["robSuccess",true, true];
-					[[_station,_robber],"STS_fnc_robGasStation",_station,true] spawn life_fnc_MP;
+					
+					private["_array","_ind","_val"];
+					_array = _station getVariable["Robbers",[]];
+					_ind = [getPlayerUID player,_array] call fnc_index;
+					
+					if(_ind != -1) then
+					{
+						_val = (_array select _ind) select 2;
+						_val = _val + _robberycash;
+						_array set[_ind,[getPlayerUID player,name player,_val]];
+						_station setVariable["Robbers",_array,true];
+					}
+					
+					else
+					{
+						_array set[count _array,[getPlayerUID player,name player,_robberycash]];
+						_station setVariable["Robbers",_array,true];
+					};
+						
+					[[_station,_robber],"TON_fnc_robGasStation",_station,true] spawn life_fnc_MP;
 				};
 		
 		};
