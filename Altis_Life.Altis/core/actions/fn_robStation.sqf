@@ -11,7 +11,7 @@ _station = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _robber = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
 _uid = getPlayerUID player;
 _robberycash = 0; 
-_progresstimer = 60;
+_progresstimer = 300;
 _denied1 = false;
 _hint = "preloop success";
 
