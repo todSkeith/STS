@@ -51,6 +51,7 @@ life_actions = [];
 life_roadblock = ObjNull;
 life_roadcone = ObjNull;
 life_isUnconscious = false;
+life_god = false;
 holstered = false;
 
 
