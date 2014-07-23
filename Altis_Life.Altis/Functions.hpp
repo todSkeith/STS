@@ -21,6 +21,16 @@ class Life_Client_Core
 		class admingetID {};
 		class adminMenu {};
 		class adminQuery {};
+		class adminSpectate {}; 
+		class adminTeleport {};
+		class adminTpHere {}; 
+		class adminDebugCon {};
+		class adminCompensate {};
+		class adminAuthenticate {};
+		class adminCheckAuth {};
+		class adminKick {};
+		class adminRepairBuild {};
+		class adminBan {};
 	};
 
 	class Actions

@@ -39,6 +39,45 @@
 		<Key ID="STR_AdminCommands">
 			<Original>Admin Commands</Original>
 		</Key>
+		<Key ID="STR_Admin_Spectate">
+			<Original>Spectate</Original>
+		</Key>
+		<Key ID="STR_Admin_Teleport">
+			<Original>Teleport</Original>
+		</Key>
+		<Key ID="STR_Admin_TpHere">
+			<Original>TP Here</Original>
+		</Key>
+		<Key ID="STR_Admin_Debug">
+			<Original>Debug</Original>
+		</Key>
+		<Key ID="STR_Admin_Compensate">
+			<Original>Comp</Original>
+		</Key>
+		<Key ID="STR_Admin_CompWarn">
+			<Original>You are about to give yourself %1 to compensate to another player &lt;br/&gt;&lt;br/&gt;You must give this cash to the person you are compensating manually.</Original>
+		</Key>
+		<Key ID="STR_Admin_Success">
+			<Original>You have added %1 to your account.</Original>
+		</Key>
+		<Key ID="STR_Admin_Fail">
+			<Original>You can not go above 999999.</Original>
+		</Key>
+		<Key ID="STR_Admin_Amount">
+			<Original>Please type in the amount to compensate.</Original>
+		</Key>
+		<Key ID="STR_Admin_RepairBuild">
+			<Original>Repair Building</Original>
+		</Key>
+		<Key ID="STR_Admin_Authenticate">
+			<Original>Admin Authentication</Original>
+		</Key>
+		<Key ID="STR_Admin_CheckAuth">
+			<Original>Check Authentication</Original>
+		</Key>
+		<Key ID="STR_Admin_Ban">
+			<Original>Ban</Original>
+		</Key>
 	</Package>
 	<Package name="ATM_Menu">
 		<Key ID="STR_ATM_Title">
