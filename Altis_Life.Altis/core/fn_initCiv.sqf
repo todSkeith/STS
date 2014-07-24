@@ -6,7 +6,6 @@
 	Initializes the civilian.
 */
 private["_spawnPos"];
-if(life_is_arrested) then{[[player,false,15],"life_fnc_jailSys",false,false] spawn life_fnc_MP;}; //should fix being stuck in jail.
 
 /*_positionArray = playerPosition;
 
@@ -28,7 +27,7 @@ else
 	if(life_is_arrested) then
 	{
 		life_is_arrested = false;
-		[player,true] spawn life_fnc_jail;
+		[[player,false,15],"life_fnc_jailSys",false,false] spawn life_fnc_MP;
 	}
 		else
 	{
