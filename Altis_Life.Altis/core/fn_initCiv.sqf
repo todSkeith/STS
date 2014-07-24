@@ -6,6 +6,8 @@
 	Initializes the civilian.
 */
 private["_spawnPos"];
+if(life_is_arrested) then{[[player,false,15],"life_fnc_jailSys",false,false] spawn life_fnc_MP;}; //should fix being stuck in jail.
+
 /*_positionArray = playerPosition;
 
 if(_positionArray select 0 != 0) then 
