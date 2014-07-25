@@ -127,6 +127,7 @@ life_cash = 0;
 life_holstered_weapon = nil;
 
 license_civ_rebel = false;
+license_civ_bh = false;
 playerPosition = [0,0,0,false];
 [] call life_fnc_sessionUpdate;
 
