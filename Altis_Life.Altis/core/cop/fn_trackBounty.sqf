@@ -12,7 +12,7 @@ _pos = [_this,0,[0,0,0],[[]]] call BIS_fnc_param;
 
 if (isNull _unit) exitWith {};
 if (_pos select 0 == 0) exitWith {};
-if (side player != west && license_civ_bh = false) exitWith {};
+if (side player != west) exitWith {};
 
 _posx = _pos select 0;
 _posx = floor(_posx / 100);
