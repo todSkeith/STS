@@ -12,7 +12,6 @@ disableSerialization;
 
 _tInv = (findDisplay 8500) displayCtrl 8502;
 _pInv = (findDisplay 8500) displayCtrl 8503;
-
 lbClear _tInv;
 lbClear _pInv;
 _weight = 0;
