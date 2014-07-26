@@ -79,7 +79,7 @@ class life_admin_menu {
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-		
+/*		
 		class Spectate : Life_RscButtonMenu {
 			idc = -1;
 			text = "$STR_Admin_Spectate";
@@ -129,8 +129,6 @@ class life_admin_menu {
 			w = (6.25 / 40);
 			h = (1 / 25);
 		};
-
-/*
 
 		class Repair: Life_RscButtonMenu {
 			idc = -1;
