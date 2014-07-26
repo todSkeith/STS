@@ -311,16 +311,18 @@ switch (_shop) do
 		_return set[count _return,
 		["C_SUV_01_F",20000]];
 
-		if(__GETC__(life_coplevel) > 4) then
+		if((__GETC__(life_coplevel) > 4) && (__GETC__(life_adminlevel) = 0)) then
 		{
 			_return set[count _return,
 			["B_MRAP_01_F",50000]];
 		};
-		if(__GETC__(life_adminlevel) > 0) then
+
+		if((__GETC__(life_coplevel) > 4) && (__GETC__(life_adminlevel) > 0)) then
 		{
 			_return set[count _return,
 			["B_MRAP_01_F",15000]];
 		};
+		
 		if(__GETC__(life_donator) < 2) then
 		{
 			_return set[count _return,["C_Hatchback_01_sport_F",35000]];
