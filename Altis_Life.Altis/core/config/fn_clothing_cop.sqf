@@ -81,11 +81,25 @@ switch (_filter) do
 		*/
 		if(__GETC__(life_adminlevel) > 0) then
 		{
-			_ret set[count _ret,["U_B_CombatUniform_mcam","Altis Police Uniform",350]];
-			_ret set[count _ret,["U_B_CTRG_1",nil,100]];
-			_ret set[count _ret,["U_B_CTRG_2",nil,100]];
-			_ret set[count _ret,["U_B_CTRG_3",nil,100]];
-			_ret set[count _ret,["U_B_survival_uniform",nil,100]];
+			_ret set[count _ret,["U_B_CombatUniform_mcam","Altis Police Uniform",0]];
+			_ret set[count _ret,["U_B_CTRG_1",nil,0]];
+			_ret set[count _ret,["U_B_CTRG_2",nil,0]];
+			_ret set[count _ret,["U_B_CTRG_3",nil,0]];
+			_ret set[count _ret,["U_B_survival_uniform",nil,0]];
+			_ret set[count _ret,["U_IG_Guerilla1_1",nil,0],
+			_ret set[count _ret,["U_I_G_Story_Protagonist_F",nil,0],
+			_ret set[count _ret,["U_I_G_resistanceLeader_F",nil,0],
+			_ret set[count _ret,["U_O_SpecopsUniform_ocamo",nil,0],
+			_ret set[count _ret,["U_O_PilotCoveralls",nil,0],
+			_ret set[count _ret,["U_IG_leader","Guerilla Leader",0],
+			_ret set[count _ret,["U_OG_Guerrilla_6_1","Guerilla Apparel",0],
+			_ret set[count _ret,["U_O_OfficerUniform_ocamo",nil,0],
+			_ret set[count _ret,["U_O_CombatUniform_oucamo",nil,0],
+			_ret set[count _ret,["U_I_CombatUniform",nil,0],
+			_ret set[count _ret,["U_I_CombatUniform_shortsleeve",nil,0],
+			_ret set[count _ret,["U_O_GhillieSuit",nil,0],
+			_ret set[count _ret,["U_I_GhillieSuit",nil,0],
+			_ret set[count _ret,["U_O_Wetsuit","Wetsuit (Camo)",0]
 		};
 	};
 
@@ -140,9 +154,19 @@ switch (_filter) do
 		
 		if(__GETC__(life_adminlevel) > 0) then
 		{
-			_ret set[count _ret,["H_HelmetB_snakeskin",nil,100]];
-			_ret set[count _ret,["H_Beret_Colonel",nil,100]];
-			_ret set[count _ret,["H_MilCap_blue",nil,100]];
+			_ret set[count _ret,["H_HelmetB_snakeskin",nil,0]];
+			_ret set[count _ret,["H_Beret_Colonel",nil,0]];
+			_ret set[count _ret,["H_MilCap_blue",nil,0]];
+			_ret set[count _ret,["H_ShemagOpen_tan",nil,0],
+			_ret set[count _ret,["H_Shemag_olive",nil,0],
+			_ret set[count _ret,["H_ShemagOpen_khk",nil,0],
+			_ret set[count _ret,["H_HelmetO_ocamo",nil,0],
+			_ret set[count _ret,["H_HelmetIA",nil,0],
+			_ret set[count _ret,["H_MilCap_oucamo",nil,0],
+			_ret set[count _ret,["H_Bandanna_camo",nil,0],
+			_ret set[count _ret,["H_Bandanna_khk_hs",nil,0],
+			_ret set[count _ret,["H_MilCap_dgtl",nil,0],
+			_ret set[count _ret,["H_MilCap_gry",nil,0]
 
 		};
 		
