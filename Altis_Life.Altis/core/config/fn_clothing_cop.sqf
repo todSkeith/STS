@@ -86,20 +86,20 @@ switch (_filter) do
 			_ret set[count _ret,["U_B_CTRG_2",nil,0]];
 			_ret set[count _ret,["U_B_CTRG_3",nil,0]];
 			_ret set[count _ret,["U_B_survival_uniform",nil,0]];
-			_ret set[count _ret,["U_IG_Guerilla1_1",nil,0],
-			_ret set[count _ret,["U_I_G_Story_Protagonist_F",nil,0],
-			_ret set[count _ret,["U_I_G_resistanceLeader_F",nil,0],
-			_ret set[count _ret,["U_O_SpecopsUniform_ocamo",nil,0],
-			_ret set[count _ret,["U_O_PilotCoveralls",nil,0],
-			_ret set[count _ret,["U_IG_leader","Guerilla Leader",0],
-			_ret set[count _ret,["U_OG_Guerrilla_6_1","Guerilla Apparel",0],
-			_ret set[count _ret,["U_O_OfficerUniform_ocamo",nil,0],
-			_ret set[count _ret,["U_O_CombatUniform_oucamo",nil,0],
-			_ret set[count _ret,["U_I_CombatUniform",nil,0],
-			_ret set[count _ret,["U_I_CombatUniform_shortsleeve",nil,0],
-			_ret set[count _ret,["U_O_GhillieSuit",nil,0],
-			_ret set[count _ret,["U_I_GhillieSuit",nil,0],
-			_ret set[count _ret,["U_O_Wetsuit","Wetsuit (Camo)",0]
+			_ret set[count _ret,["U_IG_Guerilla1_1",nil,0]];
+			_ret set[count _ret,["U_I_G_Story_Protagonist_F",nil,0]];
+			_ret set[count _ret,["U_I_G_resistanceLeader_F",nil,0]];
+			_ret set[count _ret,["U_O_SpecopsUniform_ocamo",nil,0]];
+			_ret set[count _ret,["U_O_PilotCoveralls",nil,0]];
+			_ret set[count _ret,["U_IG_leader","Guerilla Leader",0]];
+			_ret set[count _ret,["U_OG_Guerrilla_6_1","Guerilla Apparel",0];
+			_ret set[count _ret,["U_O_OfficerUniform_ocamo",nil,0]];
+			_ret set[count _ret,["U_O_CombatUniform_oucamo",nil,0]];
+			_ret set[count _ret,["U_I_CombatUniform",nil,0]];
+			_ret set[count _ret,["U_I_CombatUniform_shortsleeve",nil,0]];
+			_ret set[count _ret,["U_O_GhillieSuit",nil,0]];
+			_ret set[count _ret,["U_I_GhillieSuit",nil,0]];
+			_ret set[count _ret,["U_O_Wetsuit","Wetsuit (Camo)",0]];
 		};
 	};
 
