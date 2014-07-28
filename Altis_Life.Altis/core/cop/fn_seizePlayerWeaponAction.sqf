@@ -19,4 +19,4 @@ life_holstered_weapon = nil;  //can probably set to "", not sure if it matters
 [] call life_fnc_civFetchGear;
 [] call life_fnc_sessionUpdate; //Should make weapon remove persistent
 [] call life_fnc_civLoadGear;
-titleText ["Your weapons have been seized by %1.",name _cop],"PLAIN"]; //no
+titleText [format["Your weapons have been seized by %1.",name _cop],"PLAIN"]; //no
