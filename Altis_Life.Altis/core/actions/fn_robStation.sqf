@@ -35,7 +35,7 @@ if(_station getVariable["robProgress",true]) exitWith
 	hint "This store is in the process of being robbed please wait.";
 };
 
-// if(playersNumber west < 5) exitWith {hint "The till appears to be empty.\nTry again when more Altis civilians and officers are around."}; 
+if(playersNumber west < 5) exitWith {hint "The till appears to be empty.\nTry again when more Altis civilians and officers are around."}; 
 
 if(vehicle player != player) exitWith {hint "I'm not giving you anything until you step out of that vehicle..."};
 

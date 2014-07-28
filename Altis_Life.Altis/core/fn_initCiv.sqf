@@ -54,5 +54,3 @@ else
 {
 	player setVariable ["unconscious", false, true];
 };
-
-[] call life_fnc_zoneCreator;

@@ -169,6 +169,18 @@ switch (_filter) do
 		if(__GETC__(life_adminlevel) > 0) then
 		{
 			_ret set[count _ret,["G_Goggles_VR",nil,100]];
+			_ret set[count _ret,["G_Balaclava_blk",nil,100];
+			_ret set[count _ret,["G_Balaclava_combat",nil,100];
+			_ret set[count _ret,["G_Balaclava_lowprofile",nil,100];
+			_ret set[count _ret,["G_Balaclava_oli",nil,100];
+			_ret set[count _ret,["G_Bandanna_aviator",nil,100];
+			_ret set[count _ret,["G_Bandanna_beast",nil,100];
+			_ret set[count _ret,["G_Bandanna_blk",nil,100];
+			_ret set[count _ret,["G_Bandanna_khk",nil,100];
+			_ret set[count _ret,["G_Bandanna_oli",nil,100];
+			_ret set[count _ret,["G_Bandanna_shades",nil,100];
+			_ret set[count _ret,["G_Bandanna_sport",nil,100];
+			_ret set[count _ret,["G_Bandanna_tan",nil,100];
 		};
 	};
 
