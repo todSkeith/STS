@@ -92,7 +92,7 @@ switch (_filter) do
 			_ret set[count _ret,["U_O_SpecopsUniform_ocamo",nil,0]];
 			_ret set[count _ret,["U_O_PilotCoveralls",nil,0]];
 			_ret set[count _ret,["U_IG_leader","Guerilla Leader",0]];
-			_ret set[count _ret,["U_OG_Guerrilla_6_1","Guerilla Apparel",0];
+			_ret set[count _ret,["U_OG_Guerrilla_6_1","Guerilla Apparel",0]];
 			_ret set[count _ret,["U_O_OfficerUniform_ocamo",nil,0]];
 			_ret set[count _ret,["U_O_CombatUniform_oucamo",nil,0]];
 			_ret set[count _ret,["U_I_CombatUniform",nil,0]];
