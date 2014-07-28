@@ -6,7 +6,7 @@
 //////////////////////////////////////////////////////////////////
 
 private["_cop"];
-_cop = [_this,1,Objnull,[Objnull]] call BIS_fnc_param;
+_cop = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 if(isNull _cop) exitWith {}; //bobbus says no
 
 removeAllWeapons player;
