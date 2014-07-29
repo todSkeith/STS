@@ -15,6 +15,14 @@ _curWep = "";
 
 if(isPlayer _source && _source isKindOf "Man") then {_curWep = currentWeapon _source;};
 
+if (_projectile in ["mini_Grenade"]) then{
+	_unit allowDamage false;
+	_damage = 0;
+	[] spawn life_fnc_handleFlashbang;
+	_unit allowDamage true;
+	};
+
+
 // if(playerSide == west && side _source == west) then
 // {
 	// _damage = 0;
