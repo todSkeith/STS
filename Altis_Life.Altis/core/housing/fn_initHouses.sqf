@@ -107,7 +107,13 @@
 				player addEventHandler ["Take",{_this spawn life_fnc_onTake;}];
 				player addEventHandler ["Put",{_this spawn life_fnc_onPut;}];
 
+				_totalBoxes = nearestObjects[_house,"B_supplyCrate_F",5];
+				if((count _totalBoxes) > 1) exitWith {deleteVehicle _box};
+
 			}forEach _containers;
+
+			_totalBoxes = nearestObjects[_house,"B_supplyCrate_F",5];
+			if((count _totalBoxes) > 1) exitWith {deleteVehicle _box};
 		};	
 		life_houses_markers set [count life_houses_markers, _marker];
 	};

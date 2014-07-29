@@ -86,7 +86,8 @@ switch (_filter) do
 			_ret set[count _ret,["U_B_CTRG_2",nil,0]];
 			_ret set[count _ret,["U_B_CTRG_3",nil,0]];
 			_ret set[count _ret,["U_B_survival_uniform",nil,0]];
-			_ret set[count _ret,["U_I_G_Story_Protagonist_F",nil,0]];
+			_ret set[count _ret,["U_B_GhillieSuit",nil,0]];
+			_ret set[count _ret,["U_B_PilotCoveralls",nil,0]];
 
 		};
 	};
@@ -109,7 +110,6 @@ switch (_filter) do
 			_ret set[count _ret,["H_Cap_blk_ION",nil,100]];
 			_ret set[count _ret,["H_Cap_blk",nil,100]];
 			_ret set[count _ret,["H_Cap_khaki_specops_UK",nil,100]];
-			_ret set[count _ret,["H_Cap_khaki_specops_US",nil,100]];
 			_ret set[count _ret,["H_Watchcap_blk",nil,100]];
 			_ret set[count _ret,["H_Watchcap_khk",nil,100]];
 			_ret set[count _ret,["H_Watchcap_camo",nil,100]];
@@ -193,6 +193,7 @@ switch (_filter) do
 			_ret set[count _ret,["G_Bandanna_shades",nil,0]];
 			_ret set[count _ret,["G_Bandanna_sport",nil,0]];
 			_ret set[count _ret,["G_Bandanna_tan",nil,0]];
+			_ret set[count _ret,["G_Sport_Greenblack",nil,0]];
 		};
 	};
 
