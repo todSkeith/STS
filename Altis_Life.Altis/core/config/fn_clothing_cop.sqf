@@ -157,16 +157,16 @@ switch (_filter) do
 			_ret set[count _ret,["H_HelmetB_snakeskin",nil,0]];
 			_ret set[count _ret,["H_Beret_Colonel",nil,0]];
 			_ret set[count _ret,["H_MilCap_blue",nil,0]];
-			_ret set[count _ret,["H_ShemagOpen_tan",nil,0],
-			_ret set[count _ret,["H_Shemag_olive",nil,0],
-			_ret set[count _ret,["H_ShemagOpen_khk",nil,0],
-			_ret set[count _ret,["H_HelmetO_ocamo",nil,0],
-			_ret set[count _ret,["H_HelmetIA",nil,0],
-			_ret set[count _ret,["H_MilCap_oucamo",nil,0],
-			_ret set[count _ret,["H_Bandanna_camo",nil,0],
-			_ret set[count _ret,["H_Bandanna_khk_hs",nil,0],
-			_ret set[count _ret,["H_MilCap_dgtl",nil,0],
-			_ret set[count _ret,["H_MilCap_gry",nil,0]
+			_ret set[count _ret,["H_ShemagOpen_tan",nil,0]];
+			_ret set[count _ret,["H_Shemag_olive",nil,0]];
+			_ret set[count _ret,["H_ShemagOpen_khk",nil,0]];
+			_ret set[count _ret,["H_HelmetO_ocamo",nil,0]];
+			_ret set[count _ret,["H_HelmetIA",nil,0]];
+			_ret set[count _ret,["H_MilCap_oucamo",nil,0]];
+			_ret set[count _ret,["H_Bandanna_camo",nil,0]];
+			_ret set[count _ret,["H_Bandanna_khk_hs",nil,0]];
+			_ret set[count _ret,["H_MilCap_dgtl",nil,0]];
+			_ret set[count _ret,["H_MilCap_gry",nil,0]];
 
 		};
 		
@@ -192,19 +192,19 @@ switch (_filter) do
 
 		if(__GETC__(life_adminlevel) > 0) then
 		{
-			_ret set[count _ret,["G_Goggles_VR",nil,100]];
-			_ret set[count _ret,["G_Balaclava_blk",nil,100];
-			_ret set[count _ret,["G_Balaclava_combat",nil,100];
-			_ret set[count _ret,["G_Balaclava_lowprofile",nil,100];
-			_ret set[count _ret,["G_Balaclava_oli",nil,100];
-			_ret set[count _ret,["G_Bandanna_aviator",nil,100];
-			_ret set[count _ret,["G_Bandanna_beast",nil,100];
-			_ret set[count _ret,["G_Bandanna_blk",nil,100];
-			_ret set[count _ret,["G_Bandanna_khk",nil,100];
-			_ret set[count _ret,["G_Bandanna_oli",nil,100];
-			_ret set[count _ret,["G_Bandanna_shades",nil,100];
-			_ret set[count _ret,["G_Bandanna_sport",nil,100];
-			_ret set[count _ret,["G_Bandanna_tan",nil,100];
+			_ret set[count _ret,["G_Goggles_VR",nil,0]];
+			_ret set[count _ret,["G_Balaclava_blk",nil,0]];
+			_ret set[count _ret,["G_Balaclava_combat",nil,0]];
+			_ret set[count _ret,["G_Balaclava_lowprofile",nil,0]];
+			_ret set[count _ret,["G_Balaclava_oli",nil,0]];
+			_ret set[count _ret,["G_Bandanna_aviator",nil,0]];
+			_ret set[count _ret,["G_Bandanna_beast",nil,0]];
+			_ret set[count _ret,["G_Bandanna_blk",nil,0]];
+			_ret set[count _ret,["G_Bandanna_khk",nil,0]];
+			_ret set[count _ret,["G_Bandanna_oli",nil,0]];
+			_ret set[count _ret,["G_Bandanna_shades",nil,0]];
+			_ret set[count _ret,["G_Bandanna_sport",nil,0]];
+			_ret set[count _ret,["G_Bandanna_tan",nil,0]];
 		};
 	};
 
@@ -218,8 +218,8 @@ switch (_filter) do
 		};
 		if(__GETC__(life_adminlevel) > 0) then
 		{
-			_ret set[count _ret,["V_PlateCarrierL_CTRG",nil,100]];
-			_ret set[count _ret,["V_PlateCarrierH_CTRG",nil,100]];
+			_ret set[count _ret,["V_PlateCarrierL_CTRG",nil,0]];
+			_ret set[count _ret,["V_PlateCarrierH_CTRG",nil,0]];
 		};
 
 	};
@@ -259,4 +259,4 @@ switch (_filter) do
 	};
 };
 
-_ret;
+_ret

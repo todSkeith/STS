@@ -2,7 +2,7 @@
 /*
 	File: fn_cellphone.sqf
 	Author: Alan
-	
+
 	Description:
 	Opens the cellphone menu?
 */
@@ -18,7 +18,7 @@ lbClear _units;
 
 if((__GETC__(life_adminlevel) < 1)) then
 {
-//	ctrlShow[3020,false];
+	ctrlShow[3020,false];
 	ctrlShow[3021,false];
 };
 {
@@ -27,10 +27,10 @@ if((__GETC__(life_adminlevel) < 1)) then
 		switch (side _x) do
 		{
 			case west: {_type = "Cop"};
-			case independent: {_type = "Medic"};
 			case civilian: {_type = "Civ"};
+			case independent: {_type = "Med"};
 		};
-		_units lbAdd format["%1 (%2)",name _x,_type];
+		_units lbAdd format["%1 (%2)",_x getVariable["realname",name _x],_type];
 		_units lbSetData [(lbSize _units)-1,str(_x)];
 	};
 } foreach playableUnits;

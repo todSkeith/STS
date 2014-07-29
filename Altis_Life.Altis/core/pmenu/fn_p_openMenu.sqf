@@ -9,6 +9,8 @@
 if(!alive player || dialog) exitWith {}; //Prevent them from opening this for exploits while dead.
 createDialog "playerSettings";
 disableSerialization;
+_ret = [];
+[_ret,"TON_fnc_query",false,false] spawn life_fnc_MP;
 
 switch(playerSide) do
 {

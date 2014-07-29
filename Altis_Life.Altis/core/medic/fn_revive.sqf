@@ -28,6 +28,9 @@ if(player distance _target > 4) exitWith {};
  _reward = 750;
  life_atmcash = life_atmcash + _reward;
 hint format["You have revived %1\n\nYou have received $%2 for saving a life!",_target,_reward];
+_target allowDamage true;
+_target setDamage 0;
+_target enableSimulation true;
 /*
 if (alive _target) then
 	{
