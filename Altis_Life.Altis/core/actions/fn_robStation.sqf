@@ -13,7 +13,6 @@ _uid = getPlayerUID player;
 _robberycash = 0; 
 _progresstimer = 300;
 _denied1 = false;
-_hint = "preloop success";
 
 if(playerSide == west) exitWith 
 {
@@ -61,7 +60,6 @@ if((currentWeapon player !="") && (currentWeapon player !="Binocular")) then
 		_robberycash = robberyreward; 
 		
 		life_action_inUse = true;
-		hint "marker success";
 	
 		[[_station,_robber],"TON_fnc_robGasStation",_station,true] spawn life_fnc_MP;
 	
