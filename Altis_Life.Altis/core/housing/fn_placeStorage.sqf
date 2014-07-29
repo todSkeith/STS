@@ -45,8 +45,9 @@ switch (_item) do {
 		_box allowdamage false;
 
 		life_storage1_box = _box;
-		life_action_storageBoxDeploy = player addAction["Place Storage Box",{[false,_item,1] call life_fnc_handleInv; if(!isNull life_storage1_box) then {detach life_storage1_box; life_storage1_box = ObjNull;}; player removeAction life_action_storageBoxDeploy; life_action_storageBoxDeploy = nil;},"",999,false,false,"",'!isNull life_storage1_box'];
+		life_action_storageBoxDeploy = player addAction["Place Storage Box",{if(!isNull life_storage1_box) then {detach life_storage1_box; life_storage1_box = ObjNull;}; player removeAction life_action_storageBoxDeploy; life_action_storageBoxDeploy = nil;},"",999,false,false,"",'!isNull life_storage1_box'];
 		hint "Placing storage container...";
+		[false,_item,1] call life_fnc_handleInv;
 		waitUntil {isNull life_storage1_box;};
 		hint "";
 		};
@@ -64,8 +65,9 @@ switch (_item) do {
 		_box allowdamage false;
 
 		life_storage2_box = _box;
-		life_action_storageBoxDeploy = player addAction["Place Storage Box",{[false,_item,1] call life_fnc_handleInv; if(!isNull life_storage2_box) then {detach life_storage2_box; life_storage2_box = ObjNull;}; player removeAction life_action_storageBoxDeploy; life_action_storageBoxDeploy = nil;},"",999,false,false,"",'!isNull life_storage2_box'];
+		life_action_storageBoxDeploy = player addAction["Place Storage Box",{if(!isNull life_storage2_box) then {detach life_storage2_box; life_storage2_box = ObjNull;}; player removeAction life_action_storageBoxDeploy; life_action_storageBoxDeploy = nil;},"",999,false,false,"",'!isNull life_storage2_box'];
 		hint "Placing storage container...";
+		[false,_item,1] call life_fnc_handleInv;
 		waitUntil {isNull life_storage2_box;};
 		hint "";
 		};
