@@ -147,15 +147,6 @@ if(_source != _unit && isPlayer _source && _curWep in ["hgun_P07_snds_F","arifle
 	};
 };
 
-// Stun grenades
-if (_projectile in ["mini_Grenade"]) then
-{
-	_unit allowDamage false;
-	_damage = 0;
-	[] spawn life_fnc_handleFlashbang;
-	_unit allowDamage true;
-};
-
 if((player getVariable["restrained",false])) then
 {
 	_damage = 0;
