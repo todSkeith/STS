@@ -548,11 +548,11 @@ switch(_shop) do
 						["16Rnd_9x21_Mag",nil,0],
 						["11Rnd_45ACP_Mag",nil,0],
 						["6Rnd_45ACP_Cylinder",nil,0],
-						["30Rnd_65x39_caseless_green",nil,0]
-						["30Rnd_556x45_Stanag",nil,0]
-						["30Rnd_65x39_caseless_mag",nil,0]
-						["30Rnd_45ACP_Mag_SMG_01",nil,0]
-						["30Rnd_65x39_caseless_green",nil,0]
+						["30Rnd_65x39_caseless_green",nil,0],
+						["30Rnd_556x45_Stanag",nil,0],
+						["30Rnd_65x39_caseless_mag",nil,0],
+						["30Rnd_45ACP_Mag_SMG_01",nil,0],
+						["30Rnd_65x39_caseless_green",nil,0],
 						["20Rnd_556x45_UW_mag",nil,0],
 						["6Rnd_Green_Signal_F",nil,0],
 						["6Rnd_Red_Signal_F",nil,0],						
