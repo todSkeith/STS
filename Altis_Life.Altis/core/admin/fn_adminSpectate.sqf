@@ -24,4 +24,5 @@ if(_unit == player) exitWith {hint "You can not spectate yourself";};
 
 _unit switchCamera "EXTERNAL";
 hint format["You are now spectating %1 \n\n Press F10 to stop Spectating.",_unit getVariable["realname",name _unit]];
+[[name player,"Spectate",name _unit],"life_fnc_adminToolNotify",true,false] spawn life_fnc_MP;
 AM_Exit = (findDisplay 46) displayAddEventHandler ["KeyDown","if((_this select 1) == 68) then {(findDisplay 46) displayRemoveEventHandler ['KeyDown',AM_Exit];player switchCamera 'INTERNAL';hint 'You have stopped spectating';};false"];

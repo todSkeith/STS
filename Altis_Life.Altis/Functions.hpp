@@ -21,9 +21,10 @@ class Life_Client_Core
 		class admingetID {};
 		class adminMenu {};
 		class adminQuery {};
+		class adminToolNotify {};
 		class adminSpectate {}; 
 		class adminTeleport {};
-		class adminTpHere {}; 
+		class adminTpHere {};		
 	};
 
 	class Actions
