@@ -9,7 +9,7 @@ onEachFrame
 {
     private["_vis","_pos","_near","_name","_icon","_width","_height"];
     {
-        if(isPlayer _x && _x != player && [getPos _x select 0, getPos _x select 1, getPos _x select 2] distance [getPos player select 0, getPos player select 1, getPos player select 2] < 20) then
+        if(isPlayer _x && _x != player && !(_x in crew vehicle player) && [getPos _x select 0, getPos _x select 1, getPos _x select 2] distance [getPos player select 0, getPos player select 1, getPos player select 2] < 20) then
         {
             _vis = lineIntersects [eyePos player, eyePos _x,player, _x];
             if(!_vis) then
