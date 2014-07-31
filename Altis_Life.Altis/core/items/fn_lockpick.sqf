@@ -72,6 +72,13 @@ if(!_isVehicle) then {
 		life_vehicles set[count life_vehicles,_curTarget];
 		[[getPlayerUID player,name player,"487"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 	} else {
+		if((_dice > 15) &&(_dice < 45)) then {
+			for "_r" from 1 to 10 do
+				{
+					[[_curTarget, "car_alarm",60],"life_fnc_playSound",true,false] spawn BIS_fnc_MP;
+					sleep 2.3;
+				};
+		};
 		[[getPlayerUID player,name player,"503"],"life_fnc_wantedAdd",false,false] spawn life_fnc_MP;
 		[[0,format["%1 was seen trying to lockpick a car.",name player]],"life_fnc_broadcast",west,false] spawn life_fnc_MP;
 		titleText["The lockpick broke.","PLAIN"];
