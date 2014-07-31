@@ -43,7 +43,6 @@
 	playerFatigue = getFatigue player;
 	playerFatigue = round(100 - (playerFatigue * 200));
 	if(playerFatigue < 0) then {playerFatigue = 0};
-	playerFatigue = format["%1 %2",playerFatigue,"%"];
 	};
 
 	while{true} do

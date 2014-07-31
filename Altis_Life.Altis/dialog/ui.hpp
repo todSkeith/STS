@@ -51,20 +51,20 @@
 				w = 0.02; h = 0.03;
 			};
 
-			class weightHIcon : life_RscPicture
-			{
-				
-				idc = -1;
-				text = "icons\weight.paa";
-				x = safeZoneX+safeZoneW-0.11; y = safeZoneY+safeZoneH-0.40;
-				w = 0.02; h = 0.03;
-			};
-
 			class fatigueHIcon : life_RscPicture
 			{
 				
 				idc = -1;
 				text = "icons\fatigue.paa";
+				x = safeZoneX+safeZoneW-0.11; y = safeZoneY+safeZoneH-0.40;
+				w = 0.02; h = 0.03;
+			};
+
+			class weightHIcon : life_RscPicture
+			{
+				
+				idc = -1;
+				text = "icons\weight.paa";
 				x = safeZoneX+safeZoneW-0.11; y = safeZoneY+safeZoneH-0.35;
 				w = 0.02; h = 0.03;
 			};
@@ -126,7 +126,7 @@
 				text="";
 			};
 
-			class weighttext
+			class fatiguetext
 			{
 				type=0;
 				idc=23520;
@@ -144,7 +144,7 @@
 				text="";
 			};
 
-			class fatiguetext
+			class weighttext
 			{
 				type=0;
 				idc=23525;

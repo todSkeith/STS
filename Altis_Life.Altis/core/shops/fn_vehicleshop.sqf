@@ -252,7 +252,8 @@ closeDialog 0;
 
 {
 	_veh = _x select 0;
-	_price = _x select 1;
+	_price = round(((_x select 1)/100)*donatorLevel);
+	[] call life_fnc_donatorLevel;
 
 	if(_veh == "C_Offroad_01_F" && _price == 15000) then
 	{
@@ -262,6 +263,7 @@ closeDialog 0;
 	{
 		_name = getText(configFile >> "CfgVehicles" >> _veh >> "displayName");
 	};
+
 	_pic = getText(configFile >> "CfgVehicles" >> _veh >> "picture");
 	if(_veh == "B_G_Offroad_01_armed_F" OR _veh == "B_MRAP_01_hmg_F") then
 	{
