@@ -35,7 +35,7 @@
 
 	_fnc_weight =
 	{
-	playerWeight = round(((loadAbs player)*0.1)/2.2)
+	playerWeight = [(((loadAbs player)*0.1)/2.2),2] call BIS_fnc_cutDecimals;
 	};
 
 	_fnc_fatigue =
