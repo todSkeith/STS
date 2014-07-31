@@ -53,7 +53,8 @@ life_roadcone = ObjNull;
 life_isUnconscious = false;
 life_god = false;
 holstered = false;
-
+playerWeight = 0;
+playerFatigue = 0;
 
 
 //Uniform price (0),Hat Price (1),Glasses Price (2),Vest Price (3),Backpack Price (4)

@@ -26,8 +26,6 @@
 		_positions = [_house] call life_fnc_countBuildingPositions;
 		_containers = _house getVariable ["containers", []];
 		_weaponsAdded = false;
-		_totalBoxes = nearestObjects[_house,"B_supplyCrate_F",5];
-		if((count _totalBoxes) > 0) exitWith {};
 		
 		if(count _containers > 0) then {
 			{
@@ -111,10 +109,8 @@
 				if((count _totalBoxes) > 1) exitWith {deleteVehicle _box};
 
 			}forEach _containers;
-
-			_totalBoxes = nearestObjects[_house,"B_supplyCrate_F",5];
-			if((count _totalBoxes) > 1) exitWith {deleteVehicle _box};
 		};	
+
 		life_houses_markers set [count life_houses_markers, _marker];
 	};
 

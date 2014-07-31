@@ -1,5 +1,5 @@
 [] spawn  {
-	private["_fnc_food","_fnc_water"];
+	private["_fnc_food","_fnc_water","_fnc_weight","_fnc_fatigue"];
 	_fnc_food = 
 	{
 		if(life_hunger < 2) then {player setDamage 1; hint "You have starved to death.";}
@@ -31,6 +31,27 @@
 				case 10: {hint "You are now suffering from severe dehydration find something to drink quickly!"; player setFatigue 1;};
 			};
 		};
+	};
+
+	_fnc_weight =
+	{
+	playerWeight = round(((loadAbs player)*0.1)/2.2)
+	};
+
+	_fnc_fatigue =
+	{
+	playerFatigue = getFatigue player;
+	playerFatigue = round(100 - (playerFatigue * 200));
+	if(playerFatigue < 0) then {playerFatigue = 0};
+	playerFatigue = format["%1 %2",playerFatigue,"%"];
+	};
+
+	while{true} do
+	{
+		sleep 1;
+		[] call _fnc_fatigue;
+		[] call _fnc_weight;
+		[] call life_fnc_hudUpdate;
 	};
 	
 	while{true} do
