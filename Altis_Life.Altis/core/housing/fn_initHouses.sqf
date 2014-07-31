@@ -105,8 +105,8 @@
 				player addEventHandler ["Take",{_this spawn life_fnc_onTake;}];
 				player addEventHandler ["Put",{_this spawn life_fnc_onPut;}];
 
-				_totalBoxes = nearestObjects[_house,"B_supplyCrate_F",5];
-				if((count _totalBoxes) > 1) exitWith {deleteVehicle _box};
+				_totalBoxes = nearestObjects[_house,"B_supplyCrate_F",6];
+				if((count _totalBoxes) > 1) then {deleteVehicle _box};
 
 			}forEach _containers;
 		};	
