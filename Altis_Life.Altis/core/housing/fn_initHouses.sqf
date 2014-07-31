@@ -15,6 +15,8 @@
 	for "_i" from 1 to (count life_houses) do
 	{
 		_house = nearestObject [((life_houses select (_i-1)) select 0), "House_F"];
+		_preBox = nearestObject [_house, "B_supplyCrate_F"];
+		deleteVehicle _preBox;
 		_marker = createMarkerLocal [format["house_%1", _i], ((life_houses select (_i-1)) select 0)];
 		_cargo = ((life_houses select (_i-1)) select 2);
 		//diag_log format ["cargo : %1", _cargo];
@@ -26,10 +28,10 @@
 		_positions = [_house] call life_fnc_countBuildingPositions;
 		_containers = _house getVariable ["containers", []];
 		_weaponsAdded = false;
+		sleep 2;
 		
 		if(count _containers > 0) then {
 			{
-
 				_boxPosition = (_x select 3);
 				_boxPosition = [(_boxPosition select 0), (_boxPosition select 1), (_boxPosition select 2), (_boxPosition select 3)];
 				_boxPositionXYZ = [(_boxPosition select 0), (_boxPosition select 1), (_boxPosition select 2)];
@@ -104,9 +106,6 @@
 
 				player addEventHandler ["Take",{_this spawn life_fnc_onTake;}];
 				player addEventHandler ["Put",{_this spawn life_fnc_onPut;}];
-
-				_totalBoxes = nearestObjects[_house,"B_supplyCrate_F",6];
-				if((count _totalBoxes) > 1) then {deleteVehicle _box};
 
 			}forEach _containers;
 		};	
