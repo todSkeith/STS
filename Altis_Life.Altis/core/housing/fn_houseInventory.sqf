@@ -22,6 +22,7 @@ _box_data = [_box] call life_fnc_vehicleWeight;
 _weight = _weight + (_box_data select 0);
 _used = _used + (_box_data select 1);
 
+[] call life_fnc_preCloseHouseStorage;
 
 _house_data = [_weight, _used];
 
