@@ -17,11 +17,13 @@ _unit setVariable["Escorting",false,true];
 _unit setVariable["zipTie",false,true];
 _unit setVariable["surrender",false,true];
 
-
-_param = [(getpos player select 0),(getpos player select 1), 0];
-_param set[count _param, player getVariable "unconscious"];
-_paramName = "playerPosition";
-[_paramName,_param] spawn life_fnc_quickSync;
+if(playerSide == civilian) then 
+{
+	_param = [(getPos player select 0),(getPos player select 1), 0];
+	_param set[count _param, player getVariable "unconscious"];
+	_paramName = "playerPosition";
+	[_paramName,_param] spawn life_fnc_quickSync;
+}
 
 if(vehicle player != player) then
 {
