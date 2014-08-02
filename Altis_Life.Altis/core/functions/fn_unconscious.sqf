@@ -28,14 +28,15 @@ if(playerSide == civilian) then
 if(vehicle player != player) then
 {
 	player action ["Eject",vehicle player];
+	player action ["GetOut",vehicle player];
 };
 
-if (isPlayer _unit) then
-	{
+if (isPlayer _unit) then {
 		titleText ["", "BLACK FADED"];
-		
-		sleep 2.5;
-	};
+		disableUserInput true;
+		sleep 5;
+		disableUserInput false;
+};
 	titleText ["", "BLACK IN", 1];
 	
 	_unit setDamage 0;
