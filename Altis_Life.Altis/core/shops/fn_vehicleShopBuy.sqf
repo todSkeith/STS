@@ -24,8 +24,8 @@ switch(life_veh_shop) do
 
 	case "merc_1":
 	{
-		_sp = getMarkerPos "donator_1";
-		_dir = markerDir "donator_1";
+		_sp = getMarkerPos "merc_1";
+		_dir = markerDir "merc_1";
 		if(count(nearestObjects[_sp,["Car","Ship","Air"],2]) > 0) then
 		{
 			_sp = getMarkerPos "merc_1_1";
