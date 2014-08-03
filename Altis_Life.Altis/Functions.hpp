@@ -25,7 +25,8 @@ class Life_Client_Core
 		class adminToolNotify {};
 		class adminSpectate {}; 
 		class adminTeleport {};
-		class adminTpHere {};		
+		class adminTpHere {};	
+		class reportCash {};
 	};
 
 	class Actions
