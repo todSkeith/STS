@@ -23,6 +23,32 @@ player createDiarySubject ["controls","Controls"];
 */
 player createDiaryRecord["changelog",
 		[
+			"08/03/14",
+				"
+				Added: UI elements for Weight carried and Fatigue percentage!
+
+				Fixed: Box Duping (on Raiding, Breaking in and Logging in)
+				Fixed: House virtual storage
+				Fixed: Mercenary Vehicles can now be permanently bought
+				Fixed: Some alarm loops on houses and cars
+				Fixed: Nameplates should no longer appear when in vehicles	
+				Fixed: Multiple menus and life_inAction loops		
+
+				Changed: Donators dynamic discount applies to EVERYTHING NOW!
+				Changed: Gas Station Changes (overhaul)
+				Changed: Voice chat in Side = BIG NONO
+
+
+				DEVLOG:
+				Overhauled sync changes, quicksync and housesync for improved serverside performance times.
+				Admin Changes: See forums
+
+				"
+		]
+	];
+
+player createDiaryRecord["changelog",
+		[
 			"6/25/14",
 				"
 				Added: Placeable Persistant Storage Boxes<br/>
