@@ -9,8 +9,7 @@ private["_clerk","_player","_timer","_cash","_marker","_markerName","_inProgress
 
 _clerk = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _player = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
-//_timer = (60 * 5);
-_timer = (5);
+_timer = (60 * 5);
 _cash = (1000 * ceil(random 30));
 
 if(!(_clerk getVariable ["canBeRobbed", true])) exitWith {cutText ["Sorry... I was robbed recently! Try again later!","PLAIN"];};
@@ -103,6 +102,6 @@ if(_timer < 1 and {_success}) then {
 	_clerk = _this select 0;
 	_clerk switchMove "";
 	_clerk setVariable ["canBeRobbed", false, true];
-	sleep (5);
+	sleep (60*5);
 	_clerk setVariable ["canBeRobbed", true, true];
 };
