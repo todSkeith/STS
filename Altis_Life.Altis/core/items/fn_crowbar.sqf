@@ -82,6 +82,9 @@ if(_isVehicle) then {
 
 				if(count _containers > 0) then {
 
+				_preBox = nearestObject [_house, "B_supplyCrate_F"];
+				deleteVehicle _preBox;
+
 				_boxPosition = ((_containers select 0) select 3);
 				_boxPosition = [(_boxPosition select 0), (_boxPosition select 1), (_boxPosition select 2), (_boxPosition select 3)];
 				_boxPositionXYZ = [(_boxPosition select 0), (_boxPosition select 1), (_boxPosition select 2)];

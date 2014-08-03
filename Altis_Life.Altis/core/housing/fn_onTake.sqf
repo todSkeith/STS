@@ -77,4 +77,3 @@ if(typeOf _container == "B_supplyCrate_F") then {
 
 	[[_house, [_wc, _mc, _ic, _bc]],"BRUUUDIS_fnc_updateHouseWeaponStorage",false,false] spawn BIS_fnc_MP;
 };
-_handle = [] spawn life_fnc_sessionUpdate;

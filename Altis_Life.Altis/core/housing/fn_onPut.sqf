@@ -17,7 +17,6 @@ _house = nearestObject [position player, "House_F"];
 _owner = _container getVariable ["owner", ""];
 
 if(_owner == "") exitWith {
-	_handle = [] spawn life_fnc_sessionUpdate;
 };
 
 if(typeOf _container == "B_supplyCrate_F") then {
@@ -30,4 +29,3 @@ if(typeOf _container == "B_supplyCrate_F") then {
 	//sleep 0.5;
 	[[_house, [_wc, _mc, _ic, _bc]],"BRUUUDIS_fnc_updateHouseWeaponStorage",false,false] spawn BIS_fnc_MP;
 };
-_handle = [] spawn life_fnc_sessionUpdate;

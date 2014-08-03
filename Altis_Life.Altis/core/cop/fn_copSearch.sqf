@@ -12,7 +12,7 @@ _civ = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
 _invs = [_this,1,[],[[]]] call BIS_fnc_param;
 _robber = [_this,2,false,[false]] call BIS_fnc_param;
 _guns = [_this,3,[],[[]]] call BIS_fnc_param;
-_bleedout = [_this,4,0,[0]] call BIS_fnc_param;
+//_bleedout = [_this,4,0,[0]] call BIS_fnc_param;
 _illegal = 0;
 _inv = "";
 _gun = "";
@@ -66,9 +66,9 @@ if (side player == independent) then {
 	_out = _out + format ["<t color='#FFD700'><t size='1.5'>Illegal Items:</t></t><br/>%1<br/><br/>", _inv];
 };
 _out = _out + format ["<t color='#FF0000'><t size='1.5'>Concealed Weapons:</t></t><br/>%1<br/><br/>", _gun];
-if (_civ getVariable ["unconscious",false]) then {
-	_out = _out + format ["<t color='#FFFFFF'>Bleedout in %1 seconds.</t><br/><br/>", round (_bleedout - time)];
-};
+//if (_civ getVariable ["unconscious",false]) then {
+//	_out = _out + format ["<t color='#FFFFFF'>Bleedout in %1 seconds.</t><br/><br/>", round (_bleedout - time)];
+//};
 
 hint parseText _out;
 
