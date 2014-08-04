@@ -20,7 +20,7 @@ if (side _cop == west) then {
 	{
 		_var = [_x select 0,0] call life_fnc_varHandle;
 		_val = missionNamespace getVariable _var;
-		if(_val > 0) then
+		if(_val > _x select 2) then
 		{
 			_inv set[count _inv,[_x select 0,_val]];
 		};
