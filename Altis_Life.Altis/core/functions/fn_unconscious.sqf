@@ -23,12 +23,12 @@ if(playerSide == civilian) then
 	_param set[count _param, player getVariable "unconscious"];
 	_paramName = "playerPosition";
 	[_paramName,_param] spawn life_fnc_quickSync;
-}
+};
 
 if(vehicle player != player) then
 {
 	player action ["Eject",vehicle player];
-	player action ["GetOut",vehicle player];
+	//player action ["GetOut",vehicle player];
 };
 
 if (isPlayer _unit) then {
