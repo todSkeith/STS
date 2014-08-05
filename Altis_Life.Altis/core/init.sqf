@@ -104,4 +104,4 @@ setPlayerRespawnTime life_respawn_timer; //Set our default respawn time.
 //[] call life_fnc_setupActions;
 life_abort_enabled = false;
 [] spawn life_fnc_abortEnabled; // Monitor for restrain and modify UI menus accordingly
-[] execVM "core\nosidechat.sqf";
+[] execVM "core\fn_sidechatoff.sqf";
