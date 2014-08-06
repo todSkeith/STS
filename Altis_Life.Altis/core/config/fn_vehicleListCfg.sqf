@@ -244,13 +244,13 @@ switch (_shop) do
 		_return set[count _return,
 		["C_SUV_01_F",20000]];
 
-		if((__GETC__(life_coplevel) > 4) && (__GETC__(life_adminlevel) == 0)) then
+		if((__GETC__(life_coplevel) > 3) && (__GETC__(life_adminlevel) == 0)) then
 		{
 			_return set[count _return,
 			["B_MRAP_01_F",50000]];
 		};
 
-		if((__GETC__(life_coplevel) > 4) && (__GETC__(life_adminlevel) > 0)) then
+		if((__GETC__(life_coplevel) > 3) && (__GETC__(life_adminlevel) > 0)) then
 		{
 			_return set[count _return,
 			["B_MRAP_01_F",15000]];
@@ -300,7 +300,7 @@ switch (_shop) do
 		["C_Offroad_01_F",5000]];
 		_return set[count _return,
 		["C_SUV_01_F",20000]];
-		if(__GETC__(life_coplevel) > 4) then
+		if(__GETC__(life_coplevel) > 3) then
 		{
 			_return set[count _return,["B_MRAP_01_F",50000]];
 		};
@@ -326,7 +326,7 @@ switch (_shop) do
 		["C_Offroad_01_F",5000]];
 		_return set[count _return,
 		["C_SUV_01_F",20000]];
-		if(__GETC__(life_coplevel) > 4) then
+		if(__GETC__(life_coplevel) > 3) then
 		{
 			_return set[count _return,
 			["B_MRAP_01_F",50000]];
@@ -400,18 +400,16 @@ switch (_shop) do
 
 	case "cop_air_1":
 	{
-		_return set[count _return,
-		["B_Heli_Light_01_F",75000]];
 		if(__GETC__(life_adminlevel) > 0) then
 		{
 			_return set[count _return,["I_Heli_light_03_unarmed_F",20000]];
 			_return set[count _return,["B_Heli_Transport_01_F",20000]];
 		} else {
-			if(__GETC__(life_coplevel) > 4) then
+			if(__GETC__(life_coplevel) > 2) then
 			{
 				_return set[count _return,["I_Heli_light_03_unarmed_F",200000]];
 			};
-			if((__GETC__(life_coplevel) > 5) && (__GETC__(life_adminlevel) == 0)) then
+			if((__GETC__(life_coplevel) > 4) && (__GETC__(life_adminlevel) == 0)) then
 			{
 				_return set[count _return,["B_Heli_Transport_01_F",50000]];
 			};
@@ -420,18 +418,16 @@ switch (_shop) do
 
 	case "cop_air_2":
 	{
-		_return set[count _return,
-		["B_Heli_Light_01_F",75000]];
 		if(__GETC__(life_adminlevel) > 0) then
 		{
 			_return set[count _return,["I_Heli_light_03_unarmed_F",20000]];
 			_return set[count _return,["B_Heli_Transport_01_F",20000]];
 		} else {
-			if(__GETC__(life_coplevel) > 4) then
+			if(__GETC__(life_coplevel) > 2) then
 			{
 				_return set[count _return,["I_Heli_light_03_unarmed_F",200000]];
 			};
-			if((__GETC__(life_coplevel) > 5) && (__GETC__(life_adminlevel) == 0)) then
+			if((__GETC__(life_coplevel) > 4) && (__GETC__(life_adminlevel) == 0)) then
 			{
 				_return set[count _return,["B_Heli_Transport_01_F",50000]];
 			};
