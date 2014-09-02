@@ -27,7 +27,10 @@ if(_veh == "O_Heli_Attack_02_black_F") then
 };
 
 
-/* ALLOW GHOSTHAWKS
+/*
+
+//stopping removal of bullets from ghosthawk
+
 if(_veh == "B_Heli_Transport_01_F") then 
 {
 	_vehicle removeMagazinesTurret ["2000Rnd_65x39_Belt_Tracer_Red",[1]];

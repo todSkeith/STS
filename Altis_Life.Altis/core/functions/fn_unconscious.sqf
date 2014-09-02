@@ -17,26 +17,17 @@ _unit setVariable["Escorting",false,true];
 _unit setVariable["zipTie",false,true];
 _unit setVariable["surrender",false,true];
 
-if(playerSide == civilian) then 
-{
-	_param = [(getPos player select 0),(getPos player select 1), 0];
-	_param set[count _param, player getVariable "unconscious"];
-	_paramName = "playerPosition";
-	[_paramName,_param] spawn life_fnc_quickSync;
-};
-
 if(vehicle player != player) then
 {
 	player action ["Eject",vehicle player];
-	//player action ["GetOut",vehicle player];
 };
 
-if (isPlayer _unit) then {
+if (isPlayer _unit) then
+	{
 		titleText ["", "BLACK FADED"];
-		disableUserInput true;
-		sleep 5;
-		disableUserInput false;
-};
+		
+		sleep 2.5;
+	};
 	titleText ["", "BLACK IN", 1];
 	
 	_unit setDamage 0;
@@ -51,7 +42,7 @@ if (isPlayer _unit) then {
 	hintC "You have been incapacitated. Please do not communicate with other players.";
 
 	while {_unit getVariable "unconscious"} do
-{
+	{
 		if(vehicle player != player && driver vehicle player == player) then
 		{
 			player action ["Eject",vehicle player];
@@ -81,7 +72,8 @@ if (isPlayer _unit) then {
 			hintSilent "";
 			player setDamage 1;
 		};
-};
+	};
+	
 	hintSilent "";
 	//_unit enableSimulation true;
 	//_unit allowDamage true;

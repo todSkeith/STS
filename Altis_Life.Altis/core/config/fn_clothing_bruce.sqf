@@ -1,7 +1,7 @@
 /*
 	File: fn_clothing_bruce.sqf
 	Author: Bryan "Tonic" Boardwine
-
+	
 	Description:
 	Master configuration file for Bruce's Outback Outfits.
 */
@@ -18,39 +18,39 @@ switch (_filter) do
 	case 0:
 	{
 		[
-		["U_Marshal","Marshal Uniform", 1000],
-		["U_C_Poloshirt_blue","Poloshirt STS",250],
-		["U_C_Poloshirt_burgundy","Poloshirt Burgundy",275],
-		["U_C_Poloshirt_redwhite","Poloshirt Red/White",150],
-		["U_C_Poloshirt_salmon","Poloshirt 70s",175],
-		["U_C_Poloshirt_stripped","Poloshirt stripped",125],
-		["U_C_Poloshirt_tricolour","Poloshirt Tricolor",350],
-		["U_C_Poor_2","Rag tagged clothes",250],
-		["U_C_HunterBody_grn","Green Hunter",1500],
-		["U_IG_Guerilla2_2","Green stripped shirt & Pants",650],																												
-		["U_IG_Guerilla3_1","Brown Jacket & Pants",735],
-		["U_IG_Guerilla2_3","The Outback Rangler",1200],
-		["U_OG_Guerilla3_2","Tie Suite",5000],
-		["U_C_WorkerCoveralls","Mechanic Coveralls",2500],
-		["U_OrestesBody","Surfing On Land",1100],
-		["U_C_Scientist","Mechanic Blue",3000],	
-		["U_NikosBody","Badass Uniform",5000],
-		["U_C_Journalist","Journalist Clothes",5000],
-		["U_NikosAgedBody","Business Casual",5000],
-		["U_C_Driver_1_black",nil,1500],
- 		["U_C_Driver_1_blue",nil,1500],
- 		["U_C_Driver_1_red",nil,1500],
- 		["U_C_Driver_1_orange",nil,1500],
- 		["U_C_Driver_1_green",nil,1500],
- 		["U_C_Driver_1_white",nil,1500],
- 		["U_C_Driver_1_yellow",nil,1500],
- 		["U_C_Driver_2",nil,3500],
- 		["U_C_Driver_1",nil,3600],
- 		["U_C_Driver_3",nil,3700],
- 		["U_C_Driver_4",nil,3700]
+			["U_Marshal","Marshal Uniform", 1000],
+			["U_C_Poloshirt_blue","Poloshirt STS",250],
+			["U_C_Poloshirt_burgundy","Poloshirt Burgundy",275],
+			["U_C_Poloshirt_redwhite","Poloshirt Red/White",150],
+			["U_C_Poloshirt_salmon","Poloshirt 70s",175],
+			["U_C_Poloshirt_stripped","Poloshirt stripped",125],
+			["U_C_Poloshirt_tricolour","Poloshirt Tricolor",350],
+			["U_C_Poor_2","Rag tagged clothes",250],
+			["U_C_HunterBody_grn","Green Hunter",1500],
+			["U_IG_Guerilla2_2","Green stripped shirt & Pants",650],																												
+			["U_IG_Guerilla3_1","Brown Jacket & Pants",735],
+			["U_IG_Guerilla2_3","The Outback Rangler",1200],
+			["U_OG_Guerilla3_2","Tie Suite",5000],
+			["U_C_WorkerCoveralls","Mechanic Coveralls",2500],
+			["U_OrestesBody","Surfing On Land",1100],
+			["U_C_Scientist","Mechanic Blue",3000],	
+			["U_NikosBody","Badass Uniform",5000],
+			["U_C_Journalist","Journalist Clothes",5000],
+			["U_NikosAgedBody","Business Casual",5000],
+			["U_C_Driver_1_black",nil,1500],
+	 		["U_C_Driver_1_blue",nil,1500],
+	 		["U_C_Driver_1_red",nil,1500],
+	 		["U_C_Driver_1_orange",nil,1500],
+	 		["U_C_Driver_1_green",nil,1500],
+	 		["U_C_Driver_1_white",nil,1500],
+	 		["U_C_Driver_1_yellow",nil,1500],
+	 		["U_C_Driver_2",nil,3500],
+	 		["U_C_Driver_1",nil,3600],
+	 		["U_C_Driver_3",nil,3700],
+	 		["U_C_Driver_4",nil,3700]
 		];
 	};
-
+	
 	//Hats
 	case 1:
 	{
@@ -93,7 +93,7 @@ switch (_filter) do
  			["H_RacingHelmet_4_F",nil,2500]
 		];
 	};
-
+	
 	//Glasses
 	case 2:
 	{
@@ -122,14 +122,14 @@ switch (_filter) do
 			["G_Goggles_VR",nil,55]
 		];
 	};
-
+	
 	//Vest
 	case 3:
 	{
 		[
 		];
 	};
-
+	
 	//Backpacks
 	case 4:
 	{
@@ -146,7 +146,6 @@ switch (_filter) do
 			["B_Carryall_mcamo",nil,3000],
 			["B_Carryall_cbr",nil,3000],
 			["B_Carryall_khk",nil,4000]
-
 		];
 	};
 };

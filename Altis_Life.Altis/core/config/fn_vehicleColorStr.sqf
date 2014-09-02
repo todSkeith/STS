@@ -1,7 +1,7 @@
 /*
 	File: fn_vehicleColorStr.sqf
 	Author: Bryan "Tonic" Boardwine
-
+	
 	Description:
 	Master configuration for color strings depending on their index location.
 */
@@ -27,7 +27,7 @@ switch (_vehicle) do
 			case 8: {_color = "Black"};
 		};
 	};
-
+	
 	case "C_Hatchback_01_F":
 	{
 		switch (_index) do
@@ -44,7 +44,7 @@ switch (_vehicle) do
 			case 9: {_color = "Medic"};
 		};
 	};
-
+	
 	case "C_Hatchback_01_sport_F":
 	{
 		switch(_index) do
@@ -58,7 +58,7 @@ switch (_vehicle) do
 			case 6: {_color = "Cop"};
 		};
 	};
-
+	
 	case "C_SUV_01_F":
 	{
 		switch (_index) do
@@ -69,10 +69,9 @@ switch (_vehicle) do
 			case 3: {_color = "Orange";};
 			case 4: {_color = "Cop";};
 			case 5: {_color = "Medic";};
-
 		};
 	};
-
+	
 	case "C_Van_01_box_F":
 	{
 		switch (_index) do
@@ -81,7 +80,7 @@ switch (_vehicle) do
 			case 1: {_color = "Red"};
 		};
 	};
-
+	
 	case "C_Van_01_transport_F":
 	{
 		switch (_index) do
@@ -90,7 +89,7 @@ switch (_vehicle) do
 			case 1: {_color = "Red"};
 		};
 	};
-
+	
 	case "C_Van_01_fuel_F":
 	{
 		switch (_index) do
@@ -99,7 +98,7 @@ switch (_vehicle) do
 			case 1: {_color = "Red"};
 		};
 	};
-
+	
 	case "B_Quadbike_01_F" :
 	{
 		switch (_index) do
@@ -115,7 +114,7 @@ switch (_vehicle) do
 			case 8: {_color = "Rebel Camo"};
 		};
 	};
-
+	
 	case "B_Heli_Light_01_F":
 	{
 		switch (_index) do
@@ -137,7 +136,7 @@ switch (_vehicle) do
 			case 14: {_color = "Medic"};
 		};
 	};
-
+	
 	case "O_Heli_Light_02_unarmed_F":
 	{
 		switch (_index) do
@@ -149,7 +148,7 @@ switch (_vehicle) do
 			case 4: {_color = "Medic"};
 		};
 	};
-
+	
 	case "B_MRAP_01_F":
 	{
 		switch (_index) do
@@ -158,7 +157,7 @@ switch (_vehicle) do
 			case 1: {_color = "Black"};
 		};
 	};
-
+	
 	case "I_Truck_02_covered_F":
 	{
 		switch (_index) do
@@ -167,7 +166,7 @@ switch (_vehicle) do
 			case 1: {_color = "Black"};
 		};
 	};
-
+	
 	case "I_Truck_02_transport_F":
 	{
 		switch (_index) do
@@ -176,7 +175,7 @@ switch (_vehicle) do
 			case 1: {_color = "Black"};
 		};
 	};
-
+	
 	case "B_APC_Wheeled_01_cannon_F":
 	{
 		switch (_index) do
@@ -184,7 +183,7 @@ switch (_vehicle) do
 			case 0: {_color = "Black"};
 		};
 	};
-
+	
 	case "O_Heli_Attack_02_black_F":
 	{
 		switch (_index) do
@@ -192,7 +191,7 @@ switch (_vehicle) do
 			case 0: {_color = "Black"};
 		};
 	};
-
+	
 	case "I_Heli_Transport_02_F":
 	{
 		switch (_index) do
@@ -201,7 +200,7 @@ switch (_vehicle) do
 			case 1: {_color = "Dahoman"};
 		};
 	};
-
+	
 	case "B_APC_Wheeled_01_cannon_F":
 	{
 		switch (_index) do

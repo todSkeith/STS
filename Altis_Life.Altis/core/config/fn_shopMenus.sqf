@@ -20,7 +20,7 @@ switch (_shop) do
 {
 	case "reb":
 	{
-		ctrlSetText[2505,"Rebel Item Shop"];
+		ctrlSetText[2505,"Altis Rebel Shop"];
 		ctrlShow[2503,false];
 		ctrlShow[2513,false];
 		ctrlShow[2514,false];
@@ -55,20 +55,6 @@ switch (_shop) do
 		ctrlShow[2510,false];
 		ctrlShow[2511,false];
 		ctrlShow[2513,false];
-	};
-		case "copdive":
-	{
-		ctrlSetText[2505,"CoastGuard Diving Shop"];
-		ctrlShow[2503,false];
-		ctrlShow[2510,false];
-		ctrlShow[2511,false];
-		ctrlShow[2513,false];
-	};
-
-	
-	case "donator":
-	{
-		ctrlSetText[2505,"Mercenary Shop"];
 	};
 	
 	case "sergeant":

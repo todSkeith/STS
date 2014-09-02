@@ -6,7 +6,7 @@
 	Main handling system for eating food.
 	*Needs to be revised and made more modular and more indept effects*
 */
-private["_food","_val","_valdrug","_sum","_drugsum"];
+private["_food","_val","_sum"];
 _food = [_this,0,"",[""]] call BIS_fnc_param;
 if(_food == "") exitWith {};
 

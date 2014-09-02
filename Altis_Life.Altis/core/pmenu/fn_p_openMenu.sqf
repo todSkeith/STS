@@ -9,21 +9,10 @@
 if(!alive player || dialog) exitWith {}; //Prevent them from opening this for exploits while dead.
 createDialog "playerSettings";
 disableSerialization;
-_ret = [];
-[_ret,"TON_fnc_query",false,false] spawn life_fnc_MP;
 
 switch(playerSide) do
 {
 	case west: 
-	{
-		ctrlShow[2011,false];
-		if ((leader group player) != player) then
-		{
-			ctrlShow[2012,false];
-		};
-	};
-	
-	case independent:
 	{
 		ctrlShow[2011,false];
 	};

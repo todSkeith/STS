@@ -1,9 +1,10 @@
-//////////////////////////////////////////////////////////////////
-// Created by: Tonic and Adapted by DirtDiver for STS
-// Function Name: life_fn_licensePrice.sqf
-// Description: Sets the price for licenses.
-//////////////////////////////////////////////////////////////////
-
+/*
+	File: fn_licensePrice.sqf
+	Author: Bryan "Tonic" Boardwine
+	
+	Description:
+	Returns the license price.
+*/
 private["_type"];
 _type = [_this,0,"",[""]] call BIS_fnc_param;
 if(_type == "") exitWith {-1};
@@ -40,7 +41,6 @@ switch (_type) do
 	case "medicair" : {25000};
 	case "home": {100000};
 	case "c3": {50000};
-	{
-		/* STATEMENT */
-	};
+	case "swat": {35000}; //Swat License cost
+	case "mair": {15000};
 };

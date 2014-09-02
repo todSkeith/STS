@@ -1,17 +1,21 @@
 /*
-	Pushing boat when beached
-	Author: Egypt~Seal
+	Does it matter? Needs to be replaced.
+	Built for Feint's Push functionality
 */
-
-
-private ["_Object","_caller","_isWater"];
-_Object = cursorTarget;
+private["_target","_caller","_posCaller","_dir"];
+_target = cursorTarget;
 _caller = player;
-_isWater = surfaceIsWater position _caller; 
-if (_isWater) exitwith {titleText ["You can't push from in the water","PLAIN DOWN",1];};
-_Object setOwner (owner _caller);
-_caller playMove "AmovPercMstpSnonWnonDnon_AinvPercMstpSnonWnonDnon_Putdown";
-if (currentWeapon _caller == "") then {sleep 1;} else {sleep 2;};
-_Object setVelocity [(sin(direction _caller))*4, (cos(direction _caller))*4, 0];  
+_posCaller = getPos _caller;
+_dir = getDir _caller;
 
-waituntil{sleep 2;_player};
+if(isNull _target) exitWith {};
+if(_caller distance _target > 5) exitWith {};
+
+if(local _target) then
+{
+	[_caller,_target,_posCaller,_dir] spawn life_fnc_pushFunction;
+}
+	else
+{
+	[[_caller,_target,_posCaller,_dir],"life_fnc_pushFunction",_target,false] spawn life_fnc_MP;
+};

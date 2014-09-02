@@ -1,320 +1,101 @@
+#include <macro.h>
 /*
 	File: fn_vehicleShopBuy.sqf
 	Author: Bryan "Tonic" Boardwine
-
+	
 	Description:
-	Deleting it soon enough....
+	Does something with vehicle purchasing.
 */
-private["_index","_veh","_color","_price","_sp","_kill","_dir","_name","_sv","_fed","_double","_ems"];
-_kill = false;
-_double = false;
-_ems = false;
-switch(life_veh_shop) do
-{
-	case "civ_car_1":
-	{
-		_sp = getMarkerPos "civ_car_1";
-		_dir = markerDir "civ_car_1";
-		if(count(nearestObjects[_sp,["Car","Ship","Air"],2]) > 0) then
-		{
-			_sp = getMarkerPos "civ_car_1_1";
-			_dir = markerDir "civ_car_1_1";
-		};
-	};
+private["_mode","_spawnPoints","_className","_basePrice","_colorIndex","_spawnPoint","_vehicle"];
+_mode = _this select 0;
+if((lbCurSel 2302) == -1) exitWith {hint localize "STR_Shop_Veh_DidntPick"};
+_className = lbData[2302,(lbCurSel 2302)];
+_vIndex = lbValue[2302,(lbCurSel 2302)];
+_vehicleList = [life_veh_shop select 0] call life_fnc_vehicleListCfg; _basePrice = (_vehicleList select _vIndex) select 1;
+ if(_mode) then {_basePrice = round(_basePrice * 1.5)};
+_colorIndex = lbValue[2304,(lbCurSel 2304)];
 
-	case "merc_1":
-	{
-		_sp = getMarkerPos "merc_1";
-		_dir = markerDir "merc_1";
-		if(count(nearestObjects[_sp,["Car","Ship","Air"],2]) > 0) then
-		{
-			_sp = getMarkerPos "merc_1_1";
-			_dir = markerDir "merc_1_1";
-		};
-	};
+_basePrice = (_basePrice * __GETC__(life_donator_discount));
 
-	case "merc_2":
-	{
-		_sp = getMarkerPos "merc_2";
-		_dir = markerDir "merc_2";
-		if(count(nearestObjects[_sp,["Car","Ship","Air"],5]) > 0) then
-		{
-			_sp = getMarkerPos "merc_2_1";
-			_dir = markerDir "merc_2_1";
-		};
-	};
+//Series of checks (YAY!)
+if(_basePrice < 0) exitWith {}; //Bad price entry
+if(life_cash < _basePrice) exitWith {hint format[localize "STR_Shop_Veh_NotEnough",[_basePrice - life_cash] call life_fnc_numberText];};
+if(!([_className] call life_fnc_vehShopLicenses) && _className != "B_MRAP_01_hmg_F") exitWith {hint localize "STR_Shop_Veh_NoLicense"};
 
-	case "civ_car_2":
-	{
-		_sp = getMarkerPos "civ_car_2";
-		_dir = markerDir "civ_car_2";
-	};
+_spawnPoints = life_veh_shop select 1;
+_spawnPoint = "";
 
-	case "civ_car_3":
-	{
-		_sp = getMarkerPos "civ_car_3";
-		_dir = markerDir "civ_car_3";
-	};
-
-	case "civ_car_4":
-	{
-		_sp = getMarkerPos "civ_car_4";
-		_dir = markerDir "civ_car_4";
-	};
-
-	case "civ_servt_1":
-	{
-		_sp = getMarkerPos "civ_servt_1";
-		_dir = markerDir "civ_servt_1";
-	};
-
-	case "cop_car_1":
-	{
-		_sp = getMarkerPos "cop_car_1";
-		_dir = markerDir "cop_car_1";
-	};
-
-	case "cop_car_2":
-	{
-		_sp = getMarkerPos "cop_car_2";
-		_dir = markerDir "cop_car_2";
-	};
-
-	case "cop_car_3":
-	{
-		_sp = getMarkerPos "cop_car_3";
-		_dir = markerDir "cop_car_3";
-	};
-
-	case "cop_car_5":
-	{
-		_sp = getMarkerPos "cop_car_5";
-		_dir = markerDir "cop_car_5";
-	};
-
-	case "fed_car":
-	{
-		_sp = getMarkerPos "fed_car_1";
-		_dir = markerDir "fed_car_1";
-		if(count(nearestObjects[_sp,["Car","Ship","Air"],20]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
-	};
-
-	case "fed_air":
-	{
-		_sp = getMarkerPos "fed_air_1";
-		_dir = markerDir "fed_air_1";
-		if(count(nearestObjects[_sp,["Car","Ship","Air"],20]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
-	};
-
-	case "civ_ship_1":
-	{
-		//if(!license_civ_boat) exitWith {_kill = true;};
-		_sp = getMarkerPos "civ_ship_1";
-		_dir = markerDir "civ_ship_1";
-	};
-
-	case "civ_ship_2":
-	{
-		_sp = getMarkerPos "civ_ship_2";
-		_dir = markerDir "civ_ship_2";
-	};
-
-	case "civ_ship_3":
-	{
-		_sp = getMarkerPos "civ_ship_3";
-		_dir = markerDir "civ_ship_3";
-	};
-
-	case "civ_air_1":
-	{
-		_sp = getMarkerPos "civ_air_1";
-		_dir = markerDir "civ_air_1";
-
-		if(count(nearestObjects[_sp,["Car","Ship","Air"],2]) > 0) then
-		{
-			_sp = getMarkerPos "civ_air_1_2";
-			_dir = markerDir "civ_air_1_2";
-		};
-	};
-
-	case "civ_air_2":
-	{
-		_sp = getMarkerPos "civ_air_2";
-		_dir = markerDir "civ_air_2";
-
-		if(count(nearestObjects[_sp,["Car","Ship","Air"],2]) > 0) then
-		{
-			_sp = getMarkerPos "civ_car_2_2";
-			_dir = markerDir "civ_car_2_2";
-		};
-	};
-
-	case "civ_truck_1":
-	{
-		_sp = getMarkerPos "civ_truck_1";
-		_dir = markerDir "civ_truck_1";
-	};
-
-	case "civ_truck_2":
-	{
-		_sp = getMarkerPos "civ_truck_2";
-		_dir = markerDir "civ_truck_2";
-
-		if(count(nearestObjects[_sp,["Car","Ship","Air"],3]) > 0) then
-		{
-			_sp = getMarkerPos "civ_truck_2_1";
-			_dir = markerDir "civ_truck_2_1";
-		};
-	};
-
-	case "cop_air_1":
-	{
-		_sp = getMarkerPos "cop_air_1";
-		_dir = markerDir "cop_air_1";
-	};
-
-	case "cop_air_2":
-	{
-		_sp = getMarkerPos "cop_air_2";
-		_dir = markerDir "cop_air_2";
-	};
-
-	case "reb_v_1":
-	{
-		_sp = getMarkerPos "reb_v_1";
-		_dir = markerDir "reb_v_1";
-	};
-
-	case "reb_v_2":
-	{
-		_sp = getMarkerPos "reb_v_2";
-		_dir = markerDir "reb_v_2";
-	};
-
-	case "cop_ship_1":
-	{
-		_sp = getMarkerPos "cop_ship_1";
-		_dir = markerDir "cop_ship_1";
-	};
-
-	case "merc_heli":
-	{
-		_sp = getMarkerPos "merc_heli";
-		_dir = markerDir "mercr_heli";
-	};
-
-	case "merc_car":
-	{
-		_sp = getMarkerPos "merc_car";
-		_dir = markerDir "merc_car";
-	};
-	case "cop_ship_2":
-	{
-		_sp = getMarkerPos "cop_ship_2";
-		_dir = markerDir "cop_ship_2";
-	};
-	case "medic_car_1":
-	{
-		_sp = getMarkerPos "medic_car_1";
-		_dir = markerDir "medic_car_1";
-	};
-	case "medic_car_2":
-	{
-		_sp = getMarkerPos "medic_car_2";
-		_dir = markerDir "medic_car_2";
-	};
-	case "medic_air_1":
-	{
-		_sp = getMarkerPos "medic_air_1";
-		_dir = markerDir "medic_air_1";
-		_ems = true;
-	};
-	case "medic_air_2":
-	{
-		_sp = getMarkerPos "medic_air_2";
-		_dir = markerDir "medic_air_2";
-		_ems = false;
+if((life_veh_shop select 0) == "med_air_hs") then {
+	if(count(nearestObjects[(getMarkerPos _spawnPoints),["Air"],35]) == 0) exitWith {_spawnPoint = _spawnPoints};
+} else {
+	//Check if there is multiple spawn points and find a suitable spawnpoint.
+	if(typeName _spawnPoints == typeName []) then {
+		//Find an available spawn point.
+		{if(count(nearestObjects[(getMarkerPos _x),["Car","Ship","Air"],5]) == 0) exitWith {_spawnPoint = _x};} foreach _spawnPoints;
+	} else {
+		if(count(nearestObjects[(getMarkerPos _spawnPoints),["Car","Ship","Air"],5]) == 0) exitWith {_spawnPoint = _spawnPoints};
 	};
 };
-_index = lbCurSel 2302;
-_veh = lbData[2302,_index];
-
-_color = lbValue[2303,(lbCurSel 2303)];
-_price = lbValue[2302,(lbCurSel 2302)];
-if(_price < 0) exitWith {};
-if(life_cash < _price) exitWith {hint "You do not have enough money"};
-hint "This may take a second or two.";
-sleep floor(random 3);
-
-if(count(nearestObjects[_sp,["Car","Ship","Air"],4]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
-
-_sv = false;
-
-//EMS Heli
-if(count(nearestObjects[_sp ,["Air"],23]) > 0) exitWith {hint "There is a vehicle on the spawn point."};
-
-_sv = false;
 
 
-if(_veh == "serv_truck") then
-{
-	_name = "Service Truck";
-	_veh = "C_Offroad_01_F";
-	_sv = true;
-}
-	else
-{
-	_name = getText(configFile >> "CfgVehicles" >> _veh >> "displayName");
-};
-hint format["You bought a %1 for $%2",_name,[_price] call life_fnc_numberText];
-_vehicle = _veh createVehicle _sp;
-_vehicle setVectorUp (surfaceNormal _sp);
-if(_veh == "B_MRAP_01_hmg_F") then
-{
-	_vehicle disableTIEquipment true;
-};
-_vehicle setPos _sp;
-_vehicle setDir _dir;
-_vehicle setVariable["trunk_in_use",false,true];
-[_vehicle] call life_fnc_clearVehicleAmmo;
+if(_spawnPoint == "") exitWith {hint localize "STR_Shop_Veh_Block";};
+life_cash = life_cash - _basePrice;
+hint format[localize "STR_Shop_Veh_Bought",getText(configFile >> "CfgVehicles" >> _className >> "displayName"),[_basePrice] call life_fnc_numberText];
 
-if(_sv) then
-{
-	[_vehicle,"service_truck",true] call life_fnc_vehicleAnimate;
-	_color = 4;
-};
-
-if(_ems) then
-{
-	[_vehicle,"EMS_Heli",true] call life_fnc_vehicleAnimate;
+//Spawn the vehicle and prep it.
+if((life_veh_shop select 0) == "med_air_hs") then {
+	_vehicle = createVehicle [_className,[0,0,999],[], 0, "NONE"];
+	waitUntil {!isNil "_vehicle"}; //Wait?
+	_vehicle allowDamage false;
+	_hs = nearestObjects[getMarkerPos _spawnPoint,["Land_Hospital_side2_F"],50] select 0;
+	_vehicle setPosATL (_hs modelToWorld [-0.4,-4,14]);
 	_vehicle lock 2;
+	[[_vehicle,_colorIndex],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP;
+	[_vehicle] call life_fnc_clearVehicleAmmo;
+	_vehicle setVariable["trunk_in_use",false,true];
+	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
+	_vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
+} else {
+	_vehicle = createVehicle [_className, (getMarkerPos _spawnPoint), [], 0, "NONE"];
+	waitUntil {!isNil "_vehicle"}; //Wait?
+	_vehicle allowDamage false; //Temp disable damage handling..
+	_vehicle lock 2;
+	_vehicle setVectorUp (surfaceNormal (getMarkerPos _spawnPoint));
+	_vehicle setDir (markerDir _spawnPoint);
+	_vehicle setPos (getMarkerPos _spawnPoint);
+	[[_vehicle,_colorIndex],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP;
+	[_vehicle] call life_fnc_clearVehicleAmmo;
+	_vehicle setVariable["trunk_in_use",false,true];
+	_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,profileName]],true];
+	_vehicle disableTIEquipment true; //No Thermals.. They're cheap but addictive.
 };
 
-
-_vehicle setVariable["vehicle_info_owners",[[getPlayerUID player,name player]],true];
-
-if(_veh in ["B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_F","C_Hatchback_01_sport_F","C_Offroad_01_F"] && playerSide == west || playerSide == independent) then
-{
-	_vehicle setVariable["lights",false,true];
-};
-
-life_vehicles set[count life_vehicles,_vehicle];
-life_cash = life_cash - _price;
-
-if(playerSide == west) then
-{
-	if(_veh == "C_Offroad_01_F") then
-	{
-		[_vehicle,"cop_offroad",true] call life_fnc_vehicleAnimate;
+//Side Specific actions.
+switch(playerSide) do {
+	case west: {
+		[_vehicle,"cop_offroad",true] spawn life_fnc_vehicleAnimate;
+	};
+	
+	case civilian: {
+		if((life_veh_shop select 2) == "civ" && {_className == "B_Heli_Light_01_F"}) then {
+			[_vehicle,"civ_littlebird",true] spawn life_fnc_vehicleAnimate;
+		};
+	};
+	
+	case independent: {
+		[_vehicle,"med_offroad",true] spawn life_fnc_vehicleAnimate;
 	};
 };
 
-[[_vehicle,_color],"life_fnc_colorVehicle",true,false] spawn life_fnc_MP;
+_vehicle allowDamage true;
 
-_vehicle lock 2;
-if((life_veh_shop == "civ_air_1" OR life_veh_shop == "civ_air_2") && (typeOf _vehicle == "B_Heli_Light_01_F")) then
-{
-	[_vehicle,"civ_littlebird",true] call life_fnc_vehicleAnimate;
+life_vehicles set[count life_vehicles,_vehicle]; //Add err to the chain.
+if(_mode) then {
+	if(!(_className in ["B_G_Offroad_01_armed_F","B_MRAP_01_hmg_F"])) then {
+		[[(getPlayerUID player),playerSide,_vehicle,_colorIndex],"TON_fnc_vehicleCreate",false,false] spawn life_fnc_MP;
+	};
 };
 
-[1,false] call life_fnc_sessionHandle;
+[] call SOCK_fnc_updateRequest; //Sync silently because it's obviously silently..
+closeDialog 0; //Exit the menu.
+true;

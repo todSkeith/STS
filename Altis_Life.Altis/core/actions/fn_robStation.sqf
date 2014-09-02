@@ -6,11 +6,10 @@
 	Action for robbing gas stations
 */
 private["_clerk","_player","_timer","_cash","_marker","_markerName","_inProgress","_success"];
-
+if (playerSide == west) exitWith { hint "Police can't rob stores! Damned crooked cops."; };
 _clerk = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 _player = [_this,1,ObjNull,[ObjNull]] call BIS_fnc_param;
-//_timer = (60 * 5);
-_timer = (5);
+_timer = (4 * 60);
 _cash = (1000 * ceil(random 30));
 
 if(!(_clerk getVariable ["canBeRobbed", true])) exitWith {cutText ["Sorry... I was robbed recently! Try again later!","PLAIN"];};
@@ -18,7 +17,9 @@ if(_player distance _clerk > 15) exitWith {cutText ["You must be within 15 meter
 if(vehicle player != player) exitWith {cutText ["You're not very scary sitting in your car...","PLAIN"];};
 if(currentWeapon _player == "") exitWith {cutText ["Punk... Your fists don't scare me!","PLAIN"];};
 
-_success = false;
+
+_inProgress = true;
+_success = true;
 _clerk setVariable ["canBeRobbed", false, true];
 _clerk setVariable ["inProgress", true, true];
 
@@ -26,12 +27,6 @@ _clerk setVariable ["inProgress", true, true];
 [[0,"A gas station is being robbed!"],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 cutText ["You've started robbing the gas station, stay within 15 meters to avoid failing.","PLAIN"];
 _clerk switchMove "AmovPercMstpSsurWnonDnon";
-
-_markerName = (name player + "_robbery");
-_marker = createMarker [_markerName, getPos _clerk];
-_markerName setMarkerColor "ColorRed";
-_markerName setMarkerText "Robbery In Progress!";
-_markerName setMarkerType "mil_warning";
 
 _array = _clerk getVariable["Robbers",[]];
 _ind = [getPlayerUID player,_array] call fnc_index;
@@ -47,7 +42,7 @@ if(_ind != -1) then
 	_clerk setVariable["Robbers",_array,true];
 };
 
-[[_clerk,_player,_markerName],"TON_fnc_robGasStation",false] spawn life_fnc_MP;
+[[_clerk],"TON_fnc_robGasStation",false] spawn life_fnc_MP;
 
 while {_clerk getVariable ["inProgress", false]} do {
 

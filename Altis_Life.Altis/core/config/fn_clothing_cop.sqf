@@ -2,11 +2,10 @@
 /*
 	File: fn_clothing_cop.sqf
 	Author: Bryan "Tonic" Boardwine
-
+	
 	Description:
 	Master config file for Cop clothing store.
 */
-
 private["_filter","_ret"];
 _filter = [_this,0,0,[0]] call BIS_fnc_param;
 //Classname, Custom Display name (use nil for Cfg->DisplayName, price
@@ -31,54 +30,8 @@ switch (_filter) do
 			case 8: { _ret set[count _ret,["U_Rangemaster","Superintendent Uniform",100]]; };
 			case 9: { _ret set[count _ret,["U_Rangemaster","Chief Uniform",100]]; };
 		};
-		/*	
-		_ret set[count _ret,["U_Rangemaster","Cadet Uniform",25]];
-		if((life_coplevel) > 1) then
-		{
-			_ret set[count _ret,["U_B_CombatUniform_mcam","Altis Police Uniform",350]];
-		};
-		
-		if(__GETC__(life_coplevel) = 1) then
-		{
-			_ret set[count _ret,["U_Rangemaster","Cadet Uniform",350]];
-		};
-		
-		if(__GETC__(life_coplevel) = 2) then
-		{
-			_ret set[count _ret,["U_Rangemaster","PO Uniform",450]];
-		};
-		
-		if(__GETC__(life_coplevel) = 3) then
-		{
-			_ret set[count _ret,["U_Rangemaster","SPO Uniform",550]];
-		};
-		if(__GETC__(life_coplevel) = 4) then
-		{
-			_ret set[count _ret,["U_Rangemaster","Corp Uniform",650]];
-		};
-		
-		if(__GETC__(life_coplevel) = 5) then
-		{
-			_ret set[count _ret,["U_Rangemaster","Serg Uniform",750]];
-		};
-		if(__GETC__(life_coplevel) = 6) then
-		{
-			_ret set[count _ret,["U_Rangemaster","Lieut Uniform",850]];
-		};
-		if(__GETC__(life_coplevel) = 7) then
-		{
-			_ret set[count _ret,["U_Rangemaster","Capt Uniform",950]];
-		};
-		if(__GETC__(life_coplevel) = 8) then
-		{
-			_ret set[count _ret,["U_Rangemaster","SuperInt Uniform",1000]];
-		};
-		
-		if(__GETC__(life_coplevel) = 9) then
-		{
-			_ret set[count _ret,["U_Rangemaster","Chief Uniform",1100]];
-		};
-		*/
+
+
 		if(__GETC__(life_adminlevel) > 0) then
 		{
 			_ret set[count _ret,["U_B_CombatUniform_mcam","Altis Police Uniform",0]];
@@ -86,12 +39,25 @@ switch (_filter) do
 			_ret set[count _ret,["U_B_CTRG_2",nil,0]];
 			_ret set[count _ret,["U_B_CTRG_3",nil,0]];
 			_ret set[count _ret,["U_B_survival_uniform",nil,0]];
-			_ret set[count _ret,["U_B_GhillieSuit",nil,0]];
-			_ret set[count _ret,["U_B_PilotCoveralls",nil,0]];
-
+			_ret set[count _ret,["U_IG_Guerilla1_1",nil,0]];
+			_ret set[count _ret,["U_I_G_Story_Protagonist_F",nil,0]];
+			_ret set[count _ret,["U_I_G_resistanceLeader_F",nil,0]];
+			_ret set[count _ret,["U_O_SpecopsUniform_ocamo",nil,0]];
+			_ret set[count _ret,["U_O_PilotCoveralls",nil,0]];
+			_ret set[count _ret,["U_IG_leader","Guerilla Leader",0]];
+			_ret set[count _ret,["U_OG_Guerrilla_6_1","Guerilla Apparel",0]];
+			_ret set[count _ret,["U_O_OfficerUniform_ocamo",nil,0]];
+			_ret set[count _ret,["U_O_CombatUniform_oucamo",nil,0]];
+			_ret set[count _ret,["U_I_CombatUniform",nil,0]];
+			_ret set[count _ret,["U_I_CombatUniform_shortsleeve",nil,0]];
+			_ret set[count _ret,["U_O_GhillieSuit",nil,0]];
+			_ret set[count _ret,["U_I_GhillieSuit",nil,0]];
+			_ret set[count _ret,["U_O_Wetsuit","Wetsuit (Camo)",0]];
 		};
-	};
 
+		_ret set[count _ret, ["U_B_Wetsuit",nil,2000]];
+	};
+	
 	//Hats
 	case 1:
 	{
@@ -110,6 +76,7 @@ switch (_filter) do
 			_ret set[count _ret,["H_Cap_blk_ION",nil,100]];
 			_ret set[count _ret,["H_Cap_blk",nil,100]];
 			_ret set[count _ret,["H_Cap_khaki_specops_UK",nil,100]];
+			_ret set[count _ret,["H_Cap_khaki_specops_US",nil,100]];
 			_ret set[count _ret,["H_Watchcap_blk",nil,100]];
 			_ret set[count _ret,["H_Watchcap_khk",nil,100]];
 			_ret set[count _ret,["H_Watchcap_camo",nil,100]];
@@ -157,14 +124,14 @@ switch (_filter) do
 			_ret set[count _ret,["H_MilCap_gry",nil,0]];
 
 		};
-		
 	};
-
+	
 	//Glasses
 	case 2:
 	{
 		_ret =
 		[
+			["G_Diving",nil,500],
 			["G_Shades_Black",nil,25],
 			["G_Shades_Blue",nil,20],
 			["G_Sport_Blackred",nil,20],
@@ -193,14 +160,14 @@ switch (_filter) do
 			_ret set[count _ret,["G_Bandanna_shades",nil,0]];
 			_ret set[count _ret,["G_Bandanna_sport",nil,0]];
 			_ret set[count _ret,["G_Bandanna_tan",nil,0]];
-			_ret set[count _ret,["G_Sport_Greenblack",nil,0]];
 		};
 	};
-
+	
 	//Vest
 	case 3:
 	{
 		_ret set[count _ret,["V_Rangemaster_belt",nil,800]];
+		_ret set[count _ret,["V_RebreatherB",nil,5000]];
 		if(__GETC__(life_coplevel) > 1) then
 		{
 			_ret set[count _ret,["V_TacVest_blk_POLICE",nil,1500]];
@@ -210,9 +177,8 @@ switch (_filter) do
 			_ret set[count _ret,["V_PlateCarrierL_CTRG",nil,0]];
 			_ret set[count _ret,["V_PlateCarrierH_CTRG",nil,0]];
 		};
-
 	};
-
+	
 	//Backpacks
 	case 4:
 	{
@@ -248,4 +214,4 @@ switch (_filter) do
 	};
 };
 
-_ret
+_ret;

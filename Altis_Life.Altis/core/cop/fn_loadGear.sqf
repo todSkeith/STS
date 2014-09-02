@@ -8,10 +8,6 @@
 private["_allowedItems","_loadout","_primary","_launcher","_handgun","_magazines","_uniform","_vest","_backpack","_items","_primitems","_secitems","_handgunitems","_uitems","_vitems","_bitems","_handle"];
 _loadout = cop_gear;
 
-private["_getRank"];
-_getRank = call life_coplevel;
-player setVariable["coplevel",_getRank,true];
-
 if(isNil "_loadout") exitWith {[] call life_fnc_copDefault;}; //Slot data doesn't exist
 if(count _loadout == 0) exitWith {[] call life_fnc_copDefault;}; //Slot data doesn't exist
 _primary = _loadout select 0;
@@ -28,7 +24,6 @@ _handgunitems = _loadout select 9;
 _uitems = _loadout select 10;
 _vitems = _loadout select 11;
 _bitems = _loadout select 12;
-_yitems = _loadout select 13;
 
 //Strip the unit down
 RemoveAllWeapons player;
@@ -63,14 +58,8 @@ if(_handgun != "") then {[_handgun,true,false,false,false] spawn life_fnc_handle
 {[_x,true,false,true,false] call life_fnc_handleItem;} foreach (_primitems);
 {[_x,true,false,true,false] call life_fnc_handleItem;} foreach (_secitems);
 {[_x,true,false,true,false] call life_fnc_handleItem;} foreach (_handgunitems);  
- 
 
 if(primaryWeapon player != "") then
 {
 	player selectWeapon (primaryWeapon player);
 };
-
-{
-    _item = [_x,1] call life_fnc_varHandle;
-    [true,_item,1] call life_fnc_handleInv;
-} foreach (_yItems)

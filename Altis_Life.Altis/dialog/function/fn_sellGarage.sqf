@@ -8,13 +8,14 @@
 */
 private["_vehicle","_vid","_pid","_unit","_price"];
 disableSerialization;
-if(lbCurSel 2801 == -1) exitWith {hint localize "STR_Global_NoSelection"};
-_vehicle = lbData[2801,(lbCurSel 2801)];
-_vid = lbValue[2801,(lbCurSel 2801)];
+if(lbCurSel 2802 == -1) exitWith {hint localize "STR_Global_NoSelection"};
+_vehicle = lbData[2802,(lbCurSel 2802)];
+_vehicle = (call compile format["%1",_vehicle]) select 0;
+_vid = lbValue[2802,(lbCurSel 2802)];
 _pid = getPlayerUID player;
 _unit = player;
 
-if(isNil "_vehicle") exitWith {hint "The selection had a error..."};
+if(isNil "_vehicle") exitWith {hint localize "STR_Garage_Selection_Error"};
 
 _price = [_vehicle,__GETC__(life_garage_sell)] call fnc_index;
 if(_price == -1) then {_price = 1000;} else {_price = (__GETC__(life_garage_sell) select _price) select 1;};

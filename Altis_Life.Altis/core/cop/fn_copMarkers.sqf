@@ -11,14 +11,14 @@ _cops = [];
 
 sleep 0.5;
 if(visibleMap) then {
-	{if(side _x == west && "ItemGPS" in assignedItems _x) then {_cops set[count _cops,_x];}} foreach playableUnits; //Fetch list of cops / blufor
+	{if(side _x == west) then {_cops set[count _cops,_x];}} foreach playableUnits; //Fetch list of cops / blufor
 	
 	//Create markers
 	{
 		_marker = createMarkerLocal [format["%1_marker",_x],visiblePosition _x];
 		_marker setMarkerColorLocal "ColorBlue";
 		_marker setMarkerTypeLocal "Mil_dot";
-		_marker setMarkerTextLocal format["%1", name _x];
+		_marker setMarkerTextLocal format["%1", _x getVariable["realname",name _x]];
 	
 		_markers set[count _markers,[_marker,_x]];
 	} foreach _cops;

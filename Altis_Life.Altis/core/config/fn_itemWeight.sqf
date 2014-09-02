@@ -1,15 +1,17 @@
-//////////////////////////////////////////////////////////////////
-// Created by: Tonic and Adapted by DirtDiver & JackLags for STS
-// Function Name: life_fn_itemWeight.sqf
-// Description: Sets the weight for items.
-//////////////////////////////////////////////////////////////////
-
+/*
+	File: fn_itemWeight.sqf
+	Author: Bryan "Tonic" Boardwine
+	
+	Description:
+	Gets the items weight and returns it.
+*/
 private["_item"];
 _item = [_this,0,"",[""]] call BIS_fnc_param;
 if(_item == "") exitWith {};
 
 switch (_item) do
 {
+
 	case "oilu": {8};
 	case "oilp": {6};
 	case "heroinu": {6};
@@ -74,5 +76,10 @@ switch (_item) do
 	case "steel": {5};
 	case "crowbar": {30};
 	case "storage2": {30};
+	case "storagesmall": {5};
+	case "storagebig": {10};
+	case "blastingcharge": {15};
+	case "boltcutter": {5};
+	case "defusekit": {2};
 	default {1};
 };

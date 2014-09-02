@@ -21,171 +21,20 @@ player createDiarySubject ["controls","Controls"];
 		]
 	];
 */
-player createDiaryRecord["changelog",
-		[
-			"08/03/14",
-				"
-				Added: UI elements for Weight carried and Fatigue percentage!
-
-				Fixed: Box Duping (on Raiding, Breaking in and Logging in)
-				Fixed: House virtual storage
-				Fixed: Mercenary Vehicles can now be permanently bought
-				Fixed: Some alarm loops on houses and cars
-				Fixed: Nameplates should no longer appear when in vehicles	
-				Fixed: Multiple menus and life_inAction loops		
-
-				Changed: Donators dynamic discount applies to EVERYTHING NOW!
-				Changed: Gas Station Changes (overhaul)
-				Changed: Voice chat in Side = BIG NONO
-
-
-				DEVLOG:
-				Overhauled sync changes, quicksync and housesync for improved serverside performance times.
-				Admin Changes: See forums
-
-				"
-		]
-	];
-
-player createDiaryRecord["changelog",
-		[
-			"6/25/14",
-				"
-				Added: Placeable Persistant Storage Boxes<br/>
-				Added: Entirely new Map system (declutter)<br/>
-				Added: A new Changelog!<br/>
-				Added: New Gas Stations!<br/>
-				Added: Temporary Hunters<br/>
-				Added: Lots of new Police Hats!<br/>
-				Changed: Server Rules<br/>
-				Changed: Old Storage System<br/>
-				Changed: Holstering System<br/>
-				Changed: Jail Time<br/>
-				Removed: Civilians can no longer use Tazers (for now...)<br/>
-				Fixed: Range-Check on Shops<br/>
-				Fixed: Raiding and Breaking into houses<br/>
-				Fixed: Item Storage Saving<br/>
-				Fixed: Police can no longer impound destroyed vehicles<br/>
-                Fixed: General Medic Bugs<br/>
-                Fixed: Stabilize Exploit among others<br/>
-                Fixed: Medics and Police now take critical damage correctly<br/>
-
-				"
-		]
-	];
-player createDiaryRecord["changelog",
-		[
-			"6/7/14",
-				"
-				Added: Go-karts (must have DLC)<br/>
-				Added: Two Go-kart track<br/>
-				Added: New sync system - Should fix the issues of losing money, positions, etc (still sync data)<br/>
-				Added: Go-kart uniforms to bruce’s<br/>
-				Added Vermin scope for cops and rebels<br/>
-				Added: New helicopter spawn for medics in kavala<br/>
-				Changed: Medic helicopter garage prices<br/>
-				Changed: Increased the amount of time police can send you to jail<br/>
-				Removed: Hunters and Ifrits<br/>
-				Fixed: Should no longer be stuck in jail<br/>
-				Fixed: Holstering your weapon and logging out no longer makes you lose your weapon<br/>
-				Fixed: Only medics can now access the medic outpost<br/>
-				Fixed: You will no longer be revived if you log out and then log back in when you are downed<br/>
-                Fixed: Drug and alcohol effects, should no longer last forever<br/>
-				"
-		]
-	];
-
-
-player createDiaryRecord["changelog",
-		[
-			"5/12/14",
-				"
-				Server has been reset<br/>
-				Added: Housing - max 5 houses<br/>
-				Added: House licenses<br/>
-				Added: Able to rob houses- Need crowbar<br/>
-				Added: Storage units for houses<br/>
-				Added: Club sloth Sign<br/>
-				Added: House Alarms<br/>
-				Added: Crowbars to rebel outpost<br/>
-				Added: Ability for police to raid homes<br/>
-				Added: Able to crowbar house doors open- 10% chance of breaking item and 15% of successful robbery <br/>
-				Added: Buyable garages- Counts as a house<br/>
-				Added: Burglary and attempted burglary to the wanted list<br/>
-				Added: Able to save virtual and physical items in houses<br/>
-				Added: All gear and virtual items will now save when you log out<br/>
-				Added: Persistent spawn - where ever you log out, you log back in at the same spot<br/>
-				Added: Able to picklock handcuffs<br/>
-				Added: New spawn point for Medics<br/>
-				Added: All hospitals can now heal players when they are down<br/>
-				Added: New clothing at Bruce’s<br/>
-				Added: Skin for Medic hummingbird<br/>
-				Added: Police can open Bar Gates by pressing O when near them<br/>
-				Added: Flashbangs for rebels and police<br/>
-				Added: Lethal Injections- Sold at Rebel Outpost
-				Changed: Police paychecks have been reverted back<br/>
-				Changed: Reduced the cost of medic vehicles<br/>
-				Changed: Shops in Kavala and Athira have been moved around<br/>
-				Fixed: Could not spawn helicopter at medic helipad<br/>
-				Fixed: Fishing<br/>
-				Fixed: Loading screen logo<br/>
-				"
-		]
-	];
 	player createDiaryRecord["changelog",
 		[
-			"4/30/14",
+			"Official Change Log",
 				"
-				Added: Persistence<br/>
-				Added: Magazines save (make sure to unload your gun or you will lose that mag)<br/>
-				Added: new medic spawn/hospital in rodopoli<br/>
-				Added: Housing<br/>
-				
+					The official change log can be found on the BIS forums (search Altis Life RPG)
 				"
 		]
 	];
-
+	
 	player createDiaryRecord["changelog",
 		[
-			"4/15/14",
+			"Custom Change Log",
 				"
-				Added: EMS<br/>
-				Added: Crab grounds<br/>
-				Added: Coal Mine<br/>
-				Added: Steel forge - 1 coal ore + 1 iron ore = 1 steel ingots<br/>
-				Added: Club sloth<br/>
-				Added: Lumbering - box truck or better is suggested<br/>
-				Added: Saw to the Lumber yard - used to cut logs<br/>
-				Added: New interaction menu - left windows key<br/>
-				Added: Carryall backpack for civilians<br/>
-				Added: Fish market to the boat shop near diamond trader<br/>
-				Added: WIldlife Poacher up north<br/>
-				Added: Police ranks will now appear next to the players name<br/>
-				Added: Road barriers and cones for police<br/>
-				Added: A few new outfits at Bruce’s<br/>
-				Changed: Re-added Gas Station robberies.<br/>
-				Changed: took away 5 cop slots and added them to EMS slots<br/>
-				Changed: Turtle Dealer name changed to Wildlife Poacher<br/>
-				Changed: You no longer lose your Rebel License when you are sent to jail<br/>
-				Changed: Bleedout timer set to 10 minutes<br/>
-				Changed: Cops now lose their gear on death and respawn with a default class set<br/>
-				Changed: Now using the arma ATM machines<br/>
-				Changed: must wait 10 seconds before you can log out<br/>
-				Changed: Cop shops will now only display what you are able to buy at your rank<br/>
-				Changed: Moved gas station robbery locations<br/>
-				Changed: Police got a new shipment of uniforms - (may change in the future)<br/>
-				Changed: When robbing someone, it no longer informs the police<br/>
-				Changed: Wanted prices have been tweaked<br/>
-				Changed: cop paychecks have been tweaked<br/>
-				Changed: Bail prices have been tweaked<br/>
-				Changed: You must wait half the time of your jail sentence before given the option to pay bail<br/>
-				Changed: Tactical View disabled<br/>
-				Changed: Cops can now unrestain people that are ziptied<br/>
-				Changed: Surrender button changed to the number 2<br/>
-				Changed: Processing times depend on how many items you are processing.<br/>
-				Changed: Ziptie button is now Shift + R<br/>
-				Changed: To pick up items on the ground, you use your left Windows key<br/>
-				Fixed: ziptied civilians can now be put in a vehicle<br/>
+					This section is meant for people doing their own edits to the mission, DO NOT REMOVE THE ABOVE.
 				"
 		]
 	];
@@ -211,8 +60,11 @@ player createDiaryRecord["changelog",
 				"
 					If bombing (bombing can be intentionally exploding a vehicle), robbing, or killing occurs around these or in these areas it is punishable by ban.<br/><br/>
 					
+					Any vehicle spawn (shop or garage)<br/>
+					Any weapon shop<br/>
+					All Police HQs<br/>
 					Rebel Outposts<br/>
-					Donor Shops<br/><br/>
+					Donator Shops<br/><br/>
 				"
 		]
 	];
@@ -234,15 +86,41 @@ player createDiaryRecord["changelog",
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"Safe Zones", 
+			"Cop Interaction", 
 				"
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
 				
-				1. Roleplay scenarios cannot be INITIATED in safezones, however aggressors or defenders may pursue those and only those into a safezone area as long as they are involved in an ongoing roleplay scenario.<br/>
-				1a. For example, police chasing a wanted criminal. The police must only deal with the one individual that they previous initiated roleplay with, and must ignore any other persons in the area regardless of wanted level or illegal items.<br/><br/>
-				2. Safe zone rule applies to the following area(s):<br/>
-				2a. Rebel Outposts<br/>
-				2b. Donator Shops<br/><br/>
+				1. Civilians can be arrested for looking in cops' backpacks/vehicles. Constantly doing this will result in your removal from the server.<br/>
+				2. Civilians can be arrested for following cops in game in order to give away their position.<br/>
+				3. Civilians or Rebels who take up arms to kill cops in town or elsewhere for no RP reason will be considered RDMing. See RDMing section.<br/>
+				4. Following and or harassing cops for long periods of time will be considered griefing and/or spamming, and will result in your removal from the server.<br/>
+				5. Actively blocking cops from doing their duties can lead to your arrest. Constantly doing this will result in your removal from the server.<br/><br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord ["serverrules",
+		[
+			"Boats", 
+				"
+				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
+				
+				1. Repeatedly pushing boats without permission.<br/>
+				2. Pushing a boat with the intention of hurting or killing someone. This is not RP, it is just a flaw in the mechanics.<br/>
+				3. Purposefully running over swimmers/divers.<br/><br/>
+				"
+		]
+	];
+	
+	player createDiaryRecord ["serverrules",
+		[
+			"Aviation", 
+				"
+				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
+				
+				1. Purposefully ramming a helicopter into anything. Other helicopters, vehicles, buildings.<br/>
+				2. Flying below 150m over the city constantly. Once is illegal, more than that you risk crashing into the city, thus against server rules.<br/>
+				3. Stealing helicopters without proper warning and significant time for the driver to lock the vehicle. If they land and run away without locking, fine, if they just get out and you get in before they get a chance to lock it, no no.<br/><br/>
 				"
 		]
 	];
@@ -253,241 +131,77 @@ player createDiaryRecord["changelog",
 				"
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
 				
-				1. VDM (Vehicular Deathmatching) is our most common ban reason and is strictly forbidden.<br/>
-				2. Pushing a boat with the intention of hurting or killing someone. This is not RP, it is just a flaw in the mechanics.<br/><br/>
-				3. The following actions are forbidden:<br/>
-				3a. Deliberately running people over, except in cases where it cannot be avoided.<br/>
-				3b. Deliberately positioning yourself to get run over.<br/>
-				3c. Ramming another vehicle or structure in order to cause an explosion.<br/>
-				3d. Stealing a vehicle purely to damage it.<br/>
-				3e. Exploiting the lock/unlock system to get into a vehicle before the owner can prevent it.<br/>
-				3f. Deliberately shooting at another's vehicle with an aim to destroy rather than disable.<br/>
-				3g. Repeatedly flying aircraft below 150m AGL in built up areas.<br/>
-				3h. Abusing the Push Boat function to grief or cause damage.<br/><br/>
-
+				1. Purposefully running people over (VRDM). There are accidents, and then there is going out of your way to run someone over.<br/>
+				2. Purposefully throwing yourself in front of vehicles in order to die/get hurt.<br/>
+				3. Ramming into other vehicles in order to cause an explosion.<br/>
+				4. Constantly trying to enter vehicles that do not belong to you in order to grief the vehicle owner, and not trying to RP.<br/>
+				5. Stealing a vehicle just to crash it or otherwise destroy it.<br/>
+				6. Purchasing multiple vehicles for the purpose of doing any of the above.<br/>
+				7. The only reason for shooting at a vehicle would be to disable it and/or fire warning shots in a role-play scenario.You are not to deliberately destroy enemies vehicles.<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"Communication", 
-				"
-				1. The preferred method of communication to begin roleplay is via phone message as this is the most obvious. Voice or text chat are also acceptable but can sometimes be missed in noisy or spammy situations.<br/><br/>
-				2. The following actions are forbidden:<br/>
-				2a. Excessive usage of voice chat in Side Channel.<br/>
-				2b. Spamming of text on any channel or via phone messaging system.<br/>
-				2c. Misuse of the text message system sending useless messages to admins, police or medics. An example would be taunting police because you got away via text message.<br/><br/>
-
-				"
-		]
-	];
-	
-	player createDiaryRecord ["serverrules",
-		[
-			"Combat", 
+			"Communication Rules", 
 				"
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
 				
-				1. RDM (Random Deathmaching) is strictly forbidden.<br/>
-				2. You may not engage in combat with anyone without first establishing a roleplay scenario.<br/>
-				3. Rebellion, terrorism, claiming to be a mass murderer, etc. are not viable reasons.<br/>
-				4. You must contact your victim and convey demands (robbery, kidnapping, etc.) before shooting.<br/>
-				5. Warning shots are acceptable as a method to say 'go away' but are done at your own risk. If you accidentally hit anything it becomes RDM.<br/>
-				6. Police and civilians may only engage one another if they pose an immediate threat or are engaged in an on-going roleplay scenario.<br/><br/>
-
+				1. Side Chat may not be used to play music or otherwise micspam.<br/>
+				2. Spamming any chat channel will result in your removal.<br/>
+				4. Teamspeak channels are split up into areas for a reason. Cops must be in the cop channels at all times.<br/>
+				5. Civilians cannot be in any cop channels on teamspeak in order to gather information on their location or movements. Civs caught doing this will be removed the channel. Repeat offenders can be kicked or banned from both the game and teamspeak.<br/><br/>
 				"
 		]
 	];
 	
 	player createDiaryRecord ["serverrules",
 		[
-			"New life Rule", 
-				"
-				
-				1. New Life Rule is to be followed by all players.<br/>
-				2. If under the effects of NLR, you may not return to the general location of your death or involve yourself in any roleplay scenarios or events related to your death in any way, including observation, until 15 minutes have passed or roleplay has been completely resolved.<br/><br/>
-				4. NLR applies if any of the following are TRUE:<br/>
-				4a. You have completely died in-game and have respawned.<br/>
-				4b. You have been revived by a medic from a CRITICALLY WOUNDED state, when not involved in an on-going RP scenario.<br/>
-				4c. You have been sent to jail, and have completed your full sentence OR posted bail.<br/><br/>
-
-				5. NLR does NOT apply if any of the following are TRUE:<br/>
-				5a. A downed civilian has been transported by a fellow civilian to a hospital and has paid a doctor to revive and heal the player back to a functioning state.<br/>
-				5b. A downed police officer has been transported by a fellow police officer and has paid a doctor to revive and heal the player back to a functioning state.<br/>
-				5c. A downed civilian has been transported by a police officer to a hospital and has paid a doctor to revive and heal the player back to a functioning state.<br/>
-				5d. A downed police officer has been transported by a civilian to a hospital and has paid a doctor to revive and heal the player back to a functioning state.<br/><br/>
-
-				"
-		]
-	];
-	
-	player createDiaryRecord ["serverrules",
-		[
-			"General", 
+			"Random Deathmatching (RDM)", 
 				"
 				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
 				
-				1. The following actions are forbidden:<br/>
-				1a. Stealing from another player's backpack without permission.<br/>
-				1b. Usage of any items or vehicles not normally obtainable within the mission except with the permission of a senior moderator or above.<br/>
-				1c. Abuse of any game or mission exploits or usage of cheats or foreign scripts.<br/>
-				1d. Disconnecting or aborting in order to avoid roleplay. This includes being restrained/arrested or having crimes committed against you.<br/>
-				1e. Possession of cheated/exploited money. If you receive any suspicious money transfers contact an admin immediately.<br/>
-				1f. Abusing arma or life bugs to gain an advantage over other players, e.g. picking up a replicating weapon and selling it over and over to gain easy cash.<br/>
-				1g. Harassing of players outside of a roleplay scenario.<br/>
-				1h. Camping any hospital to have seemingly infinite numbers and/or lives.<br/><br/>
+				1. Killing anyone without a roleplay cause.<br/>
+				2. Declaring a rebellion is not a cause to kill anyone, even cops.<br/>
+				3. Cops and civilians/rebels can only commence in a shootout if there are reasons relating to a crime.<br/>
+				4. If you are killed in the crossfire of a fight, it is not RDM.<br/>
+				5. Killing someone in an attempt to protect yourself or others is not RDMing.<br/>
+				6. Shooting a player without giving reasonable time to follow demands is considered RDM.<br/><br/>
 				
+				These are all judged by admins on a case by case basis.<br/><br/>
 				"
 		]
 	];
 	player createDiaryRecord ["serverrules",
 		[
-			"Teamspeak", 
+			"New Life Rule", 
 				"
-				1. Each faction must stick to their own designated teamspeak channels at all times.<br/><br/>
+				The New Life Rule applies to police and civilians.<br/><br/>
+				
+				Items on this list may result in your removal from the server and/or ban, based on the admins discretion.<br/><br/>
 
-				2. The only exceptions to this rule are:<br/>
-				2a. ALE may join the Rescue Dept. channels if a situation calls for it.<br/>
-				2b. Rescue Dept. members may join ANY teamspeak channel if a situation calls for it.<br/><br/>
-
-				"
-		]
-	];
-
-	player createDiaryRecord ["serverrules",
-		[
-			"Meta-Gaming & Power-Gaming", 
-				"
-				1. Meta-gaming is using an out-of-character action to gain advantage in-game, or using knowledge that the out-of-character person knows, but their in-game character should not. The only exception to this rule is using teamspeak for your gang, group or squad. Using teamspeak to meta-game other groups by joining their channel is not acceptable.<br/><br/>
-
-				2. Power-gaming is using extreme roleplay or unrealistic ideas to benefit your character, to which it is overly hard or near impossible for others to counter. Some examples follow:<br/>
-				2a. All members of your gang have brain implants for player tracking<br/>
-				2b. Having comms equipment in places such as your rectum.<br/><br/>
-
+				1. If you are killed you must wait 15 minutes before returning to the scene of your death.<br/>
+				2. If you die during roleplay your past crimes are forgotten, but you also cannot seek revenge.<br/>
+				3. If you are RDM'd, it is not a new life.<br/>
+				4. If you manually respawn, it is not a new life.<br/>
+				5. If you purposefully kill yourself to avoid roleplay, it is not a new life.<br/><br/>
 				"
 		]
 	];
 
 	player createDiaryRecord ["serverrules",
 		[
-			"Civilian General",
+			"Don't Be A Dick!", 
 				"
-				1. Civilians must not initiate any aggression towards a Rescue Dept. member. This includes robbing, murdering and kidnapping.<br/>
-				2. Civilians must not wear any cop uniforms or vests. Uniforms and vests may be stored as “trophies” inside storage and/or persistent storage, but must never be worn.<br/>
-				3. Civilians ARE allowed to steal all other police equipment and use and/or store them as they see fit.<br/><br/>
-
+				If an admin has to tell you that you are being a dick, you are doing dickish things.<br/>
+				Causing others grief, disrupting roleplay, the list goes on.<br/>
+				Just don't be a dick okay?<br/>
+				This rule may be invoked at an admin's discretion.<br/><br/>
 				"
 		]
 	];
 	
-	player createDiaryRecord ["serverrules",
-		[
-			"ALE General",
-				"
-				1. All ALE members are to be on teamspeak at all times when playing as a police officer in the STS Life Server.<br/>
-				2. Use of lethal force must be limited to situations where a life is in imminent danger. Use of lethal force just because you feel on edge about someone will result in appropriate punishment.<br/><br/>
-
-				3. Non-lethal Force can be used to safely incapacitate any non-compliant persons. Misfiring of non-lethal weapons on purpose will result in removal from ALE. Non-lethal weapons are currently:<br/>
-				3a. P07 (silenced) pistol<br/>
-				3b. SDAR rifle<br/><br/>
-
-				4. Random firearm discharges are disallowed and will be punished with confiscation of the weapon and the offending officer reported to the Chief of Police. Repeat offences will result in admin intervention.<br/>
-				5. ALE officers are only to buy and keep any weapons and/or items that is appropriate to their rank.<br/>
-				6. ALE officers are to wear their correct uniforms at all times.<br/>
-				7. ALE officers must NOT share any weaponry, items, or clothing with civilians.<br/>
-				8. ALE officers may not arrest a person after giving them an option to pay a fine, UNLESS they decline the fine.<br/>
-				9. Before arresting any persons, ALE officers must tell the suspect why they are being arrested, and for how long.<br/>
-				10. ALE officers must not abuse the ticketing system and give unwarranted or large tickets.<br/>
-				11. ALE officers must not ticket players for $0 to remove them from the wanted list; contact a CORPORAL or above.<br/>
-				12. Officers may not idle around built up areas without cause.<br/><br/>
-
-				"
-
-		]
-	];
-
-	player createDiaryRecord ["serverrules",
-		[
-			"ALE Operations",
-				"
-				1. Area Raids:<br/>
-				1a. A raid is a group (squad) of 4 or more police officers with an officer of at least the rank SERGEANT in charge and calling any shots.<br/>
-				1b. Persons (civs) in the raid area can only be restrained or searched if there is probable cause that they are doing something illegal.<br/>
-				1c. Lethal force (Section 3/b) must always be in place when performing any raids.<br/>
-				1d. Once a raid is complete, the general area cannot be raided again for 20 minutes.<br/>
-				1e. If all police officers die within the raid area, the raid is considered a failure and cannot be raided again for 20 minutes.<br/>
-				1d. Officers may call for backup to a raid as long as there is at least 1 officer still alive in the area.<br/><br/>
-
-				2. Housing Raids/Warrants:<br/>
-				2a. In order to raid a house, officers must request and await a warrant in the appropriate forum. If the home owner is online, the officer in charge of the house search/raid must link the home owner the warrant post. If the home owner is offline, the home owner must be sent a forum PM with a link to the search warrant if possible. The ONLY exception to a warrant is the following:<br/>
-				2a:i. Police may follow an individual into a player owned house if the player has a bounty and police have previously (within the last 10 minutes) been in pursuit of the player.<br/><br/>
-
-				3. Camping:<br/>
-				3a. Camping is the prolonged presence of police officers in a location other than any police buildings/checkpoints/headquarters, cities, towns and villages.<br/>
-				3b. Police officers are to maintain an adequate distance from any known “illegal” areas unless performing a raid.<br/><br/>
-
-				4. Checkpoints:<br/>
-				4a. In order for a checkpoint to be legal, there must be at least 3 officers within the vicinity of the checkpoint.<br/>
-				4b. Custom checkpoints may be set up, as long as they abide by the following:<br/>
-				4b:i. Are at least 500 meters away from any known “illegal” areas.<br/>
-				4b:ii. All  rules stated in Section 'ALE General Rules & Information'.<br/>
-				4b:iii. Have at least 2 ALE vehicles present.<br/><br/>
-
-				"
-		]
-	];
-
-	player createDiaryRecord ["serverrules",
-		[
-			"Altis Rescue Department",
-				"
-				1. All Rescue Dept. members are to be on teamspeak at all times when playing as a Medic when in the STS Life Server.<br/>
-				2. Medics must wait until a roleplay scenario is over before treating patients.<br/>
-				3. If there is a roleplay scenario between groups, medics must treat the winning party FIRST before the losing party. Please ask for more information from players involved before starting any treatment.<br/>
-				4. Medics may only stabilize patients in the middle of a firefight if given permission from both sides.<br/>
-				5. Medics must not carry any firearm or object that could be considered a deadly weapon.<br/><br/>
-
-				"
-		]
-	];
-
-	player createDiaryRecord ["serverrules",
-		[
-			"Contraband",
-				"
-				1. Illegal Vehicles, Items and Weapons:<br/><br/>
-
-				1a. Illegal Vehicles are listed below:<br/>
-				1b. Ifrit<br/>
-				1c. Offroad (Armed)<br/>
-				1d. ANY police skinned vehicle<br/><br/>
-
-				2. Illegal Weapons are listed below:<br/>
-				2a. MX Series<br/>
-				2b. TRG Series<br/>
-				2c. Katiba Series<br/>
-				2d. MK Series<br/>
-				2e. SDAR rifle<br/>
-				2f. Vermin SMG<br/>
-				2g. Sting SMG<br/>
-				2h. P07 Police issue pistol<br/><br/>
-
-				3. Illegal Items are listed below:<br/>
-				3a. Spike strip<br/>
-				3b. Flashbang<br/>
-				3c. Lethal Injection<br/>
-				3d. Lock picks<br/>
-				3e. Any item of Police Officer uniform<br/>
-				3g. Cocaine (processed and unprocessed)<br/>
-				3h. Heroin (processed and unprocessed)<br/>
-				3i. Weed (processed and unprocessed)<br/>
-				3j. Moonshine (processed)<br/><br/>
-
-				"
-		]
-	];
-
 // Police Section
 	player createDiaryRecord ["policerules",
 		[
@@ -581,21 +295,6 @@ player createDiaryRecord["changelog",
 				"
 		]
 	];
-
-	player createDiaryRecord ["serverrules",
-		[
-			"Speed Limits", 
-				"
-				The following speeds are to be enforced by the Altis Police Force for the absolute safety of the citizens of Kavala and all travelling beyond the city.<br/><br/>
-				
-				Inside town(normal roads): 50km/h<br/>
-				Inside town(main roads): 65km/h<br/>
-				300 meters outside towns/cities(normal roads): 70km/h<br/>
-				300 meters outside towns/cities(main roads) 120km/h<br/><br/>
-
-				"
-		]
-	];	
 	
 	player createDiaryRecord ["policerules",
 		[
@@ -614,18 +313,19 @@ player createDiaryRecord["changelog",
 
 	player createDiaryRecord ["policerules",
 		[
-			"Speed Limits", 
+			"Speeding", 
 				"
 				The following speeds are to be enforced by the Altis Police Force for the absolute safety of the citizens of Kavala and all travelling beyond the city.<br/><br/>
 				
-				Inside town(normal roads): 50km/h<br/>
-				Inside town(main roads): 65km/h<br/>
-				300 meters outside towns/cities(normal roads): 70km/h<br/>
-				300 meters outside towns/cities(main roads) 120km/h<br/><br/>
-
+				Inside major cities:<br/>
+				Small roads: 50km/h<br/>
+				Main roads: 65km/h<br/>
+				Outside major cities:<br/>
+				Small roads: 80km/h<br/>
+				Main roads: 110km/h<br/><br/>
 				"
 		]
-	];	
+	];
 	
 	player createDiaryRecord ["policerules",
 		[
@@ -849,13 +549,11 @@ player createDiaryRecord["changelog",
 		[
 			"",
 				"
-				1: Open Wanted List<br/>
-				2: Surrender<br/>
 				Y: Open Player Menu<br/>
 				U: Lock and unlock cars<br/>
 				F: Cop Siren (if cop)<br/>
 				T: Vehicle Trunk<br/>
-				Left Shift + R: Restrain / Ziptie<br/>
+				Left Shift + R: Restrain (Cop Only)<br/>
 				Left Shift + G: Knock out / stun (Civ Only, used for robbing them)<br/>
 				Left Windows: Main Interaction key which is used for picking up items/money, interacting with cars (repair,etc) and for cops to interact with civilians. Can be rebound to a single key like H by pressing ESC->Configure->Controls->Custom->Use Action 10<br/>
 				Left Shift + L: Activates cop siren lights (as a cop).<br/>

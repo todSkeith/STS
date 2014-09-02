@@ -1,28 +1,23 @@
 #include <macro.h>
 /*
 	File: fn_initMedic.sqf
-	Author: Skeith
-
+	Author: Bryan "Tonic" Boardwine
+	
 	Description:
-	Initializes the medic.
+	Initializes the medic..
 */
-player addRating 9999999;
+private["_end"];
+player addRating 99999999;
 waitUntil {!(isNull (findDisplay 46))};
-[] spawn life_fnc_medicMarkers;
 
-//switch (true) do
-//{
-//	case (!(str(player) in ["medic_nil"])):
-//	{
-		if((__GETC__(life_medicLvl)) == 1 || (__GETC__(life_adminlevel)) > 0) then {
-			//systemChat format ["Medic login accepted. Medic level: %1 Admin level: %2",__GETC__(life_mediclvl),__GETC__(life_adminlevel)];
-		}
-		else {
-			["NotWhitelisted",false,true] call BIS_fnc_endMission;
-			sleep 35;
-		};
-//	};
-//};
-[] call life_fnc_spawnMenu;
+if((__GETC__(life_medicLevel)) < 1) exitWith {
+	["Notwhitelisted",FALSE,TRUE] call BIS_fnc_endMission;
+	sleep 35;
+};
+
 [] call life_fnc_medicLoadGear;
+[] call life_fnc_spawnMenu;
+waitUntil{!isNull (findDisplay 38500)}; //Wait for the spawn selection to be open.
+waitUntil{isNull (findDisplay 38500)}; //Wait for the spawn selection to be done.
+
 [] call life_fnc_equipGear;

@@ -8,7 +8,6 @@
 private["_cop"];
 _cop = [_this,0,ObjNull,[ObjNull]] call BIS_fnc_param;
 if(isNull _cop) exitWith {}; //Bad entry
-if(player distance _cop > 10) exitWith {};
 
 _licenses = "";
 //Licenses
@@ -19,6 +18,6 @@ _licenses = "";
 	};
 } foreach life_licenses;
 
-if(_licenses == "") then {_licenses = "No Licenses<br/>";};
+if(_licenses == "") then {_licenses = (localize "STR_Cop_NoLicensesFound");};
 
-[[name player,_licenses],"life_fnc_licensesRead",_cop,FALSE] spawn life_fnc_MP;
+[[profileName,_licenses],"life_fnc_licensesRead",_cop,FALSE] spawn life_fnc_MP;

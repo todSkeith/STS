@@ -5,24 +5,19 @@
 	Description:
 	Impounds the vehicle
 */
-private["_vehicle","_type","_time","_price","_vehicleData","_upp","_ui","_progress","_pgText","_cP","_team"];
-_vehicle = [_this,0,Objnull,[Objnull]] call BIS_fnc_param;
-if(!(_vehicle isKindOf "Car") && !(_vehicle isKindOf "Air") && !(_vehicle isKindOf "Ship")) exitWith {};
-if(player distance _vehicle > 10) exitWith {};
-if(!alive _vehicle) exitWith {};
+private["_vehicle","_type","_time","_price","_vehicleData","_upp","_ui","_progress","_pgText","_cP"];
+_vehicle = cursorTarget;
+if(!((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship"))) exitWith {};
+if(player distance cursorTarget > 10) exitWith {};
 if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf "Ship")) then
 {
 	_vehicleData = _vehicle getVariable["vehicle_info_owners",[]];
-	if(count _vehicleData == 0) exitWith {hint "This vehicle has no information, it was probably spawned in through cheats. \n\nDeleting vehicle."; deleteVehicle _vehicle;}; //Bad vehicle.
+	if(count _vehicleData == 0) exitWith {deleteVehicle _vehicle}; //Bad vehicle.
 	_vehicleName = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
-	switch (playerSide) do {
-		case west:			{ _team = "the police"; };
-		case independent:	{ _team = "the EMS"; };
-	};
-	[[0,format["%1 your %2 is being impounded by %3.",(_vehicleData select 0) select 1,_vehicleName,_team]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+	[[0,format[localize "STR_NOTF_BeingImpounded",(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 	life_action_inUse = true;
 	
-	_upp = "Impounding Vehicle";
+	_upp = localize "STR_NOTF_Impounding";
 	//Setup our progress bar.
 	disableSerialization;
 	5 cutRsc ["life_progress","PLAIN"];
@@ -44,7 +39,7 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 	};
 	5 cutText ["","PLAIN"];
 	
-	if(player distance _vehicle > 10) exitWith {hint "Impounding cancelled."; life_action_inUse = false;};
+	if(player distance _vehicle > 10) exitWith {hint localize "STR_NOTF_ImpoundingCancelled"; life_action_inUse = false;};
 	if(!alive player) exitWith {life_action_inUse = false;};
 	//_time = _vehicle getVariable "time";
 	//if(isNil {_time}) exitWith {deleteVehicle _vehicle; hint "This vehicle was hacked in"};
@@ -55,21 +50,21 @@ if((_vehicle isKindOf "Car") || (_vehicle isKindOf "Air") || (_vehicle isKindOf 
 		_type = getText(configFile >> "CfgVehicles" >> (typeOf _vehicle) >> "displayName");
 		switch (true) do
 		{
-			case (_vehicle isKindOf "Car"): {_price = life_impound_car;};
-			case (_vehicle isKindOf "Ship"): {_price = life_impound_boat;};
-			case (_vehicle isKindOf "Air"): {_price = life_impound_air;};
+			case (_vehicle isKindOf "Car"): {_price = (call life_impound_car);};
+			case (_vehicle isKindOf "Ship"): {_price = (call life_impound_boat);};
+			case (_vehicle isKindOf "Air"): {_price = (call life_impound_air);};
 		};
 		
 		life_impound_inuse = true;
 		[[_vehicle,true,player],"TON_fnc_vehicleStore",false,false] spawn life_fnc_MP;
 		waitUntil {!life_impound_inuse};
-		hint format["You have impounded a %1\n\nYou have received $%2 for cleaning up the streets!",_type,_price];
-		[[0,format["%1 has impounded %2's %3",name player,(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
+		hint format[localize "STR_NOTF_Impounded",_type,_price];
+		[[0,format[localize "STR_NOTF_HasImpounded",profileName,(_vehicleData select 0) select 1,_vehicleName]],"life_fnc_broadcast",true,false] spawn life_fnc_MP;
 		life_atmcash = life_atmcash + _price;
 	}
 		else
 	{
-		hint "Impounding cancelled.";
+		hint localize "STR_NOTF_ImpoundingCancelled";
 	};
 };
 life_action_inUse = false;

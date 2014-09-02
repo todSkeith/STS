@@ -1,7 +1,7 @@
 /*
 	File: fn_keyHandler.sqf
 	Author: Bryan "Tonic" Boardwine
-
+	
 	Description:
 	Main key handler for event 'keyDown'
 */
@@ -19,6 +19,11 @@ _mapKey = actionKeys "ShowMap" select 0;
 //hint str _code;
 _interruptionKeys = [17,30,31,32]; //A,S,W,D
 
+//Vault handling...
+if((_code in (actionKeys "GetOver") || _code in (actionKeys "salute")) && {(player getVariable ["restrained",false])}) exitWith {
+	true;
+};
+
 if(life_action_inUse) exitWith {
 	if(!life_interrupted && _code in _interruptionKeys) then {life_interrupted = true;};
 	_handled;
@@ -26,36 +31,55 @@ if(life_action_inUse) exitWith {
 
 switch (_code) do
 {
-
 	//1 Key
 	case 2:
 	{
-		[] call life_fnc_p_openMenu;
+		closeDialog 0;
 		[] call life_fnc_wantedMenu;
 	};
-
+	
 	//Map Key
 	case _mapKey:
 	{
-		if(playerSide == west && !visibleMap) then {
-			[] spawn life_fnc_copMarkers;
-		};
-		if(playerSide == independent && !visibleMap) then {
-			[] spawn life_fnc_medicMarkers;
+		switch (playerSide) do 
+		{
+			case west: {if(!visibleMap) then {[] spawn life_fnc_copMarkers;}};
+			case independent: {
+				if(!visibleMap) then {
+					[] spawn life_fnc_medicMarkers;
+					[] spawn life_fnc_teamMarkers;
+				}
+			};
 		};
 	};
-		
-	//ESC
-	case 1:
+	
+	//Holster / recall weapon.
+	case 35:
 	{
-		[] spawn life_fnc_abortEnabled;
+		if(_shift && !_ctrlKey && currentWeapon player != "") then {
+			life_curWep_h = currentWeapon player;
+			player action ["SwitchWeapon", player, player, 100];
+			player switchcamera cameraView;
+		};
+		
+		if(!_shift && _ctrlKey && !isNil "life_curWep_h" && {(life_curWep_h != "")}) then {
+			if(life_curWep_h in [primaryWeapon player,secondaryWeapon player,handgunWeapon player]) then {
+				player selectWeapon life_curWep_h;
+			};
+		};
+
+		if(playerSide != civilian && playerSide != independent && vehicle player != player && ((driver vehicle player) == player)) then
+		{
+				[[vehicle player],"life_fnc_copHorn",nil,true] spawn life_fnc_MP;
+				sleep 1;
+		};
 	};
 
 	//Interaction key (default is Left Windows, can be mapped via Controls -> Custom -> User Action 10)
 	case _interactionKey:
 	{
 		if(!life_action_inUse) then {
-			[] spawn
+			[] spawn 
 			{
 				private["_handle"];
 				_handle = [] spawn life_fnc_actionKeyHandler;
@@ -64,7 +88,7 @@ switch (_code) do
 			};
 		};
 	};
-
+	
 	//Restraining (Shift + R)
 	case 19:
 	{
@@ -76,25 +100,6 @@ switch (_code) do
 				case west:		{ [cursorTarget] call life_fnc_restrainAction; };
 				case civilian:	{ [cursorTarget] call life_fnc_zipTie; };
 			};
-		};
-	};
-		
-	 // O Key, police gate opener
-        case 24:
-	{
-		if (!_shift && !_alt && !_ctrlKey && (playerSide == west)) then {
-			[] call life_fnc_copOpener;
-		};
-	};	
-	
-		
-	//Shift+G Knock out, this is experimental and yeah...
-	case 34:
-	{
-		if(_shift) then {_handled = true;};
-		if(_shift && playerSide == civilian && !isNull cursorTarget && cursorTarget isKindOf "Man" && isPlayer cursorTarget && alive cursorTarget && cursorTarget distance player < 4 && speed cursorTarget < 1 && (animationState cursorTarget != "Incapacitated") && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["restrained",false]) && !(player getVariable["zipTie",false]) && !(player getVariable["surrender",false]) && !(player getVariable["unconscious",false]) && !life_istazed && vehicle player == player) then
-		{
-			[cursorTarget] spawn life_fnc_knockoutAction;
 		};
 	};
 
@@ -113,18 +118,25 @@ switch (_code) do
 			_handled = true;
 		};
 	};
-	
-	//Holster (Shift - H for now)
-	case 35: {
-		if (_shift && !_alt && !_ctrlKey) then {
-			if(holstered) then {
-				player action ["hideWeapon",player,player,0];
-				holstered = false;
-			}
-			else {
-				player action ["hideWeapon",player,player,100];
-				holstered = true;
-			}
+
+	//Knock out, this is experimental and yeah...
+	case 34:
+	{
+		if(_shift) then {_handled = true;};
+		if(_shift && playerSide == civilian && !isNull cursorTarget && cursorTarget isKindOf "Man" && isPlayer cursorTarget && alive cursorTarget && cursorTarget distance player < 4 && speed cursorTarget < 1) then
+		{
+			if((animationState cursorTarget) != "Incapacitated" && (currentWeapon player == primaryWeapon player OR currentWeapon player == handgunWeapon player) && currentWeapon player != "" && !life_knockout && !(player getVariable["restrained",false]) && !life_istazed) then
+			{
+				[cursorTarget] spawn life_fnc_knockoutAction;
+			};
+		};
+	};
+
+	// O Key, police gate opener
+	case 24:
+	{
+		if (!_shift && !_alt && !_ctrlKey && (playerSide == west)) then {
+			[] call life_fnc_copOpener;
 		};
 	};
 
@@ -142,9 +154,9 @@ switch (_code) do
 			}
 				else
 			{
-				if((cursorTarget isKindOf "Car" OR cursorTarget isKindOf "Air" OR cursorTarget isKindOf "Ship") && player distance cursorTarget < 7 && vehicle player == player && alive cursorTarget) then
+				if((cursorTarget isKindOf "Car" OR cursorTarget isKindOf "Air" OR cursorTarget isKindOf "Ship" OR cursorTarget isKindOf "House_F") && player distance cursorTarget < 7 && vehicle player == player && alive cursorTarget) then
 				{
-					if(cursorTarget in life_vehicles) then
+					if(cursorTarget in life_vehicles OR {!(cursorTarget getVariable ["locked",true])}) then
 					{
 						[cursorTarget] call life_fnc_openInventory;
 					};
@@ -152,22 +164,29 @@ switch (_code) do
 			};
 		};
 	};
+	
 	//L Key?
 	case 38:
 	{
 		//If cop run checks for turning lights on.
 		if(_shift && playerSide == west) then {
-			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_F","C_Hatchback_01_sport_F"]) then {
+			if(vehicle player != player) then {
 				if(!isNil {vehicle player getVariable "lights"}) then {
 					[vehicle player] call life_fnc_sirenLights;
+					_handled = true;
+				} else {
+					vehicle player setVariable ["lights", false, true];
 					_handled = true;
 				};
 			};
 		};
 		if(_shift && playerSide == independent) then {
-			if(vehicle player != player && (typeOf vehicle player) in ["C_Offroad_01_F","B_MRAP_01_F","C_SUV_01_F","C_Hatchback_01_F","C_Hatchback_01_sport_F"]) then {
+			if(vehicle player != player) then {
 				if(!isNil {vehicle player getVariable "lights"}) then {
 					[vehicle player] call life_fnc_medicSirenLights;
+					_handled = true;
+				}else{
+					vehicle player setVariable ["lights", false, true];
 					_handled = true;
 				};
 			};
@@ -175,6 +194,7 @@ switch (_code) do
 
 		if(!_alt && !_ctrlKey) then { [] call life_fnc_radar; };
 	};
+	
 	//Y Player Menu
 	case 21:
 	{
@@ -183,11 +203,13 @@ switch (_code) do
 			[] call life_fnc_p_openMenu;
 		};
 	};
+
 	//V Key
 	case 47:
 	{
 		if(player getVariable "restrained" OR player getVariable "transporting" OR player getVariable "zipTie") then {_handled = true;};
 	};
+	
 	//F Key
 	case 33:
 	{
@@ -237,61 +259,52 @@ switch (_code) do
 			};
 		};
 	};
-	//H Key
-	case 35:
-	{
-		if(playerSide != civilian && vehicle player != player && ((driver vehicle player) == player)) then
-		{
-			    _veh = vehicle player;
-				[[_veh],"life_fnc_copHorn"] spawn life_fnc_MP;
-				sleep 1;
-		};
-	};
+
 	//U Key
 	case 22:
 	{
-		if(!_alt && !_ctrlKey) then
-		{
-			if(vehicle player == player) then
-			{
+		if(!_alt && !_ctrlKey) then {
+			if(vehicle player == player) then {
 				_veh = cursorTarget;
-			}
-				else
-			{
+			} else {
 				_veh = vehicle player;
 			};
-
-			_locked = locked _veh;
-			_owners = _veh getvariable "vehicle_info_owners";
-			_uid = getPlayerUID player;
-
-			if((_veh in life_vehicles || (_uid in (_owners select 0))) && player distance _veh < 8)then
-			{
-				if(_locked == 2) then
-				{
-					if(local _veh) then
-					{
-						_veh lock 0;
-					}
-						else
-					{
-						[[_veh,0], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
+			
+			if(_veh isKindOf "House_F" && playerSide == civilian) then {
+				if(_veh in life_vehicles && player distance _veh < 8) then {
+					_door = [_veh] call life_fnc_nearestDoor;
+					if(_door == 0) exitWith {hint localize "STR_House_Door_NotNear"};
+					_locked = _veh getVariable [format["bis_disabled_Door_%1",_door],0];
+					if(_locked == 0) then {
+						_veh setVariable[format["bis_disabled_Door_%1",_door],1,true];
+						_veh animate [format["door_%1_rot",_door],0];
+						systemChat localize "STR_House_Door_Lock";
+					} else {
+						_veh setVariable[format["bis_disabled_Door_%1",_door],0,true];
+						_veh animate [format["door_%1_rot",_door],1];
+						systemChat localize "STR_House_Door_Unlock";
 					};
-					[[_veh, "car_lock",10],"life_fnc_playSound",true,false] spawn life_fnc_MP;
-					systemChat "You have unlocked your vehicle.";
-				}
-					else
-				{
-					if(local _veh) then
-					{
-						_veh lock 2;
-					}
-						else
-					{
-						[[_veh,2], "life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
+				};
+			} else {
+				_locked = locked _veh;
+				if(_veh in life_vehicles && player distance _veh < 8) then {
+					if(_locked == 2) then {
+						if(local _veh) then {
+							_veh lock 0;
+						} else {
+							[[_veh,0],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
+						};
+						systemChat localize "STR_MISC_VehUnlock";
+						[[_veh, "car_unlock",10],"life_fnc_playSound",true,false] spawn life_fnc_MP;
+					} else {
+						if(local _veh) then {
+							_veh lock 2;
+						} else {
+							[[_veh,2],"life_fnc_lockVehicle",_veh,false] spawn life_fnc_MP;
+						};	
+						systemChat localize "STR_MISC_VehLock";
+						[[_veh, "car_lock",10],"life_fnc_playSound",true,false] spawn life_fnc_MP;
 					};
-					[[_veh, "car_unlock",10],"life_fnc_playSound",true,false] spawn life_fnc_MP;
-					systemChat "You have locked your vehicle.";
 				};
 			};
 		};

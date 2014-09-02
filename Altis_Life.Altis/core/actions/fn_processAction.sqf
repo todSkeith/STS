@@ -42,7 +42,7 @@ _oldItem = [];
 _vals = [];
 life_action_inUse = true;
 {_oldItem = _oldItem + [_x];} foreach (_itemInfo select 0);
-if(count _oldItem == 0) exitWith {hint "You don't have the items necessary"; life_action_inUse = false;};
+if(count _oldItem == 0) exitWith {hint "You don't have the items necessary"};
 {_vals = _vals + [missionNamespace getVariable ([_x,0] call life_fnc_varHandle)];} foreach _oldItem;
 _oldVal = _vals select 0;
 {if (_x < _oldVal) then {_oldVal = _x};} foreach _vals;
@@ -68,14 +68,13 @@ life_is_processing = true;
 
 if((!_hasLicense)&&(life_cash < _cost)) exitWith {
 	hint format["You need $%1 to process without a license!",[_cost] call life_fnc_numberText];
-	5 cutText ["","PLAIN"]; life_is_processing = false; life_action_inUse = false;
+	5 cutText ["","PLAIN"]; life_is_processing = false;
 };
 
 //Removes the old items
 {
 	if(!([false,_x,_oldVal] call life_fnc_handleInv)) exitWith {
 		5 cutText ["","PLAIN"]; life_is_processing = false;
-		life_action_inUse = false;
 	};
 } foreach _oldItem;
 

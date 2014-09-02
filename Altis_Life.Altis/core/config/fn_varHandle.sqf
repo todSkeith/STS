@@ -1,14 +1,14 @@
-//////////////////////////////////////////////////////////////////
-// Created by: Tonic and Adapted by DirtDiver &JackLags for STS
-// Function Name: life_fn_varHandle.sqf
-// Description: Master handler for getting a variable name, short name, etc...
-//////////////////////////////////////////////////////////////////
-
+/*
+	File: fn_varHandle.sqf
+	Author: Bryan "Tonic" Boardwine
+	
+	Description:
+	Master handler for getting a variables name, short name, etc.
+*/
 private["_var","_mode"];
 _var = [_this,0,"",[""]] call BIS_fnc_param;
 _mode = [_this,1,-1,[0]] call BIS_fnc_param;
 if(_var == "" OR _mode == -1) exitWith {""};
-//if(_var == "") exitWith {""};
 
 switch (_mode) do
 {
@@ -44,8 +44,6 @@ switch (_mode) do
 			case "ironore": {"life_inv_ironore"};
 			case "iron_r": {"life_inv_ironr"};
 			case "copper_r": {"life_inv_copperr"};
-			case "goldore": {"life_inv_goldore"};
-			case "gold_r": {"life_inv_goldr"};
 			case "salt": {"life_inv_salt"};
 			case "salt_r": {"life_inv_saltr"};
 			case "sand": {"life_inv_sand"};
@@ -63,6 +61,13 @@ switch (_mode) do
 			case "rock": {"life_inv_rock"};
 			case "zip": {"life_inv_zip"};
 			case "goldbar": {"life_inv_goldbar"};
+			case "goldore": {"life_inv_goldore"};
+			case "gold_r": {"life_inv_goldr"};
+			case "blastingcharge": {"life_inv_blastingcharge"};
+			case "boltcutter": {"life_inv_boltcutter"};
+			case "defusekit": {"life_inv_defusekit"};
+			case "storagesmall": {"life_inv_storagesmall"};
+			case "storagebig": {"life_inv_storagebig"};
 			case "corn": {"life_inv_corn"};
 			case "moonshine": {"life_inv_moonshine"};
 			case "fcrab": {"life_inv_fcrab"};
@@ -78,14 +83,12 @@ switch (_mode) do
 			case "chainsaw" : {"life_inv_chainsaw"};
 			case "cellphone" : {"life_inv_cellphone"};
 			case "RoadConeStrip": {"life_inv_RoadConeStrip"};
-			//case "RoadCone": {"life_inv_RoadCone"};
 			case "RoadBlockWood": {"life_inv_RoadBlockWood"};
-			case "storage1": {"life_inv_storage1"};
-            case "storage2": {"life_inv_storage2"};
             case "crowbar": {"life_inv_crowbar"};
             case "lethal": {"life_inv_lethal"};
 		};
 	};
+	
 	case 1:
 	{
 		switch (_var) do
@@ -116,9 +119,9 @@ switch (_mode) do
 			case "life_inv_pickaxe": {"pickaxe"};
 			case "life_inv_copperore": {"copperore"};
 			case "life_inv_ironore": {"ironore"};
-			case "life_inv_goldore": {"goldore"};
 			case "life_inv_ironr": {"iron_r"};
 			case "life_inv_copperr": {"copper_r"};
+			case "life_inv_goldore": {"goldore"};
 			case "life_inv_goldr": {"gold_r"};
 			case "life_inv_sand": {"sand"};
 			case "life_inv_salt": {"salt"};
@@ -135,8 +138,19 @@ switch (_mode) do
 			case "life_inv_spikeStrip": {"spikeStrip"};
 			case "life_inv_cement": {"cement"};
 			case "life_inv_rock": {"rock"};
-			case "life_inv_zip": {"zip"};
 			case "life_inv_goldbar": {"goldbar"};
+			case "life_inv_blastingcharge": {"blastingcharge"};
+			case "life_inv_boltcutter": {"boltcutter"};
+			case "life_inv_defusekit": {"defusekit"};
+			case "life_inv_storagesmall": {"storagesmall"};
+			case "life_inv_storagebig": {"storagebig"};
+            case "life_inv_crowbar": {"crowbar"};
+			case "life_inv_lethal": {"lethal"};
+			case "life_inv_lumber" : {"lumber"};
+			case "life_inv_chainsaw" : {"chainsaw"};
+			case "life_inv_cellphone" : {"cellphone"};
+			case "life_inv_RoadConeStrip": {"RoadConeStrip"};
+			case "life_inv_RoadBlockWood": {"RoadBlockWood"};
 			case "life_inv_corn": {"corn"};
 			case "life_inv_moonshine": {"moonshine"};
 			case "life_inv_fcrab": {"fcrab"};
@@ -148,16 +162,8 @@ switch (_mode) do
 			case "life_inv_steel": {"steel"};
 			case "life_inv_defib" : {"defib"};
 			case "life_inv_log" : {"log"};
-			case "life_inv_lumber" : {"lumber"};
-			case "life_inv_chainsaw" : {"chainsaw"};
-			case "life_inv_cellphone" : {"cellphone"};
-			case "life_inv_RoadConeStrip": {"RoadConeStrip"};
-			//case "life_inv_RoadCone": {"RoadCone"};
-			case "life_inv_RoadBlockWood": {"RoadBlockWood"};
-			case "life_inv_storage1": {"storage1"};
-            case "life_inv_storage2": {"storage2"};
-            case "life_inv_crowbar": {"crowbar"};
-			case "life_inv_lethal": {"lethal"};
+			case "life_inv_rock": {"rock"};
+			case "life_inv_zip": {"zip"};
 		};
 	};
 };

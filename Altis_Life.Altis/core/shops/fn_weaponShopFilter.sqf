@@ -31,15 +31,13 @@ switch (_index) do
 			_itemList lbSetValue[(lbSize _itemList)-1,_x select 2];
 		} foreach (_config select 1);
 		
-		((findDisplay 38400) displayCtrl 38405) ctrlSetText "Buy";
+		((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Buy";
 	};
 	
 	case 1:
 	{
 		private["_listedItems"];
 		_config = [];
-		_uItems = [];
-		_vItems = [];
 		_listedItems = [];
 		//Go through weapons
 		if(primaryWeapon player != "") then {_config set[count _config,primaryWeapon player]};
@@ -49,27 +47,11 @@ switch (_index) do
 		//Go through items
 		_config = _config + primaryWeaponItems player;
 		_config = _config + (assignedItems player);
-		{
-            _itemInfo = [_x] call life_fnc_fetchCfgDetails;
-            _itemType = _itemInfo select 6;
-            if (_itemType != "CfgWeapons") then
-            {
-                _uItems = _uItems + [_x];
-            };
-        } forEach (uniformItems player);
-		_config = _config + _uItems;
-		{
-            _itemInfo = [_x] call life_fnc_fetchCfgDetails;
-            _itemType = _itemInfo select 6;
-            if (_itemType != "CfgWeapons") then
-            {
-                _vItems = _vItems + [_x];
-            };
-        } forEach (vestItems player);
-		_config = _config + _vItems;
+		_config = _config + (uniformItems player);
+		_config = _config + (vestItems player);
 		_config = _config + (backPackItems player);
 		
-		((findDisplay 38400) displayCtrl 38405) ctrlSetText "Sell";
+		((findDisplay 38400) displayCtrl 38405) ctrlSetText localize "STR_Global_Sell";
 		{
 			if(!(_x in _listedItems) && _x != "") then
 			{

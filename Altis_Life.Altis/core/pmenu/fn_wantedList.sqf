@@ -14,7 +14,7 @@ _display = findDisplay 2400;
 _list = _display displayctrl 2401;
 _units = [];
 {
-	_units set[count _units, name _x];
+	_units set[count _units,_x getVariable["realname",name _x]];
 } foreach playableUnits;
 
 {
@@ -26,7 +26,8 @@ _units = [];
 	};
 } foreach _info;
 
-ctrlSetText[2404,"Connection Established"];
+//ctrlSetText[2404,"Connection Established"];
+((findDisplay 2400) displayCtrl 2404) ctrlSetStructuredText parseText "Connection Established";
 
 if(((lbSize _list)-1) == -1) then
 {

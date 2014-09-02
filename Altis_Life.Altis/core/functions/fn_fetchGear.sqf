@@ -33,7 +33,7 @@ if(primaryWeapon player != "") then
 	player selectWeapon (primaryWeapon player);
 	if(currentMagazine player != "") then
 	{
-		_magazines set[count _magazines,0];
+		_magazines set[count _magazines,currentMagazine player];
 	};
 };
 		
@@ -42,7 +42,7 @@ if(secondaryWeapon player != "") then
 	player selectWeapon (secondaryWeapon player);
 	if(currentMagazine player != "") then
 	{
-		_magazines set[count _magazines,0];
+		_magazines set[count _magazines,currentMagazine player];
 	};
 };
 		
@@ -51,12 +51,10 @@ if(handgunWeapon player != "") then
 	player selectWeapon (handgunWeapon player);
 	if(currentMagazine player != "") then
 	{
-		_magazines set[count _magazines,0];
+		_magazines set[count _magazines,currentMagazine player];
 	};
 };
 player selectWeapon (primaryWeapon player);
-{player removeMagazine _x;} foreach (magazines player);
-
 
 if(isNil "_handgunItems") then {_handgunItems = ["","",""];};
 [_primary,_launcher,_handgun,_magazines,_uniform,_vest,_backpack,_items,_primitems,_secitems,_handgunitems,_uitems,_vitems,_bitems,_headgear,_goggles];

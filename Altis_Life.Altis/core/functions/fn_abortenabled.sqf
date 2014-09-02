@@ -6,7 +6,6 @@
 
 private["_display","_abortB","_respawnB", "_timer","_timerDone"];
 
-if((call life_adminlevel) > 0) exitWith {};
 
 disableSerialization;
 

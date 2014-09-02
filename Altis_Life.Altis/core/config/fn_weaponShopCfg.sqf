@@ -1,31 +1,33 @@
-//////////////////////////////////////////////////////////////////
-// Created by: Tonic and Adapted by DirtDiver for STS
-// Function Name: life_fn_weaponShopCfg.sqf
-// Description: Master config file for the weapon shops.
-//Return:
-//	String: Close the menu
-//	Array:
-//	[Shop Name,
-//	[ //Array of items to add to the store
-//		[classname,Custom Name (set nil for default),price]
-//	]]
-//////////////////////////////////////////////////////////////////
 #include <macro.h>
-
+/*
+	File: fn_weaponShopCfg.sqf
+	Author: Bryan "Tonic" Boardwine
+	
+	Description:
+	Master configuration file for the weapon shops.
+	
+	Return:
+	String: Close the menu
+	Array: 
+	[Shop Name,
+	[ //Array of items to add to the store
+		[classname,Custom Name (set nil for default),price]
+	]]
+*/
 private["_shop"];
 _shop = [_this,0,"",[""]] call BIS_fnc_param;
 if(_shop == "") exitWith {closeDialog 0}; //Bad shop type passed.
 
 switch(_shop) do
 {
-	case "police_equipment":
+	case "cop_basic":
 	{
 		switch(true) do
 		{
 			case (playerSide != west): {"You are not a cop!"};
 			default
 			{
-				["Altis Police Equipment Shop",
+				["Altis Cop Shop",
 					[
 						["arifle_sdar_F","Taser Rifle",10000],
 						["hgun_P07_snds_F","Stun Pistol",2000],
@@ -47,11 +49,11 @@ switch(_shop) do
 		};
 	};
 
-	case "police_weapons":
+	case "cop_gun":
 	{
 		switch(true) do
 		{
-			case (__GETC__(life_coplevel) == 0): {"You are not a cop!"};
+			case (playerSide != west): {"You are not a cop!"};
 			
 			case (__GETC__(life_adminlevel) > 0):
 			{
@@ -63,12 +65,13 @@ switch(_shop) do
 						["arifle_MX_Black_F",nil,0],
 						["arifle_MX_SW_Black_F",nil,0],
 						["arifle_MXC_Black_F",nil,0],
+						["arifle_TRG20_F",nil,0],
+						["arifle_TRG21_F",nil,0],
 						["SMG_01_F",nil,0],
 						["arifle_MK20C_F",nil,0],
 						["arifle_MK20_F",nil,0],
 						["arifle_Katiba_F",nil,0],
 						["arifle_Katiba_C_F",nil,0],
-						["MiniGrenade","Flashbang",0],
 						["hgun_ACPC2_F",nil,0],
 						["hgun_P07_snds_F","Stun Pistol",0],
 						["arifle_sdar_F","Taser Rifle",0],
@@ -185,7 +188,6 @@ switch(_shop) do
 						["SMG_02_F",nil,15000],
 						["arifle_sdar_F","Taser Rifle",10000],
 						["hgun_P07_snds_F","Stun Pistol",2000],
- 						["MiniGrenade","Flashbang",20000],
 						["acc_flashlight",nil,750],
 						["acc_pointer_IR",nil,5000],
 						["optic_Arco",nil,2500],
@@ -196,7 +198,8 @@ switch(_shop) do
 						["30Rnd_45ACP_Mag_SMG_01",nil,150],
 						["16Rnd_9x21_Mag",nil,50],
 						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
-						["30Rnd_9x21_Mag",nil,60]
+						["30Rnd_9x21_Mag",nil,60],
+						["MiniGrenade","Flashbang",20000]
 					]
 				];
 			};
@@ -212,7 +215,6 @@ switch(_shop) do
 						["SMG_02_F",nil,20000],
 						["arifle_sdar_F","Taser Rifle",10000],
 						["hgun_P07_snds_F","Stun Pistol",2000],
-						["MiniGrenade","Flashbang",20000],
 						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
 						["optic_Holosight",nil,1200],
@@ -224,7 +226,8 @@ switch(_shop) do
 						["9Rnd_45ACP_Mag",nil,200],
 						["16Rnd_9x21_Mag",nil,50],
 						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
-						["30Rnd_9x21_Mag",nil,60]
+						["30Rnd_9x21_Mag",nil,60],
+						["MiniGrenade","Flashbang",20000]
 					]
 				];
 			};
@@ -240,7 +243,6 @@ switch(_shop) do
 						["SMG_02_F",nil,15000],
 						["arifle_sdar_F","Taser Rifle",10000],
 						["hgun_P07_snds_F","Stun Pistol",2000],
-						["MiniGrenade","Flashbang",20000],
 						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
 						["optic_Holosight",nil,1200],
@@ -252,7 +254,8 @@ switch(_shop) do
 						["9Rnd_45ACP_Mag",nil,200],
 						["16Rnd_9x21_Mag",nil,50],
 						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
-						["30Rnd_9x21_Mag",nil,60]
+						["30Rnd_9x21_Mag",nil,60],
+						["MiniGrenade","Flashbang",20000]
 					]
 				];
 			};
@@ -268,7 +271,6 @@ switch(_shop) do
 						["SMG_02_F",nil,15000],
 						["arifle_sdar_F","Taser Rifle",10000],
 						["hgun_P07_snds_F","Stun Pistol",2000],
-						["MiniGrenade","Flashbang",20000],
 						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
 						["optic_Holosight",nil,1200],
@@ -280,7 +282,8 @@ switch(_shop) do
 						["9Rnd_45ACP_Mag",nil,200],
 						["16Rnd_9x21_Mag",nil,50],
 						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
-						["30Rnd_9x21_Mag",nil,60]
+						["30Rnd_9x21_Mag",nil,60],
+						["MiniGrenade","Flashbang",20000]
 					]
 				];
 			};
@@ -297,7 +300,6 @@ switch(_shop) do
 						["SMG_02_F",nil,15000],
 						["arifle_sdar_F","Taser Rifle",10000],
 						["hgun_P07_snds_F","Stun Pistol",2000],
-						["MiniGrenade","Flashbang",20000],
 						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
 						["optic_Holosight",nil,1200],
@@ -309,7 +311,8 @@ switch(_shop) do
 						["9Rnd_45ACP_Mag",nil,200],
 						["16Rnd_9x21_Mag",nil,50],
 						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
-						["30Rnd_9x21_Mag",nil,60]
+						["30Rnd_9x21_Mag",nil,60],
+						["MiniGrenade","Flashbang",20000]
 					]
 				];
 			};
@@ -326,7 +329,6 @@ switch(_shop) do
 						["SMG_02_F",nil,15000],
 						["arifle_sdar_F","Taser Rifle",10000],
 						["hgun_P07_snds_F","Stun Pistol",2000],
-						["MiniGrenade","Flashbang",20000],
 						["hgun_ACPC2_F",nil,17500],
 						["optic_Arco",nil,2500],
 						["optic_Holosight",nil,1200],
@@ -344,40 +346,14 @@ switch(_shop) do
 			};
 		};
 	};
-
-	case "cg":
-	{
-		switch(true) do
-		{
-			case (playerSide != west): {"You are not a cop!"};
-			case (!license_cop_cg): {"You are not part of the CoastGuard!"};
-			case (__GETC__(life_coplevel) < 1): {"You are not part of the CoastGuard!"};
-			default
-			{
-				["Coast Guard",
-					[
-						["SMG_02_ACO_F",nil,15000],
-						["hgun_ACPC2_F",nil,17500],
-						["arifle_SDAR_F",nil,20000],
-						["optic_Arco",nil,2500],
-						["20Rnd_556x45_UW_mag",nil,125],
-						["30Rnd_556x45_Stanag",nil,300],
-						["30Rnd_9x21_Mag",nil,60],
-						["9Rnd_45ACP_Mag",nil,200]
-					]
-				];
-			};
-		};
-	};
-
+	
 	case "medic":
 	{
-		switch(true) do
+		switch (true) do 
 		{
-			case (playerSide != independent): {"You are not a Medic!"};
-			default
-			{
-				["Medic Shop",
+			case (playerSide != independent): {"You are not an EMS Medic"};
+			default {
+				["Hospital EMS Shop",
 					[
 						["ItemGPS",nil,100],
 						["ToolKit",nil,250],
@@ -392,121 +368,14 @@ switch(_shop) do
 			};
 		};
 	};
-
+	
 	case "rebel":
 	{
 		switch(true) do
 		{
-			case (playerSide != civilian): {"You are not a cop!"};
+			case (playerSide != civilian): {"You are not a civilian!"};
 			case (!license_civ_rebel): {"You don't have a Rebel training license!"};
-			default
-			{
-				["Mohammed's Jihadi Shop",
-					[
-						["arifle_MK20C_F",nil,20000],
-						["arifle_MK20_F",nil,25000],
-						["arifle_Katiba_F",nil,35000],
-						["arifle_Katiba_C_F",nil,30000],
-						["arifle_SDAR_F",nil,20000],
-						["SMG_01_F",nil,20000],
-						["MiniGrenade","Flashbang",40000],
-						["optic_ACO_grn",nil,3500],
-						["optic_Holosight",nil,3600],
-						["optic_Holosight_smg",nil,3600],
-						["optic_Arco",nil,2500],
-						["acc_flashlight",nil,1000],
-						["optic_Hamr",nil,7500],
-						["NVGoggles_INDEP",nil,2000],
-						["30Rnd_9x21_Mag",nil,200],
-						["20Rnd_556x45_UW_mag",nil,125],
-						["30Rnd_556x45_Stanag",nil,300],
-						["30Rnd_65x39_caseless_green",nil,275],
-						["30Rnd_45ACP_Mag_SMG_01",nil,150]
-					]
-				];
-			};
-		};
-	};
-
-	case "gun":
-	{
-		switch(true) do
-		{
-			case (playerSide != civilian): {"You are not a cop!"};
-			case (!license_civ_gun): {"You don't have a Firearms license!"};
-			default
-			{
-				["Billy Joe's Firearms",
-					[
-						["hgun_Rook40_F",nil,6500],
-						["hgun_Pistol_heavy_02_F",nil,9850],
-						["hgun_pistol_heavy_01_F",nil,9850],
-						["hgun_ACPC2_F",nil,11500],
-						["hgun_PDW2000_F",nil,20000],
-						["optic_ACO_grn_smg",nil,2500],
-						["optic_Arco",nil,2500],
-						["optic_Hamr",nil,2500],
-						["V_Rangemaster_belt",nil,4900],
-						["V_Press_F",nil,30000],
-						["NVGoggles",nil,2000],
-						["16Rnd_9x21_Mag",nil,25],
-						["6Rnd_45ACP_Cylinder",nil,50],
-						["11Rnd_45ACP_Mag",nil,85],
-						["9Rnd_45ACP_Mag",nil,45],
-						["30Rnd_9x21_Mag",nil,75]
-					]
-				];
-			};
-		};
-	};
-
-	case "bh":
-	{
-		switch(true) do
-		{
-			case (playerSide != civilian): {"You are a cop!"};
-			case (!(license_civ_bh)): {"You do not have a Bounty Hunting License!"};
-			default
-			{
-				["Bounty Hunter Shop",
-					[
-						["arifle_sdar_F","Taser Rifle",10000],
-						["20Rnd_556x45_UW_mag","Taser Rifle Magazine",125],
-						["hgun_P07_snds_F","Stun Pistol",2000],
-						["16Rnd_9x21_Mag","Stun Pistol Magazine",50]
-						
-					]
-				];
-			};
-		};
-	};
-	
-	case "c3":
-	{
-		switch(true) do
-		{
-			case (playerSide != civilian): {"You are a cop!"};
-			case (!(license_civ_c3)): {"You do not have a Class III Weapons License!"};
-			default
-			{
-				["Class III Weapons Shop",
-					[
-						["arifle_MK20C_plain_F",nil,20000],
-						["arifle_MK20_plain_F",nil,25000],
-						["arifle_TRG20_F",nil,20000],
-						["arifle_TRG21_F",nil,25000],
-						["30Rnd_556x45_Stanag",nil,300]
-					]
-				];
-			};
-		};
-	};
-	
-	case "merc":
-	{
-		switch(true) do
-		{
-			case (__GETC__(life_adminlevel) > 0): 
+			case (__GETC__(life_adminlevel) > 0):
 			{
 				["STS Admin Shop",
 					[
@@ -524,7 +393,8 @@ switch(_shop) do
 						["hgun_Pistol_heavy_02_F",nil,0],						
 						["hgun_PDW2000_F",nil,0],
 						["SMG_01_F",nil,0],
-						["SMG_02_F",nil,0],								
+						["SMG_02_F",nil,0],		
+						["hgun_signal_pistol_F",nil,0],						
 						["optic_ACO_grn_smg",nil,0],
 						["optic_ACO_grn",nil,0],
 						["optic_ACO",nil,0],
@@ -543,6 +413,7 @@ switch(_shop) do
 						["itemmap",nil,0],
 						["FirstAidKit",nil,0],
 						["MiniGrenade","Flashbang",0],						
+						["9Rnd_45ACP_Mag ",nil,0],
 						["16Rnd_9x21_Mag",nil,0],
 						["11Rnd_45ACP_Mag",nil,0],
 						["6Rnd_45ACP_Cylinder",nil,0],
@@ -551,7 +422,9 @@ switch(_shop) do
 						["30Rnd_65x39_caseless_mag",nil,0],
 						["30Rnd_45ACP_Mag_SMG_01",nil,0],
 						["30Rnd_65x39_caseless_green",nil,0],
-						["20Rnd_556x45_UW_mag",nil,0],						
+						["20Rnd_556x45_UW_mag",nil,0],
+						["6Rnd_Green_Signal_F",nil,0],
+						["6Rnd_Red_Signal_F",nil,0],						
 						["H_Bandanna_camo",nil,0],
 						["H_Bandanna_cbr",nil,0],
 						["H_Bandanna_gry",nil,0],
@@ -595,15 +468,7 @@ switch(_shop) do
 						["H_Watchcap_blk",nil,0],
 						["H_Watchcap_camo",nil,0],
 						["H_Watchcap_khk",nil,0],
-						["H_Watchcap_sgg",nil,0],		
-						["G_Bandanna_aviator","Aviator Bandanna",0],
-						["G_Bandanna_beast","Beast Bandanna",0],
-						["G_Bandanna_blk","Black Bandanna",0],
-						["G_Bandanna_khk","Khaki Bandanna",0],
-						["G_Bandanna_oli","Olive Bandanna",0],
-						["G_Bandanna_shades","Bandanna with Shades",0],
-						["G_Bandanna_sport","Sport Bandanna",0],
-						["G_Bandanna_tan","Tan Bandanna",0],				
+						["H_Watchcap_sgg",nil,0],						
 						["U_C_Poloshirt_blue","Poloshirt STS",0],
 						["U_C_Poloshirt_burgundy","Poloshirt Burgundy",0],
 						["U_C_Poloshirt_redwhite","Poloshirt Red/White",0],
@@ -668,7 +533,9 @@ switch(_shop) do
 						["V_RebreatherIA",nil,0],
 						["V_RebreatherIR",nil,0],
 						["V_TacVest_blk",nil,0],
+						["V_TacVest_blk_POLICE",nil,0],
 						["V_TacVest_brn",nil,0],
+						["V_TacVest_camoe",nil,0],
 						["V_TacVestCamo_khk",nil,0],						
 						["B_AssaultPack_blk",nil,0],
 						["B_AssaultPack_cbr",nil,0],
@@ -695,124 +562,304 @@ switch(_shop) do
 						["B_Kitbag_rgr",nil,0],
 						["B_Kitbag_sgg",nil,0],
 						["B_Parachute",nil,0],
-						["B_TacticalPack_blk",nil,0],
+						["B_TacticalPack_blk",0],
 						["B_TacticalPack_mcamo",nil,0],
 						["B_TacticalPack_ocamo",nil,0],
 						["B_TacticalPack_oli",nil,0],
 						["B_TacticalPack_rgr",nil,0]
-
+						
 					]
 				];
 			};
-			case (__GETC__(life_donator) == 1):
+			default
 			{
-				["Mercenary Stockpile",
+				["Mohammed's Jihadi Shop",
 					[
-						["hgun_Rook40_F",nil,1100],
-						["hgun_PDW2000_F",nil,10000],
-						["hgun_pistol_heavy_01_F",nil,9850],
-						["arifle_Mk20C_plain_F",nil,21000],
-						["arifle_Mk20_plain_F",nil,23500],
-						["optic_ACO_grn_smg",nil,1250],
-						["optic_MRCO",nil,15000],
-						["B_FieldPack_ocamo",nil,1550],
-						["B_Kitbag_mcamo",nil,2500],
-						["B_Bergen_sgg",nil,2500],
-						["B_Carryall_oli",nil,3000],
-						["B_Carryall_ocamo",nil,3000],
-						["B_Carryall_oucamo",nil,3000],
-						["B_Carryall_mcamo",nil,3000],
-						["B_Carryall_khk",nil,3000],
-						["B_Carryall_cbr",nil,3000],
-						["NVGoggles",nil,750],
-						["ToolKit",nil,225],
-						["itemgps",nil,225],
-						["FirstAidKit",nil,125],
-						["16Rnd_9x21_Mag",nil,125],
-						["30Rnd_9x21_Mag",nil,150],
-						["11Rnd_45ACP_Mag",nil,175],
-						["30Rnd_556x45_Stanag",nil,200]
-					]
-				];
-			};
-
-			case (__GETC__(life_donator) == 2):
-			{
-				["Mercenary Stockpile",
-					[
-						["hgun_Rook40_F",nil,850],
-						["hgun_PDW2000_F",nil,8500],
-						["hgun_pistol_heavy_01_F",nil,8500],
-						["arifle_Mk20C_plain_F",nil,18500],
-						["arifle_Mk20_plain_F",nil,21000],
-						["optic_ACO_grn_smg",nil,1000],
-						["optic_MRCO",nil,13500],
-						["B_FieldPack_ocamo",nil,1250],
-						["B_Kitbag_mcamo",nil,2000],
-						["B_Bergen_sgg",nil,2000],
-						["B_Carryall_oli",nil,2400],
-						["B_Carryall_ocamo",nil,2400],
-						["B_Carryall_oucamo",nil,2400],
-						["B_Carryall_mcamo",nil,2400],
-						["B_Carryall_khk",nil,2400],
-						["B_Carryall_cbr",nil,2400],
-						["NVGoggles",nil,550],
-						["ToolKit",nil,150],
-						["itemgps",nil,150],
-						["FirstAidKit",nil,75],
-						["16Rnd_9x21_Mag",nil,75],
-						["30Rnd_9x21_Mag",nil,100],
-						["11Rnd_45ACP_Mag",nil,125],
-						["30Rnd_556x45_Stanag",nil,150]
-					]
-				];
-			};
-
-			case (__GETC__(life_donator) >= 3):
-			{
-				["Mercenary Stockpile",
-					[
-						["hgun_Rook40_F",nil,500],
-						["hgun_PDW2000_F",nil,6500],
-						["hgun_pistol_heavy_01_F",nil,5850],
-						["arifle_Mk20C_plain_F",nil,15000],
-						["arifle_Mk20_plain_F",nil,17500],
-						["optic_ACO_grn_smg",nil,750],
+						["arifle_MK20C_F",nil,20000],
+						["arifle_MK20_F",nil,25000],
+						["arifle_TRG20_F",nil,20000],
+						["arifle_TRG21_F",nil,25000],
+						["arifle_Katiba_F",nil,35000],
+						["arifle_Katiba_C_F",nil,30000],
+						["arifle_SDAR_F",nil,20000],
+						["SMG_01_F",nil,20000],
+						["optic_ACO_grn",nil,3500],
+						["optic_Aco",nil,3500],
+						["optic_Aco_smg",nil,3500],
+						["optic_ACO_grn_smg",nil,3500],
+						["optic_Holosight",nil,3600],
+						["optic_Holosight_smg",nil,3600],
 						["optic_MRCO",nil,10000],
-						["B_FieldPack_ocamo",nil,900],
-						["B_Kitbag_mcamo",nil,1500],
-						["B_Bergen_sgg",nil,1500],
-						["B_Carryall_oli",nil,1600],
-						["B_Carryall_ocamo",nil,1600],
-						["B_Carryall_oucamo",nil,1600],
-						["B_Carryall_mcamo",nil,1600],
-						["B_Carryall_khk",nil,1600],
-						["B_Carryall_cbr",nil,1600],
-						["NVGoggles",nil,350],
-						["ToolKit",nil,50],
-						["itemgps",nil,50],
-						["FirstAidKit",nil,25],
-						["16Rnd_9x21_Mag",nil,25],
-						["30Rnd_9x21_Mag",nil,75],
-						["11Rnd_45ACP_Mag",nil,85],
-						["30Rnd_556x45_Stanag",nil,125]
+						["optic_Arco",nil,2500],
+						["acc_flashlight",nil,1000],
+						["optic_Hamr",nil,7500],
+						["NVGoggles_INDEP",nil,2000],
+						["30Rnd_9x21_Mag",nil,200],
+						["20Rnd_556x45_UW_mag",nil,125],
+						["30Rnd_556x45_Stanag",nil,300],
+						["30Rnd_65x39_caseless_green",nil,275],
+						["30Rnd_45ACP_Mag_SMG_01",nil,150],
+						["MiniGrenade","Flashbang",30000]
 					]
 				];
 			};
 		};
 	};
-
-	case "servstat":
+	
+	case "gun":
 	{
-		["Altis Service Station",
-			[
-				["ItemGPS",nil,100],
-				["ToolKit",nil,250],
-				["FirstAidKit",nil,150]
-			]
-		];
+		switch(true) do
+		{
+			case (playerSide != civilian): {"You are not a civilian!"};
+			case (!license_civ_gun): {"You don't have a Firearms license!"};
+			case (__GETC__(life_adminlevel) > 0):
+			{
+				["STS Admin Shop",
+					[
+						["Binocular",nil,0],
+						["arifle_Katiba_F",nil,0],
+						["arifle_Katiba_C_F",nil,0],
+						["arifle_TRG20_F",nil,0],
+						["arifle_TRG21_F",nil,0],
+						["arifle_Mk20_F",nil,0],
+						["arifle_Mk20C_F",nil,0],
+						["arifle_SDAR_F",nil,0],						
+						["hgun_P07_snds_F","Stun Pistol",0],
+						["hgun_ACPC2_F",nil,0],
+						["hgun_Pistol_heavy_01_F",nil,0],
+						["hgun_Pistol_heavy_02_F",nil,0],						
+						["hgun_PDW2000_F",nil,0],
+						["SMG_01_F",nil,0],
+						["SMG_02_F",nil,0],		
+						["hgun_Pistol_Signal_F",nil,0],						
+						["optic_ACO_grn_smg",nil,0],
+						["optic_ACO_grn",nil,0],
+						["optic_Aco",nil,0],
+						["optic_Arco",nil,0],
+						["optic_MRCO",nil,0],
+						["optic_Hamr",nil,0],
+						["optic_MRD",nil,0],
+						["optic_Yorris",nil,0],
+						["optic_Holosight",nil,0],
+						["optic_Holosight_smg",nil,0],
+						["acc_flashlight",nil,0],
+						["acc_pointer_IR",nil,0],						
+						["NVGoggles",nil,0],
+						["ToolKit",nil,0],
+						["itemgps",nil,0],
+						["itemmap",nil,0],
+						["FirstAidKit",nil,0],
+						["MiniGrenade","Flashbang",0],						
+						["9Rnd_45ACP_Mag",nil,0],
+						["16Rnd_9x21_Mag",nil,0],
+						["11Rnd_45ACP_Mag",nil,0],
+						["6Rnd_45ACP_Cylinder",nil,0],
+						["30Rnd_65x39_caseless_green",nil,0],
+						["30Rnd_556x45_Stanag",nil,0],
+						["30Rnd_65x39_caseless_mag",nil,0],
+						["30Rnd_45ACP_Mag_SMG_01",nil,0],
+						["30Rnd_65x39_caseless_green",nil,0],
+						["20Rnd_556x45_UW_mag",nil,0],
+						["6Rnd_Green_Signal_F",nil,0],
+						["6Rnd_Red_Signal_F",nil,0],						
+						["H_Bandanna_camo",nil,0],
+						["H_Bandanna_cbr",nil,0],
+						["H_Bandanna_gry",nil,0],
+						["H_Bandanna_khk",nil,0],
+						["H_Bandanna_khk_hs",nil,0],
+						["H_Bandanna_mcamo",nil,0],
+						["H_Bandanna_surfer",nil,0],
+						["H_Beret_blk",nil,0],
+						["H_Beret_brn_SF",nil,0],
+						["H_Beret_grn_SF",nil,0],
+						["H_Beret_red",nil,0],
+						["H_Booniehat_dgtl",nil,0],
+						["H_Booniehat_grn",nil,0],
+						["H_Booniehat_mcamo",nil,0],
+						["H_Booniehat_tan",nil,0],
+						["H_Cap_blk",nil,0],
+						["H_Cap_blk_Raven",nil,0],
+						["H_Cap_headphones",nil,0],
+						["H_CrewHelmetHeli_B",nil,0],
+						["H_CrewHelmetHeli_I",nil,0],
+						["H_Hat_blue",nil,0],
+						["H_Hat_brown",nil,0],
+						["H_Hat_checker",nil,0],
+						["H_HelmetB",nil,0],
+						["H_HelmetB_black",nil,0],
+						["H_HelmetB_plain_blk",nil,0],
+						["H_HelmetB_plain_mcamo",nil,0],
+						["H_HelmetCrew_B",nil,0],
+						["H_HelmetCrew_I",nil,0],
+						["H_HelmetIA",nil,0],
+						["H_HelmetLeaderO_ocamo",nil,0],
+						["H_HelmetLeaderO_oucamo",nil,0],
+						["H_HelmetSpecB",nil,0],
+						["H_HelmetSpecO_blk",nil,0],
+						["H_MilCap_dgtl",nil,0],
+						["H_PilotHelmetFighter_B",nil,0],
+						["H_PilotHelmetFighter_O",nil,0],
+						["H_Shemag_khk",nil,0],
+						["H_Shemag_olive",nil,0],
+						["H_Shemag_tan",nil,0],
+						["H_Watchcap_blk",nil,0],
+						["H_Watchcap_camo",nil,0],
+						["H_Watchcap_khk",nil,0],
+						["H_Watchcap_sgg",nil,0],						
+						["U_C_Poloshirt_blue","Poloshirt STS",0],
+						["U_C_Poloshirt_burgundy","Poloshirt Burgundy",0],
+						["U_C_Poloshirt_redwhite","Poloshirt Red/White",0],
+						["U_C_Poloshirt_salmon","Poloshirt 70s",0],
+						["U_C_Poloshirt_stripped","Poloshirt stripped",0],
+						["U_C_Poloshirt_tricolour","Poloshirt Tricolor",0],
+						["U_C_Poor_2","Rag tagged clothes",0],
+						["U_C_HunterBody_grn","Green Hunter",0],
+						["U_IG_Guerilla2_2","Green stripped shirt & Pants",0], 
+						["U_IG_Guerilla3_1","Brown Jacket & Pants",0],
+						["U_IG_Guerilla2_3","The Outback Rangler",0],
+						["U_OG_Guerilla3_2","Tie Suite",0],
+						["U_C_WorkerCoveralls","Mechanic Coveralls",0],
+						["U_OrestesBody","Surfing On Land",0],
+						["U_C_Scientist","Mechanic Blue",0],
+						["U_NikosBody","Badass Uniform",0],
+						["U_C_Journalist","Journalist Clothes",0],
+						["U_NikosAgedBody","Business Casual",0],
+						["U_C_Driver_1_black",nil,0],
+						["U_C_Driver_1_blue",nil,0],
+						["U_C_Driver_1_red",nil,0],
+						["U_C_Driver_1_orange",nil,0],
+						["U_C_Driver_1_green",nil,0],
+						["U_C_Driver_1_white",nil,0],
+						["U_C_Driver_1_yellow",nil,0],
+						["U_C_Driver_2",nil,0],
+						["U_C_Driver_1",nil,0],
+						["U_C_Driver_3",nil,0],
+						["U_C_Driver_4",nil,0],
+						["U_IG_Guerilla1_1",nil,0],
+						["U_I_G_Story_Protagonist_F",nil,0],
+						["U_I_G_resistanceLeader_F",nil,0],
+						["U_O_SpecopsUniform_ocamo",nil,0],
+						["U_O_PilotCoveralls",nil,0],
+						["U_IG_leader","Guerilla Leader",0],
+						["U_O_OfficerUniform_ocamo",nil,0],
+						["U_O_CombatUniform_oucamo",nil,0],
+						["U_I_CombatUniform",nil,0],
+						["U_I_CombatUniform_shortsleeve",nil,0],
+						["U_O_GhillieSuit",nil,0],
+						["U_I_GhillieSuit",nil,0],
+						["U_B_HeliPilotCoveralls",nil,0],
+						["U_B_Wetsuit",nil,0],
+						["U_O_Wetsuit",nil,0],
+						["U_I_Wetsuit",nil,0],
+						["U_B_PilotCoveralls",nil,0],						
+						["V_BandollierB_blk",nil,0],
+						["V_BandollierB_cbr",nil,0],
+						["V_BandollierB_rgr",nil,0],
+						["V_Chestrig_blk",nil,0],
+						["V_Chestrig_khk",nil,0],
+						["V_HarnessO_brn",nil,0],
+						["V_HarnessOGL_brn",nil,0],
+						["V_PlateCarrier1_rgr",nil,0],
+						["V_PlateCarrier3_rgr",nil,0],
+						["V_PlateCarrierGL_rgr",nil,0],
+						["V_PlateCarrierIA1_dgtl",nil,0],
+						["V_PlateCarrierIA2_dgtl",nil,0],
+						["V_PlateCarrierIAGL_dgtl",nil,0],
+						["V_Rangemaster_belt",nil,0],
+						["V_RebreatherB",nil,0],
+						["V_RebreatherIA",nil,0],
+						["V_RebreatherIR",nil,0],
+						["V_TacVest_blk",nil,0],
+						["V_TacVest_blk_POLICE",nil,0],
+						["V_TacVest_brn",nil,0],
+						["V_TacVest_camoe",nil,0],
+						["V_TacVestCamo_khk",nil,0],						
+						["B_AssaultPack_blk",nil,0],
+						["B_AssaultPack_cbr",nil,0],
+						["B_AssaultPack_dgtl",nil,0],
+						["B_AssaultPack_khk",nil,0],
+						["B_AssaultPack_mcamo",nil,0],
+						["B_AssaultPack_ocamo",nil,0],
+						["B_AssaultPack_rgr",nil,0],
+						["B_AssaultPack_sgg",nil,0],
+						["B_Carryall_cbr",nil,0],
+						["B_Carryall_khk",nil,0],
+						["B_Carryall_mcamo",nil,0],
+						["B_Carryall_ocamo",nil,0],
+						["B_Carryall_oli",nil,0],
+						["B_Carryall_oucamo",nil,0],
+						["B_FieldPack_blk",nil,0],
+						["B_FieldPack_cbr",nil,0],
+						["B_FieldPack_khk",nil,0],
+						["B_FieldPack_ocamo",nil,0],
+						["B_FieldPack_oli",nil,0],
+						["B_FieldPack_oucamo",nil,0],
+						["B_Kitbag_cbr",nil,0],
+						["B_Kitbag_mcamo",nil,0],
+						["B_Kitbag_rgr",nil,0],
+						["B_Kitbag_sgg",nil,0],
+						["B_Parachute",nil,0],
+						["B_TacticalPack_blk",0],
+						["B_TacticalPack_mcamo",nil,0],
+						["B_TacticalPack_ocamo",nil,0],
+						["B_TacticalPack_oli",nil,0],
+						["B_TacticalPack_rgr",nil,0]
+						
+					]
+				];
+			};
+			default
+			{
+				["Billy Joe's Firearms",
+					[
+						["hgun_Rook40_F",nil,6500],
+						["hgun_Pistol_heavy_02_F",nil,9850],
+						["hgun_pistol_heavy_01_F",nil,9850],
+						["hgun_ACPC2_F",nil,11500],
+						["hgun_PDW2000_F",nil,20000],
+						["optic_ACO_grn_smg",nil,2500],
+						["optic_Aco_smg",nil,3500],
+						["optic_Arco",nil,2500],
+						["optic_Hamr",nil,2500],
+						["V_Rangemaster_belt",nil,4900],
+						["V_Press_F",nil,30000],
+						["NVGoggles",nil,2000],
+						["16Rnd_9x21_Mag",nil,25],
+						["6Rnd_45ACP_Cylinder",nil,50],
+						["11Rnd_45ACP_Mag",nil,85],
+						["9Rnd_45ACP_Mag",nil,45],
+						["30Rnd_9x21_Mag",nil,75]
+					]
+				];
+			};
+		};
 	};
-
+	
+	case "gang":
+	{
+		switch(true) do
+		{
+			case (playerSide != civilian): {"You are not a civilian!"};
+			default
+			{
+				["Hideout Armament",
+					[
+						["hgun_Rook40_F",nil,6500],
+						["hgun_Pistol_heavy_02_F",nil,9850],
+						["hgun_ACPC2_F",nil,11500],
+						["hgun_PDW2000_F",nil,20000],
+						["optic_ACO_grn_smg",nil,2500],
+						["V_Rangemaster_belt",nil,4900],
+						["16Rnd_9x21_Mag",nil,25],
+						["9Rnd_45ACP_Mag",nil,45],
+						["6Rnd_45ACP_Cylinder",nil,50],
+						["30Rnd_9x21_Mag",nil,75]
+					]
+				];
+			};
+		};
+	};
+	
 	case "genstore":
 	{
 		["Altis General Store",

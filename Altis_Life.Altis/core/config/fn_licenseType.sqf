@@ -1,9 +1,10 @@
-//////////////////////////////////////////////////////////////////
-// Created by: Tonic and Adapted by DirtDiver for STS
-// Function Name: life_fn_licenseType.sqf
-// Description: Returns short-var of the license name to a long var and display name.
-//////////////////////////////////////////////////////////////////
-
+/*
+	File: fn_licenseType.sqf
+	Author: Bryan "Tonic" Boardwine
+	
+	Description:
+	Returns the short-var of the license name to a long var and display name.
+*/
 private["_type","_ret","_var","_mode"];
 _type = [_this,0,"",[""]] call BIS_fnc_param;
 _mode = [_this,1,-1,[0]] call BIS_fnc_param;
@@ -43,13 +44,14 @@ switch (_mode) do
 			case "bh" : {_var = "license_civ_bh"};
 			case "logging" : {_var = "license_civ_logging"};
 			case "medicair" : {_var = "license_medic_air"};
-			case "home": {_var = "license_civ_home"};
 			case "c3": {_var = "license_civ_c3"};
-
+			case "swat": {_var = "license_cop_swat"}; //Swat License cost
+			case "mair": {_var = "license_med_air"};
+			case "home": {_var = "license_civ_home"};
 			default {_var = ""};
 		};
 	};
-
+	
 	case 1:
 	{
 		switch (_type) do
@@ -84,7 +86,8 @@ switch (_mode) do
 			case "license_medic_air" : {_var = "medicair"};
 			case "license_civ_home": {_var = "home"};
 			case "license_civ_c3": {_var = "c3"};
-
+			case "license_cop_swat": {_var = "swat"}; //Swat License cost
+			case "license_med_air": {_var = "mair"};
 			default {_var = ""};
 		};
 	};

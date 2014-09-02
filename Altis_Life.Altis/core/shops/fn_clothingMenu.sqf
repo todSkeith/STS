@@ -1,3 +1,4 @@
+#include <macro.h>
 /*
 	File: fn_clothingMenu.sqf
 	Author: Bryan "Tonic" Boardwine
@@ -9,12 +10,12 @@
 private["_list","_clothes","_pic","_filter"];
 createDialog "Life_Clothing";
 disableSerialization;
-if ((vehicle player) != player) exitWith { hint "This action cannot be performed from within a vehicle." };
 
 //Cop / Civ Pre Check
-if((_this select 3) in ["bruce","dive","reb"] && playerSide == west) exitWith {hint "You need to be a civilian to use this store!"; closeDialog 0;};
-if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hint "You don't have rebel training yet!"; closeDialog 0;};
-if((_this select 3) in ["cop","copdive"] && playerSide == civilian) exitWith {hint "You need to be a cop to use this store!"; closeDialog 0;};
+if((_this select 3) in ["bruce","dive","reb","kart"] && playerSide != civilian) exitWith {hint localize "STR_Shop_NotaCiv"; closeDialog 0;};
+if((_this select 3) == "reb" && !license_civ_rebel) exitWith {hint localize "STR_Shop_NotaReb"; closeDialog 0;};
+if((_this select 3) in ["cop"] && playerSide != west) exitWith {hint localize "STR_Shop_NotaCop"; closeDialog 0;};
+if((_this select 3) in ["dive"] && !license_civ_dive) exitWith { hint localize "STR_Shop_NotaDive"; closeDialog 0;};
 
 life_clothing_store = _this select 3;
 
@@ -22,7 +23,7 @@ life_clothing_store = _this select 3;
 _var = [life_clothing_store,0] call life_fnc_licenseType;
 if(_var select 0 != "") then
 {
-	if(!(missionNamespace getVariable (_var select 0))) exitWith {hint format["You need a %1 to buy from this shop!",[_var select 0] call life_fnc_varToStr]; closeDialog 0;};
+	if(!(missionNamespace getVariable (_var select 0))) exitWith {hint format[localize "STR_Shop_YouNeed",[_var select 0] call life_fnc_varToStr]; closeDialog 0;};
 };
 
 //initialize camera view
@@ -41,11 +42,11 @@ _filter = (findDisplay 3100) displayCtrl 3105;
 lbClear _filter;
 lbClear _list;
 
-_filter lbAdd "Clothing";
-_filter lbAdd "Hats";
-_filter lbAdd "Glasses";
-_filter lbAdd "Vests";
-_filter lbAdd "Backpacks";
+_filter lbAdd localize "STR_Shop_UI_Clothing";
+_filter lbAdd localize "STR_Shop_UI_Hats";
+_filter lbAdd localize "STR_Shop_UI_Glasses";
+_filter lbAdd localize "STR_Shop_UI_Vests";
+_filter lbAdd localize "STR_Shop_UI_Backpack";
 
 _filter lbSetCurSel 0;
 
@@ -68,88 +69,6 @@ if(isNil "life_clothesPurchased") exitWith
 	if(life_oldClothes != "") then {player addUniform life_oldClothes;} else {removeUniform player};
 	if(life_oldHat != "") then {player addHeadgear life_oldHat} else {removeHeadgear player;};
 	if(life_oldGlasses != "") then {player addGoggles life_oldGlasses;} else {removeGoggles player};
-
-	[] call life_fnc_equipGear;
-	/*	
-	if ((uniform player) == "U_Rangemaster") && playerSide == west) then
-	{	
-		[[player,"images\Cadet_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	
-	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 2) then
-	{
-		[[player,"images\PO_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	
-	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 3) then
-	{
-		[[player,"images\SPO_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	
-	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 4) then
-	{
-		[[player,"images\Corp_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	
-	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 5) then
-	{
-		[[player,"images\Serg_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	
-	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 6) then
-	{
-		[[player,"images\Lieut_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	
-	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 7) then
-	{
-		[[player,"images\Capt_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	
-	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 8) then
-	{
-		[[player,"images\SuperInt_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	
-	if ((uniform player) == "U_Rangemaster") && (__GETC__(life_coplevel) = 9) then
-	{
-		[[player,"images\Chief_Uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	
-	if ((uniform player) == "U_B_CombatUniform_mcam") then
-	{
-		[[player,"images\GenC.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-
-	if ((uniform player) == "C_man_hunter_1_F") then
-	{
-		[[player,"images\ems_uni.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	
-	if ((uniform player) == "U_C_Poloshirt_salmon") then
-	{
-		[[player,"images\pol3.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	if ((uniform player) == "U_C_Scientist") then
-	{
-		[[player,"images\mech.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	if ((uniform player) == "U_OG_Guerilla3_2") then
-	{
-		[[player,"images\tiee11.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	
-	f ((uniform player) == "U_C_Poloshirt_blue") then
-	{
-		[[player,"images\polosts.jpg"], "life_fnc_setUniform", true, false] spawn BIS_fnc_MP;
-	};
-	
-	
-	*/
-
-	
-	
-	
 	if(backpack player != "") then
 	{
 		if(life_oldBackpack == "") then
@@ -246,3 +165,11 @@ if((life_clothing_purchase select 4) == -1) then
 };
 
 life_clothing_purchase = [-1,-1,-1,-1,-1];
+//Hotfix in for cop gear
+if(playerSide == west) then
+{
+	[] call life_fnc_saveGear;
+};
+
+
+[] call life_fnc_equipGear;

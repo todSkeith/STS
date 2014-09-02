@@ -7,7 +7,7 @@ class Life_jail_ui
 	
 	class controlsBackground {
 		class Life_RscTitleBackground:Life_RscText {
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", "(profilenamespace getvariable ['GUI_BCG_RGB_A',0.7])"};
+			colorBackground[] = {0.62,0.012,0.004,0.85};
 			idc = -1;
 			x = 0.3;
 			y = 0.2;
@@ -50,7 +50,7 @@ class Life_jail_ui
 		class payTicket: Life_RscButtonMenu {
 			idc = -1;
 			text = "Jail";
-			colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.3843])", "(profilenamespace getvariable ['GUI_BCG_RGB_G',0.7019])", "(profilenamespace getvariable ['GUI_BCG_RGB_B',0.8862])", 0.5};
+			colorBackground[] = {0.62,0.012,0.004,0.5};
 			onButtonClick = "[life_arrestTarget] call life_fnc_jailPre";
 			x = 0.45;
 			y = 0.35;
